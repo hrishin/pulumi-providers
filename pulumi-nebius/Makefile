@@ -27,6 +27,7 @@ sdk:
 	rm -rf sdk
 	cp -r $(SCRATCH_DIR)/sdks/nebius sdk
 	rm -rf $(SCRATCH_DIR)
+	$(PYTHON) scripts/patch_pyproject.py
 	@echo "SDK generated: sdk/pulumi_nebius/  (version $(PROVIDER_VERSION))"
 
 # ── Install Python SDK into the active venv ────────────────────────────────────
@@ -57,3 +58,19 @@ bump:
 	@[ -n "$(VERSION)" ] || (echo "Usage: make bump VERSION=x.y.z"; exit 1)
 	$(MAKE) _bump VERSION=$(VERSION)
 	@echo "Version pinned to $(VERSION). Run 'make sdk' to regenerate."
+
+# ── Build & publish to PyPI ────────────────────────────────────────────────────
+# publish/publish-test are for local/manual use; CI publishes via OIDC trusted
+# publishing (see .github/workflows/pulumi-nebius-pypi-publish.yml) instead.
+
+.PHONY: dist
+dist:
+	scripts/build.sh
+
+.PHONY: publish-test
+publish-test: dist
+	scripts/publish.sh --test
+
+.PHONY: publish
+publish: dist
+	scripts/publish.sh

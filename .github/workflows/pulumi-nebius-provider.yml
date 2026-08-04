@@ -149,3 +149,37 @@ jobs:
           print('Subnet:    ', n.VpcV1Subnet)
           print('OK')
           "
+
+  # ── Tag & release a version bump that's landed on main ────────────────────
+  # Creating this release is what triggers pulumi-nebius-pypi-publish.yml.
+  # Safe to run on every push: it's a no-op whenever the tag already exists,
+  # so it only actually fires right after a version-bump PR is merged.
+  tag-release:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine pinned version
+        id: pin
+        run: |
+          V=$(grep '^PROVIDER_VERSION' pulumi-nebius/Makefile | head -1 | awk -F'= ' '{print $2}')
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+
+      - name: Create tag & GitHub release if new
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="pulumi-nebius-v${{ steps.pin.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "$TAG already exists, skipping."
+          else
+            gh release create "$TAG" \
+              --title "pulumi-nebius v${{ steps.pin.outputs.version }}" \
+              --notes "Publishes pulumi_nebius==${{ steps.pin.outputs.version }} (Nebius Terraform provider ${{ steps.pin.outputs.version }}) to PyPI." \
+              --target "$GITHUB_SHA"
+          fi

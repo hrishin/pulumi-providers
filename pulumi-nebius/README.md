@@ -136,6 +136,53 @@ The [`pulumi-nebius provider`](../.github/workflows/pulumi-nebius-provider.yml) 
 - Validates that the generated SDK imports cleanly on every push to `main` that touches
   `pulumi-nebius/**`.
 
+## Publishing to PyPI
+
+`pip install pulumi-nebius` is served from PyPI as a normal pre-built package (in addition to
+the zero-install `pulumi package add terraform-provider registry.terraform.io/nebius/nebius`
+path, which generates an SDK locally and needs nothing published at all).
+
+### Automated
+
+1. The `pulumi-nebius provider` workflow bumps `Makefile`/regenerates `sdk/` and opens a PR (as
+   described above).
+2. Merging that PR to `main` triggers the `tag-release` job, which tags `pulumi-nebius-v<version>`
+   and cuts a GitHub Release — but only if that tag doesn't already exist, so it's a no-op on
+   unrelated pushes.
+3. The release publish fires [`pulumi-nebius-pypi-publish.yml`](../.github/workflows/pulumi-nebius-pypi-publish.yml),
+   which builds `sdk/` and uploads it to PyPI via
+   [OIDC trusted publishing](https://docs.pypi.org/trusted-publishers/) — no long-lived API token
+   is stored in this repo.
+
+**One-time setup** (needs PyPI/GitHub account access, not code):
+- On PyPI (and optionally TestPyPI) → project settings → *Trusted Publishers* → add a publisher
+  pointing at this repo, workflow `pulumi-nebius-pypi-publish.yml`, environment `pypi` (or
+  `testpypi`).
+- In GitHub → repo Settings → Environments, create the `pypi` environment (and `testpypi` if
+  used) and optionally add required reviewers there for a manual approval gate before anything
+  actually publishes.
+
+### Manual / local
+
+```bash
+make dist                                   # build sdist + wheel into sdk/dist/
+PYPI_API_TOKEN=pypi-... make publish-test   # upload to TestPyPI
+PYPI_API_TOKEN=pypi-... make publish        # upload to PyPI
+```
+
+`scripts/build.sh` and `scripts/publish.sh` back these targets directly if you want more control.
+You can also trigger a TestPyPI dry run from CI without cutting a release: **Actions →
+pulumi-nebius PyPI publish → Run workflow → target: testpypi**.
+
+Because `make sdk` regenerates `sdk/` from scratch on every run, PyPI-facing metadata can't live
+in the generated `pyproject.toml` directly. `scripts/patch_pyproject.py` re-applies it after every
+regeneration (called automatically as the last step of `make sdk`):
+- adds `license`, `license-files`, `authors`, `classifiers`, and this repo's URLs
+- bumps `[build-system] requires` to `setuptools>=77.0.3` — the codegen'd `>=61.0` floor predates
+  [PEP 639](https://peps.python.org/pep-0639/) SPDX `license = "MIT"` support
+- copies `LICENSE` and `README.md` into `sdk/` so they land in the built distribution and PyPI
+  gets a real long description instead of a blank one
+
 ## Directory layout
 
 ```
