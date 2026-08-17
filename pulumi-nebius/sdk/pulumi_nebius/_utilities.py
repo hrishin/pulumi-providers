@@ -323,15 +323,15 @@ def get_plugin_download_url():
 	return None
 
 def get_version():
-    return "0.6.37"
+    return "0.6.42"
 
 async def get_package() -> str:
 	return await pulumi.runtime.register_package(
 		base_provider_name="terraform-provider",
-		base_provider_version="1.2.1",
+		base_provider_version="1.3.0",
 		base_provider_download_url=get_plugin_download_url() or "",
 		package_name="nebius",
 		package_version=get_version(),
-		base64_parameter="eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL25lYml1cy9uZWJpdXMiLCJ2ZXJzaW9uIjoiMC42LjM3In19",
+		base64_parameter="eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL25lYml1cy9uZWJpdXMiLCJ2ZXJzaW9uIjoiMC42LjQyIn19",
 	)
 	

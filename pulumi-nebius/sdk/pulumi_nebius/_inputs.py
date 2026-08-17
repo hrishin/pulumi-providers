@@ -483,6 +483,8 @@ __all__ = [
     'StorageV1BucketStatusCounterCountersArgsDict',
     'StorageV1BucketStatusCounterNonCurrentCountersArgs',
     'StorageV1BucketStatusCounterNonCurrentCountersArgsDict',
+    'StorageV1BucketStatusInsecureEndpointArgs',
+    'StorageV1BucketStatusInsecureEndpointArgsDict',
     'StorageV1TransferAfterNEmptyIterationsArgs',
     'StorageV1TransferAfterNEmptyIterationsArgsDict',
     'StorageV1TransferAfterOneIterationArgs',
@@ -7426,8 +7428,10 @@ class Mk8sV1ClusterControlPlaneArgsDict(TypedDict):
     """
     :
 
-       Desired Kubernetes version of the cluster. For now only acceptable format is
-       `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+       Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+       if the desired version is no longer supported and the cluster has been automatically updated.
+       For now only acceptable format is `<major>.<minor>` like "1.31".
+       Option for patch version update will be added later.
     """
 
 @pulumi.input_type
@@ -7466,8 +7470,10 @@ class Mk8sV1ClusterControlPlaneArgs:
                   By default cluster will be created without it.
         :param pulumi.Input[_builtins.str] version: :
                
-                  Desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+                  Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+                  if the desired version is no longer supported and the cluster has been automatically updated.
+                  For now only acceptable format is `<major>.<minor>` like "1.31".
+                  Option for patch version update will be added later.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
@@ -7566,8 +7572,10 @@ class Mk8sV1ClusterControlPlaneArgs:
         """
         :
 
-           Desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+           Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+           if the desired version is no longer supported and the cluster has been automatically updated.
+           For now only acceptable format is `<major>.<minor>` like "1.31".
+           Option for patch version update will be added later.
         """
         return pulumi.get(self, "version")
 
@@ -17965,6 +17973,13 @@ class StorageV1BucketStatusArgsDict(TypedDict):
        The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
        and contains only the FQDN address.
     """
+    insecure_endpoint: NotRequired[pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgsDict']]]
+    """
+    :
+
+       Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+       same region or allowed from everywhere.
+    """
     purge_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     :
@@ -18016,6 +18031,7 @@ class StorageV1BucketStatusArgs:
                  counters: pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketStatusCounterArgs']]]] = None,
                  deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 insecure_endpoint: pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgs']] = None,
                  purge_at: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -18035,6 +18051,10 @@ class StorageV1BucketStatusArgs:
                
                   The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
                   and contains only the FQDN address.
+        :param pulumi.Input['StorageV1BucketStatusInsecureEndpointArgs'] insecure_endpoint: :
+               
+                  Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+                  same region or allowed from everywhere.
         :param pulumi.Input[_builtins.str] purge_at: :
                
                   The time when the bucket will be automatically purged in case it was soft-deleted.
@@ -18075,6 +18095,8 @@ class StorageV1BucketStatusArgs:
             pulumi.set(__self__, "deleted_at", deleted_at)
         if domain_name is not None:
             pulumi.set(__self__, "domain_name", domain_name)
+        if insecure_endpoint is not None:
+            pulumi.set(__self__, "insecure_endpoint", insecure_endpoint)
         if purge_at is not None:
             pulumi.set(__self__, "purge_at", purge_at)
         if region is not None:
@@ -18139,6 +18161,21 @@ class StorageV1BucketStatusArgs:
     @domain_name.setter
     def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="insecureEndpoint")
+    def insecure_endpoint(self) -> pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgs']]:
+        """
+        :
+
+           Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+           same region or allowed from everywhere.
+        """
+        return pulumi.get(self, "insecure_endpoint")
+
+    @insecure_endpoint.setter
+    def insecure_endpoint(self, value: pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgs']]):
+        pulumi.set(self, "insecure_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeAt")
@@ -18475,6 +18512,71 @@ class StorageV1BucketStatusCounterNonCurrentCountersArgs:
     @simple_objects_size.setter
     def simple_objects_size(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "simple_objects_size", value)
+
+
+class StorageV1BucketStatusInsecureEndpointArgsDict(TypedDict):
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Determines where the plain HTTP endpoint is available.
+
+    #### Supported values
+
+       Defines where the plain HTTP endpoint is available.
+       Possible values:
+
+       - `MODE_UNSPECIFIED`
+       - `DISABLED` - Plain HTTP access is disabled.
+       - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+       - `ALL` - Plain HTTP access is available from any network.
+    """
+
+@pulumi.input_type
+class StorageV1BucketStatusInsecureEndpointArgs:
+    def __init__(__self__, *,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] mode: :
+               
+                  Determines where the plain HTTP endpoint is available.
+               
+               #### Supported values
+               
+                  Defines where the plain HTTP endpoint is available.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `DISABLED` - Plain HTTP access is disabled.
+                  - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+                  - `ALL` - Plain HTTP access is available from any network.
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Determines where the plain HTTP endpoint is available.
+
+        #### Supported values
+
+           Defines where the plain HTTP endpoint is available.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `DISABLED` - Plain HTTP access is disabled.
+           - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+           - `ALL` - Plain HTTP access is available from any network.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mode", value)
 
 
 class StorageV1TransferAfterNEmptyIterationsArgsDict(TypedDict):
