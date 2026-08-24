@@ -246,6 +246,7 @@ __all__ = [
     'StorageV1BucketStatusCounter',
     'StorageV1BucketStatusCounterCounters',
     'StorageV1BucketStatusCounterNonCurrentCounters',
+    'StorageV1BucketStatusInsecureEndpoint',
     'StorageV1TransferAfterNEmptyIterations',
     'StorageV1TransferAfterOneIteration',
     'StorageV1TransferDestination',
@@ -611,6 +612,7 @@ __all__ = [
     'GetStorageV1BucketStatusCounterResult',
     'GetStorageV1BucketStatusCounterCountersResult',
     'GetStorageV1BucketStatusCounterNonCurrentCountersResult',
+    'GetStorageV1BucketStatusInsecureEndpointResult',
     'GetStorageV1TransferAfterNEmptyIterationsResult',
     'GetStorageV1TransferAfterOneIterationResult',
     'GetStorageV1TransferDestinationResult',
@@ -4743,7 +4745,11 @@ class IamV1FederationSamlSettings(dict):
                  idp_issuer: Optional[_builtins.str] = None,
                  sso_url: Optional[_builtins.str] = None):
         """
-        :param _builtins.bool force_authn: if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :param _builtins.bool force_authn: :
+               
+                  If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+                  SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+                  response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         :param _builtins.str idp_issuer: The unique identifier of the SAML Identity Provider. It usually matches the entityID from the IdP metadata.
         :param _builtins.str sso_url: Identity Provider’s Single Sign-On endpoint. This is the URL where the user is redirected to start SAML login.
         """
@@ -4758,7 +4764,11 @@ class IamV1FederationSamlSettings(dict):
     @pulumi.getter(name="forceAuthn")
     def force_authn(self) -> Optional[_builtins.bool]:
         """
-        if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :
+
+           If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+           SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+           response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         """
         return pulumi.get(self, "force_authn")
 
@@ -5982,8 +5992,10 @@ class Mk8sV1ClusterControlPlane(dict):
                   By default cluster will be created without it.
         :param _builtins.str version: :
                
-                  Desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+                  Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+                  if the desired version is no longer supported and the cluster has been automatically updated.
+                  For now only acceptable format is `<major>.<minor>` like "1.31".
+                  Option for patch version update will be added later.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
@@ -6062,8 +6074,10 @@ class Mk8sV1ClusterControlPlane(dict):
         """
         :
 
-           Desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+           Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+           if the desired version is no longer supported and the cluster has been automatically updated.
+           For now only acceptable format is `<major>.<minor>` like "1.31".
+           Option for patch version update will be added later.
         """
         return pulumi.get(self, "version")
 
@@ -13856,6 +13870,8 @@ class StorageV1BucketStatus(dict):
             suggest = "deleted_at"
         elif key == "domainName":
             suggest = "domain_name"
+        elif key == "insecureEndpoint":
+            suggest = "insecure_endpoint"
         elif key == "purgeAt":
             suggest = "purge_at"
         elif key == "suspensionState":
@@ -13877,6 +13893,7 @@ class StorageV1BucketStatus(dict):
                  counters: Optional[Sequence['outputs.StorageV1BucketStatusCounter']] = None,
                  deleted_at: Optional[_builtins.str] = None,
                  domain_name: Optional[_builtins.str] = None,
+                 insecure_endpoint: Optional['outputs.StorageV1BucketStatusInsecureEndpoint'] = None,
                  purge_at: Optional[_builtins.str] = None,
                  region: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
@@ -13896,6 +13913,10 @@ class StorageV1BucketStatus(dict):
                
                   The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
                   and contains only the FQDN address.
+        :param 'StorageV1BucketStatusInsecureEndpointArgs' insecure_endpoint: :
+               
+                  Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+                  same region or allowed from everywhere.
         :param _builtins.str purge_at: :
                
                   The time when the bucket will be automatically purged in case it was soft-deleted.
@@ -13936,6 +13957,8 @@ class StorageV1BucketStatus(dict):
             pulumi.set(__self__, "deleted_at", deleted_at)
         if domain_name is not None:
             pulumi.set(__self__, "domain_name", domain_name)
+        if insecure_endpoint is not None:
+            pulumi.set(__self__, "insecure_endpoint", insecure_endpoint)
         if purge_at is not None:
             pulumi.set(__self__, "purge_at", purge_at)
         if region is not None:
@@ -13984,6 +14007,17 @@ class StorageV1BucketStatus(dict):
            and contains only the FQDN address.
         """
         return pulumi.get(self, "domain_name")
+
+    @_builtins.property
+    @pulumi.getter(name="insecureEndpoint")
+    def insecure_endpoint(self) -> Optional['outputs.StorageV1BucketStatusInsecureEndpoint']:
+        """
+        :
+
+           Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+           same region or allowed from everywhere.
+        """
+        return pulumi.get(self, "insecure_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="purgeAt")
@@ -14279,6 +14313,49 @@ class StorageV1BucketStatusCounterNonCurrentCounters(dict):
     @pulumi.getter(name="simpleObjectsSize")
     def simple_objects_size(self) -> Optional[_builtins.float]:
         return pulumi.get(self, "simple_objects_size")
+
+
+@pulumi.output_type
+class StorageV1BucketStatusInsecureEndpoint(dict):
+    def __init__(__self__, *,
+                 mode: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str mode: :
+               
+                  Determines where the plain HTTP endpoint is available.
+               
+               #### Supported values
+               
+                  Defines where the plain HTTP endpoint is available.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `DISABLED` - Plain HTTP access is disabled.
+                  - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+                  - `ALL` - Plain HTTP access is available from any network.
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Determines where the plain HTTP endpoint is available.
+
+        #### Supported values
+
+           Defines where the plain HTTP endpoint is available.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `DISABLED` - Plain HTTP access is disabled.
+           - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+           - `ALL` - Plain HTTP access is available from any network.
+        """
+        return pulumi.get(self, "mode")
 
 
 @pulumi.output_type
@@ -18125,9 +18202,11 @@ class VpcV1NetworkStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default: Optional[_builtins.bool] = None,
                  default_route_table_id: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str default_route_table_id: ID of the network's default route table.
         :param _builtins.str state: :
                
@@ -18143,10 +18222,20 @@ class VpcV1NetworkStatus(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if default_route_table_id is not None:
             pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -19709,6 +19798,7 @@ class VpcV1SubnetStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default: Optional[_builtins.bool] = None,
                  ipv4_private_cidrs: Optional[Sequence[_builtins.str]] = None,
                  ipv4_private_pools: Optional[Sequence['outputs.VpcV1SubnetStatusIpv4PrivatePool']] = None,
                  ipv4_public_cidrs: Optional[Sequence[_builtins.str]] = None,
@@ -19716,6 +19806,7 @@ class VpcV1SubnetStatus(dict):
                  route_table: Optional['outputs.VpcV1SubnetStatusRouteTable'] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -19744,6 +19835,8 @@ class VpcV1SubnetStatus(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if ipv4_private_cidrs is not None:
             pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
         if ipv4_private_pools is not None:
@@ -19756,6 +19849,14 @@ class VpcV1SubnetStatus(dict):
             pulumi.set(__self__, "route_table", route_table)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
@@ -24255,7 +24356,11 @@ class GetIamV1FederationSamlSettingsResult(dict):
                  idp_issuer: _builtins.str,
                  sso_url: _builtins.str):
         """
-        :param _builtins.bool force_authn: if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :param _builtins.bool force_authn: :
+               
+                  If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+                  SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+                  response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         :param _builtins.str idp_issuer: The unique identifier of the SAML Identity Provider. It usually matches the entityID from the IdP metadata.
         :param _builtins.str sso_url: Identity Provider’s Single Sign-On endpoint. This is the URL where the user is redirected to start SAML login.
         """
@@ -24267,7 +24372,11 @@ class GetIamV1FederationSamlSettingsResult(dict):
     @pulumi.getter(name="forceAuthn")
     def force_authn(self) -> _builtins.bool:
         """
-        if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :
+
+           If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+           SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+           response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         """
         return pulumi.get(self, "force_authn")
 
@@ -24780,6 +24889,7 @@ class GetIamV1ProjectMetadataResult(dict):
 class GetIamV1ProjectStatusResult(dict):
     def __init__(__self__, *,
                  container_state: _builtins.str,
+                 generation: _builtins.str,
                  region: _builtins.str,
                  suspension_state: _builtins.str):
         """
@@ -24803,6 +24913,15 @@ class GetIamV1ProjectStatusResult(dict):
                   - `PARKING`
                   - `PARKED`
                   - `CREATING` - DRAFT = 1000;
+        :param _builtins.str generation: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `CONTAINER_GENERATION_UNSPECIFIED`
+                  - `SINGLE_REGION`
+                  - `MULTI_REGION`
         :param _builtins.str suspension_state: :
                
                #### Supported values
@@ -24816,6 +24935,7 @@ class GetIamV1ProjectStatusResult(dict):
                   - `RESUMING`
         """
         pulumi.set(__self__, "container_state", container_state)
+        pulumi.set(__self__, "generation", generation)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "suspension_state", suspension_state)
 
@@ -24845,6 +24965,22 @@ class GetIamV1ProjectStatusResult(dict):
            - `CREATING` - DRAFT = 1000;
         """
         return pulumi.get(self, "container_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def generation(self) -> _builtins.str:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `CONTAINER_GENERATION_UNSPECIFIED`
+           - `SINGLE_REGION`
+           - `MULTI_REGION`
+        """
+        return pulumi.get(self, "generation")
 
     @_builtins.property
     @pulumi.getter
@@ -24898,6 +25034,7 @@ class GetIamV1TenantMetadataResult(dict):
 class GetIamV1TenantStatusResult(dict):
     def __init__(__self__, *,
                  container_state: _builtins.str,
+                 generation: _builtins.str,
                  region: _builtins.str,
                  suspension_state: _builtins.str):
         """
@@ -24921,6 +25058,15 @@ class GetIamV1TenantStatusResult(dict):
                   - `PARKING`
                   - `PARKED`
                   - `CREATING` - DRAFT = 1000;
+        :param _builtins.str generation: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `CONTAINER_GENERATION_UNSPECIFIED`
+                  - `SINGLE_REGION`
+                  - `MULTI_REGION`
         :param _builtins.str suspension_state: :
                
                #### Supported values
@@ -24934,6 +25080,7 @@ class GetIamV1TenantStatusResult(dict):
                   - `RESUMING`
         """
         pulumi.set(__self__, "container_state", container_state)
+        pulumi.set(__self__, "generation", generation)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "suspension_state", suspension_state)
 
@@ -24963,6 +25110,22 @@ class GetIamV1TenantStatusResult(dict):
            - `CREATING` - DRAFT = 1000;
         """
         return pulumi.get(self, "container_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def generation(self) -> _builtins.str:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `CONTAINER_GENERATION_UNSPECIFIED`
+           - `SINGLE_REGION`
+           - `MULTI_REGION`
+        """
+        return pulumi.get(self, "generation")
 
     @_builtins.property
     @pulumi.getter
@@ -25593,8 +25756,10 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
                   Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
-                  Desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+                  Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+                  if the desired version is no longer supported and the cluster has been automatically updated.
+                  For now only acceptable format is `<major>.<minor>` like "1.31".
+                  Option for patch version update will be added later.
         """
         pulumi.set(__self__, "audit_logs", audit_logs)
         pulumi.set(__self__, "endpoints", endpoints)
@@ -25668,8 +25833,10 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         """
         :
 
-           Desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+           Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+           if the desired version is no longer supported and the cluster has been automatically updated.
+           For now only acceptable format is `<major>.<minor>` like "1.31".
+           Option for patch version update will be added later.
         """
         return pulumi.get(self, "version")
 
@@ -31394,6 +31561,7 @@ class GetStorageV1BucketStatusResult(dict):
                  counters: Sequence['outputs.GetStorageV1BucketStatusCounterResult'],
                  deleted_at: _builtins.str,
                  domain_name: _builtins.str,
+                 insecure_endpoint: 'outputs.GetStorageV1BucketStatusInsecureEndpointResult',
                  purge_at: _builtins.str,
                  region: _builtins.str,
                  state: _builtins.str,
@@ -31413,6 +31581,10 @@ class GetStorageV1BucketStatusResult(dict):
                
                   The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
                   and contains only the FQDN address.
+        :param 'GetStorageV1BucketStatusInsecureEndpointArgs' insecure_endpoint: :
+               
+                  Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+                  same region or allowed from everywhere.
         :param _builtins.str purge_at: :
                
                   The time when the bucket will be automatically purged in case it was soft-deleted.
@@ -31449,6 +31621,7 @@ class GetStorageV1BucketStatusResult(dict):
         pulumi.set(__self__, "counters", counters)
         pulumi.set(__self__, "deleted_at", deleted_at)
         pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "insecure_endpoint", insecure_endpoint)
         pulumi.set(__self__, "purge_at", purge_at)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "state", state)
@@ -31493,6 +31666,17 @@ class GetStorageV1BucketStatusResult(dict):
            and contains only the FQDN address.
         """
         return pulumi.get(self, "domain_name")
+
+    @_builtins.property
+    @pulumi.getter(name="insecureEndpoint")
+    def insecure_endpoint(self) -> 'outputs.GetStorageV1BucketStatusInsecureEndpointResult':
+        """
+        :
+
+           Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+           same region or allowed from everywhere.
+        """
+        return pulumi.get(self, "insecure_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="purgeAt")
@@ -31703,6 +31887,48 @@ class GetStorageV1BucketStatusCounterNonCurrentCountersResult(dict):
     @pulumi.getter(name="simpleObjectsSize")
     def simple_objects_size(self) -> _builtins.float:
         return pulumi.get(self, "simple_objects_size")
+
+
+@pulumi.output_type
+class GetStorageV1BucketStatusInsecureEndpointResult(dict):
+    def __init__(__self__, *,
+                 mode: _builtins.str):
+        """
+        :param _builtins.str mode: :
+               
+                  Determines where the plain HTTP endpoint is available.
+               
+               #### Supported values
+               
+                  Defines where the plain HTTP endpoint is available.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `DISABLED` - Plain HTTP access is disabled.
+                  - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+                  - `ALL` - Plain HTTP access is available from any network.
+        """
+        pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> _builtins.str:
+        """
+        :
+
+           Determines where the plain HTTP endpoint is available.
+
+        #### Supported values
+
+           Defines where the plain HTTP endpoint is available.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `DISABLED` - Plain HTTP access is disabled.
+           - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+           - `ALL` - Plain HTTP access is available from any network.
+        """
+        return pulumi.get(self, "mode")
 
 
 @pulumi.output_type
@@ -33630,9 +33856,11 @@ class GetVpcV1NetworkMetadataResult(dict):
 @pulumi.output_type
 class GetVpcV1NetworkStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  default_route_table_id: _builtins.str,
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str default_route_table_id: ID of the network's default route table.
         :param _builtins.str state: :
                
@@ -33648,8 +33876,17 @@ class GetVpcV1NetworkStatusResult(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -34889,6 +35126,7 @@ class GetVpcV1SubnetMetadataResult(dict):
 @pulumi.output_type
 class GetVpcV1SubnetStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  ipv4_private_cidrs: Sequence[_builtins.str],
                  ipv4_private_pools: Sequence['outputs.GetVpcV1SubnetStatusIpv4PrivatePoolResult'],
                  ipv4_public_cidrs: Sequence[_builtins.str],
@@ -34896,6 +35134,7 @@ class GetVpcV1SubnetStatusResult(dict):
                  route_table: 'outputs.GetVpcV1SubnetStatusRouteTableResult',
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -34924,12 +35163,21 @@ class GetVpcV1SubnetStatusResult(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
         pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
         pulumi.set(__self__, "ipv4_public_cidrs", ipv4_public_cidrs)
         pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
         pulumi.set(__self__, "route_table", route_table)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
