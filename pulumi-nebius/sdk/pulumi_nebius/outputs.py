@@ -246,6 +246,9 @@ __all__ = [
     'StorageV1BucketStatusCounter',
     'StorageV1BucketStatusCounterCounters',
     'StorageV1BucketStatusCounterNonCurrentCounters',
+    'StorageV1BucketStatusInsecureEndpoint',
+    'StorageV1InventoryMetadata',
+    'StorageV1InventoryStatus',
     'StorageV1TransferAfterNEmptyIterations',
     'StorageV1TransferAfterOneIteration',
     'StorageV1TransferDestination',
@@ -312,6 +315,7 @@ __all__ = [
     'StorageV1alpha1TransferStatusLastIteration',
     'TunnelV1TunnelMetadata',
     'TunnelV1TunnelStatus',
+    'TunnelV1TunnelStatusService',
     'VpcV1AllocationIpv4Private',
     'VpcV1AllocationIpv4Public',
     'VpcV1AllocationMetadata',
@@ -611,6 +615,9 @@ __all__ = [
     'GetStorageV1BucketStatusCounterResult',
     'GetStorageV1BucketStatusCounterCountersResult',
     'GetStorageV1BucketStatusCounterNonCurrentCountersResult',
+    'GetStorageV1BucketStatusInsecureEndpointResult',
+    'GetStorageV1InventoryMetadataResult',
+    'GetStorageV1InventoryStatusResult',
     'GetStorageV1TransferAfterNEmptyIterationsResult',
     'GetStorageV1TransferAfterOneIterationResult',
     'GetStorageV1TransferDestinationResult',
@@ -647,6 +654,7 @@ __all__ = [
     'GetStorageV1alpha1TransferStatusLastIterationResult',
     'GetTunnelV1TunnelMetadataResult',
     'GetTunnelV1TunnelStatusResult',
+    'GetTunnelV1TunnelStatusServiceResult',
     'GetVpcV1AllocationIpv4PrivateResult',
     'GetVpcV1AllocationIpv4PublicResult',
     'GetVpcV1AllocationMetadataResult',
@@ -1669,6 +1677,7 @@ class ComputeV1GpuClusterStatus(dict):
                  instances: Optional[Sequence[_builtins.str]] = None,
                  reconciling: Optional[_builtins.bool] = None):
         """
+        :param Sequence[_builtins.str] instances: IDs of Compute instances that belong to this GPU cluster.
         :param _builtins.bool reconciling: Indicates whether there is an ongoing operation
         """
         if infiniband_topology_path is not None:
@@ -1686,6 +1695,9 @@ class ComputeV1GpuClusterStatus(dict):
     @_builtins.property
     @pulumi.getter
     def instances(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        IDs of Compute instances that belong to this GPU cluster.
+        """
         return pulumi.get(self, "instances")
 
     @_builtins.property
@@ -4743,7 +4755,11 @@ class IamV1FederationSamlSettings(dict):
                  idp_issuer: Optional[_builtins.str] = None,
                  sso_url: Optional[_builtins.str] = None):
         """
-        :param _builtins.bool force_authn: if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :param _builtins.bool force_authn: :
+               
+                  If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+                  SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+                  response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         :param _builtins.str idp_issuer: The unique identifier of the SAML Identity Provider. It usually matches the entityID from the IdP metadata.
         :param _builtins.str sso_url: Identity Provider’s Single Sign-On endpoint. This is the URL where the user is redirected to start SAML login.
         """
@@ -4758,7 +4774,11 @@ class IamV1FederationSamlSettings(dict):
     @pulumi.getter(name="forceAuthn")
     def force_authn(self) -> Optional[_builtins.bool]:
         """
-        if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :
+
+           If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+           SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+           response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         """
         return pulumi.get(self, "force_authn")
 
@@ -5982,8 +6002,10 @@ class Mk8sV1ClusterControlPlane(dict):
                   By default cluster will be created without it.
         :param _builtins.str version: :
                
-                  Desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+                  Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+                  if the desired version is no longer supported and the cluster has been automatically updated.
+                  For now only acceptable format is `<major>.<minor>` like "1.31".
+                  Option for patch version update will be added later.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
@@ -6062,8 +6084,10 @@ class Mk8sV1ClusterControlPlane(dict):
         """
         :
 
-           Desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+           Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+           if the desired version is no longer supported and the cluster has been automatically updated.
+           For now only acceptable format is `<major>.<minor>` like "1.31".
+           Option for patch version update will be added later.
         """
         return pulumi.get(self, "version")
 
@@ -13856,6 +13880,8 @@ class StorageV1BucketStatus(dict):
             suggest = "deleted_at"
         elif key == "domainName":
             suggest = "domain_name"
+        elif key == "insecureEndpoint":
+            suggest = "insecure_endpoint"
         elif key == "purgeAt":
             suggest = "purge_at"
         elif key == "suspensionState":
@@ -13877,6 +13903,7 @@ class StorageV1BucketStatus(dict):
                  counters: Optional[Sequence['outputs.StorageV1BucketStatusCounter']] = None,
                  deleted_at: Optional[_builtins.str] = None,
                  domain_name: Optional[_builtins.str] = None,
+                 insecure_endpoint: Optional['outputs.StorageV1BucketStatusInsecureEndpoint'] = None,
                  purge_at: Optional[_builtins.str] = None,
                  region: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
@@ -13896,6 +13923,10 @@ class StorageV1BucketStatus(dict):
                
                   The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
                   and contains only the FQDN address.
+        :param 'StorageV1BucketStatusInsecureEndpointArgs' insecure_endpoint: :
+               
+                  Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+                  same region or allowed from everywhere.
         :param _builtins.str purge_at: :
                
                   The time when the bucket will be automatically purged in case it was soft-deleted.
@@ -13936,6 +13967,8 @@ class StorageV1BucketStatus(dict):
             pulumi.set(__self__, "deleted_at", deleted_at)
         if domain_name is not None:
             pulumi.set(__self__, "domain_name", domain_name)
+        if insecure_endpoint is not None:
+            pulumi.set(__self__, "insecure_endpoint", insecure_endpoint)
         if purge_at is not None:
             pulumi.set(__self__, "purge_at", purge_at)
         if region is not None:
@@ -13984,6 +14017,17 @@ class StorageV1BucketStatus(dict):
            and contains only the FQDN address.
         """
         return pulumi.get(self, "domain_name")
+
+    @_builtins.property
+    @pulumi.getter(name="insecureEndpoint")
+    def insecure_endpoint(self) -> Optional['outputs.StorageV1BucketStatusInsecureEndpoint']:
+        """
+        :
+
+           Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+           same region or allowed from everywhere.
+        """
+        return pulumi.get(self, "insecure_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="purgeAt")
@@ -14279,6 +14323,137 @@ class StorageV1BucketStatusCounterNonCurrentCounters(dict):
     @pulumi.getter(name="simpleObjectsSize")
     def simple_objects_size(self) -> Optional[_builtins.float]:
         return pulumi.get(self, "simple_objects_size")
+
+
+@pulumi.output_type
+class StorageV1BucketStatusInsecureEndpoint(dict):
+    def __init__(__self__, *,
+                 mode: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str mode: :
+               
+                  Determines where the plain HTTP endpoint is available.
+               
+               #### Supported values
+               
+                  Defines where the plain HTTP endpoint is available.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `DISABLED` - Plain HTTP access is disabled.
+                  - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+                  - `ALL` - Plain HTTP access is available from any network.
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Determines where the plain HTTP endpoint is available.
+
+        #### Supported values
+
+           Defines where the plain HTTP endpoint is available.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `DISABLED` - Plain HTTP access is disabled.
+           - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+           - `ALL` - Plain HTTP access is available from any network.
+        """
+        return pulumi.get(self, "mode")
+
+
+@pulumi.output_type
+class StorageV1InventoryMetadata(dict):
+    def __init__(__self__):
+        pass
+
+
+@pulumi.output_type
+class StorageV1InventoryStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorCode":
+            suggest = "error_code"
+        elif key == "lastSuccess":
+            suggest = "last_success"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StorageV1InventoryStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StorageV1InventoryStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StorageV1InventoryStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_code: Optional[_builtins.str] = None,
+                 last_success: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str error_code: :
+               
+                  Error code, if the last run was not successful, otherwise NO_ERROR.
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `NO_ERROR` - No error.
+                  - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+                  - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+                  - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+                  - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+        :param _builtins.str last_success: :
+               
+                  Timestamp of the last successful run.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        if error_code is not None:
+            pulumi.set(__self__, "error_code", error_code)
+        if last_success is not None:
+            pulumi.set(__self__, "last_success", last_success)
+
+    @_builtins.property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Error code, if the last run was not successful, otherwise NO_ERROR.
+
+        #### Supported values
+
+           Possible values:
+
+           - `NO_ERROR` - No error.
+           - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+           - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+           - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+           - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+        """
+        return pulumi.get(self, "error_code")
+
+    @_builtins.property
+    @pulumi.getter(name="lastSuccess")
+    def last_success(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Timestamp of the last successful run.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "last_success")
 
 
 @pulumi.output_type
@@ -17446,9 +17621,52 @@ class TunnelV1TunnelMetadata(dict):
 
 @pulumi.output_type
 class TunnelV1TunnelStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionState":
+            suggest = "connection_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TunnelV1TunnelStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TunnelV1TunnelStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TunnelV1TunnelStatus.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 connection_state: Optional[_builtins.str] = None,
+                 services: Optional[Sequence['outputs.TunnelV1TunnelStatusService']] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.str connection_state: :
+               
+                  Whether any agent is connected to the tunnel now.
+               
+               #### Supported values
+               
+                  ConnectionState reports whether the tunnel has an agent behind it. Values are
+                  prefixed because a top-level enum puts them in the package scope.
+                  Possible values:
+               
+                  - `CONNECTION_STATE_UNSPECIFIED`:
+                Proto3 zero value. A read of the tunnel never returns it; a mutation
+                records it, because it reports the tunnel that was written.
+               
+                  - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+                  - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+        :param Sequence['TunnelV1TunnelStatusServiceArgs'] services: :
+               
+                  Services reachable through the tunnel. A service is listed while at least
+                  one agent announces it, and follows the agents within about 30 seconds.
+               
+               #### Inner value description
+               
+                  ServiceStatus is a service reachable through the tunnel.
         :param _builtins.str state: :
                
                   Current lifecycle state of the tunnel.
@@ -17462,8 +17680,50 @@ class TunnelV1TunnelStatus(dict):
                   - `CREATED` - The tunnel has been created and is active.
                   - `DELETED` - The tunnel has been deleted.
         """
+        if connection_state is not None:
+            pulumi.set(__self__, "connection_state", connection_state)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionState")
+    def connection_state(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Whether any agent is connected to the tunnel now.
+
+        #### Supported values
+
+           ConnectionState reports whether the tunnel has an agent behind it. Values are
+           prefixed because a top-level enum puts them in the package scope.
+           Possible values:
+
+           - `CONNECTION_STATE_UNSPECIFIED`:
+         Proto3 zero value. A read of the tunnel never returns it; a mutation
+         records it, because it reports the tunnel that was written.
+
+           - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+           - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+        """
+        return pulumi.get(self, "connection_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Optional[Sequence['outputs.TunnelV1TunnelStatusService']]:
+        """
+        :
+
+           Services reachable through the tunnel. A service is listed while at least
+           one agent announces it, and follows the agents within about 30 seconds.
+
+        #### Inner value description
+
+           ServiceStatus is a service reachable through the tunnel.
+        """
+        return pulumi.get(self, "services")
 
     @_builtins.property
     @pulumi.getter
@@ -17483,6 +17743,55 @@ class TunnelV1TunnelStatus(dict):
            - `DELETED` - The tunnel has been deleted.
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class TunnelV1TunnelStatusService(dict):
+    def __init__(__self__, *,
+                 endpoint: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str endpoint: :
+               
+                  Where to reach the service, as host:port. The tunnel terminates TLS, so a
+                  client connects over TLS and sends the host as SNI. What travels inside is
+                  whatever the service speaks, which the tunnel does not interpret.
+                  For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+        :param _builtins.str name: :
+               
+                  Name of the service, as the agent announced it. 1-20 characters, lowercase
+                  letters and digits only: the hostname joins the name to the tunnel id with
+                  a dash, so a name may not contain one. For example, "app".
+        """
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Where to reach the service, as host:port. The tunnel terminates TLS, so a
+           client connects over TLS and sends the host as SNI. What travels inside is
+           whatever the service speaks, which the tunnel does not interpret.
+           For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Name of the service, as the agent announced it. 1-20 characters, lowercase
+           letters and digits only: the hostname joins the name to the tunnel id with
+           a dash, so a name may not contain one. For example, "app".
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -18125,9 +18434,11 @@ class VpcV1NetworkStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default: Optional[_builtins.bool] = None,
                  default_route_table_id: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str default_route_table_id: ID of the network's default route table.
         :param _builtins.str state: :
                
@@ -18143,10 +18454,20 @@ class VpcV1NetworkStatus(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if default_route_table_id is not None:
             pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -19709,6 +20030,7 @@ class VpcV1SubnetStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default: Optional[_builtins.bool] = None,
                  ipv4_private_cidrs: Optional[Sequence[_builtins.str]] = None,
                  ipv4_private_pools: Optional[Sequence['outputs.VpcV1SubnetStatusIpv4PrivatePool']] = None,
                  ipv4_public_cidrs: Optional[Sequence[_builtins.str]] = None,
@@ -19716,6 +20038,7 @@ class VpcV1SubnetStatus(dict):
                  route_table: Optional['outputs.VpcV1SubnetStatusRouteTable'] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -19744,6 +20067,8 @@ class VpcV1SubnetStatus(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if ipv4_private_cidrs is not None:
             pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
         if ipv4_private_pools is not None:
@@ -19756,6 +20081,14 @@ class VpcV1SubnetStatus(dict):
             pulumi.set(__self__, "route_table", route_table)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
@@ -21720,6 +22053,7 @@ class GetComputeV1GpuClusterStatusResult(dict):
                  instances: Sequence[_builtins.str],
                  reconciling: _builtins.bool):
         """
+        :param Sequence[_builtins.str] instances: IDs of Compute instances that belong to this GPU cluster.
         :param _builtins.bool reconciling: Indicates whether there is an ongoing operation
         """
         pulumi.set(__self__, "infiniband_topology_path", infiniband_topology_path)
@@ -21734,6 +22068,9 @@ class GetComputeV1GpuClusterStatusResult(dict):
     @_builtins.property
     @pulumi.getter
     def instances(self) -> Sequence[_builtins.str]:
+        """
+        IDs of Compute instances that belong to this GPU cluster.
+        """
         return pulumi.get(self, "instances")
 
     @_builtins.property
@@ -24255,7 +24592,11 @@ class GetIamV1FederationSamlSettingsResult(dict):
                  idp_issuer: _builtins.str,
                  sso_url: _builtins.str):
         """
-        :param _builtins.bool force_authn: if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :param _builtins.bool force_authn: :
+               
+                  If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+                  SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+                  response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         :param _builtins.str idp_issuer: The unique identifier of the SAML Identity Provider. It usually matches the entityID from the IdP metadata.
         :param _builtins.str sso_url: Identity Provider’s Single Sign-On endpoint. This is the URL where the user is redirected to start SAML login.
         """
@@ -24267,7 +24608,11 @@ class GetIamV1FederationSamlSettingsResult(dict):
     @pulumi.getter(name="forceAuthn")
     def force_authn(self) -> _builtins.bool:
         """
-        if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :
+
+           If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+           SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+           response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         """
         return pulumi.get(self, "force_authn")
 
@@ -24780,6 +25125,7 @@ class GetIamV1ProjectMetadataResult(dict):
 class GetIamV1ProjectStatusResult(dict):
     def __init__(__self__, *,
                  container_state: _builtins.str,
+                 generation: _builtins.str,
                  region: _builtins.str,
                  suspension_state: _builtins.str):
         """
@@ -24803,6 +25149,15 @@ class GetIamV1ProjectStatusResult(dict):
                   - `PARKING`
                   - `PARKED`
                   - `CREATING` - DRAFT = 1000;
+        :param _builtins.str generation: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `CONTAINER_GENERATION_UNSPECIFIED`
+                  - `SINGLE_REGION`
+                  - `MULTI_REGION`
         :param _builtins.str suspension_state: :
                
                #### Supported values
@@ -24816,6 +25171,7 @@ class GetIamV1ProjectStatusResult(dict):
                   - `RESUMING`
         """
         pulumi.set(__self__, "container_state", container_state)
+        pulumi.set(__self__, "generation", generation)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "suspension_state", suspension_state)
 
@@ -24845,6 +25201,22 @@ class GetIamV1ProjectStatusResult(dict):
            - `CREATING` - DRAFT = 1000;
         """
         return pulumi.get(self, "container_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def generation(self) -> _builtins.str:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `CONTAINER_GENERATION_UNSPECIFIED`
+           - `SINGLE_REGION`
+           - `MULTI_REGION`
+        """
+        return pulumi.get(self, "generation")
 
     @_builtins.property
     @pulumi.getter
@@ -24898,6 +25270,7 @@ class GetIamV1TenantMetadataResult(dict):
 class GetIamV1TenantStatusResult(dict):
     def __init__(__self__, *,
                  container_state: _builtins.str,
+                 generation: _builtins.str,
                  region: _builtins.str,
                  suspension_state: _builtins.str):
         """
@@ -24921,6 +25294,15 @@ class GetIamV1TenantStatusResult(dict):
                   - `PARKING`
                   - `PARKED`
                   - `CREATING` - DRAFT = 1000;
+        :param _builtins.str generation: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `CONTAINER_GENERATION_UNSPECIFIED`
+                  - `SINGLE_REGION`
+                  - `MULTI_REGION`
         :param _builtins.str suspension_state: :
                
                #### Supported values
@@ -24934,6 +25316,7 @@ class GetIamV1TenantStatusResult(dict):
                   - `RESUMING`
         """
         pulumi.set(__self__, "container_state", container_state)
+        pulumi.set(__self__, "generation", generation)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "suspension_state", suspension_state)
 
@@ -24963,6 +25346,22 @@ class GetIamV1TenantStatusResult(dict):
            - `CREATING` - DRAFT = 1000;
         """
         return pulumi.get(self, "container_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def generation(self) -> _builtins.str:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `CONTAINER_GENERATION_UNSPECIFIED`
+           - `SINGLE_REGION`
+           - `MULTI_REGION`
+        """
+        return pulumi.get(self, "generation")
 
     @_builtins.property
     @pulumi.getter
@@ -25593,8 +25992,10 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
                   Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
-                  Desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+                  Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+                  if the desired version is no longer supported and the cluster has been automatically updated.
+                  For now only acceptable format is `<major>.<minor>` like "1.31".
+                  Option for patch version update will be added later.
         """
         pulumi.set(__self__, "audit_logs", audit_logs)
         pulumi.set(__self__, "endpoints", endpoints)
@@ -25668,8 +26069,10 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         """
         :
 
-           Desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+           Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+           if the desired version is no longer supported and the cluster has been automatically updated.
+           For now only acceptable format is `<major>.<minor>` like "1.31".
+           Option for patch version update will be added later.
         """
         return pulumi.get(self, "version")
 
@@ -31394,6 +31797,7 @@ class GetStorageV1BucketStatusResult(dict):
                  counters: Sequence['outputs.GetStorageV1BucketStatusCounterResult'],
                  deleted_at: _builtins.str,
                  domain_name: _builtins.str,
+                 insecure_endpoint: 'outputs.GetStorageV1BucketStatusInsecureEndpointResult',
                  purge_at: _builtins.str,
                  region: _builtins.str,
                  state: _builtins.str,
@@ -31413,6 +31817,10 @@ class GetStorageV1BucketStatusResult(dict):
                
                   The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
                   and contains only the FQDN address.
+        :param 'GetStorageV1BucketStatusInsecureEndpointArgs' insecure_endpoint: :
+               
+                  Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+                  same region or allowed from everywhere.
         :param _builtins.str purge_at: :
                
                   The time when the bucket will be automatically purged in case it was soft-deleted.
@@ -31449,6 +31857,7 @@ class GetStorageV1BucketStatusResult(dict):
         pulumi.set(__self__, "counters", counters)
         pulumi.set(__self__, "deleted_at", deleted_at)
         pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "insecure_endpoint", insecure_endpoint)
         pulumi.set(__self__, "purge_at", purge_at)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "state", state)
@@ -31493,6 +31902,17 @@ class GetStorageV1BucketStatusResult(dict):
            and contains only the FQDN address.
         """
         return pulumi.get(self, "domain_name")
+
+    @_builtins.property
+    @pulumi.getter(name="insecureEndpoint")
+    def insecure_endpoint(self) -> 'outputs.GetStorageV1BucketStatusInsecureEndpointResult':
+        """
+        :
+
+           Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+           same region or allowed from everywhere.
+        """
+        return pulumi.get(self, "insecure_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="purgeAt")
@@ -31703,6 +32123,115 @@ class GetStorageV1BucketStatusCounterNonCurrentCountersResult(dict):
     @pulumi.getter(name="simpleObjectsSize")
     def simple_objects_size(self) -> _builtins.float:
         return pulumi.get(self, "simple_objects_size")
+
+
+@pulumi.output_type
+class GetStorageV1BucketStatusInsecureEndpointResult(dict):
+    def __init__(__self__, *,
+                 mode: _builtins.str):
+        """
+        :param _builtins.str mode: :
+               
+                  Determines where the plain HTTP endpoint is available.
+               
+               #### Supported values
+               
+                  Defines where the plain HTTP endpoint is available.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `DISABLED` - Plain HTTP access is disabled.
+                  - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+                  - `ALL` - Plain HTTP access is available from any network.
+        """
+        pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> _builtins.str:
+        """
+        :
+
+           Determines where the plain HTTP endpoint is available.
+
+        #### Supported values
+
+           Defines where the plain HTTP endpoint is available.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `DISABLED` - Plain HTTP access is disabled.
+           - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+           - `ALL` - Plain HTTP access is available from any network.
+        """
+        return pulumi.get(self, "mode")
+
+
+@pulumi.output_type
+class GetStorageV1InventoryMetadataResult(dict):
+    def __init__(__self__):
+        pass
+
+
+@pulumi.output_type
+class GetStorageV1InventoryStatusResult(dict):
+    def __init__(__self__, *,
+                 error_code: _builtins.str,
+                 last_success: _builtins.str):
+        """
+        :param _builtins.str error_code: :
+               
+                  Error code, if the last run was not successful, otherwise NO_ERROR.
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `NO_ERROR` - No error.
+                  - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+                  - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+                  - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+                  - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+        :param _builtins.str last_success: :
+               
+                  Timestamp of the last successful run.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        pulumi.set(__self__, "error_code", error_code)
+        pulumi.set(__self__, "last_success", last_success)
+
+    @_builtins.property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> _builtins.str:
+        """
+        :
+
+           Error code, if the last run was not successful, otherwise NO_ERROR.
+
+        #### Supported values
+
+           Possible values:
+
+           - `NO_ERROR` - No error.
+           - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+           - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+           - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+           - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+        """
+        return pulumi.get(self, "error_code")
+
+    @_builtins.property
+    @pulumi.getter(name="lastSuccess")
+    def last_success(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp of the last successful run.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "last_success")
 
 
 @pulumi.output_type
@@ -33089,8 +33618,34 @@ class GetTunnelV1TunnelMetadataResult(dict):
 @pulumi.output_type
 class GetTunnelV1TunnelStatusResult(dict):
     def __init__(__self__, *,
+                 connection_state: _builtins.str,
+                 services: Sequence['outputs.GetTunnelV1TunnelStatusServiceResult'],
                  state: _builtins.str):
         """
+        :param _builtins.str connection_state: :
+               
+                  Whether any agent is connected to the tunnel now.
+               
+               #### Supported values
+               
+                  ConnectionState reports whether the tunnel has an agent behind it. Values are
+                  prefixed because a top-level enum puts them in the package scope.
+                  Possible values:
+               
+                  - `CONNECTION_STATE_UNSPECIFIED`:
+                Proto3 zero value. A read of the tunnel never returns it; a mutation
+                records it, because it reports the tunnel that was written.
+               
+                  - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+                  - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+        :param Sequence['GetTunnelV1TunnelStatusServiceArgs'] services: :
+               
+                  Services reachable through the tunnel. A service is listed while at least
+                  one agent announces it, and follows the agents within about 30 seconds.
+               
+               #### Inner value description
+               
+                  ServiceStatus is a service reachable through the tunnel.
         :param _builtins.str state: :
                
                   Current lifecycle state of the tunnel.
@@ -33104,7 +33659,47 @@ class GetTunnelV1TunnelStatusResult(dict):
                   - `CREATED` - The tunnel has been created and is active.
                   - `DELETED` - The tunnel has been deleted.
         """
+        pulumi.set(__self__, "connection_state", connection_state)
+        pulumi.set(__self__, "services", services)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionState")
+    def connection_state(self) -> _builtins.str:
+        """
+        :
+
+           Whether any agent is connected to the tunnel now.
+
+        #### Supported values
+
+           ConnectionState reports whether the tunnel has an agent behind it. Values are
+           prefixed because a top-level enum puts them in the package scope.
+           Possible values:
+
+           - `CONNECTION_STATE_UNSPECIFIED`:
+         Proto3 zero value. A read of the tunnel never returns it; a mutation
+         records it, because it reports the tunnel that was written.
+
+           - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+           - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+        """
+        return pulumi.get(self, "connection_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Sequence['outputs.GetTunnelV1TunnelStatusServiceResult']:
+        """
+        :
+
+           Services reachable through the tunnel. A service is listed while at least
+           one agent announces it, and follows the agents within about 30 seconds.
+
+        #### Inner value description
+
+           ServiceStatus is a service reachable through the tunnel.
+        """
+        return pulumi.get(self, "services")
 
     @_builtins.property
     @pulumi.getter
@@ -33124,6 +33719,53 @@ class GetTunnelV1TunnelStatusResult(dict):
            - `DELETED` - The tunnel has been deleted.
         """
         return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTunnelV1TunnelStatusServiceResult(dict):
+    def __init__(__self__, *,
+                 endpoint: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param _builtins.str endpoint: :
+               
+                  Where to reach the service, as host:port. The tunnel terminates TLS, so a
+                  client connects over TLS and sends the host as SNI. What travels inside is
+                  whatever the service speaks, which the tunnel does not interpret.
+                  For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+        :param _builtins.str name: :
+               
+                  Name of the service, as the agent announced it. 1-20 characters, lowercase
+                  letters and digits only: the hostname joins the name to the tunnel id with
+                  a dash, so a name may not contain one. For example, "app".
+        """
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        :
+
+           Where to reach the service, as host:port. The tunnel terminates TLS, so a
+           client connects over TLS and sends the host as SNI. What travels inside is
+           whatever the service speaks, which the tunnel does not interpret.
+           For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        :
+
+           Name of the service, as the agent announced it. 1-20 characters, lowercase
+           letters and digits only: the hostname joins the name to the tunnel id with
+           a dash, so a name may not contain one. For example, "app".
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -33630,9 +34272,11 @@ class GetVpcV1NetworkMetadataResult(dict):
 @pulumi.output_type
 class GetVpcV1NetworkStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  default_route_table_id: _builtins.str,
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str default_route_table_id: ID of the network's default route table.
         :param _builtins.str state: :
                
@@ -33648,8 +34292,17 @@ class GetVpcV1NetworkStatusResult(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -34889,6 +35542,7 @@ class GetVpcV1SubnetMetadataResult(dict):
 @pulumi.output_type
 class GetVpcV1SubnetStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  ipv4_private_cidrs: Sequence[_builtins.str],
                  ipv4_private_pools: Sequence['outputs.GetVpcV1SubnetStatusIpv4PrivatePoolResult'],
                  ipv4_public_cidrs: Sequence[_builtins.str],
@@ -34896,6 +35550,7 @@ class GetVpcV1SubnetStatusResult(dict):
                  route_table: 'outputs.GetVpcV1SubnetStatusRouteTableResult',
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -34924,12 +35579,21 @@ class GetVpcV1SubnetStatusResult(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
         pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
         pulumi.set(__self__, "ipv4_public_cidrs", ipv4_public_cidrs)
         pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
         pulumi.set(__self__, "route_table", route_table)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
