@@ -620,7 +620,7 @@ class DnsV1Record(pulumi.CustomResource):
                  data: pulumi.Input[Optional[_builtins.str]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict', 'outputs.DnsV1RecordMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  relative_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -644,7 +644,7 @@ class DnsV1Record(pulumi.CustomResource):
                   Mark this record as delete-protected
                   Delete-protected records can *only* be deleted by explicitly calling `RecordService/Delete` API with <span pulumi-lang-nodejs="`force`" pulumi-lang-dotnet="`Force`" pulumi-lang-go="`force`" pulumi-lang-python="`force`" pulumi-lang-yaml="`force`" pulumi-lang-java="`force`" pulumi-lang-hcl="`force`">`force`</span> flag set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict', 'outputs.DnsV1RecordMetadata']] metadata: :
                
                   DNS record metadata
                   `metadata.parent_id` must be a DNS zone ID
@@ -712,7 +712,7 @@ class DnsV1Record(pulumi.CustomResource):
                  data: pulumi.Input[Optional[_builtins.str]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict', 'outputs.DnsV1RecordMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  relative_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -763,12 +763,12 @@ class DnsV1Record(pulumi.CustomResource):
             deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict', 'outputs.DnsV1RecordMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             relative_name: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['DnsV1RecordStatusArgs', 'DnsV1RecordStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['DnsV1RecordStatusArgs', 'DnsV1RecordStatusArgsDict', 'outputs.DnsV1RecordStatus']]] = None,
             ttl: pulumi.Input[Optional[_builtins.float]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'DnsV1Record':
@@ -797,7 +797,7 @@ class DnsV1Record(pulumi.CustomResource):
                   Delete-protected records can *only* be deleted by explicitly calling `RecordService/Delete` API with <span pulumi-lang-nodejs="`force`" pulumi-lang-dotnet="`Force`" pulumi-lang-go="`force`" pulumi-lang-python="`force`" pulumi-lang-yaml="`force`" pulumi-lang-java="`force`" pulumi-lang-hcl="`force`">`force`</span> flag set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['DnsV1RecordMetadataArgs', 'DnsV1RecordMetadataArgsDict', 'outputs.DnsV1RecordMetadata']] metadata: :
                
                   DNS record metadata
                   `metadata.parent_id` must be a DNS zone ID
@@ -818,7 +818,7 @@ class DnsV1Record(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['DnsV1RecordStatusArgs', 'DnsV1RecordStatusArgsDict']] status: :
+        :param pulumi.Input[Union['DnsV1RecordStatusArgs', 'DnsV1RecordStatusArgsDict', 'outputs.DnsV1RecordStatus']] status: :
                
                   DNS record status, including e.g. its effective FQDN (fully-qualified domain name)
                

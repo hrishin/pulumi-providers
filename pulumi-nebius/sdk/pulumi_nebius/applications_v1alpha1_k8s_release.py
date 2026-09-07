@@ -463,12 +463,12 @@ class ApplicationsV1alpha1K8sRelease(pulumi.CustomResource):
                  application_name: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  product_slug: pulumi.Input[Optional[_builtins.str]] = None,
-                 sensitive: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict']]] = None,
+                 sensitive: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseSensitive']]] = None,
                  set: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  values: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -478,14 +478,14 @@ class ApplicationsV1alpha1K8sRelease(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
+        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseSensitive']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
         """
         ...
     @overload
@@ -514,12 +514,12 @@ class ApplicationsV1alpha1K8sRelease(pulumi.CustomResource):
                  application_name: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  product_slug: pulumi.Input[Optional[_builtins.str]] = None,
-                 sensitive: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict']]] = None,
+                 sensitive: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseSensitive']]] = None,
                  set: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  values: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -573,15 +573,15 @@ class ApplicationsV1alpha1K8sRelease(pulumi.CustomResource):
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             product_slug: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            sensitive: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict']]] = None,
+            sensitive: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseSensitive']]] = None,
             set: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            status: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseStatusArgs', 'ApplicationsV1alpha1K8sReleaseStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['ApplicationsV1alpha1K8sReleaseStatusArgs', 'ApplicationsV1alpha1K8sReleaseStatusArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None,
             values: pulumi.Input[Optional[_builtins.str]] = None) -> 'ApplicationsV1alpha1K8sRelease':
         """
@@ -598,7 +598,7 @@ class ApplicationsV1alpha1K8sRelease(pulumi.CustomResource):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseMetadataArgs', 'ApplicationsV1alpha1K8sReleaseMetadataArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseMetadata']] metadata: :
                
                #### Inner value description
                
@@ -611,7 +611,7 @@ class ApplicationsV1alpha1K8sRelease(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
+        :param pulumi.Input[Union['ApplicationsV1alpha1K8sReleaseSensitiveArgs', 'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict', 'outputs.ApplicationsV1alpha1K8sReleaseSensitive']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

@@ -582,7 +582,7 @@ class ComputeV1Filesystem(pulumi.CustomResource):
                  block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict', 'outputs.ComputeV1FilesystemMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
@@ -603,7 +603,7 @@ class ComputeV1Filesystem(pulumi.CustomResource):
                   The default value is 4096 bytes (4 KiB).
         :param pulumi.Input[_builtins.bool] forbid_deletion: Prevents deletion whilst set
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict', 'outputs.ComputeV1FilesystemMetadata']] metadata: :
                
                #### Inner value description
                
@@ -656,7 +656,7 @@ class ComputeV1Filesystem(pulumi.CustomResource):
                  block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict', 'outputs.ComputeV1FilesystemMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
@@ -707,7 +707,7 @@ class ComputeV1Filesystem(pulumi.CustomResource):
             forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict', 'outputs.ComputeV1FilesystemMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
@@ -715,7 +715,7 @@ class ComputeV1Filesystem(pulumi.CustomResource):
             size_gibibytes: pulumi.Input[Optional[_builtins.float]] = None,
             size_kibibytes: pulumi.Input[Optional[_builtins.float]] = None,
             size_mebibytes: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['ComputeV1FilesystemStatusArgs', 'ComputeV1FilesystemStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1FilesystemStatusArgs', 'ComputeV1FilesystemStatusArgsDict', 'outputs.ComputeV1FilesystemStatus']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeV1Filesystem':
         """
@@ -738,7 +738,7 @@ class ComputeV1Filesystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] forbid_deletion: Prevents deletion whilst set
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1FilesystemMetadataArgs', 'ComputeV1FilesystemMetadataArgsDict', 'outputs.ComputeV1FilesystemMetadata']] metadata: :
                
                #### Inner value description
                

@@ -58,6 +58,7 @@ from .get_parent_id import *
 from .get_quotas_v1_quota_allowance import *
 from .get_registry_v1_registry import *
 from .get_storage_v1_bucket import *
+from .get_storage_v1_inventory import *
 from .get_storage_v1_transfer import *
 from .get_storage_v1alpha1_transfer import *
 from .get_tunnel_v1_tunnel import *
@@ -100,6 +101,7 @@ from .provider import *
 from .quotas_v1_quota_allowance import *
 from .registry_v1_registry import *
 from .storage_v1_bucket import *
+from .storage_v1_inventory import *
 from .storage_v1_transfer import *
 from .storage_v1alpha1_transfer import *
 from .tunnel_v1_tunnel import *
@@ -403,6 +405,14 @@ _utilities.register(
   "fqn": "pulumi_nebius",
   "classes": {
    "nebius:index/storageV1Bucket:StorageV1Bucket": "StorageV1Bucket"
+  }
+ },
+ {
+  "pkg": "nebius",
+  "mod": "index/storageV1Inventory",
+  "fqn": "pulumi_nebius",
+  "classes": {
+   "nebius:index/storageV1Inventory:StorageV1Inventory": "StorageV1Inventory"
   }
  },
  {

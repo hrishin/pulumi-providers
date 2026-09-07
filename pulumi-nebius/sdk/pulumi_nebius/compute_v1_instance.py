@@ -89,8 +89,10 @@ class ComputeV1InstanceArgs:
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['ComputeV1InstancePreemptibleArgs'] preemptible: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -345,8 +347,10 @@ class ComputeV1InstanceArgs:
         """
         :
 
-           Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+           Set this field to create a preemptible VM, or omit it to create a regular VM.
            For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+           A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+           VM was created without it, the field cannot be added later.
         """
         return pulumi.get(self, "preemptible")
 
@@ -510,8 +514,10 @@ class _ComputeV1InstanceState:
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['ComputeV1InstancePreemptibleArgs'] preemptible: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -807,8 +813,10 @@ class _ComputeV1InstanceState:
         """
         :
 
-           Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+           Set this field to create a preemptible VM, or omit it to create a regular VM.
            For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+           A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+           VM was created without it, the field cannot be added later.
         """
         return pulumi.get(self, "preemptible")
 
@@ -957,23 +965,23 @@ class ComputeV1Instance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']]] = None,
+                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
-                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]]] = None,
-                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']]] = None,
+                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']]] = None,
+                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
                  nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']]] = None,
+                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
                  recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict']]] = None,
-                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']]] = None,
-                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]]] = None,
+                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
+                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  stopped: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -982,13 +990,13 @@ class ComputeV1Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']] boot_disk: Specified boot disk attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']] boot_disk: Specified boot disk attached to the instance.
         :param pulumi.Input[_builtins.str] cloud_init_user_data: :
                
                   Data in cloud-init format for customizing instance initialization.
                   For details, see https://docs.nebius.com/compute/virtual-machines/manage#user-data
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]] filesystems: List of Shared Filesystems attached to the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']] gpu_cluster: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]] filesystems: List of Shared Filesystems attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']] gpu_cluster: :
                
                   If you want to interconnect several instances in a GPU cluster via NVIDIA InfiniBand,
                   set the ID of an existing GPU cluster.
@@ -999,7 +1007,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Instance's hostname. Used to generate default DNS record in format `<hostname>.<network_id>.compute.internal.`
                   or `<instance_id>.<network_id>.compute.internal.` if hostname is not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']] local_disks: :
+        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']] local_disks: :
                
                   Local disks are meaningfully different from regular (remote) disks:
                   they are provided by the underlying host and are tied to a particular VM run.
@@ -1007,13 +1015,13 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Local disks are not provided by default. To get them, explicitly request them via this field.
                   Availability depends on the selected platform, preset and region.
                   Changing this field will result in disks change and content loss, but only after stop and start the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]] network_interfaces: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
                
@@ -1022,10 +1030,12 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Describes the specification of a network interface.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']] preemptible: :
+        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']] preemptible: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -1044,11 +1054,11 @@ class ComputeV1Instance(pulumi.CustomResource):
                   - `RECOVER`
                   - `FAIL`
                   - `ALWAYS`
-        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']] resources: :
+        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']] resources: :
                
                   Specification of compute resources allocated to the instance.
                   For details, see https://docs.nebius.com/compute/virtual-machines/types
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
         :param pulumi.Input[_builtins.str] service_account_id: :
                
                   Unique identifier of the service account associated with this instance.
@@ -1079,23 +1089,23 @@ class ComputeV1Instance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']]] = None,
+                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
-                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]]] = None,
-                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']]] = None,
+                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']]] = None,
+                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
                  nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']]] = None,
+                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
                  recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict']]] = None,
-                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']]] = None,
-                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]]] = None,
+                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
+                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  stopped: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -1150,28 +1160,28 @@ class ComputeV1Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']]] = None,
+            boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
             cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]]] = None,
-            gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']]] = None,
+            filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+            gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']]] = None,
-            metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']]] = None,
+            local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]]] = None,
+            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
             nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']]] = None,
+            preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
             recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
-            reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict']]] = None,
+            reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']]] = None,
-            secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]]] = None,
+            resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+            secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
             service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['ComputeV1InstanceStatusArgs', 'ComputeV1InstanceStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1InstanceStatusArgs', 'ComputeV1InstanceStatusArgsDict', 'outputs.ComputeV1InstanceStatus']]] = None,
             stopped: pulumi.Input[Optional[_builtins.bool]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeV1Instance':
         """
@@ -1181,7 +1191,7 @@ class ComputeV1Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']] boot_disk: Specified boot disk attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']] boot_disk: Specified boot disk attached to the instance.
         :param pulumi.Input[_builtins.str] cloud_init_user_data: :
                
                   Data in cloud-init format for customizing instance initialization.
@@ -1191,8 +1201,8 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]] filesystems: List of Shared Filesystems attached to the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']] gpu_cluster: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]] filesystems: List of Shared Filesystems attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']] gpu_cluster: :
                
                   If you want to interconnect several instances in a GPU cluster via NVIDIA InfiniBand,
                   set the ID of an existing GPU cluster.
@@ -1204,7 +1214,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                   or `<instance_id>.<network_id>.compute.internal.` if hostname is not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']] local_disks: :
+        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']] local_disks: :
                
                   Local disks are meaningfully different from regular (remote) disks:
                   they are provided by the underlying host and are tied to a particular VM run.
@@ -1212,13 +1222,13 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Local disks are not provided by default. To get them, explicitly request them via this field.
                   Availability depends on the selected platform, preset and region.
                   Changing this field will result in disks change and content loss, but only after stop and start the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]] network_interfaces: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
                
@@ -1227,10 +1237,12 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Describes the specification of a network interface.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']] preemptible: :
+        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']] preemptible: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -1255,11 +1267,11 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']] resources: :
+        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']] resources: :
                
                   Specification of compute resources allocated to the instance.
                   For details, see https://docs.nebius.com/compute/virtual-machines/types
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
         :param pulumi.Input[_builtins.str] service_account_id: :
                
                   Unique identifier of the service account associated with this instance.
@@ -1451,8 +1463,10 @@ class ComputeV1Instance(pulumi.CustomResource):
         """
         :
 
-           Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+           Set this field to create a preemptible VM, or omit it to create a regular VM.
            For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+           A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+           VM was created without it, the field cannot be added later.
         """
         return pulumi.get(self, "preemptible")
 

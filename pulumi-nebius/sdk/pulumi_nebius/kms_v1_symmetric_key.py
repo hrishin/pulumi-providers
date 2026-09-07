@@ -466,7 +466,7 @@ class KmsV1SymmetricKey(pulumi.CustomResource):
                  algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict', 'outputs.KmsV1SymmetricKeyMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_period: pulumi.Input[Optional[_builtins.str]] = None,
@@ -494,7 +494,7 @@ class KmsV1SymmetricKey(pulumi.CustomResource):
                   - `AES_256` - AES algorithm with 256-bit keys.
         :param pulumi.Input[_builtins.str] description: Description of the key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict', 'outputs.KmsV1SymmetricKeyMetadata']] metadata: :
                
                #### Inner value description
                
@@ -534,7 +534,7 @@ class KmsV1SymmetricKey(pulumi.CustomResource):
                  algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict', 'outputs.KmsV1SymmetricKeyMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_period: pulumi.Input[Optional[_builtins.str]] = None,
@@ -577,12 +577,12 @@ class KmsV1SymmetricKey(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict', 'outputs.KmsV1SymmetricKeyMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
             rotation_period: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['KmsV1SymmetricKeyStatusArgs', 'KmsV1SymmetricKeyStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['KmsV1SymmetricKeyStatusArgs', 'KmsV1SymmetricKeyStatusArgsDict', 'outputs.KmsV1SymmetricKeyStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'KmsV1SymmetricKey':
         """
         Get an existing KmsV1SymmetricKey resource's state with the given name, id, and optional extra
@@ -615,7 +615,7 @@ class KmsV1SymmetricKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of the key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['KmsV1SymmetricKeyMetadataArgs', 'KmsV1SymmetricKeyMetadataArgsDict', 'outputs.KmsV1SymmetricKeyMetadata']] metadata: :
                
                #### Inner value description
                
@@ -633,7 +633,7 @@ class KmsV1SymmetricKey(pulumi.CustomResource):
                   Key rotation period.
                
                   Duration as a string: possibly signed sequence of decimal numbers, each with optional fraction and a unit suffix, such as <span pulumi-lang-nodejs="`300ms`" pulumi-lang-dotnet="`300ms`" pulumi-lang-go="`300ms`" pulumi-lang-python="`300ms`" pulumi-lang-yaml="`300ms`" pulumi-lang-java="`300ms`" pulumi-lang-hcl="`300ms`">`300ms`</span>, `-1.5h` or <span pulumi-lang-nodejs="`2h45m`" pulumi-lang-dotnet="`2h45m`" pulumi-lang-go="`2h45m`" pulumi-lang-python="`2h45m`" pulumi-lang-yaml="`2h45m`" pulumi-lang-java="`2h45m`" pulumi-lang-hcl="`2h45m`">`2h45m`</span>. Valid time units are <span pulumi-lang-nodejs="`ns`" pulumi-lang-dotnet="`Ns`" pulumi-lang-go="`ns`" pulumi-lang-python="`ns`" pulumi-lang-yaml="`ns`" pulumi-lang-java="`ns`" pulumi-lang-hcl="`ns`">`ns`</span>, <span pulumi-lang-nodejs="`us`" pulumi-lang-dotnet="`Us`" pulumi-lang-go="`us`" pulumi-lang-python="`us`" pulumi-lang-yaml="`us`" pulumi-lang-java="`us`" pulumi-lang-hcl="`us`">`us`</span> (or `µs`), <span pulumi-lang-nodejs="`ms`" pulumi-lang-dotnet="`Ms`" pulumi-lang-go="`ms`" pulumi-lang-python="`ms`" pulumi-lang-yaml="`ms`" pulumi-lang-java="`ms`" pulumi-lang-hcl="`ms`">`ms`</span>, <span pulumi-lang-nodejs="`s`" pulumi-lang-dotnet="`S`" pulumi-lang-go="`s`" pulumi-lang-python="`s`" pulumi-lang-yaml="`s`" pulumi-lang-java="`s`" pulumi-lang-hcl="`s`">`s`</span>, <span pulumi-lang-nodejs="`m`" pulumi-lang-dotnet="`M`" pulumi-lang-go="`m`" pulumi-lang-python="`m`" pulumi-lang-yaml="`m`" pulumi-lang-java="`m`" pulumi-lang-hcl="`m`">`m`</span>, <span pulumi-lang-nodejs="`h`" pulumi-lang-dotnet="`H`" pulumi-lang-go="`h`" pulumi-lang-python="`h`" pulumi-lang-yaml="`h`" pulumi-lang-java="`h`" pulumi-lang-hcl="`h`">`h`</span>, <span pulumi-lang-nodejs="`d`" pulumi-lang-dotnet="`D`" pulumi-lang-go="`d`" pulumi-lang-python="`d`" pulumi-lang-yaml="`d`" pulumi-lang-java="`d`" pulumi-lang-hcl="`d`">`d`</span>.
-        :param pulumi.Input[Union['KmsV1SymmetricKeyStatusArgs', 'KmsV1SymmetricKeyStatusArgsDict']] status: The current status of the symmetric key.
+        :param pulumi.Input[Union['KmsV1SymmetricKeyStatusArgs', 'KmsV1SymmetricKeyStatusArgsDict', 'outputs.KmsV1SymmetricKeyStatus']] status: The current status of the symmetric key.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

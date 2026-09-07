@@ -448,11 +448,11 @@ class IamV2AccessKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account: pulumi.Input[Optional[Union['IamV2AccessKeyAccountArgs', 'IamV2AccessKeyAccountArgsDict']]] = None,
+                 account: pulumi.Input[Optional[Union['IamV2AccessKeyAccountArgs', 'IamV2AccessKeyAccountArgsDict', 'outputs.IamV2AccessKeyAccount']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  expires_at: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict', 'outputs.IamV2AccessKeyMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_delivery_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -464,7 +464,7 @@ class IamV2AccessKey(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] expires_at: A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict', 'outputs.IamV2AccessKeyMetadata']] metadata: :
                
                #### Inner value description
                
@@ -509,11 +509,11 @@ class IamV2AccessKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account: pulumi.Input[Optional[Union['IamV2AccessKeyAccountArgs', 'IamV2AccessKeyAccountArgsDict']]] = None,
+                 account: pulumi.Input[Optional[Union['IamV2AccessKeyAccountArgs', 'IamV2AccessKeyAccountArgsDict', 'outputs.IamV2AccessKeyAccount']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  expires_at: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict', 'outputs.IamV2AccessKeyMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_delivery_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -550,18 +550,18 @@ class IamV2AccessKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account: pulumi.Input[Optional[Union['IamV2AccessKeyAccountArgs', 'IamV2AccessKeyAccountArgsDict']]] = None,
+            account: pulumi.Input[Optional[Union['IamV2AccessKeyAccountArgs', 'IamV2AccessKeyAccountArgsDict', 'outputs.IamV2AccessKeyAccount']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             expires_at: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict', 'outputs.IamV2AccessKeyMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
             secret_delivery_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['IamV2AccessKeyStatusArgs', 'IamV2AccessKeyStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['IamV2AccessKeyStatusArgs', 'IamV2AccessKeyStatusArgsDict', 'outputs.IamV2AccessKeyStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamV2AccessKey':
         """
         Get an existing IamV2AccessKey resource's state with the given name, id, and optional extra
@@ -578,7 +578,7 @@ class IamV2AccessKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expires_at: A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV2AccessKeyMetadataArgs', 'IamV2AccessKeyMetadataArgsDict', 'outputs.IamV2AccessKeyMetadata']] metadata: :
                
                #### Inner value description
                
