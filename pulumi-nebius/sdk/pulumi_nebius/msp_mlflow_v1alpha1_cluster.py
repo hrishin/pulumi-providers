@@ -589,12 +589,12 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
                  admin_username: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict', 'outputs.MspMlflowV1alpha1ClusterMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  public_access: pulumi.Input[Optional[_builtins.bool]] = None,
-                 sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict']]] = None,
+                 sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict', 'outputs.MspMlflowV1alpha1ClusterSensitive']]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -608,7 +608,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] admin_username: MLflow admin username.
         :param pulumi.Input[_builtins.str] description: Description of the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict', 'outputs.MspMlflowV1alpha1ClusterMetadata']] metadata: :
                
                #### Inner value description
                
@@ -617,7 +617,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] network_id: ID of the vpc network.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.bool] public_access: Either make cluster public accessible or accessible only via private VPC.
-        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
+        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict', 'outputs.MspMlflowV1alpha1ClusterSensitive']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
         :param pulumi.Input[_builtins.str] service_account_id: Id of the service account that will be used to access S3 bucket (and create one if not provided).
         :param pulumi.Input[_builtins.str] size: :
                
@@ -653,12 +653,12 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
                  admin_username: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict', 'outputs.MspMlflowV1alpha1ClusterMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  public_access: pulumi.Input[Optional[_builtins.bool]] = None,
-                 sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict']]] = None,
+                 sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict', 'outputs.MspMlflowV1alpha1ClusterSensitive']]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -714,16 +714,16 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict', 'outputs.MspMlflowV1alpha1ClusterMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             public_access: pulumi.Input[Optional[_builtins.bool]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict']]] = None,
+            sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict', 'outputs.MspMlflowV1alpha1ClusterSensitive']]] = None,
             service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
             size: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterStatusArgs', 'MspMlflowV1alpha1ClusterStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterStatusArgs', 'MspMlflowV1alpha1ClusterStatusArgsDict', 'outputs.MspMlflowV1alpha1ClusterStatus']]] = None,
             storage_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'MspMlflowV1alpha1Cluster':
         """
@@ -743,7 +743,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict', 'outputs.MspMlflowV1alpha1ClusterMetadata']] metadata: :
                
                #### Inner value description
                
@@ -758,7 +758,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
+        :param pulumi.Input[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict', 'outputs.MspMlflowV1alpha1ClusterSensitive']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
         :param pulumi.Input[_builtins.str] service_account_id: Id of the service account that will be used to access S3 bucket (and create one if not provided).
         :param pulumi.Input[_builtins.str] size: :
                

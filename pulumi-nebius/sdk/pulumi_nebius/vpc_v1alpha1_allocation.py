@@ -368,10 +368,10 @@ class VpcV1alpha1Allocation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ipv4_private: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict']]] = None,
-                 ipv4_public: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict']]] = None,
+                 ipv4_private: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Private']]] = None,
+                 ipv4_public: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Public']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict', 'outputs.VpcV1alpha1AllocationMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -380,10 +380,10 @@ class VpcV1alpha1Allocation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict']] ipv4_private: *Cannot be set alongside ipv4_public.*
-        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict']] ipv4_public: *Cannot be set alongside ipv4_private.*
+        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Private']] ipv4_private: *Cannot be set alongside ipv4_public.*
+        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Public']] ipv4_public: *Cannot be set alongside ipv4_private.*
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict', 'outputs.VpcV1alpha1AllocationMetadata']] metadata: :
                
                   Metadata for the Allocation.
                   `metadata.parent_id` represents IAM Container.
@@ -418,10 +418,10 @@ class VpcV1alpha1Allocation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ipv4_private: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict']]] = None,
-                 ipv4_public: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict']]] = None,
+                 ipv4_private: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Private']]] = None,
+                 ipv4_public: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Public']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict', 'outputs.VpcV1alpha1AllocationMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -456,15 +456,15 @@ class VpcV1alpha1Allocation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            ipv4_private: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict']]] = None,
-            ipv4_public: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict']]] = None,
+            ipv4_private: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Private']]] = None,
+            ipv4_public: pulumi.Input[Optional[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Public']]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict', 'outputs.VpcV1alpha1AllocationMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['VpcV1alpha1AllocationStatusArgs', 'VpcV1alpha1AllocationStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1alpha1AllocationStatusArgs', 'VpcV1alpha1AllocationStatusArgsDict', 'outputs.VpcV1alpha1AllocationStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV1alpha1Allocation':
         """
         Get an existing VpcV1alpha1Allocation resource's state with the given name, id, and optional extra
@@ -478,11 +478,11 @@ class VpcV1alpha1Allocation(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict']] ipv4_private: *Cannot be set alongside ipv4_public.*
-        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict']] ipv4_public: *Cannot be set alongside ipv4_private.*
+        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PrivateArgs', 'VpcV1alpha1AllocationIpv4PrivateArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Private']] ipv4_private: *Cannot be set alongside ipv4_public.*
+        :param pulumi.Input[Union['VpcV1alpha1AllocationIpv4PublicArgs', 'VpcV1alpha1AllocationIpv4PublicArgsDict', 'outputs.VpcV1alpha1AllocationIpv4Public']] ipv4_public: *Cannot be set alongside ipv4_private.*
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1alpha1AllocationMetadataArgs', 'VpcV1alpha1AllocationMetadataArgsDict', 'outputs.VpcV1alpha1AllocationMetadata']] metadata: :
                
                   Metadata for the Allocation.
                   `metadata.parent_id` represents IAM Container.
@@ -498,7 +498,7 @@ class VpcV1alpha1Allocation(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['VpcV1alpha1AllocationStatusArgs', 'VpcV1alpha1AllocationStatusArgsDict']] status: Contains the current status of the allocation, indicating its state and any additional details.
+        :param pulumi.Input[Union['VpcV1alpha1AllocationStatusArgs', 'VpcV1alpha1AllocationStatusArgsDict', 'outputs.VpcV1alpha1AllocationStatus']] status: Contains the current status of the allocation, indicating its state and any additional details.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

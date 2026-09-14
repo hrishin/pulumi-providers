@@ -27,7 +27,7 @@ class GetStorageV1BucketResult:
     """
     A collection of values returned by getStorageV1Bucket.
     """
-    def __init__(__self__, bucket_policy=None, cors=None, created_at=None, default_storage_class=None, force_storage_class=None, id=None, labels=None, lifecycle_configuration=None, max_size_bytes=None, metadata=None, name=None, object_audit_logging=None, parent_id=None, resource_version=None, status=None, updated_at=None, versioning_policy=None):
+    def __init__(__self__, bucket_policy=None, cors=None, created_at=None, default_storage_class=None, filesystem_bucket=None, force_storage_class=None, id=None, labels=None, lifecycle_configuration=None, max_size_bytes=None, metadata=None, name=None, object_audit_logging=None, parent_id=None, resource_version=None, status=None, updated_at=None, versioning_policy=None):
         if bucket_policy and not isinstance(bucket_policy, dict):
             raise TypeError("Expected argument 'bucket_policy' to be a dict")
         pulumi.set(__self__, "bucket_policy", bucket_policy)
@@ -40,6 +40,9 @@ class GetStorageV1BucketResult:
         if default_storage_class and not isinstance(default_storage_class, str):
             raise TypeError("Expected argument 'default_storage_class' to be a str")
         pulumi.set(__self__, "default_storage_class", default_storage_class)
+        if filesystem_bucket and not isinstance(filesystem_bucket, dict):
+            raise TypeError("Expected argument 'filesystem_bucket' to be a dict")
+        pulumi.set(__self__, "filesystem_bucket", filesystem_bucket)
         if force_storage_class and not isinstance(force_storage_class, bool):
             raise TypeError("Expected argument 'force_storage_class' to be a bool")
         pulumi.set(__self__, "force_storage_class", force_storage_class)
@@ -99,6 +102,11 @@ class GetStorageV1BucketResult:
     @pulumi.getter(name="defaultStorageClass")
     def default_storage_class(self) -> _builtins.str:
         return pulumi.get(self, "default_storage_class")
+
+    @_builtins.property
+    @pulumi.getter(name="filesystemBucket")
+    def filesystem_bucket(self) -> 'outputs.GetStorageV1BucketFilesystemBucketResult':
+        return pulumi.get(self, "filesystem_bucket")
 
     @_builtins.property
     @pulumi.getter(name="forceStorageClass")
@@ -176,6 +184,7 @@ class AwaitableGetStorageV1BucketResult(GetStorageV1BucketResult):
             cors=self.cors,
             created_at=self.created_at,
             default_storage_class=self.default_storage_class,
+            filesystem_bucket=self.filesystem_bucket,
             force_storage_class=self.force_storage_class,
             id=self.id,
             labels=self.labels,
@@ -210,6 +219,7 @@ def get_storage_v1_bucket(id: Optional[_builtins.str] = None,
         cors=pulumi.get(__ret__, 'cors'),
         created_at=pulumi.get(__ret__, 'created_at'),
         default_storage_class=pulumi.get(__ret__, 'default_storage_class'),
+        filesystem_bucket=pulumi.get(__ret__, 'filesystem_bucket'),
         force_storage_class=pulumi.get(__ret__, 'force_storage_class'),
         id=pulumi.get(__ret__, 'id'),
         labels=pulumi.get(__ret__, 'labels'),
@@ -241,6 +251,7 @@ def get_storage_v1_bucket_output(id: pulumi.Input[Optional[Optional[_builtins.st
         cors=pulumi.get(__response__, 'cors'),
         created_at=pulumi.get(__response__, 'created_at'),
         default_storage_class=pulumi.get(__response__, 'default_storage_class'),
+        filesystem_bucket=pulumi.get(__response__, 'filesystem_bucket'),
         force_storage_class=pulumi.get(__response__, 'force_storage_class'),
         id=pulumi.get(__response__, 'id'),
         labels=pulumi.get(__response__, 'labels'),

@@ -343,10 +343,10 @@ class Mk8sV1Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict']]] = None,
-                 kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict']]] = None,
+                 control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict', 'outputs.Mk8sV1ClusterControlPlane']]] = None,
+                 kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict', 'outputs.Mk8sV1ClusterKubeNetwork']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict', 'outputs.Mk8sV1ClusterMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -355,9 +355,9 @@ class Mk8sV1Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict']] kube_network: Defines kubernetes network configuration, like IP allocation.
+        :param pulumi.Input[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict', 'outputs.Mk8sV1ClusterKubeNetwork']] kube_network: Defines kubernetes network configuration, like IP allocation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict', 'outputs.Mk8sV1ClusterMetadata']] metadata: :
                
                #### Inner value description
                
@@ -389,10 +389,10 @@ class Mk8sV1Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict']]] = None,
-                 kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict']]] = None,
+                 control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict', 'outputs.Mk8sV1ClusterControlPlane']]] = None,
+                 kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict', 'outputs.Mk8sV1ClusterKubeNetwork']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict', 'outputs.Mk8sV1ClusterMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -428,16 +428,16 @@ class Mk8sV1Cluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict']]] = None,
+            control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict', 'outputs.Mk8sV1ClusterControlPlane']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict']]] = None,
+            kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict', 'outputs.Mk8sV1ClusterKubeNetwork']]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict', 'outputs.Mk8sV1ClusterMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['Mk8sV1ClusterStatusArgs', 'Mk8sV1ClusterStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['Mk8sV1ClusterStatusArgs', 'Mk8sV1ClusterStatusArgsDict', 'outputs.Mk8sV1ClusterStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'Mk8sV1Cluster':
         """
         Get an existing Mk8sV1Cluster resource's state with the given name, id, and optional extra
@@ -451,10 +451,10 @@ class Mk8sV1Cluster(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict']] kube_network: Defines kubernetes network configuration, like IP allocation.
+        :param pulumi.Input[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict', 'outputs.Mk8sV1ClusterKubeNetwork']] kube_network: Defines kubernetes network configuration, like IP allocation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict', 'outputs.Mk8sV1ClusterMetadata']] metadata: :
                
                #### Inner value description
                

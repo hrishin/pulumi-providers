@@ -49,6 +49,7 @@ from .get_mk8s_v1_cluster import *
 from .get_mk8s_v1_node_group import *
 from .get_mk8s_v1alpha1_cluster import *
 from .get_mk8s_v1alpha1_node_group import *
+from .get_monitoring_v1_recording_rule import *
 from .get_msp_mlflow_v1alpha1_cluster import *
 from .get_msp_postgresql_v1alpha1_cluster import *
 from .get_mysterybox_v1_secret import *
@@ -58,6 +59,7 @@ from .get_parent_id import *
 from .get_quotas_v1_quota_allowance import *
 from .get_registry_v1_registry import *
 from .get_storage_v1_bucket import *
+from .get_storage_v1_inventory import *
 from .get_storage_v1_transfer import *
 from .get_storage_v1alpha1_transfer import *
 from .get_tunnel_v1_tunnel import *
@@ -92,6 +94,7 @@ from .mk8s_v1_cluster import *
 from .mk8s_v1_node_group import *
 from .mk8s_v1alpha1_cluster import *
 from .mk8s_v1alpha1_node_group import *
+from .monitoring_v1_recording_rule import *
 from .msp_mlflow_v1alpha1_cluster import *
 from .msp_postgresql_v1alpha1_cluster import *
 from .mysterybox_v1_secret import *
@@ -100,6 +103,7 @@ from .provider import *
 from .quotas_v1_quota_allowance import *
 from .registry_v1_registry import *
 from .storage_v1_bucket import *
+from .storage_v1_inventory import *
 from .storage_v1_transfer import *
 from .storage_v1alpha1_transfer import *
 from .tunnel_v1_tunnel import *
@@ -351,6 +355,14 @@ _utilities.register(
  },
  {
   "pkg": "nebius",
+  "mod": "index/monitoringV1RecordingRule",
+  "fqn": "pulumi_nebius",
+  "classes": {
+   "nebius:index/monitoringV1RecordingRule:MonitoringV1RecordingRule": "MonitoringV1RecordingRule"
+  }
+ },
+ {
+  "pkg": "nebius",
   "mod": "index/mspMlflowV1alpha1Cluster",
   "fqn": "pulumi_nebius",
   "classes": {
@@ -403,6 +415,14 @@ _utilities.register(
   "fqn": "pulumi_nebius",
   "classes": {
    "nebius:index/storageV1Bucket:StorageV1Bucket": "StorageV1Bucket"
+  }
+ },
+ {
+  "pkg": "nebius",
+  "mod": "index/storageV1Inventory",
+  "fqn": "pulumi_nebius",
+  "classes": {
+   "nebius:index/storageV1Inventory:StorageV1Inventory": "StorageV1Inventory"
   }
  },
  {

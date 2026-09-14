@@ -75,7 +75,7 @@ class AwaitableGetMysteryboxV1SecretPayloadEntryResult(GetMysteryboxV1SecretPayl
             version_id=self.version_id)
 
 
-def get_mysterybox_v1_secret_payload_entry(data: Optional[Union['GetMysteryboxV1SecretPayloadEntryDataArgs', 'GetMysteryboxV1SecretPayloadEntryDataArgsDict']] = None,
+def get_mysterybox_v1_secret_payload_entry(data: Optional[Union['GetMysteryboxV1SecretPayloadEntryDataArgs', 'GetMysteryboxV1SecretPayloadEntryDataArgsDict', 'outputs.GetMysteryboxV1SecretPayloadEntryDataResult']] = None,
                                            key: Optional[_builtins.str] = None,
                                            secret_id: Optional[_builtins.str] = None,
                                            version_id: Optional[_builtins.str] = None,
@@ -96,7 +96,7 @@ def get_mysterybox_v1_secret_payload_entry(data: Optional[Union['GetMysteryboxV1
         key=pulumi.get(__ret__, 'key'),
         secret_id=pulumi.get(__ret__, 'secret_id'),
         version_id=pulumi.get(__ret__, 'version_id'))
-def get_mysterybox_v1_secret_payload_entry_output(data: pulumi.Input[Optional[Optional[Union['GetMysteryboxV1SecretPayloadEntryDataArgs', 'GetMysteryboxV1SecretPayloadEntryDataArgsDict']]]] = None,
+def get_mysterybox_v1_secret_payload_entry_output(data: pulumi.Input[Optional[Optional[Union['GetMysteryboxV1SecretPayloadEntryDataArgs', 'GetMysteryboxV1SecretPayloadEntryDataArgsDict', 'outputs.GetMysteryboxV1SecretPayloadEntryDataResult']]]] = None,
                                                   key: pulumi.Input[Optional[_builtins.str]] = None,
                                                   secret_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   version_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
