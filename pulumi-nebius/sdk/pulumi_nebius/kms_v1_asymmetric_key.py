@@ -410,7 +410,7 @@ class KmsV1AsymmetricKey(pulumi.CustomResource):
                  algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict', 'outputs.KmsV1AsymmetricKeyMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -435,7 +435,7 @@ class KmsV1AsymmetricKey(pulumi.CustomResource):
                   - `RSA_4096_ENC_OAEP_SHA_256` - RSA encryption with RSA-4096 key, OAEP padding and SHA-256.
         :param pulumi.Input[_builtins.str] description: Description of the key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict', 'outputs.KmsV1AsymmetricKeyMetadata']] metadata: :
                
                #### Inner value description
                
@@ -470,7 +470,7 @@ class KmsV1AsymmetricKey(pulumi.CustomResource):
                  algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict', 'outputs.KmsV1AsymmetricKeyMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -511,11 +511,11 @@ class KmsV1AsymmetricKey(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict', 'outputs.KmsV1AsymmetricKeyMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyStatusArgs', 'KmsV1AsymmetricKeyStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['KmsV1AsymmetricKeyStatusArgs', 'KmsV1AsymmetricKeyStatusArgsDict', 'outputs.KmsV1AsymmetricKeyStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'KmsV1AsymmetricKey':
         """
         Get an existing KmsV1AsymmetricKey resource's state with the given name, id, and optional extra
@@ -546,7 +546,7 @@ class KmsV1AsymmetricKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of the key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['KmsV1AsymmetricKeyMetadataArgs', 'KmsV1AsymmetricKeyMetadataArgsDict', 'outputs.KmsV1AsymmetricKeyMetadata']] metadata: :
                
                #### Inner value description
                
@@ -559,7 +559,7 @@ class KmsV1AsymmetricKey(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['KmsV1AsymmetricKeyStatusArgs', 'KmsV1AsymmetricKeyStatusArgsDict']] status: The current status of the asymmetric key.
+        :param pulumi.Input[Union['KmsV1AsymmetricKeyStatusArgs', 'KmsV1AsymmetricKeyStatusArgsDict', 'outputs.KmsV1AsymmetricKeyStatus']] status: The current status of the asymmetric key.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

@@ -378,7 +378,7 @@ class TunnelV1Tunnel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict', 'outputs.TunnelV1TunnelMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
@@ -390,7 +390,7 @@ class TunnelV1Tunnel(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Arbitrary description of the tunnel provided by the user.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict', 'outputs.TunnelV1TunnelMetadata']] metadata: :
                
                   Resource metadata containing identification and hierarchy information.
                
@@ -427,7 +427,7 @@ class TunnelV1Tunnel(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict', 'outputs.TunnelV1TunnelMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  title: pulumi.Input[Optional[_builtins.str]] = None,
@@ -466,11 +466,11 @@ class TunnelV1Tunnel(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict', 'outputs.TunnelV1TunnelMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['TunnelV1TunnelStatusArgs', 'TunnelV1TunnelStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['TunnelV1TunnelStatusArgs', 'TunnelV1TunnelStatusArgsDict', 'outputs.TunnelV1TunnelStatus']]] = None,
             title: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'TunnelV1Tunnel':
         """
@@ -488,7 +488,7 @@ class TunnelV1Tunnel(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Arbitrary description of the tunnel provided by the user.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['TunnelV1TunnelMetadataArgs', 'TunnelV1TunnelMetadataArgsDict', 'outputs.TunnelV1TunnelMetadata']] metadata: :
                
                   Resource metadata containing identification and hierarchy information.
                
@@ -503,7 +503,7 @@ class TunnelV1Tunnel(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['TunnelV1TunnelStatusArgs', 'TunnelV1TunnelStatusArgsDict']] status: :
+        :param pulumi.Input[Union['TunnelV1TunnelStatusArgs', 'TunnelV1TunnelStatusArgsDict', 'outputs.TunnelV1TunnelStatus']] status: :
                
                   Current status of the tunnel.
                

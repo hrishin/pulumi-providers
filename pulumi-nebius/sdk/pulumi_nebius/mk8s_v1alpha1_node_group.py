@@ -487,15 +487,15 @@ class Mk8sV1alpha1NodeGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_repair: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict']]] = None,
-                 autoscaling: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict']]] = None,
+                 auto_repair: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoRepair']]] = None,
+                 autoscaling: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoscaling']]] = None,
                  fixed_node_count: pulumi.Input[Optional[_builtins.float]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1alpha1NodeGroupMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 strategy: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStrategyArgs', 'Mk8sV1alpha1NodeGroupStrategyArgsDict']]] = None,
-                 template: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupTemplateArgs', 'Mk8sV1alpha1NodeGroupTemplateArgsDict']]] = None,
+                 strategy: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStrategyArgs', 'Mk8sV1alpha1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1alpha1NodeGroupStrategy']]] = None,
+                 template: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupTemplateArgs', 'Mk8sV1alpha1NodeGroupTemplateArgsDict', 'outputs.Mk8sV1alpha1NodeGroupTemplate']]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -503,11 +503,11 @@ class Mk8sV1alpha1NodeGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict']] auto_repair: Parameters for nodes auto repair.
-        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict']] autoscaling: *Cannot be set alongside fixed_node_count.*
+        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoRepair']] auto_repair: Parameters for nodes auto repair.
+        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoscaling']] autoscaling: *Cannot be set alongside fixed_node_count.*
         :param pulumi.Input[_builtins.float] fixed_node_count: *Cannot be set alongside autoscaling.*
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1alpha1NodeGroupMetadata']] metadata: :
                
                #### Inner value description
                
@@ -546,15 +546,15 @@ class Mk8sV1alpha1NodeGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_repair: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict']]] = None,
-                 autoscaling: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict']]] = None,
+                 auto_repair: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoRepair']]] = None,
+                 autoscaling: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoscaling']]] = None,
                  fixed_node_count: pulumi.Input[Optional[_builtins.float]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1alpha1NodeGroupMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 strategy: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStrategyArgs', 'Mk8sV1alpha1NodeGroupStrategyArgsDict']]] = None,
-                 template: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupTemplateArgs', 'Mk8sV1alpha1NodeGroupTemplateArgsDict']]] = None,
+                 strategy: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStrategyArgs', 'Mk8sV1alpha1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1alpha1NodeGroupStrategy']]] = None,
+                 template: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupTemplateArgs', 'Mk8sV1alpha1NodeGroupTemplateArgsDict', 'outputs.Mk8sV1alpha1NodeGroupTemplate']]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -593,19 +593,19 @@ class Mk8sV1alpha1NodeGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_repair: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict']]] = None,
-            autoscaling: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict']]] = None,
+            auto_repair: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoRepair']]] = None,
+            autoscaling: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoscaling']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             fixed_node_count: pulumi.Input[Optional[_builtins.float]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1alpha1NodeGroupMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStatusArgs', 'Mk8sV1alpha1NodeGroupStatusArgsDict']]] = None,
-            strategy: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStrategyArgs', 'Mk8sV1alpha1NodeGroupStrategyArgsDict']]] = None,
-            template: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupTemplateArgs', 'Mk8sV1alpha1NodeGroupTemplateArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStatusArgs', 'Mk8sV1alpha1NodeGroupStatusArgsDict', 'outputs.Mk8sV1alpha1NodeGroupStatus']]] = None,
+            strategy: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupStrategyArgs', 'Mk8sV1alpha1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1alpha1NodeGroupStrategy']]] = None,
+            template: pulumi.Input[Optional[Union['Mk8sV1alpha1NodeGroupTemplateArgs', 'Mk8sV1alpha1NodeGroupTemplateArgsDict', 'outputs.Mk8sV1alpha1NodeGroupTemplate']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None) -> 'Mk8sV1alpha1NodeGroup':
         """
@@ -615,8 +615,8 @@ class Mk8sV1alpha1NodeGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict']] auto_repair: Parameters for nodes auto repair.
-        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict']] autoscaling: *Cannot be set alongside fixed_node_count.*
+        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoRepairArgs', 'Mk8sV1alpha1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoRepair']] auto_repair: Parameters for nodes auto repair.
+        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupAutoscalingArgs', 'Mk8sV1alpha1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1alpha1NodeGroupAutoscaling']] autoscaling: *Cannot be set alongside fixed_node_count.*
         :param pulumi.Input[_builtins.str] created_at: :
                
                   Timestamp indicating when the resource was created.
@@ -625,7 +625,7 @@ class Mk8sV1alpha1NodeGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] fixed_node_count: *Cannot be set alongside autoscaling.*
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['Mk8sV1alpha1NodeGroupMetadataArgs', 'Mk8sV1alpha1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1alpha1NodeGroupMetadata']] metadata: :
                
                #### Inner value description
                

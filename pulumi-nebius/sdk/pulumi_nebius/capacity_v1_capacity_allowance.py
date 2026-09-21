@@ -390,7 +390,7 @@ class CapacityV1CapacityAllowance(pulumi.CustomResource):
                  capacity_block_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  limit: pulumi.Input[Optional[_builtins.float]] = None,
-                 metadata: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict', 'outputs.CapacityV1CapacityAllowanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -405,7 +405,7 @@ class CapacityV1CapacityAllowance(pulumi.CustomResource):
                
                   Total amount of resources allocated.
                   Optional is used to define an unlimited Capacity Allowance.
-        :param pulumi.Input[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict', 'outputs.CapacityV1CapacityAllowanceMetadata']] metadata: :
                
                   Standard metadata.<span pulumi-lang-nodejs=" parentId " pulumi-lang-dotnet=" ParentId " pulumi-lang-go=" parentId " pulumi-lang-python=" parent_id " pulumi-lang-yaml=" parentId " pulumi-lang-java=" parentId " pulumi-lang-hcl=" parent_id "> parentId </span>is the User's Project NID.
                
@@ -442,7 +442,7 @@ class CapacityV1CapacityAllowance(pulumi.CustomResource):
                  capacity_block_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  limit: pulumi.Input[Optional[_builtins.float]] = None,
-                 metadata: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict', 'outputs.CapacityV1CapacityAllowanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -483,11 +483,11 @@ class CapacityV1CapacityAllowance(pulumi.CustomResource):
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             limit: pulumi.Input[Optional[_builtins.float]] = None,
-            metadata: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict', 'outputs.CapacityV1CapacityAllowanceMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceStatusArgs', 'CapacityV1CapacityAllowanceStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['CapacityV1CapacityAllowanceStatusArgs', 'CapacityV1CapacityAllowanceStatusArgsDict', 'outputs.CapacityV1CapacityAllowanceStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'CapacityV1CapacityAllowance':
         """
         Get an existing CapacityV1CapacityAllowance resource's state with the given name, id, and optional extra
@@ -508,7 +508,7 @@ class CapacityV1CapacityAllowance(pulumi.CustomResource):
                
                   Total amount of resources allocated.
                   Optional is used to define an unlimited Capacity Allowance.
-        :param pulumi.Input[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['CapacityV1CapacityAllowanceMetadataArgs', 'CapacityV1CapacityAllowanceMetadataArgsDict', 'outputs.CapacityV1CapacityAllowanceMetadata']] metadata: :
                
                   Standard metadata.<span pulumi-lang-nodejs=" parentId " pulumi-lang-dotnet=" ParentId " pulumi-lang-go=" parentId " pulumi-lang-python=" parent_id " pulumi-lang-yaml=" parentId " pulumi-lang-java=" parentId " pulumi-lang-hcl=" parent_id "> parentId </span>is the User's Project NID.
                
@@ -523,7 +523,7 @@ class CapacityV1CapacityAllowance(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['CapacityV1CapacityAllowanceStatusArgs', 'CapacityV1CapacityAllowanceStatusArgsDict']] status: :
+        :param pulumi.Input[Union['CapacityV1CapacityAllowanceStatusArgs', 'CapacityV1CapacityAllowanceStatusArgsDict', 'outputs.CapacityV1CapacityAllowanceStatus']] status: :
                
                   Current status of the Capacity Allowance.
                
