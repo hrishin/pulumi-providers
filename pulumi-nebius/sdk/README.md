@@ -174,10 +174,14 @@ PYPI_API_TOKEN=pypi-... make publish        # upload to PyPI
 You can also trigger a TestPyPI dry run from CI without cutting a release: **Actions →
 pulumi-nebius PyPI publish → Run workflow → target: testpypi**.
 
-Because `make sdk` regenerates `sdk/` from scratch on every run, PyPI-facing metadata (license,
-authors, classifiers, this repo's URLs, the long description) can't live in the generated
-`pyproject.toml` directly — `scripts/patch_pyproject.py` re-applies it after each regeneration
-and is called automatically as part of `make sdk`.
+Because `make sdk` regenerates `sdk/` from scratch on every run, PyPI-facing metadata can't live
+in the generated `pyproject.toml` directly. `scripts/patch_pyproject.py` re-applies it after every
+regeneration (called automatically as the last step of `make sdk`):
+- adds `license`, `license-files`, `authors`, `classifiers`, and this repo's URLs
+- bumps `[build-system] requires` to `setuptools>=77.0.3` — the codegen'd `>=61.0` floor predates
+  [PEP 639](https://peps.python.org/pep-0639/) SPDX `license = "MIT"` support
+- copies `LICENSE` and `README.md` into `sdk/` so they land in the built distribution and PyPI
+  gets a real long description instead of a blank one
 
 ## Directory layout
 

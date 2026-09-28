@@ -25,6 +25,7 @@ class ProviderArgs:
                  address_template_env: pulumi.Input[Optional[_builtins.str]] = None,
                  auth_timeout: pulumi.Input[Optional[_builtins.str]] = None,
                  default_labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_preflight_checks: pulumi.Input[Optional[_builtins.bool]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_env: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonate_service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -48,6 +49,7 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.str] address_template_env: env variable name to obtain address template in form of `FIND=REPLACE`
         :param pulumi.Input[_builtins.str] auth_timeout: timeout for each Nebius SDK request including authentication, default 15m0s, as a string: possibly signed sequence of decimal numbers, each with optional fraction and a unit suffix, such as <span pulumi-lang-nodejs="`300ms`" pulumi-lang-dotnet="`300ms`" pulumi-lang-go="`300ms`" pulumi-lang-python="`300ms`" pulumi-lang-yaml="`300ms`" pulumi-lang-java="`300ms`" pulumi-lang-hcl="`300ms`">`300ms`</span>, `-1.5h` or <span pulumi-lang-nodejs="`2h45m`" pulumi-lang-dotnet="`2h45m`" pulumi-lang-go="`2h45m`" pulumi-lang-python="`2h45m`" pulumi-lang-yaml="`2h45m`" pulumi-lang-java="`2h45m`" pulumi-lang-hcl="`2h45m`">`2h45m`</span>. Valid time units are <span pulumi-lang-nodejs="`ns`" pulumi-lang-dotnet="`Ns`" pulumi-lang-go="`ns`" pulumi-lang-python="`ns`" pulumi-lang-yaml="`ns`" pulumi-lang-java="`ns`" pulumi-lang-hcl="`ns`">`ns`</span>, <span pulumi-lang-nodejs="`us`" pulumi-lang-dotnet="`Us`" pulumi-lang-go="`us`" pulumi-lang-python="`us`" pulumi-lang-yaml="`us`" pulumi-lang-java="`us`" pulumi-lang-hcl="`us`">`us`</span> (or `µs`), <span pulumi-lang-nodejs="`ms`" pulumi-lang-dotnet="`Ms`" pulumi-lang-go="`ms`" pulumi-lang-python="`ms`" pulumi-lang-yaml="`ms`" pulumi-lang-java="`ms`" pulumi-lang-hcl="`ms`">`ms`</span>, <span pulumi-lang-nodejs="`s`" pulumi-lang-dotnet="`S`" pulumi-lang-go="`s`" pulumi-lang-python="`s`" pulumi-lang-yaml="`s`" pulumi-lang-java="`s`" pulumi-lang-hcl="`s`">`s`</span>, <span pulumi-lang-nodejs="`m`" pulumi-lang-dotnet="`M`" pulumi-lang-go="`m`" pulumi-lang-python="`m`" pulumi-lang-yaml="`m`" pulumi-lang-java="`m`" pulumi-lang-hcl="`m`">`m`</span>, <span pulumi-lang-nodejs="`h`" pulumi-lang-dotnet="`H`" pulumi-lang-go="`h`" pulumi-lang-python="`h`" pulumi-lang-yaml="`h`" pulumi-lang-java="`h`" pulumi-lang-hcl="`h`">`h`</span>, <span pulumi-lang-nodejs="`d`" pulumi-lang-dotnet="`D`" pulumi-lang-go="`d`" pulumi-lang-python="`d`" pulumi-lang-yaml="`d`" pulumi-lang-java="`d`" pulumi-lang-hcl="`d`">`d`</span>
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] default_labels: Labels to apply by default to managed resources that support labels. Resource labels override matching provider labels.
+        :param pulumi.Input[_builtins.bool] disable_preflight_checks: Disable server-side preflight checks for both plan and apply. Defaults to false. API requests during apply can still fail validation.
         :param pulumi.Input[_builtins.str] domain: custom domain name (overrides domain_env)
         :param pulumi.Input[_builtins.str] domain_env: env variable name to obtain custom domain name
         :param pulumi.Input[_builtins.str] impersonate_service_account_id: Service account ID to impersonate.
@@ -74,6 +76,8 @@ class ProviderArgs:
             pulumi.set(__self__, "auth_timeout", auth_timeout)
         if default_labels is not None:
             pulumi.set(__self__, "default_labels", default_labels)
+        if disable_preflight_checks is not None:
+            pulumi.set(__self__, "disable_preflight_checks", disable_preflight_checks)
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
         if domain_env is not None:
@@ -164,6 +168,18 @@ class ProviderArgs:
     @default_labels.setter
     def default_labels(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "default_labels", value)
+
+    @_builtins.property
+    @pulumi.getter(name="disablePreflightChecks")
+    def disable_preflight_checks(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Disable server-side preflight checks for both plan and apply. Defaults to false. API requests during apply can still fail validation.
+        """
+        return pulumi.get(self, "disable_preflight_checks")
+
+    @disable_preflight_checks.setter
+    def disable_preflight_checks(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "disable_preflight_checks", value)
 
     @_builtins.property
     @pulumi.getter
@@ -357,6 +373,7 @@ class Provider(pulumi.ProviderResource):
                  address_template_env: pulumi.Input[Optional[_builtins.str]] = None,
                  auth_timeout: pulumi.Input[Optional[_builtins.str]] = None,
                  default_labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_preflight_checks: pulumi.Input[Optional[_builtins.bool]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_env: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonate_service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -387,6 +404,7 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[_builtins.str] address_template_env: env variable name to obtain address template in form of `FIND=REPLACE`
         :param pulumi.Input[_builtins.str] auth_timeout: timeout for each Nebius SDK request including authentication, default 15m0s, as a string: possibly signed sequence of decimal numbers, each with optional fraction and a unit suffix, such as <span pulumi-lang-nodejs="`300ms`" pulumi-lang-dotnet="`300ms`" pulumi-lang-go="`300ms`" pulumi-lang-python="`300ms`" pulumi-lang-yaml="`300ms`" pulumi-lang-java="`300ms`" pulumi-lang-hcl="`300ms`">`300ms`</span>, `-1.5h` or <span pulumi-lang-nodejs="`2h45m`" pulumi-lang-dotnet="`2h45m`" pulumi-lang-go="`2h45m`" pulumi-lang-python="`2h45m`" pulumi-lang-yaml="`2h45m`" pulumi-lang-java="`2h45m`" pulumi-lang-hcl="`2h45m`">`2h45m`</span>. Valid time units are <span pulumi-lang-nodejs="`ns`" pulumi-lang-dotnet="`Ns`" pulumi-lang-go="`ns`" pulumi-lang-python="`ns`" pulumi-lang-yaml="`ns`" pulumi-lang-java="`ns`" pulumi-lang-hcl="`ns`">`ns`</span>, <span pulumi-lang-nodejs="`us`" pulumi-lang-dotnet="`Us`" pulumi-lang-go="`us`" pulumi-lang-python="`us`" pulumi-lang-yaml="`us`" pulumi-lang-java="`us`" pulumi-lang-hcl="`us`">`us`</span> (or `µs`), <span pulumi-lang-nodejs="`ms`" pulumi-lang-dotnet="`Ms`" pulumi-lang-go="`ms`" pulumi-lang-python="`ms`" pulumi-lang-yaml="`ms`" pulumi-lang-java="`ms`" pulumi-lang-hcl="`ms`">`ms`</span>, <span pulumi-lang-nodejs="`s`" pulumi-lang-dotnet="`S`" pulumi-lang-go="`s`" pulumi-lang-python="`s`" pulumi-lang-yaml="`s`" pulumi-lang-java="`s`" pulumi-lang-hcl="`s`">`s`</span>, <span pulumi-lang-nodejs="`m`" pulumi-lang-dotnet="`M`" pulumi-lang-go="`m`" pulumi-lang-python="`m`" pulumi-lang-yaml="`m`" pulumi-lang-java="`m`" pulumi-lang-hcl="`m`">`m`</span>, <span pulumi-lang-nodejs="`h`" pulumi-lang-dotnet="`H`" pulumi-lang-go="`h`" pulumi-lang-python="`h`" pulumi-lang-yaml="`h`" pulumi-lang-java="`h`" pulumi-lang-hcl="`h`">`h`</span>, <span pulumi-lang-nodejs="`d`" pulumi-lang-dotnet="`D`" pulumi-lang-go="`d`" pulumi-lang-python="`d`" pulumi-lang-yaml="`d`" pulumi-lang-java="`d`" pulumi-lang-hcl="`d`">`d`</span>
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] default_labels: Labels to apply by default to managed resources that support labels. Resource labels override matching provider labels.
+        :param pulumi.Input[_builtins.bool] disable_preflight_checks: Disable server-side preflight checks for both plan and apply. Defaults to false. API requests during apply can still fail validation.
         :param pulumi.Input[_builtins.str] domain: custom domain name (overrides domain_env)
         :param pulumi.Input[_builtins.str] domain_env: env variable name to obtain custom domain name
         :param pulumi.Input[_builtins.str] impersonate_service_account_id: Service account ID to impersonate.
@@ -436,6 +454,7 @@ class Provider(pulumi.ProviderResource):
                  address_template_env: pulumi.Input[Optional[_builtins.str]] = None,
                  auth_timeout: pulumi.Input[Optional[_builtins.str]] = None,
                  default_labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_preflight_checks: pulumi.Input[Optional[_builtins.bool]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_env: pulumi.Input[Optional[_builtins.str]] = None,
                  impersonate_service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -465,6 +484,7 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["address_template_env"] = address_template_env
             __props__.__dict__["auth_timeout"] = auth_timeout
             __props__.__dict__["default_labels"] = pulumi.Output.from_input(default_labels).apply(pulumi.runtime.to_json) if default_labels is not None else None
+            __props__.__dict__["disable_preflight_checks"] = pulumi.Output.from_input(disable_preflight_checks).apply(pulumi.runtime.to_json) if disable_preflight_checks is not None else None
             __props__.__dict__["domain"] = domain
             __props__.__dict__["domain_env"] = domain_env
             __props__.__dict__["impersonate_service_account_id"] = impersonate_service_account_id

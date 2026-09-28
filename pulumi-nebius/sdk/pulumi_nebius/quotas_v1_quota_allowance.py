@@ -366,7 +366,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  limit: pulumi.Input[Optional[_builtins.float]] = None,
-                 metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict', 'outputs.QuotasV1QuotaAllowanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -378,7 +378,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[_builtins.float] limit: Total amount of resources allocated.
-        :param pulumi.Input[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict', 'outputs.QuotasV1QuotaAllowanceMetadata']] metadata: :
                
                #### Inner value description
                
@@ -416,7 +416,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  limit: pulumi.Input[Optional[_builtins.float]] = None,
-                 metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict', 'outputs.QuotasV1QuotaAllowanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -455,12 +455,12 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             limit: pulumi.Input[Optional[_builtins.float]] = None,
-            metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict', 'outputs.QuotasV1QuotaAllowanceMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceStatusArgs', 'QuotasV1QuotaAllowanceStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceStatusArgs', 'QuotasV1QuotaAllowanceStatusArgsDict', 'outputs.QuotasV1QuotaAllowanceStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'QuotasV1QuotaAllowance':
         """
         Get an existing QuotasV1QuotaAllowance resource's state with the given name, id, and optional extra
@@ -477,7 +477,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
         :param pulumi.Input[_builtins.float] limit: Total amount of resources allocated.
-        :param pulumi.Input[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict', 'outputs.QuotasV1QuotaAllowanceMetadata']] metadata: :
                
                #### Inner value description
                

@@ -441,9 +441,9 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  federated_subject_id: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict', 'outputs.IamV1FederatedCredentialsMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict']]] = None,
+                 oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subject_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -457,7 +457,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                   Federated subject ID. For oidc_provider, the subject is calculated from the
                   "sub" claim of the federated JWT token.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict', 'outputs.IamV1FederatedCredentialsMetadata']] metadata: :
                
                   Federated credentials resource metadata.
                
@@ -465,7 +465,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict']] oidc_provider: :
+        :param pulumi.Input[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']] oidc_provider: :
                
                #### Inner value description
                
@@ -503,9 +503,9 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  federated_subject_id: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict', 'outputs.IamV1FederatedCredentialsMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict']]] = None,
+                 oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subject_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -546,12 +546,12 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
             federated_subject_id: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict', 'outputs.IamV1FederatedCredentialsMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict']]] = None,
+            oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['IamV1FederatedCredentialsStatusArgs', 'IamV1FederatedCredentialsStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['IamV1FederatedCredentialsStatusArgs', 'IamV1FederatedCredentialsStatusArgsDict', 'outputs.IamV1FederatedCredentialsStatus']]] = None,
             subject_id: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamV1FederatedCredentials':
         """
@@ -572,7 +572,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                   "sub" claim of the federated JWT token.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict', 'outputs.IamV1FederatedCredentialsMetadata']] metadata: :
                
                   Federated credentials resource metadata.
                
@@ -580,7 +580,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict']] oidc_provider: :
+        :param pulumi.Input[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']] oidc_provider: :
                
                #### Inner value description
                
@@ -596,7 +596,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['IamV1FederatedCredentialsStatusArgs', 'IamV1FederatedCredentialsStatusArgsDict']] status: Federated credentials resource status.
+        :param pulumi.Input[Union['IamV1FederatedCredentialsStatusArgs', 'IamV1FederatedCredentialsStatusArgsDict', 'outputs.IamV1FederatedCredentialsStatus']] status: Federated credentials resource status.
         :param pulumi.Input[_builtins.str] subject_id: IAM subject (service account) that the federated subject impersonates.
         :param pulumi.Input[_builtins.str] updated_at: :
                

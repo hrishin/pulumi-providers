@@ -147,7 +147,7 @@ class AwaitableGetQuotasV1QuotaAllowanceResult(GetQuotasV1QuotaAllowanceResult):
             updated_at=self.updated_at)
 
 
-def get_quotas_v1_quota_allowance(by_name_in_region: Optional[Union['GetQuotasV1QuotaAllowanceByNameInRegionArgs', 'GetQuotasV1QuotaAllowanceByNameInRegionArgsDict']] = None,
+def get_quotas_v1_quota_allowance(by_name_in_region: Optional[Union['GetQuotasV1QuotaAllowanceByNameInRegionArgs', 'GetQuotasV1QuotaAllowanceByNameInRegionArgsDict', 'outputs.GetQuotasV1QuotaAllowanceByNameInRegionResult']] = None,
                                   id: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetQuotasV1QuotaAllowanceResult:
     """
@@ -172,7 +172,7 @@ def get_quotas_v1_quota_allowance(by_name_in_region: Optional[Union['GetQuotasV1
         resource_version=pulumi.get(__ret__, 'resource_version'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_quotas_v1_quota_allowance_output(by_name_in_region: pulumi.Input[Optional[Optional[Union['GetQuotasV1QuotaAllowanceByNameInRegionArgs', 'GetQuotasV1QuotaAllowanceByNameInRegionArgsDict']]]] = None,
+def get_quotas_v1_quota_allowance_output(by_name_in_region: pulumi.Input[Optional[Optional[Union['GetQuotasV1QuotaAllowanceByNameInRegionArgs', 'GetQuotasV1QuotaAllowanceByNameInRegionArgsDict', 'outputs.GetQuotasV1QuotaAllowanceByNameInRegionResult']]]] = None,
                                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQuotasV1QuotaAllowanceResult]:
     """

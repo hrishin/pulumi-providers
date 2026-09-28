@@ -415,11 +415,11 @@ class VpcV1Route(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict']]] = None,
+                 destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict', 'outputs.VpcV1RouteDestination']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict', 'outputs.VpcV1RouteMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict']]] = None,
+                 next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -428,14 +428,14 @@ class VpcV1Route(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Optional description of the route.
-        :param pulumi.Input[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict']] destination: :
+        :param pulumi.Input[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict', 'outputs.VpcV1RouteDestination']] destination: :
                
                   Destination for the route.
                   Each destination CIDR must be unique within a route table.
                   When multiple routes match a destination IP, the route with the longest
                   matching prefix (most specific match) is selected.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict', 'outputs.VpcV1RouteMetadata']] metadata: :
                
                   `metadata.parent_id` represents the RouteTable.
                
@@ -443,7 +443,7 @@ class VpcV1Route(pulumi.CustomResource):
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict']] next_hop: Next hop configuration specifying where to send matching traffic.
+        :param pulumi.Input[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']] next_hop: Next hop configuration specifying where to send matching traffic.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
         ...
@@ -471,11 +471,11 @@ class VpcV1Route(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict']]] = None,
+                 destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict', 'outputs.VpcV1RouteDestination']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict', 'outputs.VpcV1RouteMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict']]] = None,
+                 next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -515,15 +515,15 @@ class VpcV1Route(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict']]] = None,
+            destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict', 'outputs.VpcV1RouteDestination']]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict', 'outputs.VpcV1RouteMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict']]] = None,
+            next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['VpcV1RouteStatusArgs', 'VpcV1RouteStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1RouteStatusArgs', 'VpcV1RouteStatusArgsDict', 'outputs.VpcV1RouteStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV1Route':
         """
         Get an existing VpcV1Route resource's state with the given name, id, and optional extra
@@ -538,7 +538,7 @@ class VpcV1Route(pulumi.CustomResource):
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[_builtins.str] description: Optional description of the route.
-        :param pulumi.Input[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict']] destination: :
+        :param pulumi.Input[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict', 'outputs.VpcV1RouteDestination']] destination: :
                
                   Destination for the route.
                   Each destination CIDR must be unique within a route table.
@@ -546,7 +546,7 @@ class VpcV1Route(pulumi.CustomResource):
                   matching prefix (most specific match) is selected.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict', 'outputs.VpcV1RouteMetadata']] metadata: :
                
                   `metadata.parent_id` represents the RouteTable.
                
@@ -554,7 +554,7 @@ class VpcV1Route(pulumi.CustomResource):
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict']] next_hop: Next hop configuration specifying where to send matching traffic.
+        :param pulumi.Input[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']] next_hop: Next hop configuration specifying where to send matching traffic.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -562,7 +562,7 @@ class VpcV1Route(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['VpcV1RouteStatusArgs', 'VpcV1RouteStatusArgsDict']] status: Current status of the route.
+        :param pulumi.Input[Union['VpcV1RouteStatusArgs', 'VpcV1RouteStatusArgsDict', 'outputs.VpcV1RouteStatus']] status: Current status of the route.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

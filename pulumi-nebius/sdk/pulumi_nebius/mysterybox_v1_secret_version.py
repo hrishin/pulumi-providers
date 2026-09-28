@@ -438,11 +438,11 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict', 'outputs.MysteryboxV1SecretVersionMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict']]]]] = None,
-                 sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict']]] = None,
+                 payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]]] = None,
+                 sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict', 'outputs.MysteryboxV1SecretVersionSensitive']]] = None,
                  set_primary: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -452,21 +452,21 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of the version.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict', 'outputs.MysteryboxV1SecretVersionMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict']]]] payloads: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]] payloads: :
                
                   Payload entries related to the version.
                
                #### Inner value description
                
                   Represents the secret's content as key-value pair.
-        :param pulumi.Input[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
+        :param pulumi.Input[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict', 'outputs.MysteryboxV1SecretVersionSensitive']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
         """
         ...
     @overload
@@ -494,11 +494,11 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict', 'outputs.MysteryboxV1SecretVersionMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict']]]]] = None,
-                 sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict']]] = None,
+                 payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]]] = None,
+                 sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict', 'outputs.MysteryboxV1SecretVersionSensitive']]] = None,
                  set_primary: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -539,14 +539,14 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict', 'outputs.MysteryboxV1SecretVersionMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict']]]]] = None,
+            payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict']]] = None,
+            sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict', 'outputs.MysteryboxV1SecretVersionSensitive']]] = None,
             set_primary: pulumi.Input[Optional[_builtins.bool]] = None,
-            status: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionStatusArgs', 'MysteryboxV1SecretVersionStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionStatusArgs', 'MysteryboxV1SecretVersionStatusArgsDict', 'outputs.MysteryboxV1SecretVersionStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'MysteryboxV1SecretVersion':
         """
         Get an existing MysteryboxV1SecretVersion resource's state with the given name, id, and optional extra
@@ -563,14 +563,14 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of the version.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict', 'outputs.MysteryboxV1SecretVersionMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict']]]] payloads: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]] payloads: :
                
                   Payload entries related to the version.
                
@@ -583,8 +583,8 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
-        :param pulumi.Input[Union['MysteryboxV1SecretVersionStatusArgs', 'MysteryboxV1SecretVersionStatusArgsDict']] status: The status of the secret version.
+        :param pulumi.Input[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict', 'outputs.MysteryboxV1SecretVersionSensitive']] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
+        :param pulumi.Input[Union['MysteryboxV1SecretVersionStatusArgs', 'MysteryboxV1SecretVersionStatusArgsDict', 'outputs.MysteryboxV1SecretVersionStatus']] status: The status of the secret version.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

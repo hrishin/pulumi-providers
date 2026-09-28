@@ -333,7 +333,7 @@ class IamV2Project(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict', 'outputs.IamV2ProjectMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -344,7 +344,7 @@ class IamV2Project(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict', 'outputs.IamV2ProjectMetadata']] metadata: :
                
                #### Inner value description
                
@@ -381,7 +381,7 @@ class IamV2Project(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict', 'outputs.IamV2ProjectMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -418,12 +418,12 @@ class IamV2Project(pulumi.CustomResource):
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict', 'outputs.IamV2ProjectMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['IamV2ProjectStatusArgs', 'IamV2ProjectStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['IamV2ProjectStatusArgs', 'IamV2ProjectStatusArgsDict', 'outputs.IamV2ProjectStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamV2Project':
         """
         Get an existing IamV2Project resource's state with the given name, id, and optional extra
@@ -439,7 +439,7 @@ class IamV2Project(pulumi.CustomResource):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict', 'outputs.IamV2ProjectMetadata']] metadata: :
                
                #### Inner value description
                
