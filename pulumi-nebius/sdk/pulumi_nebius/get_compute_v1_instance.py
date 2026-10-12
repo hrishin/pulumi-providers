@@ -27,7 +27,7 @@ class GetComputeV1InstanceResult:
     """
     A collection of values returned by getComputeV1Instance.
     """
-    def __init__(__self__, boot_disk=None, cloud_init_user_data=None, created_at=None, filesystems=None, gpu_cluster=None, hostname=None, id=None, labels=None, local_disks=None, metadata=None, name=None, network_interfaces=None, nvl_instance_group_id=None, parent_id=None, preemptible=None, recovery_policy=None, reservation_policy=None, resource_version=None, resources=None, secondary_disks=None, service_account_id=None, status=None, stopped=None, updated_at=None):
+    def __init__(__self__, boot_disk=None, cloud_init_user_data=None, created_at=None, filesystems=None, follows_spot_price=None, gpu_cluster=None, hostname=None, id=None, labels=None, local_disks=None, metadata=None, name=None, network_interfaces=None, nvl_instance_group_id=None, on_demand=None, parent_id=None, preemptible=None, recovery_policy=None, reservation_policy=None, resource_version=None, resources=None, secondary_disks=None, service_account_id=None, spot_pricing_policy=None, status=None, stopped=None, updated_at=None):
         if boot_disk and not isinstance(boot_disk, dict):
             raise TypeError("Expected argument 'boot_disk' to be a dict")
         pulumi.set(__self__, "boot_disk", boot_disk)
@@ -40,6 +40,9 @@ class GetComputeV1InstanceResult:
         if filesystems and not isinstance(filesystems, list):
             raise TypeError("Expected argument 'filesystems' to be a list")
         pulumi.set(__self__, "filesystems", filesystems)
+        if follows_spot_price and not isinstance(follows_spot_price, dict):
+            raise TypeError("Expected argument 'follows_spot_price' to be a dict")
+        pulumi.set(__self__, "follows_spot_price", follows_spot_price)
         if gpu_cluster and not isinstance(gpu_cluster, dict):
             raise TypeError("Expected argument 'gpu_cluster' to be a dict")
         pulumi.set(__self__, "gpu_cluster", gpu_cluster)
@@ -67,6 +70,9 @@ class GetComputeV1InstanceResult:
         if nvl_instance_group_id and not isinstance(nvl_instance_group_id, str):
             raise TypeError("Expected argument 'nvl_instance_group_id' to be a str")
         pulumi.set(__self__, "nvl_instance_group_id", nvl_instance_group_id)
+        if on_demand and not isinstance(on_demand, dict):
+            raise TypeError("Expected argument 'on_demand' to be a dict")
+        pulumi.set(__self__, "on_demand", on_demand)
         if parent_id and not isinstance(parent_id, str):
             raise TypeError("Expected argument 'parent_id' to be a str")
         pulumi.set(__self__, "parent_id", parent_id)
@@ -91,6 +97,9 @@ class GetComputeV1InstanceResult:
         if service_account_id and not isinstance(service_account_id, str):
             raise TypeError("Expected argument 'service_account_id' to be a str")
         pulumi.set(__self__, "service_account_id", service_account_id)
+        if spot_pricing_policy and not isinstance(spot_pricing_policy, dict):
+            raise TypeError("Expected argument 'spot_pricing_policy' to be a dict")
+        pulumi.set(__self__, "spot_pricing_policy", spot_pricing_policy)
         if status and not isinstance(status, dict):
             raise TypeError("Expected argument 'status' to be a dict")
         pulumi.set(__self__, "status", status)
@@ -120,6 +129,11 @@ class GetComputeV1InstanceResult:
     @pulumi.getter
     def filesystems(self) -> Sequence['outputs.GetComputeV1InstanceFilesystemResult']:
         return pulumi.get(self, "filesystems")
+
+    @_builtins.property
+    @pulumi.getter(name="followsSpotPrice")
+    def follows_spot_price(self) -> 'outputs.GetComputeV1InstanceFollowsSpotPriceResult':
+        return pulumi.get(self, "follows_spot_price")
 
     @_builtins.property
     @pulumi.getter(name="gpuCluster")
@@ -167,6 +181,11 @@ class GetComputeV1InstanceResult:
         return pulumi.get(self, "nvl_instance_group_id")
 
     @_builtins.property
+    @pulumi.getter(name="onDemand")
+    def on_demand(self) -> 'outputs.GetComputeV1InstanceOnDemandResult':
+        return pulumi.get(self, "on_demand")
+
+    @_builtins.property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> _builtins.str:
         return pulumi.get(self, "parent_id")
@@ -207,6 +226,11 @@ class GetComputeV1InstanceResult:
         return pulumi.get(self, "service_account_id")
 
     @_builtins.property
+    @pulumi.getter(name="spotPricingPolicy")
+    def spot_pricing_policy(self) -> 'outputs.GetComputeV1InstanceSpotPricingPolicyResult':
+        return pulumi.get(self, "spot_pricing_policy")
+
+    @_builtins.property
     @pulumi.getter
     def status(self) -> 'outputs.GetComputeV1InstanceStatusResult':
         return pulumi.get(self, "status")
@@ -232,6 +256,7 @@ class AwaitableGetComputeV1InstanceResult(GetComputeV1InstanceResult):
             cloud_init_user_data=self.cloud_init_user_data,
             created_at=self.created_at,
             filesystems=self.filesystems,
+            follows_spot_price=self.follows_spot_price,
             gpu_cluster=self.gpu_cluster,
             hostname=self.hostname,
             id=self.id,
@@ -241,6 +266,7 @@ class AwaitableGetComputeV1InstanceResult(GetComputeV1InstanceResult):
             name=self.name,
             network_interfaces=self.network_interfaces,
             nvl_instance_group_id=self.nvl_instance_group_id,
+            on_demand=self.on_demand,
             parent_id=self.parent_id,
             preemptible=self.preemptible,
             recovery_policy=self.recovery_policy,
@@ -249,6 +275,7 @@ class AwaitableGetComputeV1InstanceResult(GetComputeV1InstanceResult):
             resources=self.resources,
             secondary_disks=self.secondary_disks,
             service_account_id=self.service_account_id,
+            spot_pricing_policy=self.spot_pricing_policy,
             status=self.status,
             stopped=self.stopped,
             updated_at=self.updated_at)
@@ -273,6 +300,7 @@ def get_compute_v1_instance(id: Optional[_builtins.str] = None,
         cloud_init_user_data=pulumi.get(__ret__, 'cloud_init_user_data'),
         created_at=pulumi.get(__ret__, 'created_at'),
         filesystems=pulumi.get(__ret__, 'filesystems'),
+        follows_spot_price=pulumi.get(__ret__, 'follows_spot_price'),
         gpu_cluster=pulumi.get(__ret__, 'gpu_cluster'),
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
@@ -282,6 +310,7 @@ def get_compute_v1_instance(id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         network_interfaces=pulumi.get(__ret__, 'network_interfaces'),
         nvl_instance_group_id=pulumi.get(__ret__, 'nvl_instance_group_id'),
+        on_demand=pulumi.get(__ret__, 'on_demand'),
         parent_id=pulumi.get(__ret__, 'parent_id'),
         preemptible=pulumi.get(__ret__, 'preemptible'),
         recovery_policy=pulumi.get(__ret__, 'recovery_policy'),
@@ -290,6 +319,7 @@ def get_compute_v1_instance(id: Optional[_builtins.str] = None,
         resources=pulumi.get(__ret__, 'resources'),
         secondary_disks=pulumi.get(__ret__, 'secondary_disks'),
         service_account_id=pulumi.get(__ret__, 'service_account_id'),
+        spot_pricing_policy=pulumi.get(__ret__, 'spot_pricing_policy'),
         status=pulumi.get(__ret__, 'status'),
         stopped=pulumi.get(__ret__, 'stopped'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
@@ -311,6 +341,7 @@ def get_compute_v1_instance_output(id: pulumi.Input[Optional[Optional[_builtins.
         cloud_init_user_data=pulumi.get(__response__, 'cloud_init_user_data'),
         created_at=pulumi.get(__response__, 'created_at'),
         filesystems=pulumi.get(__response__, 'filesystems'),
+        follows_spot_price=pulumi.get(__response__, 'follows_spot_price'),
         gpu_cluster=pulumi.get(__response__, 'gpu_cluster'),
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
@@ -320,6 +351,7 @@ def get_compute_v1_instance_output(id: pulumi.Input[Optional[Optional[_builtins.
         name=pulumi.get(__response__, 'name'),
         network_interfaces=pulumi.get(__response__, 'network_interfaces'),
         nvl_instance_group_id=pulumi.get(__response__, 'nvl_instance_group_id'),
+        on_demand=pulumi.get(__response__, 'on_demand'),
         parent_id=pulumi.get(__response__, 'parent_id'),
         preemptible=pulumi.get(__response__, 'preemptible'),
         recovery_policy=pulumi.get(__response__, 'recovery_policy'),
@@ -328,6 +360,7 @@ def get_compute_v1_instance_output(id: pulumi.Input[Optional[Optional[_builtins.
         resources=pulumi.get(__response__, 'resources'),
         secondary_disks=pulumi.get(__response__, 'secondary_disks'),
         service_account_id=pulumi.get(__response__, 'service_account_id'),
+        spot_pricing_policy=pulumi.get(__response__, 'spot_pricing_policy'),
         status=pulumi.get(__response__, 'status'),
         stopped=pulumi.get(__response__, 'stopped'),
         updated_at=pulumi.get(__response__, 'updated_at')))

@@ -7,6 +7,7 @@ from . import _utilities
 import typing
 # Export this package's modules as members:
 from .applications_v1alpha1_k8s_release import *
+from .billing_v1_pricing_policy import *
 from .capacity_v1_capacity_allowance import *
 from .compute_v1_disk import *
 from .compute_v1_disk_snapshot import *
@@ -17,6 +18,7 @@ from .compute_v1_nvl_instance_group import *
 from .dns_v1_record import *
 from .dns_v1_zone import *
 from .get_applications_v1alpha1_k8s_release import *
+from .get_billing_v1_pricing_policy import *
 from .get_capacity_v1_capacity_allowance import *
 from .get_capacity_v1_capacity_block_group import *
 from .get_compute_v1_disk import *
@@ -58,6 +60,7 @@ from .get_parent_id import *
 from .get_quotas_v1_quota_allowance import *
 from .get_registry_v1_registry import *
 from .get_storage_v1_bucket import *
+from .get_storage_v1_inventory import *
 from .get_storage_v1_transfer import *
 from .get_storage_v1alpha1_transfer import *
 from .get_tunnel_v1_tunnel import *
@@ -100,6 +103,7 @@ from .provider import *
 from .quotas_v1_quota_allowance import *
 from .registry_v1_registry import *
 from .storage_v1_bucket import *
+from .storage_v1_inventory import *
 from .storage_v1_transfer import *
 from .storage_v1alpha1_transfer import *
 from .tunnel_v1_tunnel import *
@@ -131,6 +135,14 @@ _utilities.register(
   "fqn": "pulumi_nebius",
   "classes": {
    "nebius:index/applicationsV1alpha1K8sRelease:ApplicationsV1alpha1K8sRelease": "ApplicationsV1alpha1K8sRelease"
+  }
+ },
+ {
+  "pkg": "nebius",
+  "mod": "index/billingV1PricingPolicy",
+  "fqn": "pulumi_nebius",
+  "classes": {
+   "nebius:index/billingV1PricingPolicy:BillingV1PricingPolicy": "BillingV1PricingPolicy"
   }
  },
  {
@@ -403,6 +415,14 @@ _utilities.register(
   "fqn": "pulumi_nebius",
   "classes": {
    "nebius:index/storageV1Bucket:StorageV1Bucket": "StorageV1Bucket"
+  }
+ },
+ {
+  "pkg": "nebius",
+  "mod": "index/storageV1Inventory",
+  "fqn": "pulumi_nebius",
+  "classes": {
+   "nebius:index/storageV1Inventory:StorageV1Inventory": "StorageV1Inventory"
   }
  },
  {

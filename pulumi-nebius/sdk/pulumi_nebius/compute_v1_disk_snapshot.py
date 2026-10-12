@@ -353,7 +353,7 @@ class ComputeV1DiskSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict', 'outputs.ComputeV1DiskSnapshotMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_disk_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -365,7 +365,7 @@ class ComputeV1DiskSnapshot(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Arbitrary information about this snapshot provided by user.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict', 'outputs.ComputeV1DiskSnapshotMetadata']] metadata: :
                
                #### Inner value description
                
@@ -400,7 +400,7 @@ class ComputeV1DiskSnapshot(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict', 'outputs.ComputeV1DiskSnapshotMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_disk_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -441,12 +441,12 @@ class ComputeV1DiskSnapshot(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict', 'outputs.ComputeV1DiskSnapshotMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
             source_disk_id: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotStatusArgs', 'ComputeV1DiskSnapshotStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1DiskSnapshotStatusArgs', 'ComputeV1DiskSnapshotStatusArgsDict', 'outputs.ComputeV1DiskSnapshotStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeV1DiskSnapshot':
         """
         Get an existing ComputeV1DiskSnapshot resource's state with the given name, id, and optional extra
@@ -463,7 +463,7 @@ class ComputeV1DiskSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Arbitrary information about this snapshot provided by user.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1DiskSnapshotMetadataArgs', 'ComputeV1DiskSnapshotMetadataArgsDict', 'outputs.ComputeV1DiskSnapshotMetadata']] metadata: :
                
                #### Inner value description
                

@@ -40,6 +40,11 @@ defaultLabels: Optional[str]
 Labels to apply by default to managed resources that support labels. Resource labels override matching provider labels.
 """
 
+disablePreflightChecks: Optional[bool]
+"""
+Disable server-side preflight checks for both plan and apply. Defaults to false. API requests during apply can still fail validation.
+"""
+
 domain: Optional[str]
 """
 custom domain name (overrides domain_env)

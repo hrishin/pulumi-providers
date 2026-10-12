@@ -346,7 +346,7 @@ class RegistryV1Registry(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict', 'outputs.RegistryV1RegistryMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -356,7 +356,7 @@ class RegistryV1Registry(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict', 'outputs.RegistryV1RegistryMetadata']] metadata: :
                
                   This is metadata about the resource, such as its id, name, labels, etc.
                   This contains fields that may be updated both by the end user and the system.
@@ -393,7 +393,7 @@ class RegistryV1Registry(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict', 'outputs.RegistryV1RegistryMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -432,11 +432,11 @@ class RegistryV1Registry(pulumi.CustomResource):
             images_count: pulumi.Input[Optional[_builtins.float]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict', 'outputs.RegistryV1RegistryMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['RegistryV1RegistryStatusArgs', 'RegistryV1RegistryStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['RegistryV1RegistryStatusArgs', 'RegistryV1RegistryStatusArgsDict', 'outputs.RegistryV1RegistryStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'RegistryV1Registry':
         """
         Get an existing RegistryV1Registry resource's state with the given name, id, and optional extra
@@ -453,7 +453,7 @@ class RegistryV1Registry(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] images_count: Registry.Type type = 2;
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict', 'outputs.RegistryV1RegistryMetadata']] metadata: :
                
                   This is metadata about the resource, such as its id, name, labels, etc.
                   This contains fields that may be updated both by the end user and the system.
@@ -469,7 +469,7 @@ class RegistryV1Registry(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['RegistryV1RegistryStatusArgs', 'RegistryV1RegistryStatusArgsDict']] status: This is filled in by the server and reports the current state of the system.
+        :param pulumi.Input[Union['RegistryV1RegistryStatusArgs', 'RegistryV1RegistryStatusArgsDict', 'outputs.RegistryV1RegistryStatus']] status: This is filled in by the server and reports the current state of the system.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

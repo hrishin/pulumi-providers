@@ -147,7 +147,7 @@ class AwaitableGetCapacityV1CapacityAllowanceResult(GetCapacityV1CapacityAllowan
             updated_at=self.updated_at)
 
 
-def get_capacity_v1_capacity_allowance(by_parent_and_capacity_block_group: Optional[Union['GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgs', 'GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgsDict']] = None,
+def get_capacity_v1_capacity_allowance(by_parent_and_capacity_block_group: Optional[Union['GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgs', 'GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgsDict', 'outputs.GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupResult']] = None,
                                        id: Optional[_builtins.str] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCapacityV1CapacityAllowanceResult:
     """
@@ -172,7 +172,7 @@ def get_capacity_v1_capacity_allowance(by_parent_and_capacity_block_group: Optio
         resource_version=pulumi.get(__ret__, 'resource_version'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_capacity_v1_capacity_allowance_output(by_parent_and_capacity_block_group: pulumi.Input[Optional[Optional[Union['GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgs', 'GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgsDict']]]] = None,
+def get_capacity_v1_capacity_allowance_output(by_parent_and_capacity_block_group: pulumi.Input[Optional[Optional[Union['GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgs', 'GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupArgsDict', 'outputs.GetCapacityV1CapacityAllowanceByParentAndCapacityBlockGroupResult']]]] = None,
                                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCapacityV1CapacityAllowanceResult]:
     """
