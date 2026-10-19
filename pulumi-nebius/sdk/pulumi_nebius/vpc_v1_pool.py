@@ -526,9 +526,9 @@ class VpcV1Pool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict']]]]] = None,
+                 cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict', 'outputs.VpcV1PoolCidr']]]]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict', 'outputs.VpcV1PoolMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -540,9 +540,9 @@ class VpcV1Pool(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict']]]] cidrs: CIDR blocks defined by the pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict', 'outputs.VpcV1PoolCidr']]]] cidrs: CIDR blocks defined by the pool.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict', 'outputs.VpcV1PoolMetadata']] metadata: :
                
                   Metadata associated with the Pool.
                   `metadata.parent_id` represents the Project.
@@ -604,9 +604,9 @@ class VpcV1Pool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict']]]]] = None,
+                 cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict', 'outputs.VpcV1PoolCidr']]]]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict', 'outputs.VpcV1PoolMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -649,16 +649,16 @@ class VpcV1Pool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict']]]]] = None,
+            cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict', 'outputs.VpcV1PoolCidr']]]]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict', 'outputs.VpcV1PoolMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
             source_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['VpcV1PoolStatusArgs', 'VpcV1PoolStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1PoolStatusArgs', 'VpcV1PoolStatusArgsDict', 'outputs.VpcV1PoolStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None,
             visibility: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV1Pool':
@@ -669,7 +669,7 @@ class VpcV1Pool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict']]]] cidrs: CIDR blocks defined by the pool.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV1PoolCidrArgs', 'VpcV1PoolCidrArgsDict', 'outputs.VpcV1PoolCidr']]]] cidrs: CIDR blocks defined by the pool.
         :param pulumi.Input[_builtins.str] created_at: :
                
                   Timestamp indicating when the resource was created.
@@ -677,7 +677,7 @@ class VpcV1Pool(pulumi.CustomResource):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1PoolMetadataArgs', 'VpcV1PoolMetadataArgsDict', 'outputs.VpcV1PoolMetadata']] metadata: :
                
                   Metadata associated with the Pool.
                   `metadata.parent_id` represents the Project.
@@ -697,7 +697,7 @@ class VpcV1Pool(pulumi.CustomResource):
                
                   ID of the source pool.
                   CIDR blocks of a pool must be within the range defined by its source pool.
-        :param pulumi.Input[Union['VpcV1PoolStatusArgs', 'VpcV1PoolStatusArgsDict']] status: Status information for the Pool.
+        :param pulumi.Input[Union['VpcV1PoolStatusArgs', 'VpcV1PoolStatusArgsDict', 'outputs.VpcV1PoolStatus']] status: Status information for the Pool.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

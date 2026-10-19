@@ -712,17 +712,17 @@ class ComputeV1Disk(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
-                 disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict']]] = None,
+                 disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict', 'outputs.ComputeV1DiskDiskEncryption']]] = None,
                  forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict', 'outputs.ComputeV1DiskMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_gibibytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_kibibytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_mebibytes: pulumi.Input[Optional[_builtins.float]] = None,
-                 source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict']]] = None,
+                 source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict', 'outputs.ComputeV1DiskSourceImageFamily']]] = None,
                  source_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -737,10 +737,10 @@ class ComputeV1Disk(pulumi.CustomResource):
                   Block size in bytes.
                   The block size must be a power of two between 4096 bytes (4 KiB) and 131072 bytes (128 KiB).
                   The default value is 4096 bytes (4 KiB).
-        :param pulumi.Input[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict']] disk_encryption: Defines how data on the disk is encrypted. By default, no encryption is applied.
+        :param pulumi.Input[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict', 'outputs.ComputeV1DiskDiskEncryption']] disk_encryption: Defines how data on the disk is encrypted. By default, no encryption is applied.
         :param pulumi.Input[_builtins.bool] forbid_deletion: Prevents deletion whilst set
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict', 'outputs.ComputeV1DiskMetadata']] metadata: :
                
                #### Inner value description
                
@@ -751,7 +751,7 @@ class ComputeV1Disk(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] size_gibibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeKibibytes " pulumi-lang-dotnet=" SizeKibibytes " pulumi-lang-go=" sizeKibibytes " pulumi-lang-python=" size_kibibytes " pulumi-lang-yaml=" sizeKibibytes " pulumi-lang-java=" sizeKibibytes " pulumi-lang-hcl=" size_kibibytes "> sizeKibibytes </span>or size_mebibytes.*
         :param pulumi.Input[_builtins.float] size_kibibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeMebibytes " pulumi-lang-dotnet=" SizeMebibytes " pulumi-lang-go=" sizeMebibytes " pulumi-lang-python=" size_mebibytes " pulumi-lang-yaml=" sizeMebibytes " pulumi-lang-java=" sizeMebibytes " pulumi-lang-hcl=" size_mebibytes "> sizeMebibytes </span>or size_gibibytes.*
         :param pulumi.Input[_builtins.float] size_mebibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeKibibytes " pulumi-lang-dotnet=" SizeKibibytes " pulumi-lang-go=" sizeKibibytes " pulumi-lang-python=" size_kibibytes " pulumi-lang-yaml=" sizeKibibytes " pulumi-lang-java=" sizeKibibytes " pulumi-lang-hcl=" size_kibibytes "> sizeKibibytes </span>or size_gibibytes.*
-        :param pulumi.Input[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict']] source_image_family: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageId " pulumi-lang-dotnet=" SourceImageId " pulumi-lang-go=" sourceImageId " pulumi-lang-python=" source_image_id " pulumi-lang-yaml=" sourceImageId " pulumi-lang-java=" sourceImageId " pulumi-lang-hcl=" source_image_id "> sourceImageId </span>or source_snapshot_id.*
+        :param pulumi.Input[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict', 'outputs.ComputeV1DiskSourceImageFamily']] source_image_family: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageId " pulumi-lang-dotnet=" SourceImageId " pulumi-lang-go=" sourceImageId " pulumi-lang-python=" source_image_id " pulumi-lang-yaml=" sourceImageId " pulumi-lang-java=" sourceImageId " pulumi-lang-hcl=" source_image_id "> sourceImageId </span>or source_snapshot_id.*
         :param pulumi.Input[_builtins.str] source_image_id: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageFamily " pulumi-lang-dotnet=" SourceImageFamily " pulumi-lang-go=" sourceImageFamily " pulumi-lang-python=" source_image_family " pulumi-lang-yaml=" sourceImageFamily " pulumi-lang-java=" sourceImageFamily " pulumi-lang-hcl=" source_image_family "> sourceImageFamily </span>or source_snapshot_id.*
         :param pulumi.Input[_builtins.str] source_snapshot_id: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageId " pulumi-lang-dotnet=" SourceImageId " pulumi-lang-go=" sourceImageId " pulumi-lang-python=" source_image_id " pulumi-lang-yaml=" sourceImageId " pulumi-lang-java=" sourceImageId " pulumi-lang-hcl=" source_image_id "> sourceImageId </span>or source_image_family.*
         :param pulumi.Input[_builtins.str] type: :
@@ -795,17 +795,17 @@ class ComputeV1Disk(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
-                 disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict']]] = None,
+                 disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict', 'outputs.ComputeV1DiskDiskEncryption']]] = None,
                  forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict', 'outputs.ComputeV1DiskMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_gibibytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_kibibytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_mebibytes: pulumi.Input[Optional[_builtins.float]] = None,
-                 source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict']]] = None,
+                 source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict', 'outputs.ComputeV1DiskSourceImageFamily']]] = None,
                  source_image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -853,11 +853,11 @@ class ComputeV1Disk(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict']]] = None,
+            disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict', 'outputs.ComputeV1DiskDiskEncryption']]] = None,
             forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict', 'outputs.ComputeV1DiskMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
@@ -865,10 +865,10 @@ class ComputeV1Disk(pulumi.CustomResource):
             size_gibibytes: pulumi.Input[Optional[_builtins.float]] = None,
             size_kibibytes: pulumi.Input[Optional[_builtins.float]] = None,
             size_mebibytes: pulumi.Input[Optional[_builtins.float]] = None,
-            source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict']]] = None,
+            source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict', 'outputs.ComputeV1DiskSourceImageFamily']]] = None,
             source_image_id: pulumi.Input[Optional[_builtins.str]] = None,
             source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['ComputeV1DiskStatusArgs', 'ComputeV1DiskStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1DiskStatusArgs', 'ComputeV1DiskStatusArgsDict', 'outputs.ComputeV1DiskStatus']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeV1Disk':
         """
@@ -888,11 +888,11 @@ class ComputeV1Disk(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict']] disk_encryption: Defines how data on the disk is encrypted. By default, no encryption is applied.
+        :param pulumi.Input[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict', 'outputs.ComputeV1DiskDiskEncryption']] disk_encryption: Defines how data on the disk is encrypted. By default, no encryption is applied.
         :param pulumi.Input[_builtins.bool] forbid_deletion: Prevents deletion whilst set
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict', 'outputs.ComputeV1DiskMetadata']] metadata: :
                
                #### Inner value description
                
@@ -909,7 +909,7 @@ class ComputeV1Disk(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] size_gibibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeKibibytes " pulumi-lang-dotnet=" SizeKibibytes " pulumi-lang-go=" sizeKibibytes " pulumi-lang-python=" size_kibibytes " pulumi-lang-yaml=" sizeKibibytes " pulumi-lang-java=" sizeKibibytes " pulumi-lang-hcl=" size_kibibytes "> sizeKibibytes </span>or size_mebibytes.*
         :param pulumi.Input[_builtins.float] size_kibibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeMebibytes " pulumi-lang-dotnet=" SizeMebibytes " pulumi-lang-go=" sizeMebibytes " pulumi-lang-python=" size_mebibytes " pulumi-lang-yaml=" sizeMebibytes " pulumi-lang-java=" sizeMebibytes " pulumi-lang-hcl=" size_mebibytes "> sizeMebibytes </span>or size_gibibytes.*
         :param pulumi.Input[_builtins.float] size_mebibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeKibibytes " pulumi-lang-dotnet=" SizeKibibytes " pulumi-lang-go=" sizeKibibytes " pulumi-lang-python=" size_kibibytes " pulumi-lang-yaml=" sizeKibibytes " pulumi-lang-java=" sizeKibibytes " pulumi-lang-hcl=" size_kibibytes "> sizeKibibytes </span>or size_gibibytes.*
-        :param pulumi.Input[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict']] source_image_family: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageId " pulumi-lang-dotnet=" SourceImageId " pulumi-lang-go=" sourceImageId " pulumi-lang-python=" source_image_id " pulumi-lang-yaml=" sourceImageId " pulumi-lang-java=" sourceImageId " pulumi-lang-hcl=" source_image_id "> sourceImageId </span>or source_snapshot_id.*
+        :param pulumi.Input[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict', 'outputs.ComputeV1DiskSourceImageFamily']] source_image_family: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageId " pulumi-lang-dotnet=" SourceImageId " pulumi-lang-go=" sourceImageId " pulumi-lang-python=" source_image_id " pulumi-lang-yaml=" sourceImageId " pulumi-lang-java=" sourceImageId " pulumi-lang-hcl=" source_image_id "> sourceImageId </span>or source_snapshot_id.*
         :param pulumi.Input[_builtins.str] source_image_id: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageFamily " pulumi-lang-dotnet=" SourceImageFamily " pulumi-lang-go=" sourceImageFamily " pulumi-lang-python=" source_image_family " pulumi-lang-yaml=" sourceImageFamily " pulumi-lang-java=" sourceImageFamily " pulumi-lang-hcl=" source_image_family "> sourceImageFamily </span>or source_snapshot_id.*
         :param pulumi.Input[_builtins.str] source_snapshot_id: *Cannot be set alongside<span pulumi-lang-nodejs=" sourceImageId " pulumi-lang-dotnet=" SourceImageId " pulumi-lang-go=" sourceImageId " pulumi-lang-python=" source_image_id " pulumi-lang-yaml=" sourceImageId " pulumi-lang-java=" sourceImageId " pulumi-lang-hcl=" source_image_id "> sourceImageId </span>or source_image_family.*
         :param pulumi.Input[_builtins.str] type: :

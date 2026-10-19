@@ -26,6 +26,7 @@ class ComputeV1InstanceArgs:
                  resources: pulumi.Input['ComputeV1InstanceResourcesArgs'],
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
                  filesystems: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceFilesystemArgs']]]] = None,
+                 follows_spot_price: pulumi.Input[Optional['ComputeV1InstanceFollowsSpotPriceArgs']] = None,
                  gpu_cluster: pulumi.Input[Optional['ComputeV1InstanceGpuClusterArgs']] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -33,12 +34,14 @@ class ComputeV1InstanceArgs:
                  metadata: pulumi.Input[Optional['ComputeV1InstanceMetadataArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_demand: pulumi.Input[Optional['ComputeV1InstanceOnDemandArgs']] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  preemptible: pulumi.Input[Optional['ComputeV1InstancePreemptibleArgs']] = None,
                  recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
                  reservation_policy: pulumi.Input[Optional['ComputeV1InstanceReservationPolicyArgs']] = None,
                  secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceSecondaryDiskArgs']]]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spot_pricing_policy: pulumi.Input[Optional['ComputeV1InstanceSpotPricingPolicyArgs']] = None,
                  stopped: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ComputeV1Instance resource.
@@ -60,6 +63,11 @@ class ComputeV1InstanceArgs:
                   Data in cloud-init format for customizing instance initialization.
                   For details, see https://docs.nebius.com/compute/virtual-machines/manage#user-data
         :param pulumi.Input[Sequence[pulumi.Input['ComputeV1InstanceFilesystemArgs']]] filesystems: List of Shared Filesystems attached to the instance.
+        :param pulumi.Input['ComputeV1InstanceFollowsSpotPriceArgs'] follows_spot_price: :
+               
+                  The preemptible VM accepts the current spot price.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
         :param pulumi.Input['ComputeV1InstanceGpuClusterArgs'] gpu_cluster: :
                
                   If you want to interconnect several instances in a GPU cluster via NVIDIA InfiniBand,
@@ -86,11 +94,18 @@ class ComputeV1InstanceArgs:
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
+        :param pulumi.Input['ComputeV1InstanceOnDemandArgs'] on_demand: :
+               
+                  A regular, non-preemptible VM.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['ComputeV1InstancePreemptibleArgs'] preemptible: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -114,6 +129,12 @@ class ComputeV1InstanceArgs:
                
                   Unique identifier of the service account associated with this instance.
                   For details, see https://docs.nebius.com/iam/service-accounts/manage
+        :param pulumi.Input['ComputeV1InstanceSpotPricingPolicyArgs'] spot_pricing_policy: :
+               
+                  The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+                  pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
         :param pulumi.Input[_builtins.bool] stopped: Indicates whether the instance should be stopped.
         """
         pulumi.set(__self__, "boot_disk", boot_disk)
@@ -123,6 +144,8 @@ class ComputeV1InstanceArgs:
             pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
         if filesystems is not None:
             pulumi.set(__self__, "filesystems", filesystems)
+        if follows_spot_price is not None:
+            pulumi.set(__self__, "follows_spot_price", follows_spot_price)
         if gpu_cluster is not None:
             pulumi.set(__self__, "gpu_cluster", gpu_cluster)
         if hostname is not None:
@@ -137,6 +160,8 @@ class ComputeV1InstanceArgs:
             pulumi.set(__self__, "name", name)
         if nvl_instance_group_id is not None:
             pulumi.set(__self__, "nvl_instance_group_id", nvl_instance_group_id)
+        if on_demand is not None:
+            pulumi.set(__self__, "on_demand", on_demand)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
         if preemptible is not None:
@@ -149,6 +174,8 @@ class ComputeV1InstanceArgs:
             pulumi.set(__self__, "secondary_disks", secondary_disks)
         if service_account_id is not None:
             pulumi.set(__self__, "service_account_id", service_account_id)
+        if spot_pricing_policy is not None:
+            pulumi.set(__self__, "spot_pricing_policy", spot_pricing_policy)
         if stopped is not None:
             pulumi.set(__self__, "stopped", stopped)
 
@@ -223,6 +250,22 @@ class ComputeV1InstanceArgs:
     @filesystems.setter
     def filesystems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceFilesystemArgs']]]]):
         pulumi.set(self, "filesystems", value)
+
+    @_builtins.property
+    @pulumi.getter(name="followsSpotPrice")
+    def follows_spot_price(self) -> pulumi.Input[Optional['ComputeV1InstanceFollowsSpotPriceArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "follows_spot_price")
+
+    @follows_spot_price.setter
+    def follows_spot_price(self, value: pulumi.Input[Optional['ComputeV1InstanceFollowsSpotPriceArgs']]):
+        pulumi.set(self, "follows_spot_price", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuCluster")
@@ -328,6 +371,22 @@ class ComputeV1InstanceArgs:
         pulumi.set(self, "nvl_instance_group_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="onDemand")
+    def on_demand(self) -> pulumi.Input[Optional['ComputeV1InstanceOnDemandArgs']]:
+        """
+        :
+
+           A regular, non-preemptible VM.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "on_demand")
+
+    @on_demand.setter
+    def on_demand(self, value: pulumi.Input[Optional['ComputeV1InstanceOnDemandArgs']]):
+        pulumi.set(self, "on_demand", value)
+
+    @_builtins.property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -345,8 +404,10 @@ class ComputeV1InstanceArgs:
         """
         :
 
-           Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+           Set this field to create a preemptible VM, or omit it to create a regular VM.
            For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+           A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+           VM was created without it, the field cannot be added later.
         """
         return pulumi.get(self, "preemptible")
 
@@ -420,6 +481,23 @@ class ComputeV1InstanceArgs:
         pulumi.set(self, "service_account_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="spotPricingPolicy")
+    def spot_pricing_policy(self) -> pulumi.Input[Optional['ComputeV1InstanceSpotPricingPolicyArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+           pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+        """
+        return pulumi.get(self, "spot_pricing_policy")
+
+    @spot_pricing_policy.setter
+    def spot_pricing_policy(self, value: pulumi.Input[Optional['ComputeV1InstanceSpotPricingPolicyArgs']]):
+        pulumi.set(self, "spot_pricing_policy", value)
+
+    @_builtins.property
     @pulumi.getter
     def stopped(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -439,6 +517,7 @@ class _ComputeV1InstanceState:
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
                  created_at: pulumi.Input[Optional[_builtins.str]] = None,
                  filesystems: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceFilesystemArgs']]]] = None,
+                 follows_spot_price: pulumi.Input[Optional['ComputeV1InstanceFollowsSpotPriceArgs']] = None,
                  gpu_cluster: pulumi.Input[Optional['ComputeV1InstanceGpuClusterArgs']] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -448,6 +527,7 @@ class _ComputeV1InstanceState:
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceArgs']]]] = None,
                  nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_demand: pulumi.Input[Optional['ComputeV1InstanceOnDemandArgs']] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  preemptible: pulumi.Input[Optional['ComputeV1InstancePreemptibleArgs']] = None,
                  recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
@@ -456,6 +536,7 @@ class _ComputeV1InstanceState:
                  resources: pulumi.Input[Optional['ComputeV1InstanceResourcesArgs']] = None,
                  secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceSecondaryDiskArgs']]]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spot_pricing_policy: pulumi.Input[Optional['ComputeV1InstanceSpotPricingPolicyArgs']] = None,
                  status: pulumi.Input[Optional['ComputeV1InstanceStatusArgs']] = None,
                  stopped: pulumi.Input[Optional[_builtins.bool]] = None,
                  updated_at: pulumi.Input[Optional[_builtins.str]] = None):
@@ -473,6 +554,11 @@ class _ComputeV1InstanceState:
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Sequence[pulumi.Input['ComputeV1InstanceFilesystemArgs']]] filesystems: List of Shared Filesystems attached to the instance.
+        :param pulumi.Input['ComputeV1InstanceFollowsSpotPriceArgs'] follows_spot_price: :
+               
+                  The preemptible VM accepts the current spot price.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
         :param pulumi.Input['ComputeV1InstanceGpuClusterArgs'] gpu_cluster: :
                
                   If you want to interconnect several instances in a GPU cluster via NVIDIA InfiniBand,
@@ -507,11 +593,18 @@ class _ComputeV1InstanceState:
                
                   Describes the specification of a network interface.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
+        :param pulumi.Input['ComputeV1InstanceOnDemandArgs'] on_demand: :
+               
+                  A regular, non-preemptible VM.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['ComputeV1InstancePreemptibleArgs'] preemptible: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -545,6 +638,12 @@ class _ComputeV1InstanceState:
                
                   Unique identifier of the service account associated with this instance.
                   For details, see https://docs.nebius.com/iam/service-accounts/manage
+        :param pulumi.Input['ComputeV1InstanceSpotPricingPolicyArgs'] spot_pricing_policy: :
+               
+                  The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+                  pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
         :param pulumi.Input[_builtins.bool] stopped: Indicates whether the instance should be stopped.
         :param pulumi.Input[_builtins.str] updated_at: :
                
@@ -560,6 +659,8 @@ class _ComputeV1InstanceState:
             pulumi.set(__self__, "created_at", created_at)
         if filesystems is not None:
             pulumi.set(__self__, "filesystems", filesystems)
+        if follows_spot_price is not None:
+            pulumi.set(__self__, "follows_spot_price", follows_spot_price)
         if gpu_cluster is not None:
             pulumi.set(__self__, "gpu_cluster", gpu_cluster)
         if hostname is not None:
@@ -578,6 +679,8 @@ class _ComputeV1InstanceState:
             pulumi.set(__self__, "network_interfaces", network_interfaces)
         if nvl_instance_group_id is not None:
             pulumi.set(__self__, "nvl_instance_group_id", nvl_instance_group_id)
+        if on_demand is not None:
+            pulumi.set(__self__, "on_demand", on_demand)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
         if preemptible is not None:
@@ -594,6 +697,8 @@ class _ComputeV1InstanceState:
             pulumi.set(__self__, "secondary_disks", secondary_disks)
         if service_account_id is not None:
             pulumi.set(__self__, "service_account_id", service_account_id)
+        if spot_pricing_policy is not None:
+            pulumi.set(__self__, "spot_pricing_policy", spot_pricing_policy)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if stopped is not None:
@@ -655,6 +760,22 @@ class _ComputeV1InstanceState:
     @filesystems.setter
     def filesystems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceFilesystemArgs']]]]):
         pulumi.set(self, "filesystems", value)
+
+    @_builtins.property
+    @pulumi.getter(name="followsSpotPrice")
+    def follows_spot_price(self) -> pulumi.Input[Optional['ComputeV1InstanceFollowsSpotPriceArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "follows_spot_price")
+
+    @follows_spot_price.setter
+    def follows_spot_price(self, value: pulumi.Input[Optional['ComputeV1InstanceFollowsSpotPriceArgs']]):
+        pulumi.set(self, "follows_spot_price", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuCluster")
@@ -790,6 +911,22 @@ class _ComputeV1InstanceState:
         pulumi.set(self, "nvl_instance_group_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="onDemand")
+    def on_demand(self) -> pulumi.Input[Optional['ComputeV1InstanceOnDemandArgs']]:
+        """
+        :
+
+           A regular, non-preemptible VM.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "on_demand")
+
+    @on_demand.setter
+    def on_demand(self, value: pulumi.Input[Optional['ComputeV1InstanceOnDemandArgs']]):
+        pulumi.set(self, "on_demand", value)
+
+    @_builtins.property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -807,8 +944,10 @@ class _ComputeV1InstanceState:
         """
         :
 
-           Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+           Set this field to create a preemptible VM, or omit it to create a regular VM.
            For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+           A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+           VM was created without it, the field cannot be added later.
         """
         return pulumi.get(self, "preemptible")
 
@@ -914,6 +1053,23 @@ class _ComputeV1InstanceState:
         pulumi.set(self, "service_account_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="spotPricingPolicy")
+    def spot_pricing_policy(self) -> pulumi.Input[Optional['ComputeV1InstanceSpotPricingPolicyArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+           pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+        """
+        return pulumi.get(self, "spot_pricing_policy")
+
+    @spot_pricing_policy.setter
+    def spot_pricing_policy(self, value: pulumi.Input[Optional['ComputeV1InstanceSpotPricingPolicyArgs']]):
+        pulumi.set(self, "spot_pricing_policy", value)
+
+    @_builtins.property
     @pulumi.getter
     def status(self) -> pulumi.Input[Optional['ComputeV1InstanceStatusArgs']]:
         return pulumi.get(self, "status")
@@ -957,24 +1113,27 @@ class ComputeV1Instance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']]] = None,
+                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
-                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]]] = None,
-                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']]] = None,
+                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+                 follows_spot_price: pulumi.Input[Optional[Union['ComputeV1InstanceFollowsSpotPriceArgs', 'ComputeV1InstanceFollowsSpotPriceArgsDict', 'outputs.ComputeV1InstanceFollowsSpotPrice']]] = None,
+                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']]] = None,
+                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
                  nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_demand: pulumi.Input[Optional[Union['ComputeV1InstanceOnDemandArgs', 'ComputeV1InstanceOnDemandArgsDict', 'outputs.ComputeV1InstanceOnDemand']]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']]] = None,
+                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
                  recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict']]] = None,
-                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']]] = None,
-                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]]] = None,
+                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
+                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spot_pricing_policy: pulumi.Input[Optional[Union['ComputeV1InstanceSpotPricingPolicyArgs', 'ComputeV1InstanceSpotPricingPolicyArgsDict', 'outputs.ComputeV1InstanceSpotPricingPolicy']]] = None,
                  stopped: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -982,13 +1141,18 @@ class ComputeV1Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']] boot_disk: Specified boot disk attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']] boot_disk: Specified boot disk attached to the instance.
         :param pulumi.Input[_builtins.str] cloud_init_user_data: :
                
                   Data in cloud-init format for customizing instance initialization.
                   For details, see https://docs.nebius.com/compute/virtual-machines/manage#user-data
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]] filesystems: List of Shared Filesystems attached to the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']] gpu_cluster: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]] filesystems: List of Shared Filesystems attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceFollowsSpotPriceArgs', 'ComputeV1InstanceFollowsSpotPriceArgsDict', 'outputs.ComputeV1InstanceFollowsSpotPrice']] follows_spot_price: :
+               
+                  The preemptible VM accepts the current spot price.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']] gpu_cluster: :
                
                   If you want to interconnect several instances in a GPU cluster via NVIDIA InfiniBand,
                   set the ID of an existing GPU cluster.
@@ -999,7 +1163,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Instance's hostname. Used to generate default DNS record in format `<hostname>.<network_id>.compute.internal.`
                   or `<instance_id>.<network_id>.compute.internal.` if hostname is not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']] local_disks: :
+        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']] local_disks: :
                
                   Local disks are meaningfully different from regular (remote) disks:
                   they are provided by the underlying host and are tied to a particular VM run.
@@ -1007,13 +1171,13 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Local disks are not provided by default. To get them, explicitly request them via this field.
                   Availability depends on the selected platform, preset and region.
                   Changing this field will result in disks change and content loss, but only after stop and start the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]] network_interfaces: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
                
@@ -1021,11 +1185,18 @@ class ComputeV1Instance(pulumi.CustomResource):
                
                   Describes the specification of a network interface.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
-        :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']] preemptible: :
+        :param pulumi.Input[Union['ComputeV1InstanceOnDemandArgs', 'ComputeV1InstanceOnDemandArgsDict', 'outputs.ComputeV1InstanceOnDemand']] on_demand: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  A regular, non-preemptible VM.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
+        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']] preemptible: :
+               
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -1044,15 +1215,21 @@ class ComputeV1Instance(pulumi.CustomResource):
                   - `RECOVER`
                   - `FAIL`
                   - `ALWAYS`
-        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']] resources: :
+        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']] resources: :
                
                   Specification of compute resources allocated to the instance.
                   For details, see https://docs.nebius.com/compute/virtual-machines/types
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
         :param pulumi.Input[_builtins.str] service_account_id: :
                
                   Unique identifier of the service account associated with this instance.
                   For details, see https://docs.nebius.com/iam/service-accounts/manage
+        :param pulumi.Input[Union['ComputeV1InstanceSpotPricingPolicyArgs', 'ComputeV1InstanceSpotPricingPolicyArgsDict', 'outputs.ComputeV1InstanceSpotPricingPolicy']] spot_pricing_policy: :
+               
+                  The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+                  pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
         :param pulumi.Input[_builtins.bool] stopped: Indicates whether the instance should be stopped.
         """
         ...
@@ -1079,24 +1256,27 @@ class ComputeV1Instance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']]] = None,
+                 boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
-                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]]] = None,
-                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']]] = None,
+                 filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+                 follows_spot_price: pulumi.Input[Optional[Union['ComputeV1InstanceFollowsSpotPriceArgs', 'ComputeV1InstanceFollowsSpotPriceArgsDict', 'outputs.ComputeV1InstanceFollowsSpotPrice']]] = None,
+                 gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
                  hostname: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']]] = None,
+                 local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
                  nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_demand: pulumi.Input[Optional[Union['ComputeV1InstanceOnDemandArgs', 'ComputeV1InstanceOnDemandArgsDict', 'outputs.ComputeV1InstanceOnDemand']]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']]] = None,
+                 preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
                  recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
-                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict']]] = None,
-                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']]] = None,
-                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]]] = None,
+                 reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
+                 resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+                 secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spot_pricing_policy: pulumi.Input[Optional[Union['ComputeV1InstanceSpotPricingPolicyArgs', 'ComputeV1InstanceSpotPricingPolicyArgsDict', 'outputs.ComputeV1InstanceSpotPricingPolicy']]] = None,
                  stopped: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1112,6 +1292,7 @@ class ComputeV1Instance(pulumi.CustomResource):
             __props__.__dict__["boot_disk"] = boot_disk
             __props__.__dict__["cloud_init_user_data"] = None if cloud_init_user_data is None else pulumi.Output.secret(cloud_init_user_data)
             __props__.__dict__["filesystems"] = filesystems
+            __props__.__dict__["follows_spot_price"] = follows_spot_price
             __props__.__dict__["gpu_cluster"] = gpu_cluster
             __props__.__dict__["hostname"] = hostname
             __props__.__dict__["labels"] = labels
@@ -1122,6 +1303,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'network_interfaces'")
             __props__.__dict__["network_interfaces"] = network_interfaces
             __props__.__dict__["nvl_instance_group_id"] = nvl_instance_group_id
+            __props__.__dict__["on_demand"] = on_demand
             __props__.__dict__["parent_id"] = parent_id
             __props__.__dict__["preemptible"] = preemptible
             __props__.__dict__["recovery_policy"] = recovery_policy
@@ -1131,6 +1313,7 @@ class ComputeV1Instance(pulumi.CustomResource):
             __props__.__dict__["resources"] = resources
             __props__.__dict__["secondary_disks"] = secondary_disks
             __props__.__dict__["service_account_id"] = service_account_id
+            __props__.__dict__["spot_pricing_policy"] = spot_pricing_policy
             __props__.__dict__["stopped"] = stopped
             __props__.__dict__["created_at"] = None
             __props__.__dict__["labels_all"] = None
@@ -1150,28 +1333,31 @@ class ComputeV1Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']]] = None,
+            boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
             cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]]] = None,
-            gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']]] = None,
+            filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+            follows_spot_price: pulumi.Input[Optional[Union['ComputeV1InstanceFollowsSpotPriceArgs', 'ComputeV1InstanceFollowsSpotPriceArgsDict', 'outputs.ComputeV1InstanceFollowsSpotPrice']]] = None,
+            gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
             hostname: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']]] = None,
-            metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']]] = None,
+            local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]]] = None,
+            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
             nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            on_demand: pulumi.Input[Optional[Union['ComputeV1InstanceOnDemandArgs', 'ComputeV1InstanceOnDemandArgsDict', 'outputs.ComputeV1InstanceOnDemand']]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-            preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']]] = None,
+            preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
             recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
-            reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict']]] = None,
+            reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']]] = None,
-            secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]]] = None,
+            resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+            secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
             service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[Union['ComputeV1InstanceStatusArgs', 'ComputeV1InstanceStatusArgsDict']]] = None,
+            spot_pricing_policy: pulumi.Input[Optional[Union['ComputeV1InstanceSpotPricingPolicyArgs', 'ComputeV1InstanceSpotPricingPolicyArgsDict', 'outputs.ComputeV1InstanceSpotPricingPolicy']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1InstanceStatusArgs', 'ComputeV1InstanceStatusArgsDict', 'outputs.ComputeV1InstanceStatus']]] = None,
             stopped: pulumi.Input[Optional[_builtins.bool]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeV1Instance':
         """
@@ -1181,7 +1367,7 @@ class ComputeV1Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict']] boot_disk: Specified boot disk attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']] boot_disk: Specified boot disk attached to the instance.
         :param pulumi.Input[_builtins.str] cloud_init_user_data: :
                
                   Data in cloud-init format for customizing instance initialization.
@@ -1191,8 +1377,13 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict']]]] filesystems: List of Shared Filesystems attached to the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict']] gpu_cluster: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]] filesystems: List of Shared Filesystems attached to the instance.
+        :param pulumi.Input[Union['ComputeV1InstanceFollowsSpotPriceArgs', 'ComputeV1InstanceFollowsSpotPriceArgsDict', 'outputs.ComputeV1InstanceFollowsSpotPrice']] follows_spot_price: :
+               
+                  The preemptible VM accepts the current spot price.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        :param pulumi.Input[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']] gpu_cluster: :
                
                   If you want to interconnect several instances in a GPU cluster via NVIDIA InfiniBand,
                   set the ID of an existing GPU cluster.
@@ -1204,7 +1395,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                   or `<instance_id>.<network_id>.compute.internal.` if hostname is not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict']] local_disks: :
+        :param pulumi.Input[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']] local_disks: :
                
                   Local disks are meaningfully different from regular (remote) disks:
                   they are provided by the underlying host and are tied to a particular VM run.
@@ -1212,13 +1403,13 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Local disks are not provided by default. To get them, explicitly request them via this field.
                   Availability depends on the selected platform, preset and region.
                   Changing this field will result in disks change and content loss, but only after stop and start the instance.
-        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']] metadata: :
                
                #### Inner value description
                
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict']]]] network_interfaces: :
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
                
@@ -1226,11 +1417,18 @@ class ComputeV1Instance(pulumi.CustomResource):
                
                   Describes the specification of a network interface.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
-        :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict']] preemptible: :
+        :param pulumi.Input[Union['ComputeV1InstanceOnDemandArgs', 'ComputeV1InstanceOnDemandArgsDict', 'outputs.ComputeV1InstanceOnDemand']] on_demand: :
                
-                  Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+                  A regular, non-preemptible VM.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
+        :param pulumi.Input[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']] preemptible: :
+               
+                  Set this field to create a preemptible VM, or omit it to create a regular VM.
                   For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+                  A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+                  VM was created without it, the field cannot be added later.
         :param pulumi.Input[_builtins.str] recovery_policy: :
                
                   Recovery policy defines how the instance will be treated in case of a failure.
@@ -1255,15 +1453,21 @@ class ComputeV1Instance(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict']] resources: :
+        :param pulumi.Input[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']] resources: :
                
                   Specification of compute resources allocated to the instance.
                   For details, see https://docs.nebius.com/compute/virtual-machines/types
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]] secondary_disks: List of additional data disks attached to the instance beyond the boot disk.
         :param pulumi.Input[_builtins.str] service_account_id: :
                
                   Unique identifier of the service account associated with this instance.
                   For details, see https://docs.nebius.com/iam/service-accounts/manage
+        :param pulumi.Input[Union['ComputeV1InstanceSpotPricingPolicyArgs', 'ComputeV1InstanceSpotPricingPolicyArgsDict', 'outputs.ComputeV1InstanceSpotPricingPolicy']] spot_pricing_policy: :
+               
+                  The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+                  pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
         :param pulumi.Input[_builtins.bool] stopped: Indicates whether the instance should be stopped.
         :param pulumi.Input[_builtins.str] updated_at: :
                
@@ -1279,6 +1483,7 @@ class ComputeV1Instance(pulumi.CustomResource):
         __props__.__dict__["cloud_init_user_data"] = cloud_init_user_data
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["filesystems"] = filesystems
+        __props__.__dict__["follows_spot_price"] = follows_spot_price
         __props__.__dict__["gpu_cluster"] = gpu_cluster
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["labels"] = labels
@@ -1288,6 +1493,7 @@ class ComputeV1Instance(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["network_interfaces"] = network_interfaces
         __props__.__dict__["nvl_instance_group_id"] = nvl_instance_group_id
+        __props__.__dict__["on_demand"] = on_demand
         __props__.__dict__["parent_id"] = parent_id
         __props__.__dict__["preemptible"] = preemptible
         __props__.__dict__["recovery_policy"] = recovery_policy
@@ -1296,6 +1502,7 @@ class ComputeV1Instance(pulumi.CustomResource):
         __props__.__dict__["resources"] = resources
         __props__.__dict__["secondary_disks"] = secondary_disks
         __props__.__dict__["service_account_id"] = service_account_id
+        __props__.__dict__["spot_pricing_policy"] = spot_pricing_policy
         __props__.__dict__["status"] = status
         __props__.__dict__["stopped"] = stopped
         __props__.__dict__["updated_at"] = updated_at
@@ -1339,6 +1546,18 @@ class ComputeV1Instance(pulumi.CustomResource):
         List of Shared Filesystems attached to the instance.
         """
         return pulumi.get(self, "filesystems")
+
+    @_builtins.property
+    @pulumi.getter(name="followsSpotPrice")
+    def follows_spot_price(self) -> pulumi.Output[Optional['outputs.ComputeV1InstanceFollowsSpotPrice']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "follows_spot_price")
 
     @_builtins.property
     @pulumi.getter(name="gpuCluster")
@@ -1438,6 +1657,18 @@ class ComputeV1Instance(pulumi.CustomResource):
         return pulumi.get(self, "nvl_instance_group_id")
 
     @_builtins.property
+    @pulumi.getter(name="onDemand")
+    def on_demand(self) -> pulumi.Output[Optional['outputs.ComputeV1InstanceOnDemand']]:
+        """
+        :
+
+           A regular, non-preemptible VM.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "on_demand")
+
+    @_builtins.property
     @pulumi.getter(name="parentId")
     def parent_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1451,8 +1682,10 @@ class ComputeV1Instance(pulumi.CustomResource):
         """
         :
 
-           Include these parameters to create a Preemptible VM and omit them to create a Regular VM
+           Set this field to create a preemptible VM, or omit it to create a regular VM.
            For details, see https://docs.nebius.com/compute/virtual-machines/preemptible
+           A preemptible VM cannot be converted to a regular VM or vice versa. Once set, this field cannot be removed; if the
+           VM was created without it, the field cannot be added later.
         """
         return pulumi.get(self, "preemptible")
 
@@ -1528,6 +1761,19 @@ class ComputeV1Instance(pulumi.CustomResource):
            For details, see https://docs.nebius.com/iam/service-accounts/manage
         """
         return pulumi.get(self, "service_account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="spotPricingPolicy")
+    def spot_pricing_policy(self) -> pulumi.Output[Optional['outputs.ComputeV1InstanceSpotPricingPolicy']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+           pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+        """
+        return pulumi.get(self, "spot_pricing_policy")
 
     @_builtins.property
     @pulumi.getter

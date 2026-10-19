@@ -396,7 +396,7 @@ class ComputeV1NvlInstanceGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict', 'outputs.ComputeV1NvlInstanceGroupMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size: pulumi.Input[Optional[_builtins.float]] = None,
@@ -408,7 +408,7 @@ class ComputeV1NvlInstanceGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict', 'outputs.ComputeV1NvlInstanceGroupMetadata']] metadata: :
                
                #### Inner value description
                
@@ -454,7 +454,7 @@ class ComputeV1NvlInstanceGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict', 'outputs.ComputeV1NvlInstanceGroupMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size: pulumi.Input[Optional[_builtins.float]] = None,
@@ -495,12 +495,12 @@ class ComputeV1NvlInstanceGroup(pulumi.CustomResource):
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict', 'outputs.ComputeV1NvlInstanceGroupMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
             size: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupStatusArgs', 'ComputeV1NvlInstanceGroupStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1NvlInstanceGroupStatusArgs', 'ComputeV1NvlInstanceGroupStatusArgsDict', 'outputs.ComputeV1NvlInstanceGroupStatus']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeV1NvlInstanceGroup':
         """
@@ -517,7 +517,7 @@ class ComputeV1NvlInstanceGroup(pulumi.CustomResource):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['ComputeV1NvlInstanceGroupMetadataArgs', 'ComputeV1NvlInstanceGroupMetadataArgsDict', 'outputs.ComputeV1NvlInstanceGroupMetadata']] metadata: :
                
                #### Inner value description
                

@@ -57,6 +57,13 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('defaultLabels')
 
     @_builtins.property
+    def disable_preflight_checks(self) -> Optional[bool]:
+        """
+        Disable server-side preflight checks for both plan and apply. Defaults to false. API requests during apply can still fail validation.
+        """
+        return __config__.get_bool('disablePreflightChecks')
+
+    @_builtins.property
     def domain(self) -> Optional[str]:
         """
         custom domain name (overrides domain_env)

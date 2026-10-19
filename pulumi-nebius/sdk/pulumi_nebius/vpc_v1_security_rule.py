@@ -723,10 +723,10 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access: pulumi.Input[Optional[_builtins.str]] = None,
-                 egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict']]] = None,
-                 ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict']]] = None,
+                 egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict', 'outputs.VpcV1SecurityRuleEgress']]] = None,
+                 ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict', 'outputs.VpcV1SecurityRuleIngress']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict', 'outputs.VpcV1SecurityRuleMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  priority: pulumi.Input[Optional[_builtins.float]] = None,
@@ -751,14 +751,14 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                   - `ACCESS_UNSPECIFIED`
                   - `ALLOW`
                   - `DENY`
-        :param pulumi.Input[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict']] egress: :
+        :param pulumi.Input[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict', 'outputs.VpcV1SecurityRuleEgress']] egress: :
                
                #### Inner value description
                
                   Defines match for outgoing traffic.
                
                   *Cannot be set alongside ingress.*
-        :param pulumi.Input[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict']] ingress: :
+        :param pulumi.Input[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict', 'outputs.VpcV1SecurityRuleIngress']] ingress: :
                
                #### Inner value description
                
@@ -766,7 +766,7 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                
                   *Cannot be set alongside egress.*
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict', 'outputs.VpcV1SecurityRuleMetadata']] metadata: :
                
                   `metadata.parent_id` represents the SecurityGroup.
                
@@ -838,10 +838,10 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  access: pulumi.Input[Optional[_builtins.str]] = None,
-                 egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict']]] = None,
-                 ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict']]] = None,
+                 egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict', 'outputs.VpcV1SecurityRuleEgress']]] = None,
+                 ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict', 'outputs.VpcV1SecurityRuleIngress']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict', 'outputs.VpcV1SecurityRuleMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  priority: pulumi.Input[Optional[_builtins.float]] = None,
@@ -888,17 +888,17 @@ class VpcV1SecurityRule(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             access: pulumi.Input[Optional[_builtins.str]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict']]] = None,
-            ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict']]] = None,
+            egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict', 'outputs.VpcV1SecurityRuleEgress']]] = None,
+            ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict', 'outputs.VpcV1SecurityRuleIngress']]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict', 'outputs.VpcV1SecurityRuleMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             priority: pulumi.Input[Optional[_builtins.float]] = None,
             protocol: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['VpcV1SecurityRuleStatusArgs', 'VpcV1SecurityRuleStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1SecurityRuleStatusArgs', 'VpcV1SecurityRuleStatusArgsDict', 'outputs.VpcV1SecurityRuleStatus']]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV1SecurityRule':
         """
@@ -926,14 +926,14 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict']] egress: :
+        :param pulumi.Input[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict', 'outputs.VpcV1SecurityRuleEgress']] egress: :
                
                #### Inner value description
                
                   Defines match for outgoing traffic.
                
                   *Cannot be set alongside ingress.*
-        :param pulumi.Input[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict']] ingress: :
+        :param pulumi.Input[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict', 'outputs.VpcV1SecurityRuleIngress']] ingress: :
                
                #### Inner value description
                
@@ -942,7 +942,7 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                   *Cannot be set alongside egress.*
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict', 'outputs.VpcV1SecurityRuleMetadata']] metadata: :
                
                   `metadata.parent_id` represents the SecurityGroup.
                
@@ -981,7 +981,7 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['VpcV1SecurityRuleStatusArgs', 'VpcV1SecurityRuleStatusArgsDict']] status: Current status of the security rule.
+        :param pulumi.Input[Union['VpcV1SecurityRuleStatusArgs', 'VpcV1SecurityRuleStatusArgsDict', 'outputs.VpcV1SecurityRuleStatus']] status: Current status of the security rule.
         :param pulumi.Input[_builtins.str] type: :
                
                   Type of the rule (STATEFUL or STATELESS)

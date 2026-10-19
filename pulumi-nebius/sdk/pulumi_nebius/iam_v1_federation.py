@@ -418,10 +418,10 @@ class IamV1Federation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict', 'outputs.IamV1FederationMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict']]] = None,
+                 saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']]] = None,
                  user_account_auto_creation: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -431,7 +431,7 @@ class IamV1Federation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] active: Specifies if the federation in active state
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict', 'outputs.IamV1FederationMetadata']] metadata: :
                
                   Federation resource metadata.
                
@@ -440,7 +440,7 @@ class IamV1Federation(pulumi.CustomResource):
                   Common resource metadata.
         :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
-        :param pulumi.Input[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict']] saml_settings: SAML federation settings.
+        :param pulumi.Input[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']] saml_settings: SAML federation settings.
         :param pulumi.Input[_builtins.bool] user_account_auto_creation: :
                
                   If false, users with access to the federation cannot sign in automatically
@@ -472,10 +472,10 @@ class IamV1Federation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict', 'outputs.IamV1FederationMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict']]] = None,
+                 saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']]] = None,
                  user_account_auto_creation: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -513,12 +513,12 @@ class IamV1Federation(pulumi.CustomResource):
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict', 'outputs.IamV1FederationMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict']]] = None,
-            status: pulumi.Input[Optional[Union['IamV1FederationStatusArgs', 'IamV1FederationStatusArgsDict']]] = None,
+            saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']]] = None,
+            status: pulumi.Input[Optional[Union['IamV1FederationStatusArgs', 'IamV1FederationStatusArgsDict', 'outputs.IamV1FederationStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None,
             user_account_auto_creation: pulumi.Input[Optional[_builtins.bool]] = None) -> 'IamV1Federation':
         """
@@ -536,7 +536,7 @@ class IamV1Federation(pulumi.CustomResource):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict', 'outputs.IamV1FederationMetadata']] metadata: :
                
                   Federation resource metadata.
                
@@ -551,8 +551,8 @@ class IamV1Federation(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict']] saml_settings: SAML federation settings.
-        :param pulumi.Input[Union['IamV1FederationStatusArgs', 'IamV1FederationStatusArgsDict']] status: Federation resource status.
+        :param pulumi.Input[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']] saml_settings: SAML federation settings.
+        :param pulumi.Input[Union['IamV1FederationStatusArgs', 'IamV1FederationStatusArgsDict', 'outputs.IamV1FederationStatus']] status: Federation resource status.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.
