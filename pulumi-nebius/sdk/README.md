@@ -33,13 +33,13 @@ pulumi plugin install resource terraform-provider 1.2.1
 ### 3. Install the Python SDK
 
 ```bash
-pip install -e pulumi-nebius/sdk
+pip install pulumi-nebius
 ```
 
-Or from inside `pulumi-nebius/`:
+For local development from a checkout of this repo:
 
 ```bash
-make install
+pip install -e pulumi-nebius/sdk
 ```
 
 ### Verify

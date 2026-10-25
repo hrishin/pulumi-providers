@@ -119,7 +119,7 @@ jobs:
 
             ### How to test
             ```bash
-            pip install -e pulumi-nebius/sdk
+            pip install pulumi-nebius==${{ needs.check-version.outputs.version }}
             cd clusters/nebius-prod/infra && pulumi preview
             ```
           commit-message: "chore(provider): bump pulumi-nebius to ${{ needs.check-version.outputs.version }}"
