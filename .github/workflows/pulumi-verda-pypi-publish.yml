@@ -1,0 +1,53 @@
+name: pulumi-verda PyPI publish
+
+on:
+  # Fired by the `tag-release` job in pulumi-verda-provider.yml once a
+  # version bump lands on main.
+  release:
+    types: [published]
+
+  # Manual dry runs, e.g. to push a build to TestPyPI without cutting a
+  # release: Actions → pulumi-verda PyPI publish → Run workflow.
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Index to publish to"
+        type: choice
+        options: [pypi, testpypi]
+        default: pypi
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'pulumi-verda-v')
+    runs-on: ubuntu-latest
+    # Configure this as a GitHub Environment (Settings -> Environments) with
+    # a PyPI/TestPyPI "Trusted Publisher" pointing at this repo + workflow.
+    # Add required reviewers on the environment for a manual approval gate.
+    environment: ${{ github.event.inputs.target || 'pypi' }}
+    permissions:
+      id-token: write # OIDC trusted publishing -- no PyPI token stored in the repo
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build
+        run: pulumi-verda/scripts/build.sh
+
+      - name: Publish to TestPyPI
+        if: github.event.inputs.target == 'testpypi'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          packages-dir: pulumi-verda/sdk/dist
+
+      - name: Publish to PyPI
+        if: github.event.inputs.target != 'testpypi'
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: pulumi-verda/sdk/dist

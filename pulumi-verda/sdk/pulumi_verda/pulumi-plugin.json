@@ -1,0 +1,10 @@
+{
+  "resource": true,
+  "name": "terraform-provider",
+  "version": "1.2.1",
+  "parameterization": {
+    "name": "verda",
+    "version": "1.1.4",
+    "value": "eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL3ZlcmRhLWNsb3VkL3ZlcmRhIiwidmVyc2lvbiI6IjEuMS40In19"
+  }
+}

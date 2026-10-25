@@ -1,0 +1,29 @@
+[project]
+  name = "pulumi_verda"
+  description = "A Pulumi provider dynamically bridged from verda."
+  license = "MIT"
+  license-files = ["LICENSE"]
+  authors = [{ name = "Hrishikesh Shinde", email = "hello@hrishi.dev" }]
+  classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Build Tools",
+  ]
+  dependencies = ["parver>=0.2.1", "pulumi>=3.165.0,<4.0.0", "semver>=2.8.1", "typing-extensions>=4.11,<5; python_version < \"3.11\""]
+  readme = "README.md"
+  requires-python = ">=3.9"
+  version = "1.1.4"
+  [project.urls]
+    Repository = "https://github.com/hrishin/pulumi-providers"
+    Homepage = "https://github.com/hrishin/pulumi-providers/tree/main/pulumi-verda"
+    "Bug Tracker" = "https://github.com/hrishin/pulumi-providers/issues"
+
+[build-system]
+  requires = ["setuptools>=77.0.3"]
+  build-backend = "setuptools.build_meta"
+
+[tool]
+  [tool.setuptools]
+    [tool.setuptools.package-data]
+      pulumi_verda = ["py.typed", "pulumi-plugin.json"]
