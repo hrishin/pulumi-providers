@@ -96,6 +96,12 @@ Key resource classes:
 | `verda.ServerlessJob` | Serverless job deployment |
 | `verda.ContainerRegistryCredentials` | Private registry credentials for containers |
 
+## Examples
+
+| Example | Description |
+|---|---|
+| [`examples/gpu-instance`](examples/gpu-instance/) | GPU instance with an SSH key, startup script and attached data volume |
+
 ## Regenerating the SDK
 
 To regenerate after an upstream Terraform provider release:

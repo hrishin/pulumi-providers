@@ -24,8 +24,8 @@ class ServerlessJobArgs:
                  compute: pulumi.Input['ServerlessJobComputeArgs'],
                  containers: pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerArgs']]],
                  scaling: pulumi.Input['ServerlessJobScalingArgs'],
-                 container_registry_settings: Optional[pulumi.Input['ServerlessJobContainerRegistrySettingsArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 container_registry_settings: pulumi.Input[Optional['ServerlessJobContainerRegistrySettingsArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServerlessJob resource.
 
@@ -81,39 +81,39 @@ class ServerlessJobArgs:
 
     @_builtins.property
     @pulumi.getter(name="containerRegistrySettings")
-    def container_registry_settings(self) -> Optional[pulumi.Input['ServerlessJobContainerRegistrySettingsArgs']]:
+    def container_registry_settings(self) -> pulumi.Input[Optional['ServerlessJobContainerRegistrySettingsArgs']]:
         """
         Container registry authentication settings
         """
         return pulumi.get(self, "container_registry_settings")
 
     @container_registry_settings.setter
-    def container_registry_settings(self, value: Optional[pulumi.Input['ServerlessJobContainerRegistrySettingsArgs']]):
+    def container_registry_settings(self, value: pulumi.Input[Optional['ServerlessJobContainerRegistrySettingsArgs']]):
         pulumi.set(self, "container_registry_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the serverless job deployment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ServerlessJobState:
     def __init__(__self__, *,
-                 compute: Optional[pulumi.Input['ServerlessJobComputeArgs']] = None,
-                 container_registry_settings: Optional[pulumi.Input['ServerlessJobContainerRegistrySettingsArgs']] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerArgs']]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_base_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaling: Optional[pulumi.Input['ServerlessJobScalingArgs']] = None):
+                 compute: pulumi.Input[Optional['ServerlessJobComputeArgs']] = None,
+                 container_registry_settings: pulumi.Input[Optional['ServerlessJobContainerRegistrySettingsArgs']] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerArgs']]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_base_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling: pulumi.Input[Optional['ServerlessJobScalingArgs']] = None):
         """
         Input properties used for looking up and filtering ServerlessJob resources.
 
@@ -142,86 +142,86 @@ class _ServerlessJobState:
 
     @_builtins.property
     @pulumi.getter
-    def compute(self) -> Optional[pulumi.Input['ServerlessJobComputeArgs']]:
+    def compute(self) -> pulumi.Input[Optional['ServerlessJobComputeArgs']]:
         """
         Compute resources for the job deployment
         """
         return pulumi.get(self, "compute")
 
     @compute.setter
-    def compute(self, value: Optional[pulumi.Input['ServerlessJobComputeArgs']]):
+    def compute(self, value: pulumi.Input[Optional['ServerlessJobComputeArgs']]):
         pulumi.set(self, "compute", value)
 
     @_builtins.property
     @pulumi.getter(name="containerRegistrySettings")
-    def container_registry_settings(self) -> Optional[pulumi.Input['ServerlessJobContainerRegistrySettingsArgs']]:
+    def container_registry_settings(self) -> pulumi.Input[Optional['ServerlessJobContainerRegistrySettingsArgs']]:
         """
         Container registry authentication settings
         """
         return pulumi.get(self, "container_registry_settings")
 
     @container_registry_settings.setter
-    def container_registry_settings(self, value: Optional[pulumi.Input['ServerlessJobContainerRegistrySettingsArgs']]):
+    def container_registry_settings(self, value: pulumi.Input[Optional['ServerlessJobContainerRegistrySettingsArgs']]):
         pulumi.set(self, "container_registry_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def containers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerArgs']]]]:
+    def containers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerArgs']]]]:
         """
         List of containers in the job deployment
         """
         return pulumi.get(self, "containers")
 
     @containers.setter
-    def containers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerArgs']]]]):
+    def containers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerArgs']]]]):
         pulumi.set(self, "containers", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timestamp when the job deployment was created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointBaseUrl")
-    def endpoint_base_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_base_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base URL for the job deployment endpoint
         """
         return pulumi.get(self, "endpoint_base_url")
 
     @endpoint_base_url.setter
-    def endpoint_base_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_base_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_base_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the serverless job deployment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scaling(self) -> Optional[pulumi.Input['ServerlessJobScalingArgs']]:
+    def scaling(self) -> pulumi.Input[Optional['ServerlessJobScalingArgs']]:
         """
         Scaling configuration for the job deployment
         """
         return pulumi.get(self, "scaling")
 
     @scaling.setter
-    def scaling(self, value: Optional[pulumi.Input['ServerlessJobScalingArgs']]):
+    def scaling(self, value: pulumi.Input[Optional['ServerlessJobScalingArgs']]):
         pulumi.set(self, "scaling", value)
 
 
@@ -231,22 +231,22 @@ class ServerlessJob(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute: Optional[pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict']]] = None,
-                 container_registry_settings: Optional[pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict']]] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaling: Optional[pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict']]] = None,
+                 compute: pulumi.Input[Optional[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict', 'outputs.ServerlessJobCompute']]] = None,
+                 container_registry_settings: pulumi.Input[Optional[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict', 'outputs.ServerlessJobContainerRegistrySettings']]] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict', 'outputs.ServerlessJobContainer']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling: pulumi.Input[Optional[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict', 'outputs.ServerlessJobScaling']]] = None,
                  __props__=None):
         """
         Create a ServerlessJob resource with the given unique name, props, and options.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict']] compute: Compute resources for the job deployment
-        :param pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict']] container_registry_settings: Container registry authentication settings
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict']]]] containers: List of containers in the job deployment
+        :param pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict', 'outputs.ServerlessJobCompute']] compute: Compute resources for the job deployment
+        :param pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict', 'outputs.ServerlessJobContainerRegistrySettings']] container_registry_settings: Container registry authentication settings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict', 'outputs.ServerlessJobContainer']]]] containers: List of containers in the job deployment
         :param pulumi.Input[_builtins.str] name: Name of the serverless job deployment
-        :param pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict']] scaling: Scaling configuration for the job deployment
+        :param pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict', 'outputs.ServerlessJobScaling']] scaling: Scaling configuration for the job deployment
         """
         ...
     @overload
@@ -272,11 +272,11 @@ class ServerlessJob(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute: Optional[pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict']]] = None,
-                 container_registry_settings: Optional[pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict']]] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaling: Optional[pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict']]] = None,
+                 compute: pulumi.Input[Optional[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict', 'outputs.ServerlessJobCompute']]] = None,
+                 container_registry_settings: pulumi.Input[Optional[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict', 'outputs.ServerlessJobContainerRegistrySettings']]] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict', 'outputs.ServerlessJobContainer']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling: pulumi.Input[Optional[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict', 'outputs.ServerlessJobScaling']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -310,13 +310,13 @@ class ServerlessJob(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compute: Optional[pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict']]] = None,
-            container_registry_settings: Optional[pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict']]] = None,
-            containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict']]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_base_url: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            scaling: Optional[pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict']]] = None) -> 'ServerlessJob':
+            compute: pulumi.Input[Optional[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict', 'outputs.ServerlessJobCompute']]] = None,
+            container_registry_settings: pulumi.Input[Optional[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict', 'outputs.ServerlessJobContainerRegistrySettings']]] = None,
+            containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict', 'outputs.ServerlessJobContainer']]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_base_url: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scaling: pulumi.Input[Optional[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict', 'outputs.ServerlessJobScaling']]] = None) -> 'ServerlessJob':
         """
         Get an existing ServerlessJob resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -324,13 +324,13 @@ class ServerlessJob(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict']] compute: Compute resources for the job deployment
-        :param pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict']] container_registry_settings: Container registry authentication settings
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict']]]] containers: List of containers in the job deployment
+        :param pulumi.Input[Union['ServerlessJobComputeArgs', 'ServerlessJobComputeArgsDict', 'outputs.ServerlessJobCompute']] compute: Compute resources for the job deployment
+        :param pulumi.Input[Union['ServerlessJobContainerRegistrySettingsArgs', 'ServerlessJobContainerRegistrySettingsArgsDict', 'outputs.ServerlessJobContainerRegistrySettings']] container_registry_settings: Container registry authentication settings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServerlessJobContainerArgs', 'ServerlessJobContainerArgsDict', 'outputs.ServerlessJobContainer']]]] containers: List of containers in the job deployment
         :param pulumi.Input[_builtins.str] created_at: Timestamp when the job deployment was created
         :param pulumi.Input[_builtins.str] endpoint_base_url: Base URL for the job deployment endpoint
         :param pulumi.Input[_builtins.str] name: Name of the serverless job deployment
-        :param pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict']] scaling: Scaling configuration for the job deployment
+        :param pulumi.Input[Union['ServerlessJobScalingArgs', 'ServerlessJobScalingArgsDict', 'outputs.ServerlessJobScaling']] scaling: Scaling configuration for the job deployment
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

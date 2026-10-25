@@ -1,0 +1,7 @@
+name: verda-gpu-instance
+description: Verda GPU instance with an SSH key, startup script and attached data volume
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv

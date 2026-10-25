@@ -21,9 +21,9 @@ class VolumeArgs:
     def __init__(__self__, *,
                  size: pulumi.Input[_builtins.float],
                  type: pulumi.Input[_builtins.str],
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None):
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Volume resource.
 
@@ -68,52 +68,52 @@ class VolumeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location code for the volume (defaults to FIN-01)
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the volume
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="onSpotDiscontinue")
-    def on_spot_discontinue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_spot_discontinue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
         """
         return pulumi.get(self, "on_spot_discontinue")
 
     @on_spot_discontinue.setter
-    def on_spot_discontinue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_spot_discontinue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_spot_discontinue", value)
 
 
 @pulumi.input_type
 class _VolumeState:
     def __init__(__self__, *,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.float]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.float]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Volume resources.
 
@@ -145,98 +145,98 @@ class _VolumeState:
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation timestamp
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the instance this volume is attached to
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location code for the volume (defaults to FIN-01)
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the volume
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="onSpotDiscontinue")
-    def on_spot_discontinue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_spot_discontinue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
         """
         return pulumi.get(self, "on_spot_discontinue")
 
     @on_spot_discontinue.setter
-    def on_spot_discontinue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_spot_discontinue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_spot_discontinue", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size of the volume in GB
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current status of the volume
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the volume
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -246,11 +246,11 @@ class Volume(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.float]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.float]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a Volume resource with the given unique name, props, and options.
@@ -287,11 +287,11 @@ class Volume(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None,
-                 size: Optional[pulumi.Input[_builtins.float]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.float]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -324,14 +324,14 @@ class Volume(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            location: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None,
-            size: Optional[pulumi.Input[_builtins.float]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'Volume':
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None,
+            size: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Volume':
         """
         Get an existing Volume resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
