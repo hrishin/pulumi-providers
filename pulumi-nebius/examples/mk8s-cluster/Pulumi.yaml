@@ -1,0 +1,14 @@
+name: nebius-mk8s-cluster
+description: Nebius Managed Kubernetes cluster with a CPU node group and an optional GPU node group
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  projectId:
+    type: string
+    description: Nebius project ID (project-...)
+  subnetId:
+    type: string
+    description: Existing VPC subnet ID (vpcsubnet-...)

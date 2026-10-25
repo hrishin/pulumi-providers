@@ -112,6 +112,12 @@ Key resource classes:
 | `nebius.ComputeV1Instance` | Compute instance |
 | `nebius.ComputeV1GpuCluster` | GPU cluster |
 
+## Examples
+
+| Example | Description |
+|---|---|
+| [`examples/mk8s-cluster`](examples/mk8s-cluster/) | Managed Kubernetes cluster with a CPU node group and an optional GPU node group |
+
 ## Regenerating the SDK
 
 To regenerate after an upstream Terraform provider release:
