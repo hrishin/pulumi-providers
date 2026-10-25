@@ -325,7 +325,7 @@ def get_plugin_download_url():
 	return None
 
 def get_version():
-    return "0.6.72"
+    return "0.6.73"
 
 async def get_package() -> str:
 	return await pulumi.runtime.register_package(
@@ -334,6 +334,6 @@ async def get_package() -> str:
 		base_provider_download_url=get_plugin_download_url() or "",
 		package_name="nebius",
 		package_version=get_version(),
-		base64_parameter="eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL25lYml1cy9uZWJpdXMiLCJ2ZXJzaW9uIjoiMC42LjcyIn19",
+		base64_parameter="eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL25lYml1cy9uZWJpdXMiLCJ2ZXJzaW9uIjoiMC42LjczIn19",
 	)
 	

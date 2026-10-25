@@ -4,7 +4,7 @@
   "version": "1.5.0",
   "parameterization": {
     "name": "nebius",
-    "version": "0.6.72",
-    "value": "eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL25lYml1cy9uZWJpdXMiLCJ2ZXJzaW9uIjoiMC42LjcyIn19"
+    "version": "0.6.73",
+    "value": "eyJyZW1vdGUiOnsidXJsIjoicmVnaXN0cnkudGVycmFmb3JtLmlvL25lYml1cy9uZWJpdXMiLCJ2ZXJzaW9uIjoiMC42LjczIn19"
   }
 }
