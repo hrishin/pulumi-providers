@@ -400,10 +400,10 @@ class VpcV1Network(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict']]] = None,
-                 ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict']]] = None,
+                 ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict', 'outputs.VpcV1NetworkIpv4PrivatePools']]] = None,
+                 ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict', 'outputs.VpcV1NetworkIpv4PublicPools']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict', 'outputs.VpcV1NetworkMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -412,18 +412,18 @@ class VpcV1Network(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict']] ipv4_private_pools: :
+        :param pulumi.Input[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict', 'outputs.VpcV1NetworkIpv4PrivatePools']] ipv4_private_pools: :
                
                   Pools for private IPv4 addresses.
                   Default private pools will be created if not specified.
                   Default private pools are referred here
                   https://docs.nebius.com/vpc/addressing/available-addresses
-        :param pulumi.Input[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict']] ipv4_public_pools: :
+        :param pulumi.Input[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict', 'outputs.VpcV1NetworkIpv4PublicPools']] ipv4_public_pools: :
                
                   Pools for public IPv4 addresses.
                   Default public pool will be used if not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict', 'outputs.VpcV1NetworkMetadata']] metadata: :
                
                   Metadata for the network resource.
                   `metadata.parent_id` represents IAM container
@@ -458,10 +458,10 @@ class VpcV1Network(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict']]] = None,
-                 ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict']]] = None,
+                 ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict', 'outputs.VpcV1NetworkIpv4PrivatePools']]] = None,
+                 ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict', 'outputs.VpcV1NetworkIpv4PublicPools']]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadata: pulumi.Input[Optional[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict', 'outputs.VpcV1NetworkMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -496,15 +496,15 @@ class VpcV1Network(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
-            ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict']]] = None,
-            ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict']]] = None,
+            ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict', 'outputs.VpcV1NetworkIpv4PrivatePools']]] = None,
+            ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict', 'outputs.VpcV1NetworkIpv4PublicPools']]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadata: pulumi.Input[Optional[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict', 'outputs.VpcV1NetworkMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['VpcV1NetworkStatusArgs', 'VpcV1NetworkStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1NetworkStatusArgs', 'VpcV1NetworkStatusArgsDict', 'outputs.VpcV1NetworkStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV1Network':
         """
         Get an existing VpcV1Network resource's state with the given name, id, and optional extra
@@ -518,19 +518,19 @@ class VpcV1Network(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict']] ipv4_private_pools: :
+        :param pulumi.Input[Union['VpcV1NetworkIpv4PrivatePoolsArgs', 'VpcV1NetworkIpv4PrivatePoolsArgsDict', 'outputs.VpcV1NetworkIpv4PrivatePools']] ipv4_private_pools: :
                
                   Pools for private IPv4 addresses.
                   Default private pools will be created if not specified.
                   Default private pools are referred here
                   https://docs.nebius.com/vpc/addressing/available-addresses
-        :param pulumi.Input[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict']] ipv4_public_pools: :
+        :param pulumi.Input[Union['VpcV1NetworkIpv4PublicPoolsArgs', 'VpcV1NetworkIpv4PublicPoolsArgsDict', 'outputs.VpcV1NetworkIpv4PublicPools']] ipv4_public_pools: :
                
                   Pools for public IPv4 addresses.
                   Default public pool will be used if not specified.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['VpcV1NetworkMetadataArgs', 'VpcV1NetworkMetadataArgsDict', 'outputs.VpcV1NetworkMetadata']] metadata: :
                
                   Metadata for the network resource.
                   `metadata.parent_id` represents IAM container
@@ -546,7 +546,7 @@ class VpcV1Network(pulumi.CustomResource):
                   Positive and monotonically increases on each resource spec change (but *not* on each change of the
                   resource's container(s) or status).
                   Service allows zero value or current.
-        :param pulumi.Input[Union['VpcV1NetworkStatusArgs', 'VpcV1NetworkStatusArgsDict']] status: Status of the network.
+        :param pulumi.Input[Union['VpcV1NetworkStatusArgs', 'VpcV1NetworkStatusArgsDict', 'outputs.VpcV1NetworkStatus']] status: Status of the network.
         :param pulumi.Input[_builtins.str] updated_at: :
                
                   Timestamp indicating when the resource was last updated.

@@ -322,7 +322,7 @@ class IamV1GroupMembership(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  member_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict', 'outputs.IamV1GroupMembershipMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -333,7 +333,7 @@ class IamV1GroupMembership(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[_builtins.str] member_id: Member of the group. Can be tenant user account id or service account id.
-        :param pulumi.Input[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict', 'outputs.IamV1GroupMembershipMetadata']] metadata: :
                
                #### Inner value description
                
@@ -367,7 +367,7 @@ class IamV1GroupMembership(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  member_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict', 'outputs.IamV1GroupMembershipMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -404,11 +404,11 @@ class IamV1GroupMembership(pulumi.CustomResource):
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             member_id: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict', 'outputs.IamV1GroupMembershipMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['IamV1GroupMembershipStatusArgs', 'IamV1GroupMembershipStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['IamV1GroupMembershipStatusArgs', 'IamV1GroupMembershipStatusArgsDict', 'outputs.IamV1GroupMembershipStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> 'IamV1GroupMembership':
         """
         Get an existing IamV1GroupMembership resource's state with the given name, id, and optional extra
@@ -425,7 +425,7 @@ class IamV1GroupMembership(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
         :param pulumi.Input[_builtins.str] member_id: Member of the group. Can be tenant user account id or service account id.
-        :param pulumi.Input[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['IamV1GroupMembershipMetadataArgs', 'IamV1GroupMembershipMetadataArgsDict', 'outputs.IamV1GroupMembershipMetadata']] metadata: :
                
                #### Inner value description
                

@@ -21,6 +21,18 @@ __all__ = [
     'ApplicationsV1alpha1K8sReleaseSensitiveArgsDict',
     'ApplicationsV1alpha1K8sReleaseStatusArgs',
     'ApplicationsV1alpha1K8sReleaseStatusArgsDict',
+    'BillingV1PricingPolicyComputeInstanceSpecArgs',
+    'BillingV1PricingPolicyComputeInstanceSpecArgsDict',
+    'BillingV1PricingPolicyComputeInstanceSpecV1Args',
+    'BillingV1PricingPolicyComputeInstanceSpecV1ArgsDict',
+    'BillingV1PricingPolicyMetadataArgs',
+    'BillingV1PricingPolicyMetadataArgsDict',
+    'BillingV1PricingPolicyPricingArgs',
+    'BillingV1PricingPolicyPricingArgsDict',
+    'BillingV1PricingPolicyPricingMaxPriceV1Args',
+    'BillingV1PricingPolicyPricingMaxPriceV1ArgsDict',
+    'BillingV1PricingPolicyStatusArgs',
+    'BillingV1PricingPolicyStatusArgsDict',
     'CapacityV1CapacityAllowanceMetadataArgs',
     'CapacityV1CapacityAllowanceMetadataArgsDict',
     'CapacityV1CapacityAllowanceStatusArgs',
@@ -69,6 +81,8 @@ __all__ = [
     'ComputeV1InstanceFilesystemArgsDict',
     'ComputeV1InstanceFilesystemExistingFilesystemArgs',
     'ComputeV1InstanceFilesystemExistingFilesystemArgsDict',
+    'ComputeV1InstanceFollowsSpotPriceArgs',
+    'ComputeV1InstanceFollowsSpotPriceArgsDict',
     'ComputeV1InstanceGpuClusterArgs',
     'ComputeV1InstanceGpuClusterArgsDict',
     'ComputeV1InstanceLocalDisksArgs',
@@ -87,6 +101,8 @@ __all__ = [
     'ComputeV1InstanceNetworkInterfacePublicIpAddressArgsDict',
     'ComputeV1InstanceNetworkInterfaceSecurityGroupArgs',
     'ComputeV1InstanceNetworkInterfaceSecurityGroupArgsDict',
+    'ComputeV1InstanceOnDemandArgs',
+    'ComputeV1InstanceOnDemandArgsDict',
     'ComputeV1InstancePreemptibleArgs',
     'ComputeV1InstancePreemptibleArgsDict',
     'ComputeV1InstanceReservationPolicyArgs',
@@ -105,6 +121,8 @@ __all__ = [
     'ComputeV1InstanceSecondaryDiskManagedDiskSpecDiskEncryptionArgsDict',
     'ComputeV1InstanceSecondaryDiskManagedDiskSpecSourceImageFamilyArgs',
     'ComputeV1InstanceSecondaryDiskManagedDiskSpecSourceImageFamilyArgsDict',
+    'ComputeV1InstanceSpotPricingPolicyArgs',
+    'ComputeV1InstanceSpotPricingPolicyArgsDict',
     'ComputeV1InstanceStatusArgs',
     'ComputeV1InstanceStatusArgsDict',
     'ComputeV1InstanceStatusDiskAttachmentArgs',
@@ -273,14 +291,20 @@ __all__ = [
     'Mk8sV1NodeGroupTemplateArgsDict',
     'Mk8sV1NodeGroupTemplateBootDiskArgs',
     'Mk8sV1NodeGroupTemplateBootDiskArgsDict',
+    'Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs',
+    'Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgsDict',
     'Mk8sV1NodeGroupTemplateFilesystemArgs',
     'Mk8sV1NodeGroupTemplateFilesystemArgsDict',
     'Mk8sV1NodeGroupTemplateFilesystemExistingFilesystemArgs',
     'Mk8sV1NodeGroupTemplateFilesystemExistingFilesystemArgsDict',
+    'Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs',
+    'Mk8sV1NodeGroupTemplateFollowsSpotPriceArgsDict',
     'Mk8sV1NodeGroupTemplateGpuClusterArgs',
     'Mk8sV1NodeGroupTemplateGpuClusterArgsDict',
     'Mk8sV1NodeGroupTemplateGpuSettingsArgs',
     'Mk8sV1NodeGroupTemplateGpuSettingsArgsDict',
+    'Mk8sV1NodeGroupTemplateInstanceMetadataArgs',
+    'Mk8sV1NodeGroupTemplateInstanceMetadataArgsDict',
     'Mk8sV1NodeGroupTemplateLocalDisksArgs',
     'Mk8sV1NodeGroupTemplateLocalDisksArgsDict',
     'Mk8sV1NodeGroupTemplateLocalDisksConfigArgs',
@@ -297,12 +321,16 @@ __all__ = [
     'Mk8sV1NodeGroupTemplateNetworkInterfaceSecurityGroupArgsDict',
     'Mk8sV1NodeGroupTemplateNvlinkArgs',
     'Mk8sV1NodeGroupTemplateNvlinkArgsDict',
+    'Mk8sV1NodeGroupTemplateOnDemandArgs',
+    'Mk8sV1NodeGroupTemplateOnDemandArgsDict',
     'Mk8sV1NodeGroupTemplatePreemptibleArgs',
     'Mk8sV1NodeGroupTemplatePreemptibleArgsDict',
     'Mk8sV1NodeGroupTemplateReservationPolicyArgs',
     'Mk8sV1NodeGroupTemplateReservationPolicyArgsDict',
     'Mk8sV1NodeGroupTemplateResourcesArgs',
     'Mk8sV1NodeGroupTemplateResourcesArgsDict',
+    'Mk8sV1NodeGroupTemplateSpotPricingPolicyArgs',
+    'Mk8sV1NodeGroupTemplateSpotPricingPolicyArgsDict',
     'Mk8sV1NodeGroupTemplateTaintArgs',
     'Mk8sV1NodeGroupTemplateTaintArgsDict',
     'Mk8sV1alpha1ClusterControlPlaneArgs',
@@ -451,6 +479,12 @@ __all__ = [
     'StorageV1BucketCorsArgsDict',
     'StorageV1BucketCorsRuleArgs',
     'StorageV1BucketCorsRuleArgsDict',
+    'StorageV1BucketFilesystemBucketArgs',
+    'StorageV1BucketFilesystemBucketArgsDict',
+    'StorageV1BucketLastAccessArgs',
+    'StorageV1BucketLastAccessArgsDict',
+    'StorageV1BucketLastAccessConditionArgs',
+    'StorageV1BucketLastAccessConditionArgsDict',
     'StorageV1BucketLifecycleConfigurationArgs',
     'StorageV1BucketLifecycleConfigurationArgsDict',
     'StorageV1BucketLifecycleConfigurationLastAccessFilterArgs',
@@ -483,6 +517,12 @@ __all__ = [
     'StorageV1BucketStatusCounterCountersArgsDict',
     'StorageV1BucketStatusCounterNonCurrentCountersArgs',
     'StorageV1BucketStatusCounterNonCurrentCountersArgsDict',
+    'StorageV1BucketStatusInsecureEndpointArgs',
+    'StorageV1BucketStatusInsecureEndpointArgsDict',
+    'StorageV1InventoryMetadataArgs',
+    'StorageV1InventoryMetadataArgsDict',
+    'StorageV1InventoryStatusArgs',
+    'StorageV1InventoryStatusArgsDict',
     'StorageV1TransferAfterNEmptyIterationsArgs',
     'StorageV1TransferAfterNEmptyIterationsArgsDict',
     'StorageV1TransferAfterOneIterationArgs',
@@ -615,6 +655,8 @@ __all__ = [
     'TunnelV1TunnelMetadataArgsDict',
     'TunnelV1TunnelStatusArgs',
     'TunnelV1TunnelStatusArgsDict',
+    'TunnelV1TunnelStatusServiceArgs',
+    'TunnelV1TunnelStatusServiceArgsDict',
     'VpcV1AllocationIpv4PrivateArgs',
     'VpcV1AllocationIpv4PrivateArgsDict',
     'VpcV1AllocationIpv4PublicArgs',
@@ -886,6 +928,373 @@ class ApplicationsV1alpha1K8sReleaseStatusArgs:
            - `DEPLOYED`
            - `FAILED`
            - `INSTALLING`
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class BillingV1PricingPolicyComputeInstanceSpecArgsDict(TypedDict):
+    v1: NotRequired[pulumi.Input[Optional['BillingV1PricingPolicyComputeInstanceSpecV1ArgsDict']]]
+    """
+    First version of the compute instance specification.
+    """
+
+@pulumi.input_type
+class BillingV1PricingPolicyComputeInstanceSpecArgs:
+    def __init__(__self__, *,
+                 v1: pulumi.Input[Optional['BillingV1PricingPolicyComputeInstanceSpecV1Args']] = None):
+        """
+        :param pulumi.Input['BillingV1PricingPolicyComputeInstanceSpecV1Args'] v1: First version of the compute instance specification.
+        """
+        if v1 is not None:
+            pulumi.set(__self__, "v1", v1)
+
+    @_builtins.property
+    @pulumi.getter
+    def v1(self) -> pulumi.Input[Optional['BillingV1PricingPolicyComputeInstanceSpecV1Args']]:
+        """
+        First version of the compute instance specification.
+        """
+        return pulumi.get(self, "v1")
+
+    @v1.setter
+    def v1(self, value: pulumi.Input[Optional['BillingV1PricingPolicyComputeInstanceSpecV1Args']]):
+        pulumi.set(self, "v1", value)
+
+
+class BillingV1PricingPolicyComputeInstanceSpecV1ArgsDict(TypedDict):
+    platform: pulumi.Input[_builtins.str]
+    """
+    Compute platform. Example: "gpu-h100-sxm".
+    """
+
+@pulumi.input_type
+class BillingV1PricingPolicyComputeInstanceSpecV1Args:
+    def __init__(__self__, *,
+                 platform: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] platform: Compute platform. Example: "gpu-h100-sxm".
+        """
+        pulumi.set(__self__, "platform", platform)
+
+    @_builtins.property
+    @pulumi.getter
+    def platform(self) -> pulumi.Input[_builtins.str]:
+        """
+        Compute platform. Example: "gpu-h100-sxm".
+        """
+        return pulumi.get(self, "platform")
+
+    @platform.setter
+    def platform(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "platform", value)
+
+
+class BillingV1PricingPolicyMetadataArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class BillingV1PricingPolicyMetadataArgs:
+    def __init__(__self__):
+        pass
+
+
+class BillingV1PricingPolicyPricingArgsDict(TypedDict):
+    max_price_v1: NotRequired[pulumi.Input[Optional['BillingV1PricingPolicyPricingMaxPriceV1ArgsDict']]]
+    """
+    :
+
+       Maximum price: the per-GPU <span pulumi-lang-nodejs="`maxPrice`" pulumi-lang-dotnet="`MaxPrice`" pulumi-lang-go="`maxPrice`" pulumi-lang-python="`max_price`" pulumi-lang-yaml="`maxPrice`" pulumi-lang-java="`maxPrice`" pulumi-lang-hcl="`max_price`">`maxPrice`</span> sets the priority of the policy's
+       VMs for scheduling and preemption.
+
+    #### Inner value description
+
+       Pricing with a per-GPU maximum price.
+    """
+
+@pulumi.input_type
+class BillingV1PricingPolicyPricingArgs:
+    def __init__(__self__, *,
+                 max_price_v1: pulumi.Input[Optional['BillingV1PricingPolicyPricingMaxPriceV1Args']] = None):
+        """
+        :param pulumi.Input['BillingV1PricingPolicyPricingMaxPriceV1Args'] max_price_v1: :
+               
+                  Maximum price: the per-GPU <span pulumi-lang-nodejs="`maxPrice`" pulumi-lang-dotnet="`MaxPrice`" pulumi-lang-go="`maxPrice`" pulumi-lang-python="`max_price`" pulumi-lang-yaml="`maxPrice`" pulumi-lang-java="`maxPrice`" pulumi-lang-hcl="`max_price`">`maxPrice`</span> sets the priority of the policy's
+                  VMs for scheduling and preemption.
+               
+               #### Inner value description
+               
+                  Pricing with a per-GPU maximum price.
+        """
+        if max_price_v1 is not None:
+            pulumi.set(__self__, "max_price_v1", max_price_v1)
+
+    @_builtins.property
+    @pulumi.getter(name="maxPriceV1")
+    def max_price_v1(self) -> pulumi.Input[Optional['BillingV1PricingPolicyPricingMaxPriceV1Args']]:
+        """
+        :
+
+           Maximum price: the per-GPU <span pulumi-lang-nodejs="`maxPrice`" pulumi-lang-dotnet="`MaxPrice`" pulumi-lang-go="`maxPrice`" pulumi-lang-python="`max_price`" pulumi-lang-yaml="`maxPrice`" pulumi-lang-java="`maxPrice`" pulumi-lang-hcl="`max_price`">`maxPrice`</span> sets the priority of the policy's
+           VMs for scheduling and preemption.
+
+        #### Inner value description
+
+           Pricing with a per-GPU maximum price.
+        """
+        return pulumi.get(self, "max_price_v1")
+
+    @max_price_v1.setter
+    def max_price_v1(self, value: pulumi.Input[Optional['BillingV1PricingPolicyPricingMaxPriceV1Args']]):
+        pulumi.set(self, "max_price_v1", value)
+
+
+class BillingV1PricingPolicyPricingMaxPriceV1ArgsDict(TypedDict):
+    max_price: pulumi.Input[_builtins.str]
+    """
+    :
+
+       Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+       Must be within the allowed price range (OUT_OF_RANGE otherwise);
+       a value below the current market price is accepted but blocks scheduling.
+       Mutable only while `status.running_vm_count` is 0
+       (FAILED_PRECONDITION otherwise); the policy reports STATE_UPDATING and
+       blocks scheduling while the change is applied.
+    """
+
+@pulumi.input_type
+class BillingV1PricingPolicyPricingMaxPriceV1Args:
+    def __init__(__self__, *,
+                 max_price: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] max_price: :
+               
+                  Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+                  Must be within the allowed price range (OUT_OF_RANGE otherwise);
+                  a value below the current market price is accepted but blocks scheduling.
+                  Mutable only while `status.running_vm_count` is 0
+                  (FAILED_PRECONDITION otherwise); the policy reports STATE_UPDATING and
+                  blocks scheduling while the change is applied.
+        """
+        pulumi.set(__self__, "max_price", max_price)
+
+    @_builtins.property
+    @pulumi.getter(name="maxPrice")
+    def max_price(self) -> pulumi.Input[_builtins.str]:
+        """
+        :
+
+           Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+           Must be within the allowed price range (OUT_OF_RANGE otherwise);
+           a value below the current market price is accepted but blocks scheduling.
+           Mutable only while `status.running_vm_count` is 0
+           (FAILED_PRECONDITION otherwise); the policy reports STATE_UPDATING and
+           blocks scheduling while the change is applied.
+        """
+        return pulumi.get(self, "max_price")
+
+    @max_price.setter
+    def max_price(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "max_price", value)
+
+
+class BillingV1PricingPolicyStatusArgsDict(TypedDict):
+    currency: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ISO 4217 currency code of max_price, e.g. "USD".
+    """
+    running_vm_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    :
+
+       Number of VMs currently running under this policy. Nonzero blocks resource
+       changes and deletion.
+    """
+    scheduling_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Whether new VMs may currently start under this policy.
+
+    #### Supported values
+
+       Possible values:
+
+       - `SCHEDULING_STATE_UNSPECIFIED`
+       - `SCHEDULING_STATE_ALLOWED` - New VMs may start.
+       - `SCHEDULING_STATE_BLOCKED`:
+          The<span pulumi-lang-nodejs=" maxPrice " pulumi-lang-dotnet=" MaxPrice " pulumi-lang-go=" maxPrice " pulumi-lang-python=" max_price " pulumi-lang-yaml=" maxPrice " pulumi-lang-java=" maxPrice " pulumi-lang-hcl=" max_price "> maxPrice </span>limit is below the market price in force or below a market price
+          that is being applied; VM creation succeeds once the price falls to it.
+    """
+    sku_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    SKU resolved from the spec.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+    #### Supported values
+
+       Possible values:
+
+       - `STATE_UNSPECIFIED`
+       - `STATE_CREATING`:
+     Not ready yet; a VM referencing the policy gets a retryable error.
+     The state can last while a market price change is applied to the segment.
+
+       - `STATE_ACTIVE` - Ready; whether VMs may start is <span pulumi-lang-nodejs="`schedulingState`" pulumi-lang-dotnet="`SchedulingState`" pulumi-lang-go="`schedulingState`" pulumi-lang-python="`scheduling_state`" pulumi-lang-yaml="`schedulingState`" pulumi-lang-java="`schedulingState`" pulumi-lang-hcl="`scheduling_state`">`schedulingState`</span>.
+       - `STATE_DELETING` - Being deleted; does not accept new VMs.
+       - `STATE_UPDATING`:
+     The<span pulumi-lang-nodejs=" maxPrice " pulumi-lang-dotnet=" MaxPrice " pulumi-lang-go=" maxPrice " pulumi-lang-python=" max_price " pulumi-lang-yaml=" maxPrice " pulumi-lang-java=" maxPrice " pulumi-lang-hcl=" max_price "> maxPrice </span>is being changed; scheduling is blocked until the change
+     is applied.
+     The state can last while a market price change is applied to the segment.
+    """
+
+@pulumi.input_type
+class BillingV1PricingPolicyStatusArgs:
+    def __init__(__self__, *,
+                 currency: pulumi.Input[Optional[_builtins.str]] = None,
+                 running_vm_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 scheduling_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 sku_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] currency: ISO 4217 currency code of max_price, e.g. "USD".
+        :param pulumi.Input[_builtins.float] running_vm_count: :
+               
+                  Number of VMs currently running under this policy. Nonzero blocks resource
+                  changes and deletion.
+        :param pulumi.Input[_builtins.str] scheduling_state: :
+               
+                  Whether new VMs may currently start under this policy.
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `SCHEDULING_STATE_UNSPECIFIED`
+                  - `SCHEDULING_STATE_ALLOWED` - New VMs may start.
+                  - `SCHEDULING_STATE_BLOCKED`:
+                     The<span pulumi-lang-nodejs=" maxPrice " pulumi-lang-dotnet=" MaxPrice " pulumi-lang-go=" maxPrice " pulumi-lang-python=" max_price " pulumi-lang-yaml=" maxPrice " pulumi-lang-java=" maxPrice " pulumi-lang-hcl=" max_price "> maxPrice </span>limit is below the market price in force or below a market price
+                     that is being applied; VM creation succeeds once the price falls to it.
+        :param pulumi.Input[_builtins.str] sku_id: SKU resolved from the spec.
+        :param pulumi.Input[_builtins.str] state: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED`
+                  - `STATE_CREATING`:
+                Not ready yet; a VM referencing the policy gets a retryable error.
+                The state can last while a market price change is applied to the segment.
+               
+                  - `STATE_ACTIVE` - Ready; whether VMs may start is <span pulumi-lang-nodejs="`schedulingState`" pulumi-lang-dotnet="`SchedulingState`" pulumi-lang-go="`schedulingState`" pulumi-lang-python="`scheduling_state`" pulumi-lang-yaml="`schedulingState`" pulumi-lang-java="`schedulingState`" pulumi-lang-hcl="`scheduling_state`">`schedulingState`</span>.
+                  - `STATE_DELETING` - Being deleted; does not accept new VMs.
+                  - `STATE_UPDATING`:
+                The<span pulumi-lang-nodejs=" maxPrice " pulumi-lang-dotnet=" MaxPrice " pulumi-lang-go=" maxPrice " pulumi-lang-python=" max_price " pulumi-lang-yaml=" maxPrice " pulumi-lang-java=" maxPrice " pulumi-lang-hcl=" max_price "> maxPrice </span>is being changed; scheduling is blocked until the change
+                is applied.
+                The state can last while a market price change is applied to the segment.
+        """
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if running_vm_count is not None:
+            pulumi.set(__self__, "running_vm_count", running_vm_count)
+        if scheduling_state is not None:
+            pulumi.set(__self__, "scheduling_state", scheduling_state)
+        if sku_id is not None:
+            pulumi.set(__self__, "sku_id", sku_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ISO 4217 currency code of max_price, e.g. "USD".
+        """
+        return pulumi.get(self, "currency")
+
+    @currency.setter
+    def currency(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "currency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runningVmCount")
+    def running_vm_count(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        :
+
+           Number of VMs currently running under this policy. Nonzero blocks resource
+           changes and deletion.
+        """
+        return pulumi.get(self, "running_vm_count")
+
+    @running_vm_count.setter
+    def running_vm_count(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "running_vm_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="schedulingState")
+    def scheduling_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Whether new VMs may currently start under this policy.
+
+        #### Supported values
+
+           Possible values:
+
+           - `SCHEDULING_STATE_UNSPECIFIED`
+           - `SCHEDULING_STATE_ALLOWED` - New VMs may start.
+           - `SCHEDULING_STATE_BLOCKED`:
+              The<span pulumi-lang-nodejs=" maxPrice " pulumi-lang-dotnet=" MaxPrice " pulumi-lang-go=" maxPrice " pulumi-lang-python=" max_price " pulumi-lang-yaml=" maxPrice " pulumi-lang-java=" maxPrice " pulumi-lang-hcl=" max_price "> maxPrice </span>limit is below the market price in force or below a market price
+              that is being applied; VM creation succeeds once the price falls to it.
+        """
+        return pulumi.get(self, "scheduling_state")
+
+    @scheduling_state.setter
+    def scheduling_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scheduling_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="skuId")
+    def sku_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        SKU resolved from the spec.
+        """
+        return pulumi.get(self, "sku_id")
+
+    @sku_id.setter
+    def sku_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sku_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `STATE_UNSPECIFIED`
+           - `STATE_CREATING`:
+         Not ready yet; a VM referencing the policy gets a retryable error.
+         The state can last while a market price change is applied to the segment.
+
+           - `STATE_ACTIVE` - Ready; whether VMs may start is <span pulumi-lang-nodejs="`schedulingState`" pulumi-lang-dotnet="`SchedulingState`" pulumi-lang-go="`schedulingState`" pulumi-lang-python="`scheduling_state`" pulumi-lang-yaml="`schedulingState`" pulumi-lang-java="`schedulingState`" pulumi-lang-hcl="`scheduling_state`">`schedulingState`</span>.
+           - `STATE_DELETING` - Being deleted; does not accept new VMs.
+           - `STATE_UPDATING`:
+         The<span pulumi-lang-nodejs=" maxPrice " pulumi-lang-dotnet=" MaxPrice " pulumi-lang-go=" maxPrice " pulumi-lang-python=" max_price " pulumi-lang-yaml=" maxPrice " pulumi-lang-java=" maxPrice " pulumi-lang-hcl=" max_price "> maxPrice </span>is being changed; scheduling is blocked until the change
+         is applied.
+         The state can last while a market price change is applied to the segment.
         """
         return pulumi.get(self, "state")
 
@@ -1984,6 +2393,9 @@ class ComputeV1GpuClusterMetadataArgs:
 class ComputeV1GpuClusterStatusArgsDict(TypedDict):
     infiniband_topology_path: NotRequired[pulumi.Input[Optional['ComputeV1GpuClusterStatusInfinibandTopologyPathArgsDict']]]
     instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    IDs of Compute instances that belong to this GPU cluster.
+    """
     reconciling: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether there is an ongoing operation
@@ -1996,6 +2408,7 @@ class ComputeV1GpuClusterStatusArgs:
                  instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  reconciling: pulumi.Input[Optional[_builtins.bool]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] instances: IDs of Compute instances that belong to this GPU cluster.
         :param pulumi.Input[_builtins.bool] reconciling: Indicates whether there is an ongoing operation
         """
         if infiniband_topology_path is not None:
@@ -2017,6 +2430,9 @@ class ComputeV1GpuClusterStatusArgs:
     @_builtins.property
     @pulumi.getter
     def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        IDs of Compute instances that belong to this GPU cluster.
+        """
         return pulumi.get(self, "instances")
 
     @instances.setter
@@ -2104,7 +2520,10 @@ class ComputeV1InstanceBootDiskArgsDict(TypedDict):
     """
     device_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Specifies the user-defined identifier, allowing to use '/dev/disk/by-id/virtio-{device_id}' as a device path in mount command.
+    :
+
+       Specifies the user-defined device identifier.
+       Use `/dev/disk/by-id/virtio-{device_id}` as the device path in a mount command.
     """
     existing_disk: NotRequired[pulumi.Input[Optional['ComputeV1InstanceBootDiskExistingDiskArgsDict']]]
     """
@@ -2187,7 +2606,10 @@ class ComputeV1InstanceBootDiskArgs:
                   - `UNSPECIFIED`
                   - `READ_ONLY`
                   - `READ_WRITE`
-        :param pulumi.Input[_builtins.str] device_id: Specifies the user-defined identifier, allowing to use '/dev/disk/by-id/virtio-{device_id}' as a device path in mount command.
+        :param pulumi.Input[_builtins.str] device_id: :
+               
+                  Specifies the user-defined device identifier.
+                  Use `/dev/disk/by-id/virtio-{device_id}` as the device path in a mount command.
         :param pulumi.Input['ComputeV1InstanceBootDiskExistingDiskArgs'] existing_disk: :
                
                   Attach an existing disk.
@@ -2278,7 +2700,10 @@ class ComputeV1InstanceBootDiskArgs:
     @pulumi.getter(name="deviceId")
     def device_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Specifies the user-defined identifier, allowing to use '/dev/disk/by-id/virtio-{device_id}' as a device path in mount command.
+        :
+
+           Specifies the user-defined device identifier.
+           Use `/dev/disk/by-id/virtio-{device_id}` as the device path in a mount command.
         """
         return pulumi.get(self, "device_id")
 
@@ -2937,6 +3362,15 @@ class ComputeV1InstanceFilesystemExistingFilesystemArgs:
         pulumi.set(self, "id", value)
 
 
+class ComputeV1InstanceFollowsSpotPriceArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class ComputeV1InstanceFollowsSpotPriceArgs:
+    def __init__(__self__):
+        pass
+
+
 class ComputeV1InstanceGpuClusterArgsDict(TypedDict):
     id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -3097,10 +3531,6 @@ class ComputeV1InstanceNetworkInterfaceArgsDict(TypedDict):
        Value of this field configures the name of the network interface inside VM's OS.
        Longer values will persist in the specification but will be truncated to 15 symbols before being passed to VM configuration.
     """
-    subnet_id: pulumi.Input[_builtins.str]
-    """
-    Subnet ID
-    """
     aliases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceAliasArgsDict']]]]]
     """
     Assign ranges of IP addresses as aliases
@@ -3123,16 +3553,20 @@ class ComputeV1InstanceNetworkInterfaceArgsDict(TypedDict):
        If an empty list is provided, the default security group for the network will be used.
        Effective security groups can be seen in the status.
     """
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Subnet ID
+    """
 
 @pulumi.input_type
 class ComputeV1InstanceNetworkInterfaceArgs:
     def __init__(__self__, *,
                  ip_address: pulumi.Input['ComputeV1InstanceNetworkInterfaceIpAddressArgs'],
                  name: pulumi.Input[_builtins.str],
-                 subnet_id: pulumi.Input[_builtins.str],
                  aliases: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceAliasArgs']]]] = None,
                  public_ip_address: pulumi.Input[Optional['ComputeV1InstanceNetworkInterfacePublicIpAddressArgs']] = None,
-                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceSecurityGroupArgs']]]] = None):
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceSecurityGroupArgs']]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['ComputeV1InstanceNetworkInterfaceIpAddressArgs'] ip_address: :
                
@@ -3146,7 +3580,6 @@ class ComputeV1InstanceNetworkInterfaceArgs:
                   Interface name
                   Value of this field configures the name of the network interface inside VM's OS.
                   Longer values will persist in the specification but will be truncated to 15 symbols before being passed to VM configuration.
-        :param pulumi.Input[_builtins.str] subnet_id: Subnet ID
         :param pulumi.Input[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceAliasArgs']]] aliases: Assign ranges of IP addresses as aliases
         :param pulumi.Input['ComputeV1InstanceNetworkInterfacePublicIpAddressArgs'] public_ip_address: :
                
@@ -3160,16 +3593,18 @@ class ComputeV1InstanceNetworkInterfaceArgs:
                   Security groups associated with the network interface.
                   If an empty list is provided, the default security group for the network will be used.
                   Effective security groups can be seen in the status.
+        :param pulumi.Input[_builtins.str] subnet_id: Subnet ID
         """
         pulumi.set(__self__, "ip_address", ip_address)
         pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
         if aliases is not None:
             pulumi.set(__self__, "aliases", aliases)
         if public_ip_address is not None:
             pulumi.set(__self__, "public_ip_address", public_ip_address)
         if security_groups is not None:
             pulumi.set(__self__, "security_groups", security_groups)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
@@ -3204,18 +3639,6 @@ class ComputeV1InstanceNetworkInterfaceArgs:
     @name.setter
     def name(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        Subnet ID
-        """
-        return pulumi.get(self, "subnet_id")
-
-    @subnet_id.setter
-    def subnet_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -3262,6 +3685,18 @@ class ComputeV1InstanceNetworkInterfaceArgs:
     @security_groups.setter
     def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceSecurityGroupArgs']]]]):
         pulumi.set(self, "security_groups", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
 
 
 class ComputeV1InstanceNetworkInterfaceAliasArgsDict(TypedDict):
@@ -3409,6 +3844,15 @@ class ComputeV1InstanceNetworkInterfaceSecurityGroupArgs:
     @id.setter
     def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
+
+
+class ComputeV1InstanceOnDemandArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class ComputeV1InstanceOnDemandArgs:
+    def __init__(__self__):
+        pass
 
 
 class ComputeV1InstancePreemptibleArgsDict(TypedDict):
@@ -3639,7 +4083,10 @@ class ComputeV1InstanceSecondaryDiskArgsDict(TypedDict):
     """
     device_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Specifies the user-defined identifier, allowing to use '/dev/disk/by-id/virtio-{device_id}' as a device path in mount command.
+    :
+
+       Specifies the user-defined device identifier.
+       Use `/dev/disk/by-id/virtio-{device_id}` as the device path in a mount command.
     """
     existing_disk: NotRequired[pulumi.Input[Optional['ComputeV1InstanceSecondaryDiskExistingDiskArgsDict']]]
     """
@@ -3722,7 +4169,10 @@ class ComputeV1InstanceSecondaryDiskArgs:
                   - `UNSPECIFIED`
                   - `READ_ONLY`
                   - `READ_WRITE`
-        :param pulumi.Input[_builtins.str] device_id: Specifies the user-defined identifier, allowing to use '/dev/disk/by-id/virtio-{device_id}' as a device path in mount command.
+        :param pulumi.Input[_builtins.str] device_id: :
+               
+                  Specifies the user-defined device identifier.
+                  Use `/dev/disk/by-id/virtio-{device_id}` as the device path in a mount command.
         :param pulumi.Input['ComputeV1InstanceSecondaryDiskExistingDiskArgs'] existing_disk: :
                
                   Attach an existing disk.
@@ -3813,7 +4263,10 @@ class ComputeV1InstanceSecondaryDiskArgs:
     @pulumi.getter(name="deviceId")
     def device_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Specifies the user-defined identifier, allowing to use '/dev/disk/by-id/virtio-{device_id}' as a device path in mount command.
+        :
+
+           Specifies the user-defined device identifier.
+           Use `/dev/disk/by-id/virtio-{device_id}` as the device path in a mount command.
         """
         return pulumi.get(self, "device_id")
 
@@ -4369,6 +4822,34 @@ class ComputeV1InstanceSecondaryDiskManagedDiskSpecSourceImageFamilyArgs:
         pulumi.set(self, "parent_id", value)
 
 
+class ComputeV1InstanceSpotPricingPolicyArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+    """
+
+@pulumi.input_type
+class ComputeV1InstanceSpotPricingPolicyArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] id: PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+
 class ComputeV1InstanceStatusArgsDict(TypedDict):
     disk_attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceStatusDiskAttachmentArgsDict']]]]]
     """
@@ -4376,6 +4857,9 @@ class ComputeV1InstanceStatusArgsDict(TypedDict):
     """
     infiniband_topology_path: NotRequired[pulumi.Input[Optional['ComputeV1InstanceStatusInfinibandTopologyPathArgsDict']]]
     maintenance_event_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Identifier of the maintenance event associated with the instance, if any.
+    """
     network_interfaces: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ComputeV1InstanceStatusNetworkInterfaceArgsDict']]]]]
     """
     :
@@ -4420,6 +4904,7 @@ class ComputeV1InstanceStatusArgs:
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ComputeV1InstanceStatusDiskAttachmentArgs']]] disk_attachments: Status of the requested disk attachments.
+        :param pulumi.Input[_builtins.str] maintenance_event_id: Identifier of the maintenance event associated with the instance, if any.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeV1InstanceStatusNetworkInterfaceArgs']]] network_interfaces: :
                
                #### Inner value description
@@ -4481,6 +4966,9 @@ class ComputeV1InstanceStatusArgs:
     @_builtins.property
     @pulumi.getter(name="maintenanceEventId")
     def maintenance_event_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifier of the maintenance event associated with the instance, if any.
+        """
         return pulumi.get(self, "maintenance_event_id")
 
     @maintenance_event_id.setter
@@ -5871,7 +6359,11 @@ class IamV1FederationMetadataArgs:
 class IamV1FederationSamlSettingsArgsDict(TypedDict):
     force_authn: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+    :
+
+       If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+       SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+       response does not let verify whether the identity provider honored this request; support depends on the identity provider.
     """
     idp_issuer: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -5889,7 +6381,11 @@ class IamV1FederationSamlSettingsArgs:
                  idp_issuer: pulumi.Input[Optional[_builtins.str]] = None,
                  sso_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.bool] force_authn: if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :param pulumi.Input[_builtins.bool] force_authn: :
+               
+                  If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+                  SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+                  response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         :param pulumi.Input[_builtins.str] idp_issuer: The unique identifier of the SAML Identity Provider. It usually matches the entityID from the IdP metadata.
         :param pulumi.Input[_builtins.str] sso_url: Identity Provider’s Single Sign-On endpoint. This is the URL where the user is redirected to start SAML login.
         """
@@ -5904,7 +6400,11 @@ class IamV1FederationSamlSettingsArgs:
     @pulumi.getter(name="forceAuthn")
     def force_authn(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        if "true", the identity provider MUST authenticate the presenter directly rather than rely on a previous security context.
+        :
+
+           If true, the SAML AuthnRequest asks the identity provider to authenticate the user instead of reusing an existing IdP session. (See
+           SAML Core 2.0, section 3.4.1, ForceAuthn: https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) Limitations: the SAML
+           response does not let verify whether the identity provider honored this request; support depends on the identity provider.
         """
         return pulumi.get(self, "force_authn")
 
@@ -7142,141 +7642,6 @@ class KmsV1AsymmetricKeyStatusArgsDict(TypedDict):
     """
     :
 
-       State (ACTIVE, SCHEDULED_FOR_DELETION)
-
-    #### Supported values
-
-       Key state
-       Possible values:
-
-       - `KEY_STATE_UNSPECIFIED`
-       - `ACTIVE` - Key is active, ready for use
-       - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
-    """
-
-@pulumi.input_type
-class KmsV1AsymmetricKeyStatusArgs:
-    def __init__(__self__, *,
-                 deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
-                 purge_at: pulumi.Input[Optional[_builtins.str]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None):
-        """
-        :param pulumi.Input[_builtins.str] deleted_at: :
-               
-                  Time when the key was scheduled for deletion.
-               
-                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[_builtins.str] purge_at: :
-               
-                  Time when the key will be permanently deleted.
-               
-                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[_builtins.str] state: :
-               
-                  State (ACTIVE, SCHEDULED_FOR_DELETION)
-               
-               #### Supported values
-               
-                  Key state
-                  Possible values:
-               
-                  - `KEY_STATE_UNSPECIFIED`
-                  - `ACTIVE` - Key is active, ready for use
-                  - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
-        """
-        if deleted_at is not None:
-            pulumi.set(__self__, "deleted_at", deleted_at)
-        if purge_at is not None:
-            pulumi.set(__self__, "purge_at", purge_at)
-        if state is not None:
-            pulumi.set(__self__, "state", state)
-
-    @_builtins.property
-    @pulumi.getter(name="deletedAt")
-    def deleted_at(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        :
-
-           Time when the key was scheduled for deletion.
-
-           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        """
-        return pulumi.get(self, "deleted_at")
-
-    @deleted_at.setter
-    def deleted_at(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "deleted_at", value)
-
-    @_builtins.property
-    @pulumi.getter(name="purgeAt")
-    def purge_at(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        :
-
-           Time when the key will be permanently deleted.
-
-           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        """
-        return pulumi.get(self, "purge_at")
-
-    @purge_at.setter
-    def purge_at(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "purge_at", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        :
-
-           State (ACTIVE, SCHEDULED_FOR_DELETION)
-
-        #### Supported values
-
-           Key state
-           Possible values:
-
-           - `KEY_STATE_UNSPECIFIED`
-           - `ACTIVE` - Key is active, ready for use
-           - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
-        """
-        return pulumi.get(self, "state")
-
-    @state.setter
-    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "state", value)
-
-
-class KmsV1SymmetricKeyMetadataArgsDict(TypedDict):
-    pass
-
-@pulumi.input_type
-class KmsV1SymmetricKeyMetadataArgs:
-    def __init__(__self__):
-        pass
-
-
-class KmsV1SymmetricKeyStatusArgsDict(TypedDict):
-    deleted_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    :
-
-       Time when the key was scheduled for deletion.
-
-       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-    """
-    purge_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    :
-
-       Time when the key will be permanently deleted.
-
-       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-    """
-    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    :
-
        State (ACTIVE, SCHEDULED_FOR_DELETION).
 
     #### Supported values
@@ -7287,10 +7652,11 @@ class KmsV1SymmetricKeyStatusArgsDict(TypedDict):
        - `KEY_STATE_UNSPECIFIED`
        - `ACTIVE` - Key is active, ready for use
        - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
+       - `PENDING_IMPORT`
     """
 
 @pulumi.input_type
-class KmsV1SymmetricKeyStatusArgs:
+class KmsV1AsymmetricKeyStatusArgs:
     def __init__(__self__, *,
                  deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
                  purge_at: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7318,6 +7684,7 @@ class KmsV1SymmetricKeyStatusArgs:
                   - `KEY_STATE_UNSPECIFIED`
                   - `ACTIVE` - Key is active, ready for use
                   - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
+                  - `PENDING_IMPORT`
         """
         if deleted_at is not None:
             pulumi.set(__self__, "deleted_at", deleted_at)
@@ -7374,6 +7741,145 @@ class KmsV1SymmetricKeyStatusArgs:
            - `KEY_STATE_UNSPECIFIED`
            - `ACTIVE` - Key is active, ready for use
            - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
+           - `PENDING_IMPORT`
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class KmsV1SymmetricKeyMetadataArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class KmsV1SymmetricKeyMetadataArgs:
+    def __init__(__self__):
+        pass
+
+
+class KmsV1SymmetricKeyStatusArgsDict(TypedDict):
+    deleted_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Time when the key was scheduled for deletion.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+    purge_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Time when the key will be permanently deleted.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       State (ACTIVE, SCHEDULED_FOR_DELETION).
+
+    #### Supported values
+
+       Key state
+       Possible values:
+
+       - `KEY_STATE_UNSPECIFIED`
+       - `ACTIVE` - Key is active, ready for use
+       - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
+       - `PENDING_IMPORT`
+    """
+
+@pulumi.input_type
+class KmsV1SymmetricKeyStatusArgs:
+    def __init__(__self__, *,
+                 deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 purge_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] deleted_at: :
+               
+                  Time when the key was scheduled for deletion.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        :param pulumi.Input[_builtins.str] purge_at: :
+               
+                  Time when the key will be permanently deleted.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        :param pulumi.Input[_builtins.str] state: :
+               
+                  State (ACTIVE, SCHEDULED_FOR_DELETION).
+               
+               #### Supported values
+               
+                  Key state
+                  Possible values:
+               
+                  - `KEY_STATE_UNSPECIFIED`
+                  - `ACTIVE` - Key is active, ready for use
+                  - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
+                  - `PENDING_IMPORT`
+        """
+        if deleted_at is not None:
+            pulumi.set(__self__, "deleted_at", deleted_at)
+        if purge_at is not None:
+            pulumi.set(__self__, "purge_at", purge_at)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="deletedAt")
+    def deleted_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Time when the key was scheduled for deletion.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "deleted_at")
+
+    @deleted_at.setter
+    def deleted_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deleted_at", value)
+
+    @_builtins.property
+    @pulumi.getter(name="purgeAt")
+    def purge_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Time when the key will be permanently deleted.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "purge_at")
+
+    @purge_at.setter
+    def purge_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "purge_at", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           State (ACTIVE, SCHEDULED_FOR_DELETION).
+
+        #### Supported values
+
+           Key state
+           Possible values:
+
+           - `KEY_STATE_UNSPECIFIED`
+           - `ACTIVE` - Key is active, ready for use
+           - `SCHEDULED_FOR_DELETION` - Key is scheduled for deletion.
+           - `PENDING_IMPORT`
         """
         return pulumi.get(self, "state")
 
@@ -7426,8 +7932,10 @@ class Mk8sV1ClusterControlPlaneArgsDict(TypedDict):
     """
     :
 
-       Desired Kubernetes version of the cluster. For now only acceptable format is
-       `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+       Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+       if the desired version is no longer supported and the cluster has been automatically updated.
+       For now only acceptable format is `<major>.<minor>` like "1.31".
+       Option for patch version update will be added later.
     """
 
 @pulumi.input_type
@@ -7466,8 +7974,10 @@ class Mk8sV1ClusterControlPlaneArgs:
                   By default cluster will be created without it.
         :param pulumi.Input[_builtins.str] version: :
                
-                  Desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+                  Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+                  if the desired version is no longer supported and the cluster has been automatically updated.
+                  For now only acceptable format is `<major>.<minor>` like "1.31".
+                  Option for patch version update will be added later.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
@@ -7566,8 +8076,10 @@ class Mk8sV1ClusterControlPlaneArgs:
         """
         :
 
-           Desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
+           Desired Kubernetes version of the cluster. May be lower than the actual cluster version
+           if the desired version is no longer supported and the cluster has been automatically updated.
+           For now only acceptable format is `<major>.<minor>` like "1.31".
+           Option for patch version update will be added later.
         """
         return pulumi.get(self, "version")
 
@@ -7621,6 +8133,7 @@ class Mk8sV1ClusterControlPlaneEndpointsPublicEndpointArgsDict(TypedDict):
 
        List of CIDR blocks from which access to public endpoint is allowed.
        If field is not set, or list is empty, it means that access is not restricted at all.
+       You can specify a maximum of 100 CIDRs.
     """
 
 @pulumi.input_type
@@ -7632,6 +8145,7 @@ class Mk8sV1ClusterControlPlaneEndpointsPublicEndpointArgs:
                
                   List of CIDR blocks from which access to public endpoint is allowed.
                   If field is not set, or list is empty, it means that access is not restricted at all.
+                  You can specify a maximum of 100 CIDRs.
         """
         if allowed_cidrs is not None:
             pulumi.set(__self__, "allowed_cidrs", allowed_cidrs)
@@ -7644,6 +8158,7 @@ class Mk8sV1ClusterControlPlaneEndpointsPublicEndpointArgs:
 
            List of CIDR blocks from which access to public endpoint is allowed.
            If field is not set, or list is empty, it means that access is not restricted at all.
+           You can specify a maximum of 100 CIDRs.
         """
         return pulumi.get(self, "allowed_cidrs")
 
@@ -9754,6 +10269,14 @@ class Mk8sV1NodeGroupTemplateArgsDict(TypedDict):
        Static attachments of Compute Filesystem.
        Can be used as a workaround, until CSI for Compute Disk and Filesystem will be available.
     """
+    follows_spot_price: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateFollowsSpotPriceArgsDict']]]
+    """
+    :
+
+       The preemptible VM accepts the current spot price.
+
+       *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+    """
     gpu_cluster: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateGpuClusterArgsDict']]]
     """
     Nebius Compute GPUCluster ID that will be attached to node.
@@ -9767,6 +10290,10 @@ class Mk8sV1NodeGroupTemplateArgsDict(TypedDict):
     #### Inner value description
 
        GPU-related settings.
+    """
+    instance_metadata: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateInstanceMetadataArgsDict']]]
+    """
+    Metadata propagated to the Compute Instances in the NodeGroup.
     """
     local_disks: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateLocalDisksArgsDict']]]
     """
@@ -9790,35 +10317,22 @@ class Mk8sV1NodeGroupTemplateArgsDict(TypedDict):
     """
     NVLinkSpec configures NVLink settings for the NodeGroup.
     """
+    on_demand: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateOnDemandArgsDict']]]
+    """
+    :
+
+       A regular, non-preemptible VM.
+
+       *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+    """
     os: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     :
 
        OS version that will be used to create the boot disk of Compute Instances in the NodeGroup.
-       Supported platform / Kubernetes version / OS / driver presets combinations
-       * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`, `cpu-e1`, `cpu-e2`, `cpu-d3`:
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30 → `"ubuntu22.04"`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu22.04"` (default), `"ubuntu24.04"`
-       * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`:
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12"` (CUDA 12.4)
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu22.04"`
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.4"`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu22.04"`
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-       * `gpu-b200-sxm`:
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu24.04"`
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12"` (CUDA 12.8)
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu24.04"`
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-       * `gpu-b200-sxm-a`:
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-         * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-           * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
+       Supported OS depend on the platform and Kubernetes version.
+       To get the up-to-date list of supported OS for a given Kubernetes version and platform, run:
+       nebius mk8s node-group get-compatibility-matrix --cluster-kubernetes-version VERSION --platform PLATFORM
     """
     preemptible: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplatePreemptibleArgsDict']]]
     """
@@ -9848,6 +10362,15 @@ class Mk8sV1NodeGroupTemplateArgsDict(TypedDict):
 
        `resource.serviceaccount.issueAccessToken` permission is required to use this field.
     """
+    spot_pricing_policy: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateSpotPricingPolicyArgsDict']]]
+    """
+    :
+
+       The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+       pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+       *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+    """
     taints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateTaintArgsDict']]]]]
     """
     :
@@ -9870,17 +10393,21 @@ class Mk8sV1NodeGroupTemplateArgs:
                  boot_disk: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateBootDiskArgs']] = None,
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
                  filesystems: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateFilesystemArgs']]]] = None,
+                 follows_spot_price: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs']] = None,
                  gpu_cluster: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateGpuClusterArgs']] = None,
                  gpu_settings: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateGpuSettingsArgs']] = None,
+                 instance_metadata: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateInstanceMetadataArgs']] = None,
                  local_disks: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateLocalDisksArgs']] = None,
                  max_pods: pulumi.Input[Optional[_builtins.float]] = None,
                  metadata: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateMetadataArgs']] = None,
                  network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateNetworkInterfaceArgs']]]] = None,
                  nvlink: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateNvlinkArgs']] = None,
+                 on_demand: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateOnDemandArgs']] = None,
                  os: pulumi.Input[Optional[_builtins.str]] = None,
                  preemptible: pulumi.Input[Optional['Mk8sV1NodeGroupTemplatePreemptibleArgs']] = None,
                  reservation_policy: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateReservationPolicyArgs']] = None,
                  service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 spot_pricing_policy: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateSpotPricingPolicyArgs']] = None,
                  taints: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateTaintArgs']]]] = None):
         """
         :param pulumi.Input['Mk8sV1NodeGroupTemplateResourcesArgs'] resources: Resources that will have Nebius Compute Instance where Node kubelet will run.
@@ -9893,6 +10420,11 @@ class Mk8sV1NodeGroupTemplateArgs:
                
                   Static attachments of Compute Filesystem.
                   Can be used as a workaround, until CSI for Compute Disk and Filesystem will be available.
+        :param pulumi.Input['Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs'] follows_spot_price: :
+               
+                  The preemptible VM accepts the current spot price.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
         :param pulumi.Input['Mk8sV1NodeGroupTemplateGpuClusterArgs'] gpu_cluster: Nebius Compute GPUCluster ID that will be attached to node.
         :param pulumi.Input['Mk8sV1NodeGroupTemplateGpuSettingsArgs'] gpu_settings: :
                
@@ -9901,6 +10433,7 @@ class Mk8sV1NodeGroupTemplateArgs:
                #### Inner value description
                
                   GPU-related settings.
+        :param pulumi.Input['Mk8sV1NodeGroupTemplateInstanceMetadataArgs'] instance_metadata: Metadata propagated to the Compute Instances in the NodeGroup.
         :param pulumi.Input['Mk8sV1NodeGroupTemplateLocalDisksArgs'] local_disks: :
                
                  <span pulumi-lang-nodejs=" localDisks " pulumi-lang-dotnet=" LocalDisks " pulumi-lang-go=" localDisks " pulumi-lang-python=" local_disks " pulumi-lang-yaml=" localDisks " pulumi-lang-java=" localDisks " pulumi-lang-hcl=" local_disks "> localDisks </span>enables the provisioning of fast local drives.
@@ -9912,33 +10445,17 @@ class Mk8sV1NodeGroupTemplateArgs:
                   in group. The node CIDR prefix is calculated as `32 - ceil(log2(2 * max_pods))`, i.e. the smallest IPv4 subnet whose total address
                   count is at least `2 *<span pulumi-lang-nodejs=" maxPods`" pulumi-lang-dotnet=" MaxPods`" pulumi-lang-go=" maxPods`" pulumi-lang-python=" max_pods`" pulumi-lang-yaml=" maxPods`" pulumi-lang-java=" maxPods`" pulumi-lang-hcl=" max_pods`"> maxPods`</span>. Not all IPs are usable for workload Pods because some of them are consumed by system Pods.
         :param pulumi.Input['Mk8sV1NodeGroupTemplateNvlinkArgs'] nvlink: NVLinkSpec configures NVLink settings for the NodeGroup.
+        :param pulumi.Input['Mk8sV1NodeGroupTemplateOnDemandArgs'] on_demand: :
+               
+                  A regular, non-preemptible VM.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
         :param pulumi.Input[_builtins.str] os: :
                
                   OS version that will be used to create the boot disk of Compute Instances in the NodeGroup.
-                  Supported platform / Kubernetes version / OS / driver presets combinations
-                  * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`, `cpu-e1`, `cpu-e2`, `cpu-d3`:
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30 → `"ubuntu22.04"`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu22.04"` (default), `"ubuntu24.04"`
-                  * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`:
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12"` (CUDA 12.4)
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu22.04"`
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.4"`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu22.04"`
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-                  * `gpu-b200-sxm`:
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu24.04"`
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12"` (CUDA 12.8)
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu24.04"`
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-                  * `gpu-b200-sxm-a`:
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-                    * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-                      * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
+                  Supported OS depend on the platform and Kubernetes version.
+                  To get the up-to-date list of supported OS for a given Kubernetes version and platform, run:
+                  nebius mk8s node-group get-compatibility-matrix --cluster-kubernetes-version VERSION --platform PLATFORM
         :param pulumi.Input['Mk8sV1NodeGroupTemplatePreemptibleArgs'] preemptible: :
                
                   Configures whether the nodes in the group are preemptible.
@@ -9958,6 +10475,12 @@ class Mk8sV1NodeGroupTemplateArgs:
                   This service account is also used to make requests to container registry.
                
                   `resource.serviceaccount.issueAccessToken` permission is required to use this field.
+        :param pulumi.Input['Mk8sV1NodeGroupTemplateSpotPricingPolicyArgs'] spot_pricing_policy: :
+               
+                  The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+                  pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
         :param pulumi.Input[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateTaintArgs']]] taints: :
                
                   Kubernetes Node taints.
@@ -9977,10 +10500,14 @@ class Mk8sV1NodeGroupTemplateArgs:
             pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
         if filesystems is not None:
             pulumi.set(__self__, "filesystems", filesystems)
+        if follows_spot_price is not None:
+            pulumi.set(__self__, "follows_spot_price", follows_spot_price)
         if gpu_cluster is not None:
             pulumi.set(__self__, "gpu_cluster", gpu_cluster)
         if gpu_settings is not None:
             pulumi.set(__self__, "gpu_settings", gpu_settings)
+        if instance_metadata is not None:
+            pulumi.set(__self__, "instance_metadata", instance_metadata)
         if local_disks is not None:
             pulumi.set(__self__, "local_disks", local_disks)
         if max_pods is not None:
@@ -9991,6 +10518,8 @@ class Mk8sV1NodeGroupTemplateArgs:
             pulumi.set(__self__, "network_interfaces", network_interfaces)
         if nvlink is not None:
             pulumi.set(__self__, "nvlink", nvlink)
+        if on_demand is not None:
+            pulumi.set(__self__, "on_demand", on_demand)
         if os is not None:
             pulumi.set(__self__, "os", os)
         if preemptible is not None:
@@ -9999,6 +10528,8 @@ class Mk8sV1NodeGroupTemplateArgs:
             pulumi.set(__self__, "reservation_policy", reservation_policy)
         if service_account_id is not None:
             pulumi.set(__self__, "service_account_id", service_account_id)
+        if spot_pricing_policy is not None:
+            pulumi.set(__self__, "spot_pricing_policy", spot_pricing_policy)
         if taints is not None:
             pulumi.set(__self__, "taints", taints)
 
@@ -10057,6 +10588,22 @@ class Mk8sV1NodeGroupTemplateArgs:
         pulumi.set(self, "filesystems", value)
 
     @_builtins.property
+    @pulumi.getter(name="followsSpotPrice")
+    def follows_spot_price(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "follows_spot_price")
+
+    @follows_spot_price.setter
+    def follows_spot_price(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs']]):
+        pulumi.set(self, "follows_spot_price", value)
+
+    @_builtins.property
     @pulumi.getter(name="gpuCluster")
     def gpu_cluster(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateGpuClusterArgs']]:
         """
@@ -10085,6 +10632,18 @@ class Mk8sV1NodeGroupTemplateArgs:
     @gpu_settings.setter
     def gpu_settings(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateGpuSettingsArgs']]):
         pulumi.set(self, "gpu_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceMetadata")
+    def instance_metadata(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateInstanceMetadataArgs']]:
+        """
+        Metadata propagated to the Compute Instances in the NodeGroup.
+        """
+        return pulumi.get(self, "instance_metadata")
+
+    @instance_metadata.setter
+    def instance_metadata(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateInstanceMetadataArgs']]):
+        pulumi.set(self, "instance_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="localDisks")
@@ -10149,36 +10708,31 @@ class Mk8sV1NodeGroupTemplateArgs:
         pulumi.set(self, "nvlink", value)
 
     @_builtins.property
+    @pulumi.getter(name="onDemand")
+    def on_demand(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateOnDemandArgs']]:
+        """
+        :
+
+           A regular, non-preemptible VM.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "on_demand")
+
+    @on_demand.setter
+    def on_demand(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateOnDemandArgs']]):
+        pulumi.set(self, "on_demand", value)
+
+    @_builtins.property
     @pulumi.getter
     def os(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         :
 
            OS version that will be used to create the boot disk of Compute Instances in the NodeGroup.
-           Supported platform / Kubernetes version / OS / driver presets combinations
-           * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`, `cpu-e1`, `cpu-e2`, `cpu-d3`:
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30 → `"ubuntu22.04"`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu22.04"` (default), `"ubuntu24.04"`
-           * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`:
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12"` (CUDA 12.4)
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu22.04"`
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.4"`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu22.04"`
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-           * `gpu-b200-sxm`:
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu24.04"`
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12"` (CUDA 12.8)
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30, 1.31 → `"ubuntu24.04"`
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-           * `gpu-b200-sxm-a`:
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `""`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
-             * <span pulumi-lang-nodejs="`driversPreset`" pulumi-lang-dotnet="`DriversPreset`" pulumi-lang-go="`driversPreset`" pulumi-lang-python="`drivers_preset`" pulumi-lang-yaml="`driversPreset`" pulumi-lang-java="`driversPreset`" pulumi-lang-hcl="`drivers_preset`">`driversPreset`</span>: `"cuda12.8"`
-               * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"ubuntu24.04"`
+           Supported OS depend on the platform and Kubernetes version.
+           To get the up-to-date list of supported OS for a given Kubernetes version and platform, run:
+           nebius mk8s node-group get-compatibility-matrix --cluster-kubernetes-version VERSION --platform PLATFORM
         """
         return pulumi.get(self, "os")
 
@@ -10239,6 +10793,23 @@ class Mk8sV1NodeGroupTemplateArgs:
         pulumi.set(self, "service_account_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="spotPricingPolicy")
+    def spot_pricing_policy(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateSpotPricingPolicyArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+           pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+        """
+        return pulumi.get(self, "spot_pricing_policy")
+
+    @spot_pricing_policy.setter
+    def spot_pricing_policy(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateSpotPricingPolicyArgs']]):
+        pulumi.set(self, "spot_pricing_policy", value)
+
+    @_builtins.property
     @pulumi.getter
     def taints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateTaintArgs']]]]:
         """
@@ -10263,6 +10834,7 @@ class Mk8sV1NodeGroupTemplateArgs:
 
 class Mk8sV1NodeGroupTemplateBootDiskArgsDict(TypedDict):
     block_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    disk_encryption: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgsDict']]]
     size_bytes: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     *Cannot be set alongside size_kibibytes,<span pulumi-lang-nodejs=" sizeMebibytes " pulumi-lang-dotnet=" SizeMebibytes " pulumi-lang-go=" sizeMebibytes " pulumi-lang-python=" size_mebibytes " pulumi-lang-yaml=" sizeMebibytes " pulumi-lang-java=" sizeMebibytes " pulumi-lang-hcl=" size_mebibytes "> sizeMebibytes </span>or size_gibibytes.*
@@ -10298,6 +10870,7 @@ class Mk8sV1NodeGroupTemplateBootDiskArgsDict(TypedDict):
 class Mk8sV1NodeGroupTemplateBootDiskArgs:
     def __init__(__self__, *,
                  block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
+                 disk_encryption: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs']] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_gibibytes: pulumi.Input[Optional[_builtins.float]] = None,
                  size_kibibytes: pulumi.Input[Optional[_builtins.float]] = None,
@@ -10322,6 +10895,8 @@ class Mk8sV1NodeGroupTemplateBootDiskArgs:
         """
         if block_size_bytes is not None:
             pulumi.set(__self__, "block_size_bytes", block_size_bytes)
+        if disk_encryption is not None:
+            pulumi.set(__self__, "disk_encryption", disk_encryption)
         if size_bytes is not None:
             pulumi.set(__self__, "size_bytes", size_bytes)
         if size_gibibytes is not None:
@@ -10341,6 +10916,15 @@ class Mk8sV1NodeGroupTemplateBootDiskArgs:
     @block_size_bytes.setter
     def block_size_bytes(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "block_size_bytes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="diskEncryption")
+    def disk_encryption(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs']]:
+        return pulumi.get(self, "disk_encryption")
+
+    @disk_encryption.setter
+    def disk_encryption(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs']]):
+        pulumi.set(self, "disk_encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")
@@ -10405,6 +10989,56 @@ class Mk8sV1NodeGroupTemplateBootDiskArgs:
            - `NETWORK_HDD`
            - `NETWORK_SSD_IO_M3`
            - `NETWORK_SSD_NON_REPLICATED`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+    #### Supported values
+
+       Possible values:
+
+       - `DISK_ENCRYPTION_UNSPECIFIED`
+       - `DISK_ENCRYPTION_MANAGED`
+    """
+
+@pulumi.input_type
+class Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `DISK_ENCRYPTION_UNSPECIFIED`
+                  - `DISK_ENCRYPTION_MANAGED`
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `DISK_ENCRYPTION_UNSPECIFIED`
+           - `DISK_ENCRYPTION_MANAGED`
         """
         return pulumi.get(self, "type")
 
@@ -10516,6 +11150,15 @@ class Mk8sV1NodeGroupTemplateFilesystemExistingFilesystemArgs:
         pulumi.set(self, "id", value)
 
 
+class Mk8sV1NodeGroupTemplateFollowsSpotPriceArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs:
+    def __init__(__self__):
+        pass
+
+
 class Mk8sV1NodeGroupTemplateGpuClusterArgsDict(TypedDict):
     id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
@@ -10537,61 +11180,120 @@ class Mk8sV1NodeGroupTemplateGpuClusterArgs:
 
 
 class Mk8sV1NodeGroupTemplateGpuSettingsArgsDict(TypedDict):
-    drivers_preset: pulumi.Input[_builtins.str]
+    dra: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    :
+
+       Enables Dynamic Resource Allocation for this GPU node group.
+       For nodes whose image contains preinstalled NVIDIA drivers, disables the legacy NVIDIA device plugin.
+       For GPU nodes attached to a Compute GPU cluster, advertises RDMA capability through the managed DRANet DaemonSet.
+    """
+    drivers_preset: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     :
 
        Identifier of the predefined set of drivers included in the ComputeImage deployed on ComputeInstances that are part of the NodeGroup.
-       Supported presets for different platform / Kubernetes version combinations:
-       * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`:
-         * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30 → `"cuda12"` (CUDA 12.4)
-         * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12"` (CUDA 12.4), `"cuda12.4"`, `"cuda12.8"`
-       * `gpu-b200-sxm`:
-         * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12"` (CUDA 12.8), `"cuda12.8"`
-       * `gpu-b200-sxm-a`:
-         * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12.8"`
+       Supported presets depend on the platform and Kubernetes version.
+       To get the up-to-date list of supported presets for a given Kubernetes version and platform, run:
+       nebius mk8s node-group get-compatibility-matrix --cluster-kubernetes-version VERSION --platform PLATFORM
+       Leave empty for GPU nodes that do not have preinstalled drivers, including DRA-enabled node groups.
     """
 
 @pulumi.input_type
 class Mk8sV1NodeGroupTemplateGpuSettingsArgs:
     def __init__(__self__, *,
-                 drivers_preset: pulumi.Input[_builtins.str]):
+                 dra: pulumi.Input[Optional[_builtins.bool]] = None,
+                 drivers_preset: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.bool] dra: :
+               
+                  Enables Dynamic Resource Allocation for this GPU node group.
+                  For nodes whose image contains preinstalled NVIDIA drivers, disables the legacy NVIDIA device plugin.
+                  For GPU nodes attached to a Compute GPU cluster, advertises RDMA capability through the managed DRANet DaemonSet.
         :param pulumi.Input[_builtins.str] drivers_preset: :
                
                   Identifier of the predefined set of drivers included in the ComputeImage deployed on ComputeInstances that are part of the NodeGroup.
-                  Supported presets for different platform / Kubernetes version combinations:
-                  * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`:
-                    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30 → `"cuda12"` (CUDA 12.4)
-                    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12"` (CUDA 12.4), `"cuda12.4"`, `"cuda12.8"`
-                  * `gpu-b200-sxm`:
-                    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12"` (CUDA 12.8), `"cuda12.8"`
-                  * `gpu-b200-sxm-a`:
-                    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12.8"`
+                  Supported presets depend on the platform and Kubernetes version.
+                  To get the up-to-date list of supported presets for a given Kubernetes version and platform, run:
+                  nebius mk8s node-group get-compatibility-matrix --cluster-kubernetes-version VERSION --platform PLATFORM
+                  Leave empty for GPU nodes that do not have preinstalled drivers, including DRA-enabled node groups.
         """
-        pulumi.set(__self__, "drivers_preset", drivers_preset)
+        if dra is not None:
+            pulumi.set(__self__, "dra", dra)
+        if drivers_preset is not None:
+            pulumi.set(__self__, "drivers_preset", drivers_preset)
+
+    @_builtins.property
+    @pulumi.getter
+    def dra(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        :
+
+           Enables Dynamic Resource Allocation for this GPU node group.
+           For nodes whose image contains preinstalled NVIDIA drivers, disables the legacy NVIDIA device plugin.
+           For GPU nodes attached to a Compute GPU cluster, advertises RDMA capability through the managed DRANet DaemonSet.
+        """
+        return pulumi.get(self, "dra")
+
+    @dra.setter
+    def dra(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dra", value)
 
     @_builtins.property
     @pulumi.getter(name="driversPreset")
-    def drivers_preset(self) -> pulumi.Input[_builtins.str]:
+    def drivers_preset(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         :
 
            Identifier of the predefined set of drivers included in the ComputeImage deployed on ComputeInstances that are part of the NodeGroup.
-           Supported presets for different platform / Kubernetes version combinations:
-           * `gpu-l40s-a`, `gpu-l40s-d`, `gpu-h100-sxm`, `gpu-h200-sxm`:
-             * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.30 → `"cuda12"` (CUDA 12.4)
-             * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12"` (CUDA 12.4), `"cuda12.4"`, `"cuda12.8"`
-           * `gpu-b200-sxm`:
-             * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12"` (CUDA 12.8), `"cuda12.8"`
-           * `gpu-b200-sxm-a`:
-             * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`" pulumi-lang-hcl="`version`">`version`</span>: 1.31 → `"cuda12.8"`
+           Supported presets depend on the platform and Kubernetes version.
+           To get the up-to-date list of supported presets for a given Kubernetes version and platform, run:
+           nebius mk8s node-group get-compatibility-matrix --cluster-kubernetes-version VERSION --platform PLATFORM
+           Leave empty for GPU nodes that do not have preinstalled drivers, including DRA-enabled node groups.
         """
         return pulumi.get(self, "drivers_preset")
 
     @drivers_preset.setter
-    def drivers_preset(self, value: pulumi.Input[_builtins.str]):
+    def drivers_preset(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drivers_preset", value)
+
+
+class Mk8sV1NodeGroupTemplateInstanceMetadataArgsDict(TypedDict):
+    labels: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    :
+
+       Labels propagated into Compute Instance metadata.
+       Provider-managed labels take precedence over user-provided instance labels.
+    """
+
+@pulumi.input_type
+class Mk8sV1NodeGroupTemplateInstanceMetadataArgs:
+    def __init__(__self__, *,
+                 labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: :
+               
+                  Labels propagated into Compute Instance metadata.
+                  Provider-managed labels take precedence over user-provided instance labels.
+        """
+        if labels is not None:
+            pulumi.set(__self__, "labels", labels)
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        :
+
+           Labels propagated into Compute Instance metadata.
+           Provider-managed labels take precedence over user-provided instance labels.
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "labels", value)
 
 
 class Mk8sV1NodeGroupTemplateLocalDisksArgsDict(TypedDict):
@@ -11039,6 +11741,15 @@ class Mk8sV1NodeGroupTemplateNvlinkArgs:
         pulumi.set(self, "nvl_instance_group_id", value)
 
 
+class Mk8sV1NodeGroupTemplateOnDemandArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class Mk8sV1NodeGroupTemplateOnDemandArgs:
+    def __init__(__self__):
+        pass
+
+
 class Mk8sV1NodeGroupTemplatePreemptibleArgsDict(TypedDict):
     pass
 
@@ -11184,6 +11895,34 @@ class Mk8sV1NodeGroupTemplateResourcesArgs:
     @preset.setter
     def preset(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preset", value)
+
+
+class Mk8sV1NodeGroupTemplateSpotPricingPolicyArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+    """
+
+@pulumi.input_type
+class Mk8sV1NodeGroupTemplateSpotPricingPolicyArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] id: PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
 
 
 class Mk8sV1NodeGroupTemplateTaintArgsDict(TypedDict):
@@ -16778,6 +17517,417 @@ class StorageV1BucketCorsRuleArgs:
         pulumi.set(self, "max_age_seconds", value)
 
 
+class StorageV1BucketFilesystemBucketArgsDict(TypedDict):
+    filesystem_id: pulumi.Input[_builtins.str]
+    """
+    Identifier of filesystem to be exposed via Object Storage API.
+    """
+    directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Directory within the filesystem that will be used as a root for the bucket.
+       If not empty, it must be an absolute normalized path (no ., .., or doubled /).
+       Empty value means that the bucket will be mounted at the filesystem root (/).
+    """
+    directory_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Linux permissions that will be applied for uploaded directories.
+       Permissions are specified in octal format (one to four octal numbers), e.g. "644" or "755".
+       The default value is 755 (rwxr-xr-x).
+    """
+    file_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Linux permissions that will be applied for uploaded files.
+       Permissions are specified in octal format (one to four octal numbers), e.g. "644" or "755".
+       The default value is 644 (rw-r--r--).
+    """
+    gid: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    :
+
+       GID that will be used for write operations to the filesystem.
+       By default, root user (UID=0, GID=0) is used.
+    """
+    uid: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    :
+
+       UID that will be used for write operations to the filesystem.
+       By default, root user (UID=0, GID=0) is used.
+    """
+
+@pulumi.input_type
+class StorageV1BucketFilesystemBucketArgs:
+    def __init__(__self__, *,
+                 filesystem_id: pulumi.Input[_builtins.str],
+                 directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 directory_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 gid: pulumi.Input[Optional[_builtins.float]] = None,
+                 uid: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] filesystem_id: Identifier of filesystem to be exposed via Object Storage API.
+        :param pulumi.Input[_builtins.str] directory: :
+               
+                  Directory within the filesystem that will be used as a root for the bucket.
+                  If not empty, it must be an absolute normalized path (no ., .., or doubled /).
+                  Empty value means that the bucket will be mounted at the filesystem root (/).
+        :param pulumi.Input[_builtins.str] directory_mode: :
+               
+                  Linux permissions that will be applied for uploaded directories.
+                  Permissions are specified in octal format (one to four octal numbers), e.g. "644" or "755".
+                  The default value is 755 (rwxr-xr-x).
+        :param pulumi.Input[_builtins.str] file_mode: :
+               
+                  Linux permissions that will be applied for uploaded files.
+                  Permissions are specified in octal format (one to four octal numbers), e.g. "644" or "755".
+                  The default value is 644 (rw-r--r--).
+        :param pulumi.Input[_builtins.float] gid: :
+               
+                  GID that will be used for write operations to the filesystem.
+                  By default, root user (UID=0, GID=0) is used.
+        :param pulumi.Input[_builtins.float] uid: :
+               
+                  UID that will be used for write operations to the filesystem.
+                  By default, root user (UID=0, GID=0) is used.
+        """
+        pulumi.set(__self__, "filesystem_id", filesystem_id)
+        if directory is not None:
+            pulumi.set(__self__, "directory", directory)
+        if directory_mode is not None:
+            pulumi.set(__self__, "directory_mode", directory_mode)
+        if file_mode is not None:
+            pulumi.set(__self__, "file_mode", file_mode)
+        if gid is not None:
+            pulumi.set(__self__, "gid", gid)
+        if uid is not None:
+            pulumi.set(__self__, "uid", uid)
+
+    @_builtins.property
+    @pulumi.getter(name="filesystemId")
+    def filesystem_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Identifier of filesystem to be exposed via Object Storage API.
+        """
+        return pulumi.get(self, "filesystem_id")
+
+    @filesystem_id.setter
+    def filesystem_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "filesystem_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def directory(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Directory within the filesystem that will be used as a root for the bucket.
+           If not empty, it must be an absolute normalized path (no ., .., or doubled /).
+           Empty value means that the bucket will be mounted at the filesystem root (/).
+        """
+        return pulumi.get(self, "directory")
+
+    @directory.setter
+    def directory(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "directory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="directoryMode")
+    def directory_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Linux permissions that will be applied for uploaded directories.
+           Permissions are specified in octal format (one to four octal numbers), e.g. "644" or "755".
+           The default value is 755 (rwxr-xr-x).
+        """
+        return pulumi.get(self, "directory_mode")
+
+    @directory_mode.setter
+    def directory_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "directory_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fileMode")
+    def file_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Linux permissions that will be applied for uploaded files.
+           Permissions are specified in octal format (one to four octal numbers), e.g. "644" or "755".
+           The default value is 644 (rw-r--r--).
+        """
+        return pulumi.get(self, "file_mode")
+
+    @file_mode.setter
+    def file_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def gid(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        :
+
+           GID that will be used for write operations to the filesystem.
+           By default, root user (UID=0, GID=0) is used.
+        """
+        return pulumi.get(self, "gid")
+
+    @gid.setter
+    def gid(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "gid", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def uid(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        :
+
+           UID that will be used for write operations to the filesystem.
+           By default, root user (UID=0, GID=0) is used.
+        """
+        return pulumi.get(self, "uid")
+
+    @uid.setter
+    def uid(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "uid", value)
+
+
+class StorageV1BucketLastAccessArgsDict(TypedDict):
+    conditions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketLastAccessConditionArgsDict']]]]]
+    """
+    :
+
+       A request is included in Last Access tracking if:
+       - The first condition matching the request has `INCLUDE` type.
+            OR
+       - The request doesn't match any conditions
+
+    #### Inner value description
+
+       Specifies conditions to include or exclude request from Last Access tracking.
+    """
+
+@pulumi.input_type
+class StorageV1BucketLastAccessArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketLastAccessConditionArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['StorageV1BucketLastAccessConditionArgs']]] conditions: :
+               
+                  A request is included in Last Access tracking if:
+                  - The first condition matching the request has `INCLUDE` type.
+                       OR
+                  - The request doesn't match any conditions
+               
+               #### Inner value description
+               
+                  Specifies conditions to include or exclude request from Last Access tracking.
+        """
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @_builtins.property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketLastAccessConditionArgs']]]]:
+        """
+        :
+
+           A request is included in Last Access tracking if:
+           - The first condition matching the request has `INCLUDE` type.
+                OR
+           - The request doesn't match any conditions
+
+        #### Inner value description
+
+           Specifies conditions to include or exclude request from Last Access tracking.
+        """
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketLastAccessConditionArgs']]]]):
+        pulumi.set(self, "conditions", value)
+
+
+class StorageV1BucketLastAccessConditionArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    :
+
+    #### Supported values
+
+       Possible values:
+
+       - `TYPE_UNSPECIFIED`
+       - `INCLUDE`:
+     If an include type condition is the first condition that the request match, the request will be included in
+     <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> calculation.
+
+       - `EXCLUDE`:
+     If an exclude type condition is the first condition that the request match, the request will be ignored in <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span>
+     calculation.
+    """
+    methods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    :
+
+       The s3 methods to match.
+       An empty list matches all methods
+
+    #### Supported values
+
+       Possible values:
+
+       - `METHOD_UNSPECIFIED`
+       - `GET_OBJECT`
+       - `HEAD_OBJECT`
+       - `GET_OBJECT_TAGGING`
+       - `COPY_OBJECT`:
+     Copy object method reads the source object.
+     We account for those operations as source object accesses when calculating <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> for source object.
+
+       - `UPLOAD_PART_COPY`:
+     Upload part copy method reads the source object.
+     We account for those operations as source object accesses when calculating <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> for source object.
+    """
+    user_agents: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    :
+
+       User agents to match. Condition is satisfied if the request's user agent contains any of these substrings.
+       An empty list matches all user agents.
+    """
+
+@pulumi.input_type
+class StorageV1BucketLastAccessConditionArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 methods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_agents: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: :
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `TYPE_UNSPECIFIED`
+                  - `INCLUDE`:
+                If an include type condition is the first condition that the request match, the request will be included in
+                <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> calculation.
+               
+                  - `EXCLUDE`:
+                If an exclude type condition is the first condition that the request match, the request will be ignored in <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span>
+                calculation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] methods: :
+               
+                  The s3 methods to match.
+                  An empty list matches all methods
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `METHOD_UNSPECIFIED`
+                  - `GET_OBJECT`
+                  - `HEAD_OBJECT`
+                  - `GET_OBJECT_TAGGING`
+                  - `COPY_OBJECT`:
+                Copy object method reads the source object.
+                We account for those operations as source object accesses when calculating <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> for source object.
+               
+                  - `UPLOAD_PART_COPY`:
+                Upload part copy method reads the source object.
+                We account for those operations as source object accesses when calculating <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> for source object.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] user_agents: :
+               
+                  User agents to match. Condition is satisfied if the request's user agent contains any of these substrings.
+                  An empty list matches all user agents.
+        """
+        pulumi.set(__self__, "type", type)
+        if methods is not None:
+            pulumi.set(__self__, "methods", methods)
+        if user_agents is not None:
+            pulumi.set(__self__, "user_agents", user_agents)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        :
+
+        #### Supported values
+
+           Possible values:
+
+           - `TYPE_UNSPECIFIED`
+           - `INCLUDE`:
+         If an include type condition is the first condition that the request match, the request will be included in
+         <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> calculation.
+
+           - `EXCLUDE`:
+         If an exclude type condition is the first condition that the request match, the request will be ignored in <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span>
+         calculation.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def methods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        :
+
+           The s3 methods to match.
+           An empty list matches all methods
+
+        #### Supported values
+
+           Possible values:
+
+           - `METHOD_UNSPECIFIED`
+           - `GET_OBJECT`
+           - `HEAD_OBJECT`
+           - `GET_OBJECT_TAGGING`
+           - `COPY_OBJECT`:
+         Copy object method reads the source object.
+         We account for those operations as source object accesses when calculating <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> for source object.
+
+           - `UPLOAD_PART_COPY`:
+         Upload part copy method reads the source object.
+         We account for those operations as source object accesses when calculating <span pulumi-lang-nodejs="`daysSinceLastAccess`" pulumi-lang-dotnet="`DaysSinceLastAccess`" pulumi-lang-go="`daysSinceLastAccess`" pulumi-lang-python="`days_since_last_access`" pulumi-lang-yaml="`daysSinceLastAccess`" pulumi-lang-java="`daysSinceLastAccess`" pulumi-lang-hcl="`days_since_last_access`">`daysSinceLastAccess`</span> for source object.
+        """
+        return pulumi.get(self, "methods")
+
+    @methods.setter
+    def methods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "methods", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userAgents")
+    def user_agents(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        :
+
+           User agents to match. Condition is satisfied if the request's user agent contains any of these substrings.
+           An empty list matches all user agents.
+        """
+        return pulumi.get(self, "user_agents")
+
+    @user_agents.setter
+    def user_agents(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "user_agents", value)
+
+
 class StorageV1BucketLifecycleConfigurationArgsDict(TypedDict):
     last_access_filter: NotRequired[pulumi.Input[Optional['StorageV1BucketLifecycleConfigurationLastAccessFilterArgsDict']]]
     """
@@ -17948,6 +19098,19 @@ class StorageV1BucketStatusArgsDict(TypedDict):
        Indicator flag showing whether the bucket has any BucketPolicy rule
        that grants anonymous access to any object, prefix, or the entire bucket.
     """
+    bucket_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+    #### Supported values
+
+       BucketType is a type of the bucket.
+       Possible values:
+
+       - `BUCKET_TYPE_UNSPECIFIED`
+       - `REGULAR` - Regular object storage bucket.
+       - `FILESYSTEM` - Object storage bucket that is mounted to an existing compute filesystem.
+    """
     counters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketStatusCounterArgsDict']]]]]
     deleted_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -17964,6 +19127,13 @@ class StorageV1BucketStatusArgsDict(TypedDict):
 
        The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
        and contains only the FQDN address.
+    """
+    insecure_endpoint: NotRequired[pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgsDict']]]
+    """
+    :
+
+       Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+       same region or allowed from everywhere.
     """
     purge_at: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -18013,9 +19183,11 @@ class StorageV1BucketStatusArgsDict(TypedDict):
 class StorageV1BucketStatusArgs:
     def __init__(__self__, *,
                  anonymous_access_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket_type: pulumi.Input[Optional[_builtins.str]] = None,
                  counters: pulumi.Input[Optional[Sequence[pulumi.Input['StorageV1BucketStatusCounterArgs']]]] = None,
                  deleted_at: pulumi.Input[Optional[_builtins.str]] = None,
                  domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 insecure_endpoint: pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgs']] = None,
                  purge_at: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -18025,6 +19197,16 @@ class StorageV1BucketStatusArgs:
                
                   Indicator flag showing whether the bucket has any BucketPolicy rule
                   that grants anonymous access to any object, prefix, or the entire bucket.
+        :param pulumi.Input[_builtins.str] bucket_type: :
+               
+               #### Supported values
+               
+                  BucketType is a type of the bucket.
+                  Possible values:
+               
+                  - `BUCKET_TYPE_UNSPECIFIED`
+                  - `REGULAR` - Regular object storage bucket.
+                  - `FILESYSTEM` - Object storage bucket that is mounted to an existing compute filesystem.
         :param pulumi.Input[_builtins.str] deleted_at: :
                
                   The time when the bucket was deleted (or scheduled for deletion).
@@ -18035,6 +19217,10 @@ class StorageV1BucketStatusArgs:
                
                   The domain of the endpoint where the bucket can be accessed. It omits the scheme (HTTPS) and the port (443)
                   and contains only the FQDN address.
+        :param pulumi.Input['StorageV1BucketStatusInsecureEndpointArgs'] insecure_endpoint: :
+               
+                  Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+                  same region or allowed from everywhere.
         :param pulumi.Input[_builtins.str] purge_at: :
                
                   The time when the bucket will be automatically purged in case it was soft-deleted.
@@ -18069,12 +19255,16 @@ class StorageV1BucketStatusArgs:
         """
         if anonymous_access_enabled is not None:
             pulumi.set(__self__, "anonymous_access_enabled", anonymous_access_enabled)
+        if bucket_type is not None:
+            pulumi.set(__self__, "bucket_type", bucket_type)
         if counters is not None:
             pulumi.set(__self__, "counters", counters)
         if deleted_at is not None:
             pulumi.set(__self__, "deleted_at", deleted_at)
         if domain_name is not None:
             pulumi.set(__self__, "domain_name", domain_name)
+        if insecure_endpoint is not None:
+            pulumi.set(__self__, "insecure_endpoint", insecure_endpoint)
         if purge_at is not None:
             pulumi.set(__self__, "purge_at", purge_at)
         if region is not None:
@@ -18098,6 +19288,27 @@ class StorageV1BucketStatusArgs:
     @anonymous_access_enabled.setter
     def anonymous_access_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "anonymous_access_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bucketType")
+    def bucket_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+        #### Supported values
+
+           BucketType is a type of the bucket.
+           Possible values:
+
+           - `BUCKET_TYPE_UNSPECIFIED`
+           - `REGULAR` - Regular object storage bucket.
+           - `FILESYSTEM` - Object storage bucket that is mounted to an existing compute filesystem.
+        """
+        return pulumi.get(self, "bucket_type")
+
+    @bucket_type.setter
+    def bucket_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bucket_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -18139,6 +19350,21 @@ class StorageV1BucketStatusArgs:
     @domain_name.setter
     def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="insecureEndpoint")
+    def insecure_endpoint(self) -> pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgs']]:
+        """
+        :
+
+           Insecure endpoint mode shows whether plain HTTP (without TLS) is forbidden, allowed for traffic from the
+           same region or allowed from everywhere.
+        """
+        return pulumi.get(self, "insecure_endpoint")
+
+    @insecure_endpoint.setter
+    def insecure_endpoint(self, value: pulumi.Input[Optional['StorageV1BucketStatusInsecureEndpointArgs']]):
+        pulumi.set(self, "insecure_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="purgeAt")
@@ -18475,6 +19701,177 @@ class StorageV1BucketStatusCounterNonCurrentCountersArgs:
     @simple_objects_size.setter
     def simple_objects_size(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "simple_objects_size", value)
+
+
+class StorageV1BucketStatusInsecureEndpointArgsDict(TypedDict):
+    mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Determines where the plain HTTP endpoint is available.
+
+    #### Supported values
+
+       Defines where the plain HTTP endpoint is available.
+       Possible values:
+
+       - `MODE_UNSPECIFIED`
+       - `DISABLED` - Plain HTTP access is disabled.
+       - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+       - `ALL` - Plain HTTP access is available from any network.
+    """
+
+@pulumi.input_type
+class StorageV1BucketStatusInsecureEndpointArgs:
+    def __init__(__self__, *,
+                 mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] mode: :
+               
+                  Determines where the plain HTTP endpoint is available.
+               
+               #### Supported values
+               
+                  Defines where the plain HTTP endpoint is available.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `DISABLED` - Plain HTTP access is disabled.
+                  - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+                  - `ALL` - Plain HTTP access is available from any network.
+        """
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Determines where the plain HTTP endpoint is available.
+
+        #### Supported values
+
+           Defines where the plain HTTP endpoint is available.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `DISABLED` - Plain HTTP access is disabled.
+           - `REGION_LOCAL` - Plain HTTP access is available only from the same region.
+           - `ALL` - Plain HTTP access is available from any network.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mode", value)
+
+
+class StorageV1InventoryMetadataArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class StorageV1InventoryMetadataArgs:
+    def __init__(__self__):
+        pass
+
+
+class StorageV1InventoryStatusArgsDict(TypedDict):
+    error_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Error code, if the last run was not successful, otherwise NO_ERROR.
+
+    #### Supported values
+
+       Possible values:
+
+       - `NO_ERROR` - No error.
+       - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+       - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+       - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+       - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+    """
+    last_success: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Timestamp of the last successful run.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+
+@pulumi.input_type
+class StorageV1InventoryStatusArgs:
+    def __init__(__self__, *,
+                 error_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_success: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] error_code: :
+               
+                  Error code, if the last run was not successful, otherwise NO_ERROR.
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `NO_ERROR` - No error.
+                  - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+                  - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+                  - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+                  - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+        :param pulumi.Input[_builtins.str] last_success: :
+               
+                  Timestamp of the last successful run.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        if error_code is not None:
+            pulumi.set(__self__, "error_code", error_code)
+        if last_success is not None:
+            pulumi.set(__self__, "last_success", last_success)
+
+    @_builtins.property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Error code, if the last run was not successful, otherwise NO_ERROR.
+
+        #### Supported values
+
+           Possible values:
+
+           - `NO_ERROR` - No error.
+           - `DESTINATION_BUCKET_NOT_FOUND` - Destination bucket not found.
+           - `PERMISSION_DENIED` - Permission denied: you don't have permission to the destination bucket.
+           - `INVALID_INTENT` - Intent is invalid, does not exist or expired.
+           - `QUOTA_EXCEEDED` - Quota exceeded in destination.
+        """
+        return pulumi.get(self, "error_code")
+
+    @error_code.setter
+    def error_code(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "error_code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastSuccess")
+    def last_success(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Timestamp of the last successful run.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "last_success")
+
+    @last_success.setter
+    def last_success(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "last_success", value)
 
 
 class StorageV1TransferAfterNEmptyIterationsArgsDict(TypedDict):
@@ -22116,6 +23513,36 @@ class TunnelV1TunnelMetadataArgs:
 
 
 class TunnelV1TunnelStatusArgsDict(TypedDict):
+    connection_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Whether any agent is connected to the tunnel now.
+
+    #### Supported values
+
+       ConnectionState reports whether the tunnel has an agent behind it. Values are
+       prefixed because a top-level enum puts them in the package scope.
+       Possible values:
+
+       - `CONNECTION_STATE_UNSPECIFIED`:
+     Proto3 zero value. A read of the tunnel never returns it; a mutation
+     records it, because it reports the tunnel that was written.
+
+       - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+       - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+    """
+    services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TunnelV1TunnelStatusServiceArgsDict']]]]]
+    """
+    :
+
+       Services reachable through the tunnel. A service is listed while at least
+       one agent announces it, and follows the agents within about 30 seconds.
+
+    #### Inner value description
+
+       ServiceStatus is a service reachable through the tunnel.
+    """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     :
@@ -22135,8 +23562,34 @@ class TunnelV1TunnelStatusArgsDict(TypedDict):
 @pulumi.input_type
 class TunnelV1TunnelStatusArgs:
     def __init__(__self__, *,
+                 connection_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input['TunnelV1TunnelStatusServiceArgs']]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] connection_state: :
+               
+                  Whether any agent is connected to the tunnel now.
+               
+               #### Supported values
+               
+                  ConnectionState reports whether the tunnel has an agent behind it. Values are
+                  prefixed because a top-level enum puts them in the package scope.
+                  Possible values:
+               
+                  - `CONNECTION_STATE_UNSPECIFIED`:
+                Proto3 zero value. A read of the tunnel never returns it; a mutation
+                records it, because it reports the tunnel that was written.
+               
+                  - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+                  - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+        :param pulumi.Input[Sequence[pulumi.Input['TunnelV1TunnelStatusServiceArgs']]] services: :
+               
+                  Services reachable through the tunnel. A service is listed while at least
+                  one agent announces it, and follows the agents within about 30 seconds.
+               
+               #### Inner value description
+               
+                  ServiceStatus is a service reachable through the tunnel.
         :param pulumi.Input[_builtins.str] state: :
                
                   Current lifecycle state of the tunnel.
@@ -22150,8 +23603,58 @@ class TunnelV1TunnelStatusArgs:
                   - `CREATED` - The tunnel has been created and is active.
                   - `DELETED` - The tunnel has been deleted.
         """
+        if connection_state is not None:
+            pulumi.set(__self__, "connection_state", connection_state)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionState")
+    def connection_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Whether any agent is connected to the tunnel now.
+
+        #### Supported values
+
+           ConnectionState reports whether the tunnel has an agent behind it. Values are
+           prefixed because a top-level enum puts them in the package scope.
+           Possible values:
+
+           - `CONNECTION_STATE_UNSPECIFIED`:
+         Proto3 zero value. A read of the tunnel never returns it; a mutation
+         records it, because it reports the tunnel that was written.
+
+           - `CONNECTION_STATE_DISCONNECTED` - No agent is connected. Nothing the tunnel exposes is reachable.
+           - `CONNECTION_STATE_CONNECTED` - At least one agent is connected.
+        """
+        return pulumi.get(self, "connection_state")
+
+    @connection_state.setter
+    def connection_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "connection_state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TunnelV1TunnelStatusServiceArgs']]]]:
+        """
+        :
+
+           Services reachable through the tunnel. A service is listed while at least
+           one agent announces it, and follows the agents within about 30 seconds.
+
+        #### Inner value description
+
+           ServiceStatus is a service reachable through the tunnel.
+        """
+        return pulumi.get(self, "services")
+
+    @services.setter
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TunnelV1TunnelStatusServiceArgs']]]]):
+        pulumi.set(self, "services", value)
 
     @_builtins.property
     @pulumi.getter
@@ -22175,6 +23678,82 @@ class TunnelV1TunnelStatusArgs:
     @state.setter
     def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+
+class TunnelV1TunnelStatusServiceArgsDict(TypedDict):
+    endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Where to reach the service, as host:port. The tunnel terminates TLS, so a
+       client connects over TLS and sends the host as SNI. What travels inside is
+       whatever the service speaks, which the tunnel does not interpret.
+       For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Name of the service, as the agent announced it. 1-20 characters, lowercase
+       letters and digits only: the hostname joins the name to the tunnel id with
+       a dash, so a name may not contain one. For example, "app".
+    """
+
+@pulumi.input_type
+class TunnelV1TunnelStatusServiceArgs:
+    def __init__(__self__, *,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] endpoint: :
+               
+                  Where to reach the service, as host:port. The tunnel terminates TLS, so a
+                  client connects over TLS and sends the host as SNI. What travels inside is
+                  whatever the service speaks, which the tunnel does not interpret.
+                  For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+        :param pulumi.Input[_builtins.str] name: :
+               
+                  Name of the service, as the agent announced it. 1-20 characters, lowercase
+                  letters and digits only: the hostname joins the name to the tunnel id with
+                  a dash, so a name may not contain one. For example, "app".
+        """
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Where to reach the service, as host:port. The tunnel terminates TLS, so a
+           client connects over TLS and sends the host as SNI. What travels inside is
+           whatever the service speaks, which the tunnel does not interpret.
+           For example, "app-hy3wnb3wstpk7dz.tunnel.example.com:443".
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Name of the service, as the agent announced it. 1-20 characters, lowercase
+           letters and digits only: the hostname joins the name to the tunnel id with
+           a dash, so a name may not contain one. For example, "app".
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
 
 
 class VpcV1AllocationIpv4PrivateArgsDict(TypedDict):
@@ -23881,6 +25460,10 @@ class VpcV1RouteTableStatusArgsDict(TypedDict):
 
        - `STATE_UNSPECIFIED` - The state is unknown or not yet set.
        - `READY` - The route table is configured and operational.
+       - `CREATING` - The route table is being created.
+       - `RECONCILING` - The route table is reconciling changes after it has been created.
+       - `DELETING` - The route table is being deleted.
+       - `FAILED` - Reconciliation stopped because of an error.
     """
 
 @pulumi.input_type
@@ -23906,6 +25489,10 @@ class VpcV1RouteTableStatusArgs:
                
                   - `STATE_UNSPECIFIED` - The state is unknown or not yet set.
                   - `READY` - The route table is configured and operational.
+                  - `CREATING` - The route table is being created.
+                  - `RECONCILING` - The route table is reconciling changes after it has been created.
+                  - `DELETING` - The route table is being deleted.
+                  - `FAILED` - Reconciliation stopped because of an error.
         """
         if assignment is not None:
             pulumi.set(__self__, "assignment", assignment)
@@ -23956,6 +25543,10 @@ class VpcV1RouteTableStatusArgs:
 
            - `STATE_UNSPECIFIED` - The state is unknown or not yet set.
            - `READY` - The route table is configured and operational.
+           - `CREATING` - The route table is being created.
+           - `RECONCILING` - The route table is reconciling changes after it has been created.
+           - `DELETING` - The route table is being deleted.
+           - `FAILED` - Reconciliation stopped because of an error.
         """
         return pulumi.get(self, "state")
 

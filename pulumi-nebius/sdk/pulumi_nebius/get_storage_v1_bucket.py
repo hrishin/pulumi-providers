@@ -27,7 +27,7 @@ class GetStorageV1BucketResult:
     """
     A collection of values returned by getStorageV1Bucket.
     """
-    def __init__(__self__, bucket_policy=None, cors=None, created_at=None, default_storage_class=None, force_storage_class=None, id=None, labels=None, lifecycle_configuration=None, max_size_bytes=None, metadata=None, name=None, object_audit_logging=None, parent_id=None, resource_version=None, status=None, updated_at=None, versioning_policy=None):
+    def __init__(__self__, bucket_policy=None, cors=None, created_at=None, default_storage_class=None, filesystem_bucket=None, force_storage_class=None, id=None, labels=None, last_access=None, lifecycle_configuration=None, max_size_bytes=None, metadata=None, name=None, object_audit_logging=None, parent_id=None, resource_version=None, status=None, updated_at=None, versioning_policy=None):
         if bucket_policy and not isinstance(bucket_policy, dict):
             raise TypeError("Expected argument 'bucket_policy' to be a dict")
         pulumi.set(__self__, "bucket_policy", bucket_policy)
@@ -40,6 +40,9 @@ class GetStorageV1BucketResult:
         if default_storage_class and not isinstance(default_storage_class, str):
             raise TypeError("Expected argument 'default_storage_class' to be a str")
         pulumi.set(__self__, "default_storage_class", default_storage_class)
+        if filesystem_bucket and not isinstance(filesystem_bucket, dict):
+            raise TypeError("Expected argument 'filesystem_bucket' to be a dict")
+        pulumi.set(__self__, "filesystem_bucket", filesystem_bucket)
         if force_storage_class and not isinstance(force_storage_class, bool):
             raise TypeError("Expected argument 'force_storage_class' to be a bool")
         pulumi.set(__self__, "force_storage_class", force_storage_class)
@@ -49,6 +52,9 @@ class GetStorageV1BucketResult:
         if labels and not isinstance(labels, dict):
             raise TypeError("Expected argument 'labels' to be a dict")
         pulumi.set(__self__, "labels", labels)
+        if last_access and not isinstance(last_access, dict):
+            raise TypeError("Expected argument 'last_access' to be a dict")
+        pulumi.set(__self__, "last_access", last_access)
         if lifecycle_configuration and not isinstance(lifecycle_configuration, dict):
             raise TypeError("Expected argument 'lifecycle_configuration' to be a dict")
         pulumi.set(__self__, "lifecycle_configuration", lifecycle_configuration)
@@ -101,6 +107,11 @@ class GetStorageV1BucketResult:
         return pulumi.get(self, "default_storage_class")
 
     @_builtins.property
+    @pulumi.getter(name="filesystemBucket")
+    def filesystem_bucket(self) -> 'outputs.GetStorageV1BucketFilesystemBucketResult':
+        return pulumi.get(self, "filesystem_bucket")
+
+    @_builtins.property
     @pulumi.getter(name="forceStorageClass")
     def force_storage_class(self) -> _builtins.bool:
         return pulumi.get(self, "force_storage_class")
@@ -114,6 +125,11 @@ class GetStorageV1BucketResult:
     @pulumi.getter
     def labels(self) -> Mapping[str, _builtins.str]:
         return pulumi.get(self, "labels")
+
+    @_builtins.property
+    @pulumi.getter(name="lastAccess")
+    def last_access(self) -> 'outputs.GetStorageV1BucketLastAccessResult':
+        return pulumi.get(self, "last_access")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleConfiguration")
@@ -176,9 +192,11 @@ class AwaitableGetStorageV1BucketResult(GetStorageV1BucketResult):
             cors=self.cors,
             created_at=self.created_at,
             default_storage_class=self.default_storage_class,
+            filesystem_bucket=self.filesystem_bucket,
             force_storage_class=self.force_storage_class,
             id=self.id,
             labels=self.labels,
+            last_access=self.last_access,
             lifecycle_configuration=self.lifecycle_configuration,
             max_size_bytes=self.max_size_bytes,
             metadata=self.metadata,
@@ -210,9 +228,11 @@ def get_storage_v1_bucket(id: Optional[_builtins.str] = None,
         cors=pulumi.get(__ret__, 'cors'),
         created_at=pulumi.get(__ret__, 'created_at'),
         default_storage_class=pulumi.get(__ret__, 'default_storage_class'),
+        filesystem_bucket=pulumi.get(__ret__, 'filesystem_bucket'),
         force_storage_class=pulumi.get(__ret__, 'force_storage_class'),
         id=pulumi.get(__ret__, 'id'),
         labels=pulumi.get(__ret__, 'labels'),
+        last_access=pulumi.get(__ret__, 'last_access'),
         lifecycle_configuration=pulumi.get(__ret__, 'lifecycle_configuration'),
         max_size_bytes=pulumi.get(__ret__, 'max_size_bytes'),
         metadata=pulumi.get(__ret__, 'metadata'),
@@ -241,9 +261,11 @@ def get_storage_v1_bucket_output(id: pulumi.Input[Optional[Optional[_builtins.st
         cors=pulumi.get(__response__, 'cors'),
         created_at=pulumi.get(__response__, 'created_at'),
         default_storage_class=pulumi.get(__response__, 'default_storage_class'),
+        filesystem_bucket=pulumi.get(__response__, 'filesystem_bucket'),
         force_storage_class=pulumi.get(__response__, 'force_storage_class'),
         id=pulumi.get(__response__, 'id'),
         labels=pulumi.get(__response__, 'labels'),
+        last_access=pulumi.get(__response__, 'last_access'),
         lifecycle_configuration=pulumi.get(__response__, 'lifecycle_configuration'),
         max_size_bytes=pulumi.get(__response__, 'max_size_bytes'),
         metadata=pulumi.get(__response__, 'metadata'),

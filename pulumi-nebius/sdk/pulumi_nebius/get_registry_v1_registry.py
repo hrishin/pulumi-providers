@@ -138,12 +138,16 @@ class AwaitableGetRegistryV1RegistryResult(GetRegistryV1RegistryResult):
 
 
 def get_registry_v1_registry(id: Optional[_builtins.str] = None,
+                             name: Optional[_builtins.str] = None,
+                             parent_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRegistryV1RegistryResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
+    __args__['name'] = name
+    __args__['parentId'] = parent_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('nebius:index/getRegistryV1Registry:getRegistryV1Registry', __args__, opts=opts, typ=GetRegistryV1RegistryResult, package_ref=_utilities.get_package()).value
 
@@ -159,13 +163,17 @@ def get_registry_v1_registry(id: Optional[_builtins.str] = None,
         resource_version=pulumi.get(__ret__, 'resource_version'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_registry_v1_registry_output(id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_registry_v1_registry_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    parent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRegistryV1RegistryResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
+    __args__['name'] = name
+    __args__['parentId'] = parent_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nebius:index/getRegistryV1Registry:getRegistryV1Registry', __args__, opts=opts, typ=GetRegistryV1RegistryResult, package_ref=_utilities.get_package())
     return __ret__.apply(lambda __response__: GetRegistryV1RegistryResult(

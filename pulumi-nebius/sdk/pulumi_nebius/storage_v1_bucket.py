@@ -24,8 +24,10 @@ class StorageV1BucketArgs:
                  bucket_policy: pulumi.Input[Optional['StorageV1BucketBucketPolicyArgs']] = None,
                  cors: pulumi.Input[Optional['StorageV1BucketCorsArgs']] = None,
                  default_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 filesystem_bucket: pulumi.Input[Optional['StorageV1BucketFilesystemBucketArgs']] = None,
                  force_storage_class: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_access: pulumi.Input[Optional['StorageV1BucketLastAccessArgs']] = None,
                  lifecycle_configuration: pulumi.Input[Optional['StorageV1BucketLifecycleConfigurationArgs']] = None,
                  max_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  metadata: pulumi.Input[Optional['StorageV1BucketMetadataArgs']] = None,
@@ -64,8 +66,18 @@ class StorageV1BucketArgs:
                   - `ENHANCED_THROUGHPUT`
                   - `INTELLIGENT`
                   - `FILESYSTEM` - Special storage class only for filesystem buckets.
+        :param pulumi.Input['StorageV1BucketFilesystemBucketArgs'] filesystem_bucket: Bucket that uses the existing client's compute filesystem.
         :param pulumi.Input[_builtins.bool] force_storage_class: Flag to force usage of default_storage_class, ignoring `x-amz-storage-class` header.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
+        :param pulumi.Input['StorageV1BucketLastAccessArgs'] last_access: :
+               
+                  Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+                  It does not itself enable Last Access tracking.
+                  A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+               
+               #### Inner value description
+               
+                  Specifies which requests are included in Last Access tracking.
         :param pulumi.Input['StorageV1BucketLifecycleConfigurationArgs'] lifecycle_configuration: :
                
                #### Inner value description
@@ -128,10 +140,14 @@ class StorageV1BucketArgs:
             pulumi.set(__self__, "cors", cors)
         if default_storage_class is not None:
             pulumi.set(__self__, "default_storage_class", default_storage_class)
+        if filesystem_bucket is not None:
+            pulumi.set(__self__, "filesystem_bucket", filesystem_bucket)
         if force_storage_class is not None:
             pulumi.set(__self__, "force_storage_class", force_storage_class)
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
+        if last_access is not None:
+            pulumi.set(__self__, "last_access", last_access)
         if lifecycle_configuration is not None:
             pulumi.set(__self__, "lifecycle_configuration", lifecycle_configuration)
         if max_size_bytes is not None:
@@ -209,6 +225,18 @@ class StorageV1BucketArgs:
         pulumi.set(self, "default_storage_class", value)
 
     @_builtins.property
+    @pulumi.getter(name="filesystemBucket")
+    def filesystem_bucket(self) -> pulumi.Input[Optional['StorageV1BucketFilesystemBucketArgs']]:
+        """
+        Bucket that uses the existing client's compute filesystem.
+        """
+        return pulumi.get(self, "filesystem_bucket")
+
+    @filesystem_bucket.setter
+    def filesystem_bucket(self, value: pulumi.Input[Optional['StorageV1BucketFilesystemBucketArgs']]):
+        pulumi.set(self, "filesystem_bucket", value)
+
+    @_builtins.property
     @pulumi.getter(name="forceStorageClass")
     def force_storage_class(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -231,6 +259,26 @@ class StorageV1BucketArgs:
     @labels.setter
     def labels(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastAccess")
+    def last_access(self) -> pulumi.Input[Optional['StorageV1BucketLastAccessArgs']]:
+        """
+        :
+
+           Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+           It does not itself enable Last Access tracking.
+           A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+
+        #### Inner value description
+
+           Specifies which requests are included in Last Access tracking.
+        """
+        return pulumi.get(self, "last_access")
+
+    @last_access.setter
+    def last_access(self, value: pulumi.Input[Optional['StorageV1BucketLastAccessArgs']]):
+        pulumi.set(self, "last_access", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleConfiguration")
@@ -372,9 +420,11 @@ class _StorageV1BucketState:
                  cors: pulumi.Input[Optional['StorageV1BucketCorsArgs']] = None,
                  created_at: pulumi.Input[Optional[_builtins.str]] = None,
                  default_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 filesystem_bucket: pulumi.Input[Optional['StorageV1BucketFilesystemBucketArgs']] = None,
                  force_storage_class: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_access: pulumi.Input[Optional['StorageV1BucketLastAccessArgs']] = None,
                  lifecycle_configuration: pulumi.Input[Optional['StorageV1BucketLifecycleConfigurationArgs']] = None,
                  max_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
                  metadata: pulumi.Input[Optional['StorageV1BucketMetadataArgs']] = None,
@@ -421,9 +471,19 @@ class _StorageV1BucketState:
                   - `ENHANCED_THROUGHPUT`
                   - `INTELLIGENT`
                   - `FILESYSTEM` - Special storage class only for filesystem buckets.
+        :param pulumi.Input['StorageV1BucketFilesystemBucketArgs'] filesystem_bucket: Bucket that uses the existing client's compute filesystem.
         :param pulumi.Input[_builtins.bool] force_storage_class: Flag to force usage of default_storage_class, ignoring `x-amz-storage-class` header.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
+        :param pulumi.Input['StorageV1BucketLastAccessArgs'] last_access: :
+               
+                  Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+                  It does not itself enable Last Access tracking.
+                  A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+               
+               #### Inner value description
+               
+                  Specifies which requests are included in Last Access tracking.
         :param pulumi.Input['StorageV1BucketLifecycleConfigurationArgs'] lifecycle_configuration: :
                
                #### Inner value description
@@ -499,12 +559,16 @@ class _StorageV1BucketState:
             pulumi.set(__self__, "created_at", created_at)
         if default_storage_class is not None:
             pulumi.set(__self__, "default_storage_class", default_storage_class)
+        if filesystem_bucket is not None:
+            pulumi.set(__self__, "filesystem_bucket", filesystem_bucket)
         if force_storage_class is not None:
             pulumi.set(__self__, "force_storage_class", force_storage_class)
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
         if labels_all is not None:
             pulumi.set(__self__, "labels_all", labels_all)
+        if last_access is not None:
+            pulumi.set(__self__, "last_access", last_access)
         if lifecycle_configuration is not None:
             pulumi.set(__self__, "lifecycle_configuration", lifecycle_configuration)
         if max_size_bytes is not None:
@@ -604,6 +668,18 @@ class _StorageV1BucketState:
         pulumi.set(self, "default_storage_class", value)
 
     @_builtins.property
+    @pulumi.getter(name="filesystemBucket")
+    def filesystem_bucket(self) -> pulumi.Input[Optional['StorageV1BucketFilesystemBucketArgs']]:
+        """
+        Bucket that uses the existing client's compute filesystem.
+        """
+        return pulumi.get(self, "filesystem_bucket")
+
+    @filesystem_bucket.setter
+    def filesystem_bucket(self, value: pulumi.Input[Optional['StorageV1BucketFilesystemBucketArgs']]):
+        pulumi.set(self, "filesystem_bucket", value)
+
+    @_builtins.property
     @pulumi.getter(name="forceStorageClass")
     def force_storage_class(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -638,6 +714,26 @@ class _StorageV1BucketState:
     @labels_all.setter
     def labels_all(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels_all", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastAccess")
+    def last_access(self) -> pulumi.Input[Optional['StorageV1BucketLastAccessArgs']]:
+        """
+        :
+
+           Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+           It does not itself enable Last Access tracking.
+           A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+
+        #### Inner value description
+
+           Specifies which requests are included in Last Access tracking.
+        """
+        return pulumi.get(self, "last_access")
+
+    @last_access.setter
+    def last_access(self, value: pulumi.Input[Optional['StorageV1BucketLastAccessArgs']]):
+        pulumi.set(self, "last_access", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleConfiguration")
@@ -820,14 +916,16 @@ class StorageV1Bucket(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict']]] = None,
-                 cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict']]] = None,
+                 bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict', 'outputs.StorageV1BucketBucketPolicy']]] = None,
+                 cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict', 'outputs.StorageV1BucketCors']]] = None,
                  default_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 filesystem_bucket: pulumi.Input[Optional[Union['StorageV1BucketFilesystemBucketArgs', 'StorageV1BucketFilesystemBucketArgsDict', 'outputs.StorageV1BucketFilesystemBucket']]] = None,
                  force_storage_class: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict']]] = None,
+                 last_access: pulumi.Input[Optional[Union['StorageV1BucketLastAccessArgs', 'StorageV1BucketLastAccessArgsDict', 'outputs.StorageV1BucketLastAccess']]] = None,
+                 lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict', 'outputs.StorageV1BucketLifecycleConfiguration']]] = None,
                  max_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
-                 metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict', 'outputs.StorageV1BucketMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_audit_logging: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -838,14 +936,14 @@ class StorageV1Bucket(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict']] bucket_policy: :
+        :param pulumi.Input[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict', 'outputs.StorageV1BucketBucketPolicy']] bucket_policy: :
                
                   Bucket policy specifies granular permissions for a bucket.
                
                #### Inner value description
                
                   Bucket policy specifies granular permissions for a bucket.
-        :param pulumi.Input[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict']] cors: :
+        :param pulumi.Input[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict', 'outputs.StorageV1BucketCors']] cors: :
                
                   Cross-origin resource sharing configuration.
                
@@ -866,9 +964,19 @@ class StorageV1Bucket(pulumi.CustomResource):
                   - `ENHANCED_THROUGHPUT`
                   - `INTELLIGENT`
                   - `FILESYSTEM` - Special storage class only for filesystem buckets.
+        :param pulumi.Input[Union['StorageV1BucketFilesystemBucketArgs', 'StorageV1BucketFilesystemBucketArgsDict', 'outputs.StorageV1BucketFilesystemBucket']] filesystem_bucket: Bucket that uses the existing client's compute filesystem.
         :param pulumi.Input[_builtins.bool] force_storage_class: Flag to force usage of default_storage_class, ignoring `x-amz-storage-class` header.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict']] lifecycle_configuration: :
+        :param pulumi.Input[Union['StorageV1BucketLastAccessArgs', 'StorageV1BucketLastAccessArgsDict', 'outputs.StorageV1BucketLastAccess']] last_access: :
+               
+                  Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+                  It does not itself enable Last Access tracking.
+                  A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+               
+               #### Inner value description
+               
+                  Specifies which requests are included in Last Access tracking.
+        :param pulumi.Input[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict', 'outputs.StorageV1BucketLifecycleConfiguration']] lifecycle_configuration: :
                
                #### Inner value description
                
@@ -889,7 +997,7 @@ class StorageV1Bucket(pulumi.CustomResource):
                   Zero means unlimited.
                   Actual limit can be lower if customer doesn't have enough quota.
                   Real bucket size can go a little higher if customer writes too fast.
-        :param pulumi.Input[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict', 'outputs.StorageV1BucketMetadata']] metadata: :
                
                #### Inner value description
                
@@ -948,14 +1056,16 @@ class StorageV1Bucket(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict']]] = None,
-                 cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict']]] = None,
+                 bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict', 'outputs.StorageV1BucketBucketPolicy']]] = None,
+                 cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict', 'outputs.StorageV1BucketCors']]] = None,
                  default_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
+                 filesystem_bucket: pulumi.Input[Optional[Union['StorageV1BucketFilesystemBucketArgs', 'StorageV1BucketFilesystemBucketArgsDict', 'outputs.StorageV1BucketFilesystemBucket']]] = None,
                  force_storage_class: pulumi.Input[Optional[_builtins.bool]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict']]] = None,
+                 last_access: pulumi.Input[Optional[Union['StorageV1BucketLastAccessArgs', 'StorageV1BucketLastAccessArgsDict', 'outputs.StorageV1BucketLastAccess']]] = None,
+                 lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict', 'outputs.StorageV1BucketLifecycleConfiguration']]] = None,
                  max_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
-                 metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict', 'outputs.StorageV1BucketMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  object_audit_logging: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -972,8 +1082,10 @@ class StorageV1Bucket(pulumi.CustomResource):
             __props__.__dict__["bucket_policy"] = bucket_policy
             __props__.__dict__["cors"] = cors
             __props__.__dict__["default_storage_class"] = default_storage_class
+            __props__.__dict__["filesystem_bucket"] = filesystem_bucket
             __props__.__dict__["force_storage_class"] = force_storage_class
             __props__.__dict__["labels"] = labels
+            __props__.__dict__["last_access"] = last_access
             __props__.__dict__["lifecycle_configuration"] = lifecycle_configuration
             __props__.__dict__["max_size_bytes"] = max_size_bytes
             __props__.__dict__["metadata"] = metadata
@@ -997,21 +1109,23 @@ class StorageV1Bucket(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict']]] = None,
-            cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict']]] = None,
+            bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict', 'outputs.StorageV1BucketBucketPolicy']]] = None,
+            cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict', 'outputs.StorageV1BucketCors']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             default_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
+            filesystem_bucket: pulumi.Input[Optional[Union['StorageV1BucketFilesystemBucketArgs', 'StorageV1BucketFilesystemBucketArgsDict', 'outputs.StorageV1BucketFilesystemBucket']]] = None,
             force_storage_class: pulumi.Input[Optional[_builtins.bool]] = None,
             labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict']]] = None,
+            last_access: pulumi.Input[Optional[Union['StorageV1BucketLastAccessArgs', 'StorageV1BucketLastAccessArgsDict', 'outputs.StorageV1BucketLastAccess']]] = None,
+            lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict', 'outputs.StorageV1BucketLifecycleConfiguration']]] = None,
             max_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
-            metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict', 'outputs.StorageV1BucketMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             object_audit_logging: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
             resource_version: pulumi.Input[Optional[_builtins.float]] = None,
-            status: pulumi.Input[Optional[Union['StorageV1BucketStatusArgs', 'StorageV1BucketStatusArgsDict']]] = None,
+            status: pulumi.Input[Optional[Union['StorageV1BucketStatusArgs', 'StorageV1BucketStatusArgsDict', 'outputs.StorageV1BucketStatus']]] = None,
             updated_at: pulumi.Input[Optional[_builtins.str]] = None,
             versioning_policy: pulumi.Input[Optional[_builtins.str]] = None) -> 'StorageV1Bucket':
         """
@@ -1021,14 +1135,14 @@ class StorageV1Bucket(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict']] bucket_policy: :
+        :param pulumi.Input[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict', 'outputs.StorageV1BucketBucketPolicy']] bucket_policy: :
                
                   Bucket policy specifies granular permissions for a bucket.
                
                #### Inner value description
                
                   Bucket policy specifies granular permissions for a bucket.
-        :param pulumi.Input[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict']] cors: :
+        :param pulumi.Input[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict', 'outputs.StorageV1BucketCors']] cors: :
                
                   Cross-origin resource sharing configuration.
                
@@ -1054,10 +1168,20 @@ class StorageV1Bucket(pulumi.CustomResource):
                   - `ENHANCED_THROUGHPUT`
                   - `INTELLIGENT`
                   - `FILESYSTEM` - Special storage class only for filesystem buckets.
+        :param pulumi.Input[Union['StorageV1BucketFilesystemBucketArgs', 'StorageV1BucketFilesystemBucketArgsDict', 'outputs.StorageV1BucketFilesystemBucket']] filesystem_bucket: Bucket that uses the existing client's compute filesystem.
         :param pulumi.Input[_builtins.bool] force_storage_class: Flag to force usage of default_storage_class, ignoring `x-amz-storage-class` header.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
-        :param pulumi.Input[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict']] lifecycle_configuration: :
+        :param pulumi.Input[Union['StorageV1BucketLastAccessArgs', 'StorageV1BucketLastAccessArgsDict', 'outputs.StorageV1BucketLastAccess']] last_access: :
+               
+                  Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+                  It does not itself enable Last Access tracking.
+                  A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+               
+               #### Inner value description
+               
+                  Specifies which requests are included in Last Access tracking.
+        :param pulumi.Input[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict', 'outputs.StorageV1BucketLifecycleConfiguration']] lifecycle_configuration: :
                
                #### Inner value description
                
@@ -1078,7 +1202,7 @@ class StorageV1Bucket(pulumi.CustomResource):
                   Zero means unlimited.
                   Actual limit can be lower if customer doesn't have enough quota.
                   Real bucket size can go a little higher if customer writes too fast.
-        :param pulumi.Input[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict']] metadata: :
+        :param pulumi.Input[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict', 'outputs.StorageV1BucketMetadata']] metadata: :
                
                #### Inner value description
                
@@ -1132,9 +1256,11 @@ class StorageV1Bucket(pulumi.CustomResource):
         __props__.__dict__["cors"] = cors
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["default_storage_class"] = default_storage_class
+        __props__.__dict__["filesystem_bucket"] = filesystem_bucket
         __props__.__dict__["force_storage_class"] = force_storage_class
         __props__.__dict__["labels"] = labels
         __props__.__dict__["labels_all"] = labels_all
+        __props__.__dict__["last_access"] = last_access
         __props__.__dict__["lifecycle_configuration"] = lifecycle_configuration
         __props__.__dict__["max_size_bytes"] = max_size_bytes
         __props__.__dict__["metadata"] = metadata
@@ -1209,6 +1335,14 @@ class StorageV1Bucket(pulumi.CustomResource):
         return pulumi.get(self, "default_storage_class")
 
     @_builtins.property
+    @pulumi.getter(name="filesystemBucket")
+    def filesystem_bucket(self) -> pulumi.Output[Optional['outputs.StorageV1BucketFilesystemBucket']]:
+        """
+        Bucket that uses the existing client's compute filesystem.
+        """
+        return pulumi.get(self, "filesystem_bucket")
+
+    @_builtins.property
     @pulumi.getter(name="forceStorageClass")
     def force_storage_class(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
@@ -1231,6 +1365,22 @@ class StorageV1Bucket(pulumi.CustomResource):
         Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
         """
         return pulumi.get(self, "labels_all")
+
+    @_builtins.property
+    @pulumi.getter(name="lastAccess")
+    def last_access(self) -> pulumi.Output[Optional['outputs.StorageV1BucketLastAccess']]:
+        """
+        :
+
+           Specifies which requests are included in Last Access tracking, if Last Access tracking is enabled.
+           It does not itself enable Last Access tracking.
+           A non-empty <span pulumi-lang-nodejs="`lastAccess`" pulumi-lang-dotnet="`LastAccess`" pulumi-lang-go="`lastAccess`" pulumi-lang-python="`last_access`" pulumi-lang-yaml="`lastAccess`" pulumi-lang-java="`lastAccess`" pulumi-lang-hcl="`last_access`">`lastAccess`</span> overrides `lifecycle_configuration.last_access_filter`.
+
+        #### Inner value description
+
+           Specifies which requests are included in Last Access tracking.
+        """
+        return pulumi.get(self, "last_access")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleConfiguration")
