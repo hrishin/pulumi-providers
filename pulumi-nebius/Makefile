@@ -1,4 +1,4 @@
-PROVIDER_VERSION ?= 0.6.72
+PROVIDER_VERSION ?= 0.6.73
 PROVIDER_NAME    := nebius
 TF_REGISTRY      := registry.terraform.io/nebius/nebius
 PYTHON           := python3
