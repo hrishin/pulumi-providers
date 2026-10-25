@@ -127,19 +127,19 @@ class ContainerContainerArgsDict(TypedDict):
     """
     Container image (e.g., 'nginx:latest')
     """
-    entrypoint_overrides: NotRequired[pulumi.Input['ContainerContainerEntrypointOverridesArgsDict']]
+    entrypoint_overrides: NotRequired[pulumi.Input[Optional['ContainerContainerEntrypointOverridesArgsDict']]]
     """
     Override container entrypoint and command
     """
-    envs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerContainerEnvArgsDict']]]]
+    envs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerEnvArgsDict']]]]]
     """
     Environment variables
     """
-    healthcheck: NotRequired[pulumi.Input['ContainerContainerHealthcheckArgsDict']]
+    healthcheck: NotRequired[pulumi.Input[Optional['ContainerContainerHealthcheckArgsDict']]]
     """
     Healthcheck configuration
     """
-    volume_mounts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerContainerVolumeMountArgsDict']]]]
+    volume_mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerVolumeMountArgsDict']]]]]
     """
     Volume mounts for the container
     """
@@ -149,10 +149,10 @@ class ContainerContainerArgs:
     def __init__(__self__, *,
                  exposed_port: pulumi.Input[_builtins.float],
                  image: pulumi.Input[_builtins.str],
-                 entrypoint_overrides: Optional[pulumi.Input['ContainerContainerEntrypointOverridesArgs']] = None,
-                 envs: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerEnvArgs']]]] = None,
-                 healthcheck: Optional[pulumi.Input['ContainerContainerHealthcheckArgs']] = None,
-                 volume_mounts: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerVolumeMountArgs']]]] = None):
+                 entrypoint_overrides: pulumi.Input[Optional['ContainerContainerEntrypointOverridesArgs']] = None,
+                 envs: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerEnvArgs']]]] = None,
+                 healthcheck: pulumi.Input[Optional['ContainerContainerHealthcheckArgs']] = None,
+                 volume_mounts: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerVolumeMountArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.float] exposed_port: Port exposed by the container
         :param pulumi.Input[_builtins.str] image: Container image (e.g., 'nginx:latest')
@@ -198,50 +198,50 @@ class ContainerContainerArgs:
 
     @_builtins.property
     @pulumi.getter(name="entrypointOverrides")
-    def entrypoint_overrides(self) -> Optional[pulumi.Input['ContainerContainerEntrypointOverridesArgs']]:
+    def entrypoint_overrides(self) -> pulumi.Input[Optional['ContainerContainerEntrypointOverridesArgs']]:
         """
         Override container entrypoint and command
         """
         return pulumi.get(self, "entrypoint_overrides")
 
     @entrypoint_overrides.setter
-    def entrypoint_overrides(self, value: Optional[pulumi.Input['ContainerContainerEntrypointOverridesArgs']]):
+    def entrypoint_overrides(self, value: pulumi.Input[Optional['ContainerContainerEntrypointOverridesArgs']]):
         pulumi.set(self, "entrypoint_overrides", value)
 
     @_builtins.property
     @pulumi.getter
-    def envs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerEnvArgs']]]]:
+    def envs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerEnvArgs']]]]:
         """
         Environment variables
         """
         return pulumi.get(self, "envs")
 
     @envs.setter
-    def envs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerEnvArgs']]]]):
+    def envs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerEnvArgs']]]]):
         pulumi.set(self, "envs", value)
 
     @_builtins.property
     @pulumi.getter
-    def healthcheck(self) -> Optional[pulumi.Input['ContainerContainerHealthcheckArgs']]:
+    def healthcheck(self) -> pulumi.Input[Optional['ContainerContainerHealthcheckArgs']]:
         """
         Healthcheck configuration
         """
         return pulumi.get(self, "healthcheck")
 
     @healthcheck.setter
-    def healthcheck(self, value: Optional[pulumi.Input['ContainerContainerHealthcheckArgs']]):
+    def healthcheck(self, value: pulumi.Input[Optional['ContainerContainerHealthcheckArgs']]):
         pulumi.set(self, "healthcheck", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeMounts")
-    def volume_mounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerVolumeMountArgs']]]]:
+    def volume_mounts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerVolumeMountArgs']]]]:
         """
         Volume mounts for the container
         """
         return pulumi.get(self, "volume_mounts")
 
     @volume_mounts.setter
-    def volume_mounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerVolumeMountArgs']]]]):
+    def volume_mounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerVolumeMountArgs']]]]):
         pulumi.set(self, "volume_mounts", value)
 
 
@@ -250,11 +250,11 @@ class ContainerContainerEntrypointOverridesArgsDict(TypedDict):
     """
     Whether to override the entrypoint
     """
-    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    cmds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Custom command array
     """
-    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    entrypoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Custom entrypoint array (e.g., ["/bin/sh", "-c"])
     """
@@ -263,8 +263,8 @@ class ContainerContainerEntrypointOverridesArgsDict(TypedDict):
 class ContainerContainerEntrypointOverridesArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
-                 cmds: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cmds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entrypoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.bool] enabled: Whether to override the entrypoint
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cmds: Custom command array
@@ -290,26 +290,26 @@ class ContainerContainerEntrypointOverridesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cmds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cmds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Custom command array
         """
         return pulumi.get(self, "cmds")
 
     @cmds.setter
-    def cmds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cmds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cmds", value)
 
     @_builtins.property
     @pulumi.getter
-    def entrypoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def entrypoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Custom entrypoint array (e.g., ["/bin/sh", "-c"])
         """
         return pulumi.get(self, "entrypoints")
 
     @entrypoints.setter
-    def entrypoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def entrypoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "entrypoints", value)
 
 
@@ -384,11 +384,11 @@ class ContainerContainerHealthcheckArgsDict(TypedDict):
     """
     Whether healthcheck is enabled ('true' or 'false')
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Path for healthcheck
     """
-    port: NotRequired[pulumi.Input[_builtins.str]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Port for healthcheck
     """
@@ -397,8 +397,8 @@ class ContainerContainerHealthcheckArgsDict(TypedDict):
 class ContainerContainerHealthcheckArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.str],
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.str]] = None):
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] enabled: Whether healthcheck is enabled ('true' or 'false')
         :param pulumi.Input[_builtins.str] path: Path for healthcheck
@@ -424,35 +424,35 @@ class ContainerContainerHealthcheckArgs:
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path for healthcheck
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Port for healthcheck
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "port", value)
 
 
 class ContainerContainerRegistrySettingsArgsDict(TypedDict):
-    credentials: NotRequired[pulumi.Input[_builtins.str]]
+    credentials: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the registry credentials resource
     """
-    is_private: NotRequired[pulumi.Input[_builtins.str]]
+    is_private: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Whether the registry is private ('true' or 'false')
     """
@@ -460,8 +460,8 @@ class ContainerContainerRegistrySettingsArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerContainerRegistrySettingsArgs:
     def __init__(__self__, *,
-                 credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.str]] = None):
+                 credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credentials: Name of the registry credentials resource
         :param pulumi.Input[_builtins.str] is_private: Whether the registry is private ('true' or 'false')
@@ -473,26 +473,26 @@ class ContainerContainerRegistrySettingsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credentials(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the registry credentials resource
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credentials(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def is_private(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether the registry is private ('true' or 'false')
         """
         return pulumi.get(self, "is_private")
 
     @is_private.setter
-    def is_private(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def is_private(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "is_private", value)
 
 
@@ -505,15 +505,15 @@ class ContainerContainerVolumeMountArgsDict(TypedDict):
     """
     Type of volume ('scratch', 'memory', 'secret', 'shared')
     """
-    secret_name: NotRequired[pulumi.Input[_builtins.str]]
+    secret_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of secret (required for type='secret')
     """
-    size_in_mb: NotRequired[pulumi.Input[_builtins.float]]
+    size_in_mb: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Size in MB (optional for type='scratch' or 'memory')
     """
-    volume_id: NotRequired[pulumi.Input[_builtins.str]]
+    volume_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Volume ID (required for type='shared')
     """
@@ -523,9 +523,9 @@ class ContainerContainerVolumeMountArgs:
     def __init__(__self__, *,
                  mount_path: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_mb: Optional[pulumi.Input[_builtins.float]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_mb: pulumi.Input[Optional[_builtins.float]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] mount_path: Path where volume will be mounted in container
         :param pulumi.Input[_builtins.str] type: Type of volume ('scratch', 'memory', 'secret', 'shared')
@@ -568,38 +568,38 @@ class ContainerContainerVolumeMountArgs:
 
     @_builtins.property
     @pulumi.getter(name="secretName")
-    def secret_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of secret (required for type='secret')
         """
         return pulumi.get(self, "secret_name")
 
     @secret_name.setter
-    def secret_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInMb")
-    def size_in_mb(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def size_in_mb(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size in MB (optional for type='scratch' or 'memory')
         """
         return pulumi.get(self, "size_in_mb")
 
     @size_in_mb.setter
-    def size_in_mb(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def size_in_mb(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "size_in_mb", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeId")
-    def volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume ID (required for type='shared')
         """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
-    def volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_id", value)
 
 
@@ -632,7 +632,7 @@ class ContainerScalingArgsDict(TypedDict):
     """
     Scale up policy configuration
     """
-    deadline_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    deadline_seconds: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Request deadline in seconds
     """
@@ -647,7 +647,7 @@ class ContainerScalingArgs:
                  queue_message_ttl_seconds: pulumi.Input[_builtins.float],
                  scale_down_policy: pulumi.Input['ContainerScalingScaleDownPolicyArgs'],
                  scale_up_policy: pulumi.Input['ContainerScalingScaleUpPolicyArgs'],
-                 deadline_seconds: Optional[pulumi.Input[_builtins.float]] = None):
+                 deadline_seconds: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] concurrent_requests_per_replica: Maximum concurrent requests per replica
         :param pulumi.Input[_builtins.float] max_replica_count: Maximum number of replicas
@@ -754,14 +754,14 @@ class ContainerScalingArgs:
 
     @_builtins.property
     @pulumi.getter(name="deadlineSeconds")
-    def deadline_seconds(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def deadline_seconds(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Request deadline in seconds
         """
         return pulumi.get(self, "deadline_seconds")
 
     @deadline_seconds.setter
-    def deadline_seconds(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def deadline_seconds(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "deadline_seconds", value)
 
 
@@ -850,14 +850,14 @@ class ContainerScalingScaleUpPolicyArgs:
 
 
 class InstanceCpuArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
-    number_of_cores: NotRequired[pulumi.Input[_builtins.float]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    number_of_cores: NotRequired[pulumi.Input[Optional[_builtins.float]]]
 
 @pulumi.input_type
 class InstanceCpuArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_cores: Optional[pulumi.Input[_builtins.float]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_cores: pulumi.Input[Optional[_builtins.float]] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
         if number_of_cores is not None:
@@ -865,32 +865,32 @@ class InstanceCpuArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfCores")
-    def number_of_cores(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def number_of_cores(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "number_of_cores")
 
     @number_of_cores.setter
-    def number_of_cores(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def number_of_cores(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "number_of_cores", value)
 
 
 class InstanceGpuArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
-    number_of_gpus: NotRequired[pulumi.Input[_builtins.float]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    number_of_gpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
 
 @pulumi.input_type
 class InstanceGpuArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_gpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_gpus: pulumi.Input[Optional[_builtins.float]] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
         if number_of_gpus is not None:
@@ -898,32 +898,32 @@ class InstanceGpuArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfGpus")
-    def number_of_gpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def number_of_gpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "number_of_gpus")
 
     @number_of_gpus.setter
-    def number_of_gpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def number_of_gpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "number_of_gpus", value)
 
 
 class InstanceGpuMemoryArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
-    size_in_gigabytes: NotRequired[pulumi.Input[_builtins.float]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    size_in_gigabytes: NotRequired[pulumi.Input[Optional[_builtins.float]]]
 
 @pulumi.input_type
 class InstanceGpuMemoryArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_gigabytes: Optional[pulumi.Input[_builtins.float]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_gigabytes: pulumi.Input[Optional[_builtins.float]] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
         if size_in_gigabytes is not None:
@@ -931,32 +931,32 @@ class InstanceGpuMemoryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInGigabytes")
-    def size_in_gigabytes(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def size_in_gigabytes(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "size_in_gigabytes")
 
     @size_in_gigabytes.setter
-    def size_in_gigabytes(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def size_in_gigabytes(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "size_in_gigabytes", value)
 
 
 class InstanceMemoryArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
-    size_in_gigabytes: NotRequired[pulumi.Input[_builtins.float]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    size_in_gigabytes: NotRequired[pulumi.Input[Optional[_builtins.float]]]
 
 @pulumi.input_type
 class InstanceMemoryArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_gigabytes: Optional[pulumi.Input[_builtins.float]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_gigabytes: pulumi.Input[Optional[_builtins.float]] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
         if size_in_gigabytes is not None:
@@ -964,20 +964,20 @@ class InstanceMemoryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInGigabytes")
-    def size_in_gigabytes(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def size_in_gigabytes(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "size_in_gigabytes")
 
     @size_in_gigabytes.setter
-    def size_in_gigabytes(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def size_in_gigabytes(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "size_in_gigabytes", value)
 
 
@@ -985,11 +985,11 @@ class InstanceOsVolumeArgsDict(TypedDict):
     name: pulumi.Input[_builtins.str]
     size: pulumi.Input[_builtins.float]
     type: pulumi.Input[_builtins.str]
-    on_destroy: NotRequired[pulumi.Input[_builtins.str]]
+    on_destroy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     What happens to the OS volume when the instance is destroyed: 'delete_permanently' (default), 'move_to_trash', or 'keep_detached'
     """
-    on_spot_discontinue: NotRequired[pulumi.Input[_builtins.str]]
+    on_spot_discontinue: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
     """
@@ -1000,8 +1000,8 @@ class InstanceOsVolumeArgs:
                  name: pulumi.Input[_builtins.str],
                  size: pulumi.Input[_builtins.float],
                  type: pulumi.Input[_builtins.str],
-                 on_destroy: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None):
+                 on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] on_destroy: What happens to the OS volume when the instance is destroyed: 'delete_permanently' (default), 'move_to_trash', or 'keep_detached'
         :param pulumi.Input[_builtins.str] on_spot_discontinue: Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
@@ -1043,51 +1043,51 @@ class InstanceOsVolumeArgs:
 
     @_builtins.property
     @pulumi.getter(name="onDestroy")
-    def on_destroy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_destroy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         What happens to the OS volume when the instance is destroyed: 'delete_permanently' (default), 'move_to_trash', or 'keep_detached'
         """
         return pulumi.get(self, "on_destroy")
 
     @on_destroy.setter
-    def on_destroy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_destroy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_destroy", value)
 
     @_builtins.property
     @pulumi.getter(name="onSpotDiscontinue")
-    def on_spot_discontinue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_spot_discontinue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
         """
         return pulumi.get(self, "on_spot_discontinue")
 
     @on_spot_discontinue.setter
-    def on_spot_discontinue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_spot_discontinue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_spot_discontinue", value)
 
 
 class InstanceStorageArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
 @pulumi.input_type
 class InstanceStorageArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
 
 class InstanceTimeoutsArgsDict(TypedDict):
-    create: NotRequired[pulumi.Input[_builtins.str]]
+    create: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
     """
@@ -1095,7 +1095,7 @@ class InstanceTimeoutsArgsDict(TypedDict):
 @pulumi.input_type
 class InstanceTimeoutsArgs:
     def __init__(__self__, *,
-                 create: Optional[pulumi.Input[_builtins.str]] = None):
+                 create: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] create: A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
         """
@@ -1104,14 +1104,14 @@ class InstanceTimeoutsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def create(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
         """
         return pulumi.get(self, "create")
 
     @create.setter
-    def create(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create", value)
 
 
@@ -1119,8 +1119,8 @@ class InstanceVolumeArgsDict(TypedDict):
     name: pulumi.Input[_builtins.str]
     size: pulumi.Input[_builtins.float]
     type: pulumi.Input[_builtins.str]
-    location: NotRequired[pulumi.Input[_builtins.str]]
-    on_spot_discontinue: NotRequired[pulumi.Input[_builtins.str]]
+    location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    on_spot_discontinue: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
     """
@@ -1131,8 +1131,8 @@ class InstanceVolumeArgs:
                  name: pulumi.Input[_builtins.str],
                  size: pulumi.Input[_builtins.float],
                  type: pulumi.Input[_builtins.str],
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 on_spot_discontinue: Optional[pulumi.Input[_builtins.str]] = None):
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 on_spot_discontinue: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] on_spot_discontinue: Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
         """
@@ -1173,23 +1173,23 @@ class InstanceVolumeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="onSpotDiscontinue")
-    def on_spot_discontinue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_spot_discontinue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to take on spot instance discontinuation: 'keep_detached', 'move_to_trash', or 'delete_permanently'
         """
         return pulumi.get(self, "on_spot_discontinue")
 
     @on_spot_discontinue.setter
-    def on_spot_discontinue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_spot_discontinue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_spot_discontinue", value)
 
 
@@ -1249,19 +1249,19 @@ class ServerlessJobContainerArgsDict(TypedDict):
     """
     Container image (e.g., 'nginx:latest')
     """
-    entrypoint_overrides: NotRequired[pulumi.Input['ServerlessJobContainerEntrypointOverridesArgsDict']]
+    entrypoint_overrides: NotRequired[pulumi.Input[Optional['ServerlessJobContainerEntrypointOverridesArgsDict']]]
     """
     Override container entrypoint and command
     """
-    envs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerEnvArgsDict']]]]
+    envs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerEnvArgsDict']]]]]
     """
     Environment variables
     """
-    healthcheck: NotRequired[pulumi.Input['ServerlessJobContainerHealthcheckArgsDict']]
+    healthcheck: NotRequired[pulumi.Input[Optional['ServerlessJobContainerHealthcheckArgsDict']]]
     """
     Healthcheck configuration
     """
-    volume_mounts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgsDict']]]]
+    volume_mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgsDict']]]]]
     """
     Volume mounts for the container
     """
@@ -1271,10 +1271,10 @@ class ServerlessJobContainerArgs:
     def __init__(__self__, *,
                  exposed_port: pulumi.Input[_builtins.float],
                  image: pulumi.Input[_builtins.str],
-                 entrypoint_overrides: Optional[pulumi.Input['ServerlessJobContainerEntrypointOverridesArgs']] = None,
-                 envs: Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerEnvArgs']]]] = None,
-                 healthcheck: Optional[pulumi.Input['ServerlessJobContainerHealthcheckArgs']] = None,
-                 volume_mounts: Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgs']]]] = None):
+                 entrypoint_overrides: pulumi.Input[Optional['ServerlessJobContainerEntrypointOverridesArgs']] = None,
+                 envs: pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerEnvArgs']]]] = None,
+                 healthcheck: pulumi.Input[Optional['ServerlessJobContainerHealthcheckArgs']] = None,
+                 volume_mounts: pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.float] exposed_port: Port exposed by the container
         :param pulumi.Input[_builtins.str] image: Container image (e.g., 'nginx:latest')
@@ -1320,50 +1320,50 @@ class ServerlessJobContainerArgs:
 
     @_builtins.property
     @pulumi.getter(name="entrypointOverrides")
-    def entrypoint_overrides(self) -> Optional[pulumi.Input['ServerlessJobContainerEntrypointOverridesArgs']]:
+    def entrypoint_overrides(self) -> pulumi.Input[Optional['ServerlessJobContainerEntrypointOverridesArgs']]:
         """
         Override container entrypoint and command
         """
         return pulumi.get(self, "entrypoint_overrides")
 
     @entrypoint_overrides.setter
-    def entrypoint_overrides(self, value: Optional[pulumi.Input['ServerlessJobContainerEntrypointOverridesArgs']]):
+    def entrypoint_overrides(self, value: pulumi.Input[Optional['ServerlessJobContainerEntrypointOverridesArgs']]):
         pulumi.set(self, "entrypoint_overrides", value)
 
     @_builtins.property
     @pulumi.getter
-    def envs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerEnvArgs']]]]:
+    def envs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerEnvArgs']]]]:
         """
         Environment variables
         """
         return pulumi.get(self, "envs")
 
     @envs.setter
-    def envs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerEnvArgs']]]]):
+    def envs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerEnvArgs']]]]):
         pulumi.set(self, "envs", value)
 
     @_builtins.property
     @pulumi.getter
-    def healthcheck(self) -> Optional[pulumi.Input['ServerlessJobContainerHealthcheckArgs']]:
+    def healthcheck(self) -> pulumi.Input[Optional['ServerlessJobContainerHealthcheckArgs']]:
         """
         Healthcheck configuration
         """
         return pulumi.get(self, "healthcheck")
 
     @healthcheck.setter
-    def healthcheck(self, value: Optional[pulumi.Input['ServerlessJobContainerHealthcheckArgs']]):
+    def healthcheck(self, value: pulumi.Input[Optional['ServerlessJobContainerHealthcheckArgs']]):
         pulumi.set(self, "healthcheck", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeMounts")
-    def volume_mounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgs']]]]:
+    def volume_mounts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgs']]]]:
         """
         Volume mounts for the container
         """
         return pulumi.get(self, "volume_mounts")
 
     @volume_mounts.setter
-    def volume_mounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgs']]]]):
+    def volume_mounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServerlessJobContainerVolumeMountArgs']]]]):
         pulumi.set(self, "volume_mounts", value)
 
 
@@ -1372,11 +1372,11 @@ class ServerlessJobContainerEntrypointOverridesArgsDict(TypedDict):
     """
     Whether to override the entrypoint
     """
-    cmds: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    cmds: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Custom command array
     """
-    entrypoints: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    entrypoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Custom entrypoint array (e.g., ["/bin/sh", "-c"])
     """
@@ -1385,8 +1385,8 @@ class ServerlessJobContainerEntrypointOverridesArgsDict(TypedDict):
 class ServerlessJobContainerEntrypointOverridesArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.bool],
-                 cmds: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 cmds: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entrypoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.bool] enabled: Whether to override the entrypoint
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cmds: Custom command array
@@ -1412,26 +1412,26 @@ class ServerlessJobContainerEntrypointOverridesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cmds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cmds(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Custom command array
         """
         return pulumi.get(self, "cmds")
 
     @cmds.setter
-    def cmds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cmds(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cmds", value)
 
     @_builtins.property
     @pulumi.getter
-    def entrypoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def entrypoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Custom entrypoint array (e.g., ["/bin/sh", "-c"])
         """
         return pulumi.get(self, "entrypoints")
 
     @entrypoints.setter
-    def entrypoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def entrypoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "entrypoints", value)
 
 
@@ -1506,11 +1506,11 @@ class ServerlessJobContainerHealthcheckArgsDict(TypedDict):
     """
     Whether healthcheck is enabled ('true' or 'false')
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Path for healthcheck
     """
-    port: NotRequired[pulumi.Input[_builtins.str]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Port for healthcheck
     """
@@ -1519,8 +1519,8 @@ class ServerlessJobContainerHealthcheckArgsDict(TypedDict):
 class ServerlessJobContainerHealthcheckArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[_builtins.str],
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.str]] = None):
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] enabled: Whether healthcheck is enabled ('true' or 'false')
         :param pulumi.Input[_builtins.str] path: Path for healthcheck
@@ -1546,35 +1546,35 @@ class ServerlessJobContainerHealthcheckArgs:
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path for healthcheck
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Port for healthcheck
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "port", value)
 
 
 class ServerlessJobContainerRegistrySettingsArgsDict(TypedDict):
-    credentials: NotRequired[pulumi.Input[_builtins.str]]
+    credentials: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the registry credentials resource
     """
-    is_private: NotRequired[pulumi.Input[_builtins.str]]
+    is_private: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Whether the registry is private ('true' or 'false')
     """
@@ -1582,8 +1582,8 @@ class ServerlessJobContainerRegistrySettingsArgsDict(TypedDict):
 @pulumi.input_type
 class ServerlessJobContainerRegistrySettingsArgs:
     def __init__(__self__, *,
-                 credentials: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.str]] = None):
+                 credentials: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credentials: Name of the registry credentials resource
         :param pulumi.Input[_builtins.str] is_private: Whether the registry is private ('true' or 'false')
@@ -1595,26 +1595,26 @@ class ServerlessJobContainerRegistrySettingsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credentials(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the registry credentials resource
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credentials(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def is_private(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether the registry is private ('true' or 'false')
         """
         return pulumi.get(self, "is_private")
 
     @is_private.setter
-    def is_private(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def is_private(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "is_private", value)
 
 
@@ -1627,15 +1627,15 @@ class ServerlessJobContainerVolumeMountArgsDict(TypedDict):
     """
     Type of volume ('scratch', 'memory', 'secret', 'shared')
     """
-    secret_name: NotRequired[pulumi.Input[_builtins.str]]
+    secret_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of secret (required for type='secret')
     """
-    size_in_mb: NotRequired[pulumi.Input[_builtins.float]]
+    size_in_mb: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Size in MB (optional for type='scratch' or 'memory')
     """
-    volume_id: NotRequired[pulumi.Input[_builtins.str]]
+    volume_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Volume ID (required for type='shared')
     """
@@ -1645,9 +1645,9 @@ class ServerlessJobContainerVolumeMountArgs:
     def __init__(__self__, *,
                  mount_path: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 secret_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_mb: Optional[pulumi.Input[_builtins.float]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_mb: pulumi.Input[Optional[_builtins.float]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] mount_path: Path where volume will be mounted in container
         :param pulumi.Input[_builtins.str] type: Type of volume ('scratch', 'memory', 'secret', 'shared')
@@ -1690,38 +1690,38 @@ class ServerlessJobContainerVolumeMountArgs:
 
     @_builtins.property
     @pulumi.getter(name="secretName")
-    def secret_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of secret (required for type='secret')
         """
         return pulumi.get(self, "secret_name")
 
     @secret_name.setter
-    def secret_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInMb")
-    def size_in_mb(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def size_in_mb(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Size in MB (optional for type='scratch' or 'memory')
         """
         return pulumi.get(self, "size_in_mb")
 
     @size_in_mb.setter
-    def size_in_mb(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def size_in_mb(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "size_in_mb", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeId")
-    def volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Volume ID (required for type='shared')
         """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
-    def volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_id", value)
 
 
@@ -1734,7 +1734,7 @@ class ServerlessJobScalingArgsDict(TypedDict):
     """
     Queue message TTL in seconds
     """
-    deadline_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    deadline_seconds: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Request deadline in seconds
     """
@@ -1744,7 +1744,7 @@ class ServerlessJobScalingArgs:
     def __init__(__self__, *,
                  max_replica_count: pulumi.Input[_builtins.float],
                  queue_message_ttl_seconds: pulumi.Input[_builtins.float],
-                 deadline_seconds: Optional[pulumi.Input[_builtins.float]] = None):
+                 deadline_seconds: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] max_replica_count: Maximum number of replicas
         :param pulumi.Input[_builtins.float] queue_message_ttl_seconds: Queue message TTL in seconds
@@ -1781,14 +1781,14 @@ class ServerlessJobScalingArgs:
 
     @_builtins.property
     @pulumi.getter(name="deadlineSeconds")
-    def deadline_seconds(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def deadline_seconds(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Request deadline in seconds
         """
         return pulumi.get(self, "deadline_seconds")
 
     @deadline_seconds.setter
-    def deadline_seconds(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def deadline_seconds(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "deadline_seconds", value)
 
 

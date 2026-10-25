@@ -24,9 +24,9 @@ class ContainerArgs:
                  compute: pulumi.Input['ContainerComputeArgs'],
                  containers: pulumi.Input[Sequence[pulumi.Input['ContainerContainerArgs']]],
                  scaling: pulumi.Input['ContainerScalingArgs'],
-                 container_registry_settings: Optional[pulumi.Input['ContainerContainerRegistrySettingsArgs']] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 container_registry_settings: pulumi.Input[Optional['ContainerContainerRegistrySettingsArgs']] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Container resource.
 
@@ -85,52 +85,52 @@ class ContainerArgs:
 
     @_builtins.property
     @pulumi.getter(name="containerRegistrySettings")
-    def container_registry_settings(self) -> Optional[pulumi.Input['ContainerContainerRegistrySettingsArgs']]:
+    def container_registry_settings(self) -> pulumi.Input[Optional['ContainerContainerRegistrySettingsArgs']]:
         """
         Container registry authentication settings
         """
         return pulumi.get(self, "container_registry_settings")
 
     @container_registry_settings.setter
-    def container_registry_settings(self, value: Optional[pulumi.Input['ContainerContainerRegistrySettingsArgs']]):
+    def container_registry_settings(self, value: pulumi.Input[Optional['ContainerContainerRegistrySettingsArgs']]):
         pulumi.set(self, "container_registry_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="isSpot")
-    def is_spot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_spot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to use spot instances (defaults to false)
         """
         return pulumi.get(self, "is_spot")
 
     @is_spot.setter
-    def is_spot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_spot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_spot", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the container deployment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ContainerState:
     def __init__(__self__, *,
-                 compute: Optional[pulumi.Input['ContainerComputeArgs']] = None,
-                 container_registry_settings: Optional[pulumi.Input['ContainerContainerRegistrySettingsArgs']] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerArgs']]]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_base_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaling: Optional[pulumi.Input['ContainerScalingArgs']] = None):
+                 compute: pulumi.Input[Optional['ContainerComputeArgs']] = None,
+                 container_registry_settings: pulumi.Input[Optional['ContainerContainerRegistrySettingsArgs']] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerArgs']]]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_base_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling: pulumi.Input[Optional['ContainerScalingArgs']] = None):
         """
         Input properties used for looking up and filtering Container resources.
 
@@ -162,98 +162,98 @@ class _ContainerState:
 
     @_builtins.property
     @pulumi.getter
-    def compute(self) -> Optional[pulumi.Input['ContainerComputeArgs']]:
+    def compute(self) -> pulumi.Input[Optional['ContainerComputeArgs']]:
         """
         Compute resources for the deployment
         """
         return pulumi.get(self, "compute")
 
     @compute.setter
-    def compute(self, value: Optional[pulumi.Input['ContainerComputeArgs']]):
+    def compute(self, value: pulumi.Input[Optional['ContainerComputeArgs']]):
         pulumi.set(self, "compute", value)
 
     @_builtins.property
     @pulumi.getter(name="containerRegistrySettings")
-    def container_registry_settings(self) -> Optional[pulumi.Input['ContainerContainerRegistrySettingsArgs']]:
+    def container_registry_settings(self) -> pulumi.Input[Optional['ContainerContainerRegistrySettingsArgs']]:
         """
         Container registry authentication settings
         """
         return pulumi.get(self, "container_registry_settings")
 
     @container_registry_settings.setter
-    def container_registry_settings(self, value: Optional[pulumi.Input['ContainerContainerRegistrySettingsArgs']]):
+    def container_registry_settings(self, value: pulumi.Input[Optional['ContainerContainerRegistrySettingsArgs']]):
         pulumi.set(self, "container_registry_settings", value)
 
     @_builtins.property
     @pulumi.getter
-    def containers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerArgs']]]]:
+    def containers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerArgs']]]]:
         """
         List of containers in the deployment
         """
         return pulumi.get(self, "containers")
 
     @containers.setter
-    def containers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerContainerArgs']]]]):
+    def containers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerContainerArgs']]]]):
         pulumi.set(self, "containers", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timestamp when the deployment was created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointBaseUrl")
-    def endpoint_base_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_base_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base URL for the deployment endpoint
         """
         return pulumi.get(self, "endpoint_base_url")
 
     @endpoint_base_url.setter
-    def endpoint_base_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_base_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_base_url", value)
 
     @_builtins.property
     @pulumi.getter(name="isSpot")
-    def is_spot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_spot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to use spot instances (defaults to false)
         """
         return pulumi.get(self, "is_spot")
 
     @is_spot.setter
-    def is_spot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_spot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_spot", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the container deployment
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def scaling(self) -> Optional[pulumi.Input['ContainerScalingArgs']]:
+    def scaling(self) -> pulumi.Input[Optional['ContainerScalingArgs']]:
         """
         Scaling configuration for the deployment
         """
         return pulumi.get(self, "scaling")
 
     @scaling.setter
-    def scaling(self, value: Optional[pulumi.Input['ContainerScalingArgs']]):
+    def scaling(self, value: pulumi.Input[Optional['ContainerScalingArgs']]):
         pulumi.set(self, "scaling", value)
 
 
@@ -263,24 +263,24 @@ class Container(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute: Optional[pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict']]] = None,
-                 container_registry_settings: Optional[pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict']]] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict']]]]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaling: Optional[pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict']]] = None,
+                 compute: pulumi.Input[Optional[Union['ContainerComputeArgs', 'ContainerComputeArgsDict', 'outputs.ContainerCompute']]] = None,
+                 container_registry_settings: pulumi.Input[Optional[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict', 'outputs.ContainerContainerRegistrySettings']]] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict', 'outputs.ContainerContainer']]]]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling: pulumi.Input[Optional[Union['ContainerScalingArgs', 'ContainerScalingArgsDict', 'outputs.ContainerScaling']]] = None,
                  __props__=None):
         """
         Create a Container resource with the given unique name, props, and options.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict']] compute: Compute resources for the deployment
-        :param pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict']] container_registry_settings: Container registry authentication settings
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict']]]] containers: List of containers in the deployment
+        :param pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict', 'outputs.ContainerCompute']] compute: Compute resources for the deployment
+        :param pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict', 'outputs.ContainerContainerRegistrySettings']] container_registry_settings: Container registry authentication settings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict', 'outputs.ContainerContainer']]]] containers: List of containers in the deployment
         :param pulumi.Input[_builtins.bool] is_spot: Whether to use spot instances (defaults to false)
         :param pulumi.Input[_builtins.str] name: Name of the container deployment
-        :param pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict']] scaling: Scaling configuration for the deployment
+        :param pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict', 'outputs.ContainerScaling']] scaling: Scaling configuration for the deployment
         """
         ...
     @overload
@@ -306,12 +306,12 @@ class Container(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute: Optional[pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict']]] = None,
-                 container_registry_settings: Optional[pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict']]] = None,
-                 containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict']]]]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaling: Optional[pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict']]] = None,
+                 compute: pulumi.Input[Optional[Union['ContainerComputeArgs', 'ContainerComputeArgsDict', 'outputs.ContainerCompute']]] = None,
+                 container_registry_settings: pulumi.Input[Optional[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict', 'outputs.ContainerContainerRegistrySettings']]] = None,
+                 containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict', 'outputs.ContainerContainer']]]]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaling: pulumi.Input[Optional[Union['ContainerScalingArgs', 'ContainerScalingArgsDict', 'outputs.ContainerScaling']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -346,14 +346,14 @@ class Container(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compute: Optional[pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict']]] = None,
-            container_registry_settings: Optional[pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict']]] = None,
-            containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict']]]]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_base_url: Optional[pulumi.Input[_builtins.str]] = None,
-            is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            scaling: Optional[pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict']]] = None) -> 'Container':
+            compute: pulumi.Input[Optional[Union['ContainerComputeArgs', 'ContainerComputeArgsDict', 'outputs.ContainerCompute']]] = None,
+            container_registry_settings: pulumi.Input[Optional[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict', 'outputs.ContainerContainerRegistrySettings']]] = None,
+            containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict', 'outputs.ContainerContainer']]]]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_base_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            scaling: pulumi.Input[Optional[Union['ContainerScalingArgs', 'ContainerScalingArgsDict', 'outputs.ContainerScaling']]] = None) -> 'Container':
         """
         Get an existing Container resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -361,14 +361,14 @@ class Container(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict']] compute: Compute resources for the deployment
-        :param pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict']] container_registry_settings: Container registry authentication settings
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict']]]] containers: List of containers in the deployment
+        :param pulumi.Input[Union['ContainerComputeArgs', 'ContainerComputeArgsDict', 'outputs.ContainerCompute']] compute: Compute resources for the deployment
+        :param pulumi.Input[Union['ContainerContainerRegistrySettingsArgs', 'ContainerContainerRegistrySettingsArgsDict', 'outputs.ContainerContainerRegistrySettings']] container_registry_settings: Container registry authentication settings
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerContainerArgs', 'ContainerContainerArgsDict', 'outputs.ContainerContainer']]]] containers: List of containers in the deployment
         :param pulumi.Input[_builtins.str] created_at: Timestamp when the deployment was created
         :param pulumi.Input[_builtins.str] endpoint_base_url: Base URL for the deployment endpoint
         :param pulumi.Input[_builtins.bool] is_spot: Whether to use spot instances (defaults to false)
         :param pulumi.Input[_builtins.str] name: Name of the container deployment
-        :param pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict']] scaling: Scaling configuration for the deployment
+        :param pulumi.Input[Union['ContainerScalingArgs', 'ContainerScalingArgsDict', 'outputs.ContainerScaling']] scaling: Scaling configuration for the deployment
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

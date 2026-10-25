@@ -20,17 +20,17 @@ __all__ = ['ContainerRegistryCredentialsArgs', 'ContainerRegistryCredentials']
 class ContainerRegistryCredentialsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_config_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 ecr_repo: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_config_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 ecr_repo: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ContainerRegistryCredentials resource.
 
@@ -85,153 +85,153 @@ class ContainerRegistryCredentialsArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWS Access Key ID for ECR authentication
         """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
-    def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accessToken")
-    def access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access token for registry authentication (for DockerHub, GHCR, etc.)
         """
         return pulumi.get(self, "access_token")
 
     @access_token.setter
-    def access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="dockerConfigJson")
-    def docker_config_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def docker_config_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Docker config.json content for authentication
         """
         return pulumi.get(self, "docker_config_json")
 
     @docker_config_json.setter
-    def docker_config_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def docker_config_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "docker_config_json", value)
 
     @_builtins.property
     @pulumi.getter(name="ecrRepo")
-    def ecr_repo(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ecr_repo(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ECR repository URL
         """
         return pulumi.get(self, "ecr_repo")
 
     @ecr_repo.setter
-    def ecr_repo(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ecr_repo(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ecr_repo", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the registry credentials
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWS region for ECR
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="scalewayDomain")
-    def scaleway_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scaleway_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Scaleway registry domain
         """
         return pulumi.get(self, "scaleway_domain")
 
     @scaleway_domain.setter
-    def scaleway_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scaleway_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scaleway_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="scalewayUuid")
-    def scaleway_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scaleway_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Scaleway namespace UUID
         """
         return pulumi.get(self, "scaleway_uuid")
 
     @scaleway_uuid.setter
-    def scaleway_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scaleway_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scaleway_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
-    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWS Secret Access Key for ECR authentication
         """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKey")
-    def service_account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service account key JSON for GCR authentication
         """
         return pulumi.get(self, "service_account_key")
 
     @service_account_key.setter
-    def service_account_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Username for registry authentication (for DockerHub, GHCR, etc.)
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
 @pulumi.input_type
 class _ContainerRegistryCredentialsState:
     def __init__(__self__, *,
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_config_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 ecr_repo: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_config_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 ecr_repo: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerRegistryCredentials resources.
 
@@ -278,158 +278,158 @@ class _ContainerRegistryCredentialsState:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWS Access Key ID for ECR authentication
         """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
-    def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accessToken")
-    def access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Access token for registry authentication (for DockerHub, GHCR, etc.)
         """
         return pulumi.get(self, "access_token")
 
     @access_token.setter
-    def access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timestamp when the credentials were created
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter(name="dockerConfigJson")
-    def docker_config_json(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def docker_config_json(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Docker config.json content for authentication
         """
         return pulumi.get(self, "docker_config_json")
 
     @docker_config_json.setter
-    def docker_config_json(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def docker_config_json(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "docker_config_json", value)
 
     @_builtins.property
     @pulumi.getter(name="ecrRepo")
-    def ecr_repo(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ecr_repo(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ECR repository URL
         """
         return pulumi.get(self, "ecr_repo")
 
     @ecr_repo.setter
-    def ecr_repo(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ecr_repo(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ecr_repo", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the registry credentials
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWS region for ECR
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="scalewayDomain")
-    def scaleway_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scaleway_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Scaleway registry domain
         """
         return pulumi.get(self, "scaleway_domain")
 
     @scaleway_domain.setter
-    def scaleway_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scaleway_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scaleway_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="scalewayUuid")
-    def scaleway_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scaleway_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Scaleway namespace UUID
         """
         return pulumi.get(self, "scaleway_uuid")
 
     @scaleway_uuid.setter
-    def scaleway_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scaleway_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scaleway_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
-    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWS Secret Access Key for ECR authentication
         """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKey")
-    def service_account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service account key JSON for GCR authentication
         """
         return pulumi.get(self, "service_account_key")
 
     @service_account_key.setter
-    def service_account_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of registry: 'dockerhub', 'gcr', 'ghcr', 'ecr', 'scaleway', etc.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Username for registry authentication (for DockerHub, GHCR, etc.)
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -439,18 +439,18 @@ class ContainerRegistryCredentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_config_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 ecr_repo: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_config_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 ecr_repo: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ContainerRegistryCredentials resource with the given unique name, props, and options.
@@ -494,18 +494,18 @@ class ContainerRegistryCredentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 docker_config_json: Optional[pulumi.Input[_builtins.str]] = None,
-                 ecr_repo: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 scaleway_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 docker_config_json: pulumi.Input[Optional[_builtins.str]] = None,
+                 ecr_repo: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 scaleway_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -543,19 +543,19 @@ class ContainerRegistryCredentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            docker_config_json: Optional[pulumi.Input[_builtins.str]] = None,
-            ecr_repo: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            scaleway_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            scaleway_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-            service_account_key: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            username: Optional[pulumi.Input[_builtins.str]] = None) -> 'ContainerRegistryCredentials':
+            access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            docker_config_json: pulumi.Input[Optional[_builtins.str]] = None,
+            ecr_repo: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            scaleway_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            scaleway_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+            service_account_key: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> 'ContainerRegistryCredentials':
         """
         Get an existing ContainerRegistryCredentials resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -25,16 +25,16 @@ class InstanceArgs:
                  hostname: pulumi.Input[_builtins.str],
                  image: pulumi.Input[_builtins.str],
                  instance_type: pulumi.Input[_builtins.str],
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 existing_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_volume: Optional[pulumi.Input['InstanceOsVolumeArgs']] = None,
-                 pricing: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 startup_script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input['InstanceTimeoutsArgs']] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceVolumeArgs']]]] = None):
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 existing_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_volume: pulumi.Input[Optional['InstanceOsVolumeArgs']] = None,
+                 pricing: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 startup_script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional['InstanceTimeoutsArgs']] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceVolumeArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
 
@@ -127,150 +127,150 @@ class InstanceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contract type for the instance
         """
         return pulumi.get(self, "contract")
 
     @contract.setter
-    def contract(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract", value)
 
     @_builtins.property
     @pulumi.getter(name="existingVolumes")
-    def existing_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def existing_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IDs of existing volumes to attach to the instance
         """
         return pulumi.get(self, "existing_volumes")
 
     @existing_volumes.setter
-    def existing_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def existing_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "existing_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="isSpot")
-    def is_spot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_spot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether this is a spot instance
         """
         return pulumi.get(self, "is_spot")
 
     @is_spot.setter
-    def is_spot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_spot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_spot", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location code for the instance (defaults to FIN-01)
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="osVolume")
-    def os_volume(self) -> Optional[pulumi.Input['InstanceOsVolumeArgs']]:
+    def os_volume(self) -> pulumi.Input[Optional['InstanceOsVolumeArgs']]:
         """
         OS volume configuration
         """
         return pulumi.get(self, "os_volume")
 
     @os_volume.setter
-    def os_volume(self, value: Optional[pulumi.Input['InstanceOsVolumeArgs']]):
+    def os_volume(self, value: pulumi.Input[Optional['InstanceOsVolumeArgs']]):
         pulumi.set(self, "os_volume", value)
 
     @_builtins.property
     @pulumi.getter
-    def pricing(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pricing(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pricing model for the instance
         """
         return pulumi.get(self, "pricing")
 
     @pricing.setter
-    def pricing(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pricing(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pricing", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKeyIds")
-    def ssh_key_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ssh_key_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of SSH key IDs to add to the instance
         """
         return pulumi.get(self, "ssh_key_ids")
 
     @ssh_key_ids.setter
-    def ssh_key_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ssh_key_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ssh_key_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="startupScriptId")
-    def startup_script_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def startup_script_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the startup script to run on instance creation
         """
         return pulumi.get(self, "startup_script_id")
 
     @startup_script_id.setter
-    def startup_script_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def startup_script_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "startup_script_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['InstanceTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['InstanceTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['InstanceTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['InstanceTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceVolumeArgs']]]]:
+    def volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceVolumeArgs']]]]:
         """
         Volumes to create and attach to the instance
         """
         return pulumi.get(self, "volumes")
 
     @volumes.setter
-    def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceVolumeArgs']]]]):
+    def volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceVolumeArgs']]]]):
         pulumi.set(self, "volumes", value)
 
 
 @pulumi.input_type
 class _InstanceState:
     def __init__(__self__, *,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu: Optional[pulumi.Input['InstanceCpuArgs']] = None,
-                 created_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 existing_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 gpu: Optional[pulumi.Input['InstanceGpuArgs']] = None,
-                 gpu_memory: Optional[pulumi.Input['InstanceGpuMemoryArgs']] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory: Optional[pulumi.Input['InstanceMemoryArgs']] = None,
-                 os_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_volume: Optional[pulumi.Input['InstanceOsVolumeArgs']] = None,
-                 os_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 price_per_hour: Optional[pulumi.Input[_builtins.float]] = None,
-                 pricing: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 startup_script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage: Optional[pulumi.Input['InstanceStorageArgs']] = None,
-                 timeouts: Optional[pulumi.Input['InstanceTimeoutsArgs']] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceVolumeArgs']]]] = None):
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu: pulumi.Input[Optional['InstanceCpuArgs']] = None,
+                 created_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 existing_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 gpu: pulumi.Input[Optional['InstanceGpuArgs']] = None,
+                 gpu_memory: pulumi.Input[Optional['InstanceGpuMemoryArgs']] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory: pulumi.Input[Optional['InstanceMemoryArgs']] = None,
+                 os_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_volume: pulumi.Input[Optional['InstanceOsVolumeArgs']] = None,
+                 os_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 price_per_hour: pulumi.Input[Optional[_builtins.float]] = None,
+                 pricing: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 startup_script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage: pulumi.Input[Optional['InstanceStorageArgs']] = None,
+                 timeouts: pulumi.Input[Optional['InstanceTimeoutsArgs']] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceVolumeArgs']]]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
 
@@ -352,299 +352,299 @@ class _InstanceState:
 
     @_builtins.property
     @pulumi.getter
-    def contract(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contract(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Contract type for the instance
         """
         return pulumi.get(self, "contract")
 
     @contract.setter
-    def contract(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contract(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contract", value)
 
     @_builtins.property
     @pulumi.getter
-    def cpu(self) -> Optional[pulumi.Input['InstanceCpuArgs']]:
+    def cpu(self) -> pulumi.Input[Optional['InstanceCpuArgs']]:
         """
         CPU information
         """
         return pulumi.get(self, "cpu")
 
     @cpu.setter
-    def cpu(self, value: Optional[pulumi.Input['InstanceCpuArgs']]):
+    def cpu(self, value: pulumi.Input[Optional['InstanceCpuArgs']]):
         pulumi.set(self, "cpu", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
-    def created_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation timestamp
         """
         return pulumi.get(self, "created_at")
 
     @created_at.setter
-    def created_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_at", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the instance
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="existingVolumes")
-    def existing_volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def existing_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IDs of existing volumes to attach to the instance
         """
         return pulumi.get(self, "existing_volumes")
 
     @existing_volumes.setter
-    def existing_volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def existing_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "existing_volumes", value)
 
     @_builtins.property
     @pulumi.getter
-    def gpu(self) -> Optional[pulumi.Input['InstanceGpuArgs']]:
+    def gpu(self) -> pulumi.Input[Optional['InstanceGpuArgs']]:
         """
         GPU information
         """
         return pulumi.get(self, "gpu")
 
     @gpu.setter
-    def gpu(self, value: Optional[pulumi.Input['InstanceGpuArgs']]):
+    def gpu(self, value: pulumi.Input[Optional['InstanceGpuArgs']]):
         pulumi.set(self, "gpu", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemory")
-    def gpu_memory(self) -> Optional[pulumi.Input['InstanceGpuMemoryArgs']]:
+    def gpu_memory(self) -> pulumi.Input[Optional['InstanceGpuMemoryArgs']]:
         """
         GPU memory information
         """
         return pulumi.get(self, "gpu_memory")
 
     @gpu_memory.setter
-    def gpu_memory(self, value: Optional[pulumi.Input['InstanceGpuMemoryArgs']]):
+    def gpu_memory(self, value: pulumi.Input[Optional['InstanceGpuMemoryArgs']]):
         pulumi.set(self, "gpu_memory", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Hostname for the instance
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Image to use for the instance
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceType")
-    def instance_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the instance (e.g., '1B200.30V')
         """
         return pulumi.get(self, "instance_type")
 
     @instance_type.setter
-    def instance_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP address of the instance
         """
         return pulumi.get(self, "ip")
 
     @ip.setter
-    def ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip", value)
 
     @_builtins.property
     @pulumi.getter(name="isSpot")
-    def is_spot(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_spot(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether this is a spot instance
         """
         return pulumi.get(self, "is_spot")
 
     @is_spot.setter
-    def is_spot(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_spot(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_spot", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location code for the instance (defaults to FIN-01)
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter
-    def memory(self) -> Optional[pulumi.Input['InstanceMemoryArgs']]:
+    def memory(self) -> pulumi.Input[Optional['InstanceMemoryArgs']]:
         """
         Memory information
         """
         return pulumi.get(self, "memory")
 
     @memory.setter
-    def memory(self, value: Optional[pulumi.Input['InstanceMemoryArgs']]):
+    def memory(self, value: pulumi.Input[Optional['InstanceMemoryArgs']]):
         pulumi.set(self, "memory", value)
 
     @_builtins.property
     @pulumi.getter(name="osName")
-    def os_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Operating system name
         """
         return pulumi.get(self, "os_name")
 
     @os_name.setter
-    def os_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_name", value)
 
     @_builtins.property
     @pulumi.getter(name="osVolume")
-    def os_volume(self) -> Optional[pulumi.Input['InstanceOsVolumeArgs']]:
+    def os_volume(self) -> pulumi.Input[Optional['InstanceOsVolumeArgs']]:
         """
         OS volume configuration
         """
         return pulumi.get(self, "os_volume")
 
     @os_volume.setter
-    def os_volume(self, value: Optional[pulumi.Input['InstanceOsVolumeArgs']]):
+    def os_volume(self, value: pulumi.Input[Optional['InstanceOsVolumeArgs']]):
         pulumi.set(self, "os_volume", value)
 
     @_builtins.property
     @pulumi.getter(name="osVolumeId")
-    def os_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the OS volume
         """
         return pulumi.get(self, "os_volume_id")
 
     @os_volume_id.setter
-    def os_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_volume_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pricePerHour")
-    def price_per_hour(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def price_per_hour(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Price per hour for the instance
         """
         return pulumi.get(self, "price_per_hour")
 
     @price_per_hour.setter
-    def price_per_hour(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def price_per_hour(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "price_per_hour", value)
 
     @_builtins.property
     @pulumi.getter
-    def pricing(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pricing(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pricing model for the instance
         """
         return pulumi.get(self, "pricing")
 
     @pricing.setter
-    def pricing(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pricing(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pricing", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKeyIds")
-    def ssh_key_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ssh_key_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of SSH key IDs to add to the instance
         """
         return pulumi.get(self, "ssh_key_ids")
 
     @ssh_key_ids.setter
-    def ssh_key_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ssh_key_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ssh_key_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="startupScriptId")
-    def startup_script_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def startup_script_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the startup script to run on instance creation
         """
         return pulumi.get(self, "startup_script_id")
 
     @startup_script_id.setter
-    def startup_script_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def startup_script_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "startup_script_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current status of the instance
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def storage(self) -> Optional[pulumi.Input['InstanceStorageArgs']]:
+    def storage(self) -> pulumi.Input[Optional['InstanceStorageArgs']]:
         """
         Storage information
         """
         return pulumi.get(self, "storage")
 
     @storage.setter
-    def storage(self, value: Optional[pulumi.Input['InstanceStorageArgs']]):
+    def storage(self, value: pulumi.Input[Optional['InstanceStorageArgs']]):
         pulumi.set(self, "storage", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeouts(self) -> Optional[pulumi.Input['InstanceTimeoutsArgs']]:
+    def timeouts(self) -> pulumi.Input[Optional['InstanceTimeoutsArgs']]:
         return pulumi.get(self, "timeouts")
 
     @timeouts.setter
-    def timeouts(self, value: Optional[pulumi.Input['InstanceTimeoutsArgs']]):
+    def timeouts(self, value: pulumi.Input[Optional['InstanceTimeoutsArgs']]):
         pulumi.set(self, "timeouts", value)
 
     @_builtins.property
     @pulumi.getter
-    def volumes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstanceVolumeArgs']]]]:
+    def volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceVolumeArgs']]]]:
         """
         Volumes to create and attach to the instance
         """
         return pulumi.get(self, "volumes")
 
     @volumes.setter
-    def volumes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceVolumeArgs']]]]):
+    def volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceVolumeArgs']]]]):
         pulumi.set(self, "volumes", value)
 
 
@@ -654,20 +654,20 @@ class Instance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 existing_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_volume: Optional[pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict']]] = None,
-                 pricing: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 startup_script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['InstanceTimeoutsArgs', 'InstanceTimeoutsArgsDict']]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict']]]]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 existing_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_volume: pulumi.Input[Optional[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict', 'outputs.InstanceOsVolume']]] = None,
+                 pricing: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 startup_script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['InstanceTimeoutsArgs', 'InstanceTimeoutsArgsDict', 'outputs.InstanceTimeouts']]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict', 'outputs.InstanceVolume']]]]] = None,
                  __props__=None):
         """
         Create a Instance resource with the given unique name, props, and options.
@@ -682,11 +682,11 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_type: Type of the instance (e.g., '1B200.30V')
         :param pulumi.Input[_builtins.bool] is_spot: Whether this is a spot instance
         :param pulumi.Input[_builtins.str] location: Location code for the instance (defaults to FIN-01)
-        :param pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict']] os_volume: OS volume configuration
+        :param pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict', 'outputs.InstanceOsVolume']] os_volume: OS volume configuration
         :param pulumi.Input[_builtins.str] pricing: Pricing model for the instance
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_key_ids: List of SSH key IDs to add to the instance
         :param pulumi.Input[_builtins.str] startup_script_id: ID of the startup script to run on instance creation
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict']]]] volumes: Volumes to create and attach to the instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict', 'outputs.InstanceVolume']]]] volumes: Volumes to create and attach to the instance
         """
         ...
     @overload
@@ -712,20 +712,20 @@ class Instance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 contract: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 existing_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_volume: Optional[pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict']]] = None,
-                 pricing: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 startup_script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeouts: Optional[pulumi.Input[Union['InstanceTimeoutsArgs', 'InstanceTimeoutsArgsDict']]] = None,
-                 volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict']]]]] = None,
+                 contract: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 existing_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_volume: pulumi.Input[Optional[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict', 'outputs.InstanceOsVolume']]] = None,
+                 pricing: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 startup_script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeouts: pulumi.Input[Optional[Union['InstanceTimeoutsArgs', 'InstanceTimeoutsArgsDict', 'outputs.InstanceTimeouts']]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict', 'outputs.InstanceVolume']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -779,31 +779,31 @@ class Instance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contract: Optional[pulumi.Input[_builtins.str]] = None,
-            cpu: Optional[pulumi.Input[Union['InstanceCpuArgs', 'InstanceCpuArgsDict']]] = None,
-            created_at: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            existing_volumes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            gpu: Optional[pulumi.Input[Union['InstanceGpuArgs', 'InstanceGpuArgsDict']]] = None,
-            gpu_memory: Optional[pulumi.Input[Union['InstanceGpuMemoryArgs', 'InstanceGpuMemoryArgsDict']]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_type: Optional[pulumi.Input[_builtins.str]] = None,
-            ip: Optional[pulumi.Input[_builtins.str]] = None,
-            is_spot: Optional[pulumi.Input[_builtins.bool]] = None,
-            location: Optional[pulumi.Input[_builtins.str]] = None,
-            memory: Optional[pulumi.Input[Union['InstanceMemoryArgs', 'InstanceMemoryArgsDict']]] = None,
-            os_name: Optional[pulumi.Input[_builtins.str]] = None,
-            os_volume: Optional[pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict']]] = None,
-            os_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
-            price_per_hour: Optional[pulumi.Input[_builtins.float]] = None,
-            pricing: Optional[pulumi.Input[_builtins.str]] = None,
-            ssh_key_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            startup_script_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            storage: Optional[pulumi.Input[Union['InstanceStorageArgs', 'InstanceStorageArgsDict']]] = None,
-            timeouts: Optional[pulumi.Input[Union['InstanceTimeoutsArgs', 'InstanceTimeoutsArgsDict']]] = None,
-            volumes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict']]]]] = None) -> 'Instance':
+            contract: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu: pulumi.Input[Optional[Union['InstanceCpuArgs', 'InstanceCpuArgsDict', 'outputs.InstanceCpu']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            existing_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            gpu: pulumi.Input[Optional[Union['InstanceGpuArgs', 'InstanceGpuArgsDict', 'outputs.InstanceGpu']]] = None,
+            gpu_memory: pulumi.Input[Optional[Union['InstanceGpuMemoryArgs', 'InstanceGpuMemoryArgsDict', 'outputs.InstanceGpuMemory']]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ip: pulumi.Input[Optional[_builtins.str]] = None,
+            is_spot: pulumi.Input[Optional[_builtins.bool]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            memory: pulumi.Input[Optional[Union['InstanceMemoryArgs', 'InstanceMemoryArgsDict', 'outputs.InstanceMemory']]] = None,
+            os_name: pulumi.Input[Optional[_builtins.str]] = None,
+            os_volume: pulumi.Input[Optional[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict', 'outputs.InstanceOsVolume']]] = None,
+            os_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+            price_per_hour: pulumi.Input[Optional[_builtins.float]] = None,
+            pricing: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            startup_script_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage: pulumi.Input[Optional[Union['InstanceStorageArgs', 'InstanceStorageArgsDict', 'outputs.InstanceStorage']]] = None,
+            timeouts: pulumi.Input[Optional[Union['InstanceTimeoutsArgs', 'InstanceTimeoutsArgsDict', 'outputs.InstanceTimeouts']]] = None,
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict', 'outputs.InstanceVolume']]]]] = None) -> 'Instance':
         """
         Get an existing Instance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -812,29 +812,29 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] contract: Contract type for the instance
-        :param pulumi.Input[Union['InstanceCpuArgs', 'InstanceCpuArgsDict']] cpu: CPU information
+        :param pulumi.Input[Union['InstanceCpuArgs', 'InstanceCpuArgsDict', 'outputs.InstanceCpu']] cpu: CPU information
         :param pulumi.Input[_builtins.str] created_at: Creation timestamp
         :param pulumi.Input[_builtins.str] description: Description of the instance
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] existing_volumes: IDs of existing volumes to attach to the instance
-        :param pulumi.Input[Union['InstanceGpuArgs', 'InstanceGpuArgsDict']] gpu: GPU information
-        :param pulumi.Input[Union['InstanceGpuMemoryArgs', 'InstanceGpuMemoryArgsDict']] gpu_memory: GPU memory information
+        :param pulumi.Input[Union['InstanceGpuArgs', 'InstanceGpuArgsDict', 'outputs.InstanceGpu']] gpu: GPU information
+        :param pulumi.Input[Union['InstanceGpuMemoryArgs', 'InstanceGpuMemoryArgsDict', 'outputs.InstanceGpuMemory']] gpu_memory: GPU memory information
         :param pulumi.Input[_builtins.str] hostname: Hostname for the instance
         :param pulumi.Input[_builtins.str] image: Image to use for the instance
         :param pulumi.Input[_builtins.str] instance_type: Type of the instance (e.g., '1B200.30V')
         :param pulumi.Input[_builtins.str] ip: IP address of the instance
         :param pulumi.Input[_builtins.bool] is_spot: Whether this is a spot instance
         :param pulumi.Input[_builtins.str] location: Location code for the instance (defaults to FIN-01)
-        :param pulumi.Input[Union['InstanceMemoryArgs', 'InstanceMemoryArgsDict']] memory: Memory information
+        :param pulumi.Input[Union['InstanceMemoryArgs', 'InstanceMemoryArgsDict', 'outputs.InstanceMemory']] memory: Memory information
         :param pulumi.Input[_builtins.str] os_name: Operating system name
-        :param pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict']] os_volume: OS volume configuration
+        :param pulumi.Input[Union['InstanceOsVolumeArgs', 'InstanceOsVolumeArgsDict', 'outputs.InstanceOsVolume']] os_volume: OS volume configuration
         :param pulumi.Input[_builtins.str] os_volume_id: ID of the OS volume
         :param pulumi.Input[_builtins.float] price_per_hour: Price per hour for the instance
         :param pulumi.Input[_builtins.str] pricing: Pricing model for the instance
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_key_ids: List of SSH key IDs to add to the instance
         :param pulumi.Input[_builtins.str] startup_script_id: ID of the startup script to run on instance creation
         :param pulumi.Input[_builtins.str] status: Current status of the instance
-        :param pulumi.Input[Union['InstanceStorageArgs', 'InstanceStorageArgsDict']] storage: Storage information
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict']]]] volumes: Volumes to create and attach to the instance
+        :param pulumi.Input[Union['InstanceStorageArgs', 'InstanceStorageArgsDict', 'outputs.InstanceStorage']] storage: Storage information
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceVolumeArgs', 'InstanceVolumeArgsDict', 'outputs.InstanceVolume']]]] volumes: Volumes to create and attach to the instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

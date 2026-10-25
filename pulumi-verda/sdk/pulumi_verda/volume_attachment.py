@@ -58,11 +58,11 @@ class VolumeAttachmentArgs:
 @pulumi.input_type
 class _VolumeAttachmentState:
     def __init__(__self__, *,
-                 create_directory_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 filesystem_to_fstab_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 mount_command: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 create_directory_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 filesystem_to_fstab_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 mount_command: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeAttachment resources.
 
@@ -85,62 +85,62 @@ class _VolumeAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="createDirectoryCommand")
-    def create_directory_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_directory_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shell command to create the mount directory on the instance
         """
         return pulumi.get(self, "create_directory_command")
 
     @create_directory_command.setter
-    def create_directory_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_directory_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_directory_command", value)
 
     @_builtins.property
     @pulumi.getter(name="filesystemToFstabCommand")
-    def filesystem_to_fstab_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filesystem_to_fstab_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shell command to add the volume to /etc/fstab for persistent mounts
         """
         return pulumi.get(self, "filesystem_to_fstab_command")
 
     @filesystem_to_fstab_command.setter
-    def filesystem_to_fstab_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filesystem_to_fstab_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filesystem_to_fstab_command", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the instance to attach the volume to
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="mountCommand")
-    def mount_command(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mount_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shell command to mount the volume on the instance
         """
         return pulumi.get(self, "mount_command")
 
     @mount_command.setter
-    def mount_command(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mount_command(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mount_command", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeId")
-    def volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the volume to attach
         """
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
-    def volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_id", value)
 
 
@@ -150,8 +150,8 @@ class VolumeAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a VolumeAttachment resource with the given unique name, props, and options.
@@ -185,8 +185,8 @@ class VolumeAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -216,11 +216,11 @@ class VolumeAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            create_directory_command: Optional[pulumi.Input[_builtins.str]] = None,
-            filesystem_to_fstab_command: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            mount_command: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeAttachment':
+            create_directory_command: pulumi.Input[Optional[_builtins.str]] = None,
+            filesystem_to_fstab_command: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_command: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeAttachment':
         """
         Get an existing VolumeAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
