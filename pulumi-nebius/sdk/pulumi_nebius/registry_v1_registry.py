@@ -139,7 +139,6 @@ class _RegistryV1RegistryState:
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[_builtins.float] images_count: Registry.Type type = 2;
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
         :param pulumi.Input['RegistryV1RegistryMetadataArgs'] metadata: :
@@ -216,9 +215,6 @@ class _RegistryV1RegistryState:
     @_builtins.property
     @pulumi.getter(name="imagesCount")
     def images_count(self) -> pulumi.Input[Optional[_builtins.float]]:
-        """
-        Registry.Type type = 2;
-        """
         return pulumi.get(self, "images_count")
 
     @images_count.setter
@@ -450,7 +446,6 @@ class RegistryV1Registry(pulumi.CustomResource):
                   Timestamp indicating when the resource was created.
                
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
-        :param pulumi.Input[_builtins.float] images_count: Registry.Type type = 2;
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels_all: Effective labels sent to the API after merging provider <span pulumi-lang-nodejs="`defaultLabels`" pulumi-lang-dotnet="`DefaultLabels`" pulumi-lang-go="`defaultLabels`" pulumi-lang-python="`default_labels`" pulumi-lang-yaml="`defaultLabels`" pulumi-lang-java="`defaultLabels`" pulumi-lang-hcl="`default_labels`">`defaultLabels`</span> with resource <span pulumi-lang-nodejs="`labels`" pulumi-lang-dotnet="`Labels`" pulumi-lang-go="`labels`" pulumi-lang-python="`labels`" pulumi-lang-yaml="`labels`" pulumi-lang-java="`labels`" pulumi-lang-hcl="`labels`">`labels`</span>.
         :param pulumi.Input[Union['RegistryV1RegistryMetadataArgs', 'RegistryV1RegistryMetadataArgsDict', 'outputs.RegistryV1RegistryMetadata']] metadata: :
@@ -513,9 +508,6 @@ class RegistryV1Registry(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="imagesCount")
     def images_count(self) -> pulumi.Output[_builtins.float]:
-        """
-        Registry.Type type = 2;
-        """
         return pulumi.get(self, "images_count")
 
     @_builtins.property

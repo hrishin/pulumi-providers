@@ -6327,12 +6327,12 @@ class Mk8sV1ClusterControlPlane(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "subnetId":
-            suggest = "subnet_id"
-        elif key == "auditLogs":
+        if key == "auditLogs":
             suggest = "audit_logs"
         elif key == "etcdClusterSize":
             suggest = "etcd_cluster_size"
+        elif key == "subnetId":
+            suggest = "subnet_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in Mk8sV1ClusterControlPlane. Access the value via the '{suggest}' property getter instead.")
@@ -6346,17 +6346,13 @@ class Mk8sV1ClusterControlPlane(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 subnet_id: _builtins.str,
                  audit_logs: Optional['outputs.Mk8sV1ClusterControlPlaneAuditLogs'] = None,
                  endpoints: Optional['outputs.Mk8sV1ClusterControlPlaneEndpoints'] = None,
                  etcd_cluster_size: Optional[_builtins.float] = None,
                  karpenter: Optional['outputs.Mk8sV1ClusterControlPlaneKarpenter'] = None,
+                 subnet_id: Optional[_builtins.str] = None,
                  version: Optional[_builtins.str] = None):
         """
-        :param _builtins.str subnet_id: :
-               
-                  Nebius VPC Subnet ID where control plane instances will be located.
-                  Also will be default NodeGroup subnet.
         :param 'Mk8sV1ClusterControlPlaneAuditLogsArgs' audit_logs: :
                
                   Specify configuration of the pushing k8s audit logs into service logs and show it in the UI.
@@ -6377,6 +6373,11 @@ class Mk8sV1ClusterControlPlane(dict):
                   Please note that there is no feature parity between Karpenter node pools and
                   public node groups.
                   By default cluster will be created without it.
+        :param _builtins.str subnet_id: :
+               
+                  Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
+                  Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
                   Desired Kubernetes version of the cluster. May be lower than the actual cluster version
@@ -6384,7 +6385,6 @@ class Mk8sV1ClusterControlPlane(dict):
                   For now only acceptable format is `<major>.<minor>` like "1.31".
                   Option for patch version update will be added later.
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
             pulumi.set(__self__, "audit_logs", audit_logs)
         if endpoints is not None:
@@ -6393,19 +6393,10 @@ class Mk8sV1ClusterControlPlane(dict):
             pulumi.set(__self__, "etcd_cluster_size", etcd_cluster_size)
         if karpenter is not None:
             pulumi.set(__self__, "karpenter", karpenter)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if version is not None:
             pulumi.set(__self__, "version", version)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> _builtins.str:
-        """
-        :
-
-           Nebius VPC Subnet ID where control plane instances will be located.
-           Also will be default NodeGroup subnet.
-        """
-        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="auditLogs")
@@ -6454,6 +6445,18 @@ class Mk8sV1ClusterControlPlane(dict):
            By default cluster will be created without it.
         """
         return pulumi.get(self, "karpenter")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
+           Also will be default NodeGroup subnet.
+        """
+        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter
@@ -20125,8 +20128,8 @@ class VpcV1SecurityRuleEgress(dict):
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param Sequence[_builtins.float] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -20150,8 +20153,8 @@ class VpcV1SecurityRuleEgress(dict):
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -20215,8 +20218,8 @@ class VpcV1SecurityRuleIngress(dict):
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param _builtins.str source_security_group_id: ID of the referenced Security Group as the source.
         """
         if destination_ports is not None:
@@ -20247,8 +20250,8 @@ class VpcV1SecurityRuleIngress(dict):
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
@@ -27062,6 +27065,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         :param _builtins.str subnet_id: :
                
                   Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
                   Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
@@ -27132,6 +27136,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         :
 
            Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
            Also will be default NodeGroup subnet.
         """
         return pulumi.get(self, "subnet_id")
@@ -36460,8 +36465,8 @@ class GetVpcV1SecurityRuleEgressResult(dict):
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param Sequence[_builtins.float] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -36482,8 +36487,8 @@ class GetVpcV1SecurityRuleEgressResult(dict):
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -36526,8 +36531,8 @@ class GetVpcV1SecurityRuleIngressResult(dict):
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param _builtins.str source_security_group_id: ID of the referenced Security Group as the source.
         """
         pulumi.set(__self__, "destination_ports", destination_ports)
@@ -36555,8 +36560,8 @@ class GetVpcV1SecurityRuleIngressResult(dict):
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
