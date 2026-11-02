@@ -155,6 +155,7 @@ __all__ = [
     'Mk8sV1NodeGroupTemplate',
     'Mk8sV1NodeGroupTemplateBootDisk',
     'Mk8sV1NodeGroupTemplateBootDiskDiskEncryption',
+    'Mk8sV1NodeGroupTemplateContainerRuntime',
     'Mk8sV1NodeGroupTemplateFilesystem',
     'Mk8sV1NodeGroupTemplateFilesystemExistingFilesystem',
     'Mk8sV1NodeGroupTemplateFollowsSpotPrice',
@@ -550,6 +551,7 @@ __all__ = [
     'GetMk8sV1NodeGroupTemplateResult',
     'GetMk8sV1NodeGroupTemplateBootDiskResult',
     'GetMk8sV1NodeGroupTemplateBootDiskDiskEncryptionResult',
+    'GetMk8sV1NodeGroupTemplateContainerRuntimeResult',
     'GetMk8sV1NodeGroupTemplateFilesystemResult',
     'GetMk8sV1NodeGroupTemplateFilesystemExistingFilesystemResult',
     'GetMk8sV1NodeGroupTemplateFollowsSpotPriceResult',
@@ -6327,12 +6329,12 @@ class Mk8sV1ClusterControlPlane(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "subnetId":
-            suggest = "subnet_id"
-        elif key == "auditLogs":
+        if key == "auditLogs":
             suggest = "audit_logs"
         elif key == "etcdClusterSize":
             suggest = "etcd_cluster_size"
+        elif key == "subnetId":
+            suggest = "subnet_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in Mk8sV1ClusterControlPlane. Access the value via the '{suggest}' property getter instead.")
@@ -6346,17 +6348,13 @@ class Mk8sV1ClusterControlPlane(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 subnet_id: _builtins.str,
                  audit_logs: Optional['outputs.Mk8sV1ClusterControlPlaneAuditLogs'] = None,
                  endpoints: Optional['outputs.Mk8sV1ClusterControlPlaneEndpoints'] = None,
                  etcd_cluster_size: Optional[_builtins.float] = None,
                  karpenter: Optional['outputs.Mk8sV1ClusterControlPlaneKarpenter'] = None,
+                 subnet_id: Optional[_builtins.str] = None,
                  version: Optional[_builtins.str] = None):
         """
-        :param _builtins.str subnet_id: :
-               
-                  Nebius VPC Subnet ID where control plane instances will be located.
-                  Also will be default NodeGroup subnet.
         :param 'Mk8sV1ClusterControlPlaneAuditLogsArgs' audit_logs: :
                
                   Specify configuration of the pushing k8s audit logs into service logs and show it in the UI.
@@ -6377,6 +6375,11 @@ class Mk8sV1ClusterControlPlane(dict):
                   Please note that there is no feature parity between Karpenter node pools and
                   public node groups.
                   By default cluster will be created without it.
+        :param _builtins.str subnet_id: :
+               
+                  Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
+                  Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
                   Desired Kubernetes version of the cluster. May be lower than the actual cluster version
@@ -6384,7 +6387,6 @@ class Mk8sV1ClusterControlPlane(dict):
                   For now only acceptable format is `<major>.<minor>` like "1.31".
                   Option for patch version update will be added later.
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
             pulumi.set(__self__, "audit_logs", audit_logs)
         if endpoints is not None:
@@ -6393,19 +6395,10 @@ class Mk8sV1ClusterControlPlane(dict):
             pulumi.set(__self__, "etcd_cluster_size", etcd_cluster_size)
         if karpenter is not None:
             pulumi.set(__self__, "karpenter", karpenter)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if version is not None:
             pulumi.set(__self__, "version", version)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> _builtins.str:
-        """
-        :
-
-           Nebius VPC Subnet ID where control plane instances will be located.
-           Also will be default NodeGroup subnet.
-        """
-        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="auditLogs")
@@ -6454,6 +6447,18 @@ class Mk8sV1ClusterControlPlane(dict):
            By default cluster will be created without it.
         """
         return pulumi.get(self, "karpenter")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
+           Also will be default NodeGroup subnet.
+        """
+        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter
@@ -8143,6 +8148,8 @@ class Mk8sV1NodeGroupTemplate(dict):
             suggest = "boot_disk"
         elif key == "cloudInitUserData":
             suggest = "cloud_init_user_data"
+        elif key == "containerRuntime":
+            suggest = "container_runtime"
         elif key == "followsSpotPrice":
             suggest = "follows_spot_price"
         elif key == "gpuCluster":
@@ -8181,6 +8188,7 @@ class Mk8sV1NodeGroupTemplate(dict):
                  resources: 'outputs.Mk8sV1NodeGroupTemplateResources',
                  boot_disk: Optional['outputs.Mk8sV1NodeGroupTemplateBootDisk'] = None,
                  cloud_init_user_data: Optional[_builtins.str] = None,
+                 container_runtime: Optional['outputs.Mk8sV1NodeGroupTemplateContainerRuntime'] = None,
                  filesystems: Optional[Sequence['outputs.Mk8sV1NodeGroupTemplateFilesystem']] = None,
                  follows_spot_price: Optional['outputs.Mk8sV1NodeGroupTemplateFollowsSpotPrice'] = None,
                  gpu_cluster: Optional['outputs.Mk8sV1NodeGroupTemplateGpuCluster'] = None,
@@ -8205,6 +8213,13 @@ class Mk8sV1NodeGroupTemplate(dict):
                
                   cloud-init user-data
                   Should contain at least one SSH key.
+        :param 'Mk8sV1NodeGroupTemplateContainerRuntimeArgs' container_runtime: :
+               
+                  Configures container runtime for the node group.
+               
+               #### Inner value description
+               
+                  Configures container runtime for the node group.
         :param Sequence['Mk8sV1NodeGroupTemplateFilesystemArgs'] filesystems: :
                
                   Static attachments of Compute Filesystem.
@@ -8287,6 +8302,8 @@ class Mk8sV1NodeGroupTemplate(dict):
             pulumi.set(__self__, "boot_disk", boot_disk)
         if cloud_init_user_data is not None:
             pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
+        if container_runtime is not None:
+            pulumi.set(__self__, "container_runtime", container_runtime)
         if filesystems is not None:
             pulumi.set(__self__, "filesystems", filesystems)
         if follows_spot_price is not None:
@@ -8348,6 +8365,20 @@ class Mk8sV1NodeGroupTemplate(dict):
            Should contain at least one SSH key.
         """
         return pulumi.get(self, "cloud_init_user_data")
+
+    @_builtins.property
+    @pulumi.getter(name="containerRuntime")
+    def container_runtime(self) -> Optional['outputs.Mk8sV1NodeGroupTemplateContainerRuntime']:
+        """
+        :
+
+           Configures container runtime for the node group.
+
+        #### Inner value description
+
+           Configures container runtime for the node group.
+        """
+        return pulumi.get(self, "container_runtime")
 
     @_builtins.property
     @pulumi.getter
@@ -8702,6 +8733,64 @@ class Mk8sV1NodeGroupTemplateBootDiskDiskEncryption(dict):
            - `DISK_ENCRYPTION_MANAGED`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class Mk8sV1NodeGroupTemplateContainerRuntime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sociPullMode":
+            suggest = "soci_pull_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Mk8sV1NodeGroupTemplateContainerRuntime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Mk8sV1NodeGroupTemplateContainerRuntime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Mk8sV1NodeGroupTemplateContainerRuntime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 soci_pull_mode: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str soci_pull_mode: :
+               
+                  Uses SOCI Snapshotter to pull images.
+               
+               #### Supported values
+               
+                  Image pull modes for SOCI Snapshotter
+                  Possible values:
+               
+                  - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+                  - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+                  - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        if soci_pull_mode is not None:
+            pulumi.set(__self__, "soci_pull_mode", soci_pull_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="sociPullMode")
+    def soci_pull_mode(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Uses SOCI Snapshotter to pull images.
+
+        #### Supported values
+
+           Image pull modes for SOCI Snapshotter
+           Possible values:
+
+           - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+           - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+           - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        return pulumi.get(self, "soci_pull_mode")
 
 
 @pulumi.output_type
@@ -20125,8 +20214,8 @@ class VpcV1SecurityRuleEgress(dict):
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param Sequence[_builtins.float] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -20150,8 +20239,8 @@ class VpcV1SecurityRuleEgress(dict):
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -20215,8 +20304,8 @@ class VpcV1SecurityRuleIngress(dict):
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param _builtins.str source_security_group_id: ID of the referenced Security Group as the source.
         """
         if destination_ports is not None:
@@ -20247,8 +20336,8 @@ class VpcV1SecurityRuleIngress(dict):
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
@@ -27062,6 +27151,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         :param _builtins.str subnet_id: :
                
                   Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
                   Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
@@ -27132,6 +27222,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         :
 
            Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
            Also will be default NodeGroup subnet.
         """
         return pulumi.get(self, "subnet_id")
@@ -28482,6 +28573,7 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
     def __init__(__self__, *,
                  boot_disk: 'outputs.GetMk8sV1NodeGroupTemplateBootDiskResult',
                  cloud_init_user_data: _builtins.str,
+                 container_runtime: 'outputs.GetMk8sV1NodeGroupTemplateContainerRuntimeResult',
                  filesystems: Sequence['outputs.GetMk8sV1NodeGroupTemplateFilesystemResult'],
                  follows_spot_price: 'outputs.GetMk8sV1NodeGroupTemplateFollowsSpotPriceResult',
                  gpu_cluster: 'outputs.GetMk8sV1NodeGroupTemplateGpuClusterResult',
@@ -28506,6 +28598,13 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
                
                   cloud-init user-data
                   Should contain at least one SSH key.
+        :param 'GetMk8sV1NodeGroupTemplateContainerRuntimeArgs' container_runtime: :
+               
+                  Configures container runtime for the node group.
+               
+               #### Inner value description
+               
+                  Configures container runtime for the node group.
         :param Sequence['GetMk8sV1NodeGroupTemplateFilesystemArgs'] filesystems: :
                
                   Static attachments of Compute Filesystem.
@@ -28586,6 +28685,7 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
         """
         pulumi.set(__self__, "boot_disk", boot_disk)
         pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
+        pulumi.set(__self__, "container_runtime", container_runtime)
         pulumi.set(__self__, "filesystems", filesystems)
         pulumi.set(__self__, "follows_spot_price", follows_spot_price)
         pulumi.set(__self__, "gpu_cluster", gpu_cluster)
@@ -28623,6 +28723,20 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
            Should contain at least one SSH key.
         """
         return pulumi.get(self, "cloud_init_user_data")
+
+    @_builtins.property
+    @pulumi.getter(name="containerRuntime")
+    def container_runtime(self) -> 'outputs.GetMk8sV1NodeGroupTemplateContainerRuntimeResult':
+        """
+        :
+
+           Configures container runtime for the node group.
+
+        #### Inner value description
+
+           Configures container runtime for the node group.
+        """
+        return pulumi.get(self, "container_runtime")
 
     @_builtins.property
     @pulumi.getter
@@ -28950,6 +29064,46 @@ class GetMk8sV1NodeGroupTemplateBootDiskDiskEncryptionResult(dict):
            - `DISK_ENCRYPTION_MANAGED`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMk8sV1NodeGroupTemplateContainerRuntimeResult(dict):
+    def __init__(__self__, *,
+                 soci_pull_mode: _builtins.str):
+        """
+        :param _builtins.str soci_pull_mode: :
+               
+                  Uses SOCI Snapshotter to pull images.
+               
+               #### Supported values
+               
+                  Image pull modes for SOCI Snapshotter
+                  Possible values:
+               
+                  - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+                  - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+                  - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        pulumi.set(__self__, "soci_pull_mode", soci_pull_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="sociPullMode")
+    def soci_pull_mode(self) -> _builtins.str:
+        """
+        :
+
+           Uses SOCI Snapshotter to pull images.
+
+        #### Supported values
+
+           Image pull modes for SOCI Snapshotter
+           Possible values:
+
+           - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+           - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+           - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        return pulumi.get(self, "soci_pull_mode")
 
 
 @pulumi.output_type
@@ -36460,8 +36614,8 @@ class GetVpcV1SecurityRuleEgressResult(dict):
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param Sequence[_builtins.float] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -36482,8 +36636,8 @@ class GetVpcV1SecurityRuleEgressResult(dict):
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -36526,8 +36680,8 @@ class GetVpcV1SecurityRuleIngressResult(dict):
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param _builtins.str source_security_group_id: ID of the referenced Security Group as the source.
         """
         pulumi.set(__self__, "destination_ports", destination_ports)
@@ -36555,8 +36709,8 @@ class GetVpcV1SecurityRuleIngressResult(dict):
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
