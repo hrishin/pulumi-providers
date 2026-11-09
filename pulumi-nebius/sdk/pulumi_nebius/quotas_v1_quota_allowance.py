@@ -37,7 +37,7 @@ class QuotasV1QuotaAllowanceArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -101,7 +101,7 @@ class QuotasV1QuotaAllowanceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -167,7 +167,7 @@ class _QuotasV1QuotaAllowanceState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -280,7 +280,7 @@ class _QuotasV1QuotaAllowanceState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -383,7 +383,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -482,7 +482,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -516,6 +516,34 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return QuotasV1QuotaAllowance(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            limit: pulumi.Input[Optional[_builtins.float]] = None,
+            metadata: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceMetadataArgs', 'QuotasV1QuotaAllowanceMetadataArgsDict', 'outputs.QuotasV1QuotaAllowanceMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['QuotasV1QuotaAllowanceStatusArgs', 'QuotasV1QuotaAllowanceStatusArgsDict', 'outputs.QuotasV1QuotaAllowanceStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["limit"] = limit
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["region"] = region
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/quotasV1QuotaAllowance:QuotasV1QuotaAllowance', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -569,7 +597,7 @@ class QuotasV1QuotaAllowance(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

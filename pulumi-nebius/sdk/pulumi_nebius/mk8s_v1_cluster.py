@@ -37,7 +37,7 @@ class Mk8sV1ClusterArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
         pulumi.set(__self__, "control_plane", control_plane)
@@ -105,7 +105,7 @@ class Mk8sV1ClusterArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -156,7 +156,7 @@ class _Mk8sV1ClusterState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -274,7 +274,7 @@ class _Mk8sV1ClusterState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -362,7 +362,7 @@ class Mk8sV1Cluster(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
         ...
@@ -459,7 +459,7 @@ class Mk8sV1Cluster(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -489,6 +489,34 @@ class Mk8sV1Cluster(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return Mk8sV1Cluster(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            control_plane: pulumi.Input[Optional[Union['Mk8sV1ClusterControlPlaneArgs', 'Mk8sV1ClusterControlPlaneArgsDict', 'outputs.Mk8sV1ClusterControlPlane']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            kube_network: pulumi.Input[Optional[Union['Mk8sV1ClusterKubeNetworkArgs', 'Mk8sV1ClusterKubeNetworkArgsDict', 'outputs.Mk8sV1ClusterKubeNetwork']]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['Mk8sV1ClusterMetadataArgs', 'Mk8sV1ClusterMetadataArgsDict', 'outputs.Mk8sV1ClusterMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['Mk8sV1ClusterStatusArgs', 'Mk8sV1ClusterStatusArgsDict', 'outputs.Mk8sV1ClusterStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["controlPlane"] = control_plane
+        __props__["createdAt"] = created_at
+        __props__["kubeNetwork"] = kube_network
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/mk8sV1Cluster:Mk8sV1Cluster', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="controlPlane")
@@ -547,7 +575,7 @@ class Mk8sV1Cluster(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

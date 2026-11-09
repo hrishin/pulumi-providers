@@ -35,7 +35,7 @@ class IamV2ProjectArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -85,7 +85,7 @@ class IamV2ProjectArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -149,7 +149,7 @@ class _IamV2ProjectState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -248,7 +248,7 @@ class _IamV2ProjectState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -349,7 +349,7 @@ class IamV2Project(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -444,7 +444,7 @@ class IamV2Project(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] region: :
                
@@ -477,6 +477,32 @@ class IamV2Project(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return IamV2Project(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV2ProjectMetadataArgs', 'IamV2ProjectMetadataArgsDict', 'outputs.IamV2ProjectMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['IamV2ProjectStatusArgs', 'IamV2ProjectStatusArgsDict', 'outputs.IamV2ProjectStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["region"] = region
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/iamV2Project:IamV2Project', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -522,7 +548,7 @@ class IamV2Project(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

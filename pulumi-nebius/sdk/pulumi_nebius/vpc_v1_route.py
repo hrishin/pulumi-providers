@@ -47,7 +47,7 @@ class VpcV1RouteArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
         pulumi.set(__self__, "destination", destination)
@@ -138,7 +138,7 @@ class VpcV1RouteArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -198,7 +198,7 @@ class _VpcV1RouteState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input['VpcV1RouteNextHopArgs'] next_hop: Next hop configuration specifying where to send matching traffic.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
@@ -330,7 +330,7 @@ class _VpcV1RouteState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -442,7 +442,7 @@ class VpcV1Route(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']] next_hop: Next hop configuration specifying where to send matching traffic.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
@@ -553,7 +553,7 @@ class VpcV1Route(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']] next_hop: Next hop configuration specifying where to send matching traffic.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
@@ -586,6 +586,36 @@ class VpcV1Route(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return VpcV1Route(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[Union['VpcV1RouteDestinationArgs', 'VpcV1RouteDestinationArgsDict', 'outputs.VpcV1RouteDestination']]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1RouteMetadataArgs', 'VpcV1RouteMetadataArgsDict', 'outputs.VpcV1RouteMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_hop: pulumi.Input[Optional[Union['VpcV1RouteNextHopArgs', 'VpcV1RouteNextHopArgsDict', 'outputs.VpcV1RouteNextHop']]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1RouteStatusArgs', 'VpcV1RouteStatusArgsDict', 'outputs.VpcV1RouteStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["description"] = description
+        __props__["destination"] = destination
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["nextHop"] = next_hop
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/vpcV1Route:VpcV1Route', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -654,7 +684,7 @@ class VpcV1Route(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

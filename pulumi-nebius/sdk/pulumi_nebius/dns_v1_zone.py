@@ -44,7 +44,7 @@ class DnsV1ZoneArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['DnsV1ZoneSoaSpecArgs'] soa_spec: :
                
@@ -125,7 +125,7 @@ class DnsV1ZoneArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -219,7 +219,7 @@ class _DnsV1ZoneState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -357,7 +357,7 @@ class _DnsV1ZoneState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -497,7 +497,7 @@ class DnsV1Zone(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Union['DnsV1ZoneSoaSpecArgs', 'DnsV1ZoneSoaSpecArgsDict', 'outputs.DnsV1ZoneSoaSpec']] soa_spec: :
                
@@ -617,7 +617,7 @@ class DnsV1Zone(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -669,6 +669,36 @@ class DnsV1Zone(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["vpc"] = vpc
         return DnsV1Zone(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['DnsV1ZoneMetadataArgs', 'DnsV1ZoneMetadataArgsDict', 'outputs.DnsV1ZoneMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            soa_spec: pulumi.Input[Optional[Union['DnsV1ZoneSoaSpecArgs', 'DnsV1ZoneSoaSpecArgsDict', 'outputs.DnsV1ZoneSoaSpec']]] = None,
+            status: pulumi.Input[Optional[Union['DnsV1ZoneStatusArgs', 'DnsV1ZoneStatusArgsDict', 'outputs.DnsV1ZoneStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc: pulumi.Input[Optional[Union['DnsV1ZoneVpcArgs', 'DnsV1ZoneVpcArgsDict', 'outputs.DnsV1ZoneVpc']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["domainName"] = domain_name
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["soaSpec"] = soa_spec
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        __props__["vpc"] = vpc
+        return pulumi.runtime.exists_resource(None, 'nebius:index/dnsV1Zone:DnsV1Zone', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -728,7 +758,7 @@ class DnsV1Zone(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

@@ -50,7 +50,7 @@ class VpcV1SubnetArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] route_table_id: :
                
@@ -150,7 +150,7 @@ class VpcV1SubnetArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -228,7 +228,7 @@ class _VpcV1SubnetState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] network_id: ID of the network this subnet belongs to.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
@@ -368,7 +368,7 @@ class _VpcV1SubnetState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -498,7 +498,7 @@ class VpcV1Subnet(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] network_id: ID of the network this subnet belongs to.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.str] route_table_id: :
@@ -616,7 +616,7 @@ class VpcV1Subnet(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] network_id: ID of the network this subnet belongs to.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
@@ -654,6 +654,38 @@ class VpcV1Subnet(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return VpcV1Subnet(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4_private_pools: pulumi.Input[Optional[Union['VpcV1SubnetIpv4PrivatePoolsArgs', 'VpcV1SubnetIpv4PrivatePoolsArgsDict', 'outputs.VpcV1SubnetIpv4PrivatePools']]] = None,
+            ipv4_public_pools: pulumi.Input[Optional[Union['VpcV1SubnetIpv4PublicPoolsArgs', 'VpcV1SubnetIpv4PublicPoolsArgsDict', 'outputs.VpcV1SubnetIpv4PublicPools']]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1SubnetMetadataArgs', 'VpcV1SubnetMetadataArgsDict', 'outputs.VpcV1SubnetMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1SubnetStatusArgs', 'VpcV1SubnetStatusArgsDict', 'outputs.VpcV1SubnetStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["ipv4PrivatePools"] = ipv4_private_pools
+        __props__["ipv4PublicPools"] = ipv4_public_pools
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["networkId"] = network_id
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["routeTableId"] = route_table_id
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/vpcV1Subnet:VpcV1Subnet', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -724,7 +756,7 @@ class VpcV1Subnet(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
