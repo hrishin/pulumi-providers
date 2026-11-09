@@ -84,7 +84,7 @@ class VpcV1SecurityRuleArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] priority: :
                
@@ -248,7 +248,7 @@ class VpcV1SecurityRuleArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -375,7 +375,7 @@ class _VpcV1SecurityRuleState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] priority: :
                
@@ -580,7 +580,7 @@ class _VpcV1SecurityRuleState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -773,7 +773,7 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] priority: :
                
@@ -949,7 +949,7 @@ class VpcV1SecurityRule(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] priority: :
                
@@ -1021,6 +1021,42 @@ class VpcV1SecurityRule(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         __props__.__dict__["updated_at"] = updated_at
         return VpcV1SecurityRule(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            egress: pulumi.Input[Optional[Union['VpcV1SecurityRuleEgressArgs', 'VpcV1SecurityRuleEgressArgsDict', 'outputs.VpcV1SecurityRuleEgress']]] = None,
+            ingress: pulumi.Input[Optional[Union['VpcV1SecurityRuleIngressArgs', 'VpcV1SecurityRuleIngressArgsDict', 'outputs.VpcV1SecurityRuleIngress']]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['VpcV1SecurityRuleMetadataArgs', 'VpcV1SecurityRuleMetadataArgsDict', 'outputs.VpcV1SecurityRuleMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.float]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['VpcV1SecurityRuleStatusArgs', 'VpcV1SecurityRuleStatusArgsDict', 'outputs.VpcV1SecurityRuleStatus']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["access"] = access
+        __props__["createdAt"] = created_at
+        __props__["egress"] = egress
+        __props__["ingress"] = ingress
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["priority"] = priority
+        __props__["protocol"] = protocol
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["type"] = type
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/vpcV1SecurityRule:VpcV1SecurityRule', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter
@@ -1116,7 +1152,7 @@ class VpcV1SecurityRule(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

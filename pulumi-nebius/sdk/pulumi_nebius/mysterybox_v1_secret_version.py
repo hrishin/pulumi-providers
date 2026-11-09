@@ -39,7 +39,7 @@ class MysteryboxV1SecretVersionArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Sequence[pulumi.Input['MysteryboxV1SecretVersionPayloadArgs']]] payloads: :
                
@@ -111,7 +111,7 @@ class MysteryboxV1SecretVersionArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -203,7 +203,7 @@ class _MysteryboxV1SecretVersionState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Sequence[pulumi.Input['MysteryboxV1SecretVersionPayloadArgs']]] payloads: :
                
@@ -325,7 +325,7 @@ class _MysteryboxV1SecretVersionState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -457,7 +457,7 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]] payloads: :
                
@@ -568,7 +568,7 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]] payloads: :
                
@@ -609,6 +609,38 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return MysteryboxV1SecretVersion(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionMetadataArgs', 'MysteryboxV1SecretVersionMetadataArgsDict', 'outputs.MysteryboxV1SecretVersionMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysteryboxV1SecretVersionPayloadArgs', 'MysteryboxV1SecretVersionPayloadArgsDict', 'outputs.MysteryboxV1SecretVersionPayload']]]]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            sensitive: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionSensitiveArgs', 'MysteryboxV1SecretVersionSensitiveArgsDict', 'outputs.MysteryboxV1SecretVersionSensitive']]] = None,
+            set_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[Union['MysteryboxV1SecretVersionStatusArgs', 'MysteryboxV1SecretVersionStatusArgsDict', 'outputs.MysteryboxV1SecretVersionStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["description"] = description
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["payloads"] = payloads
+        __props__["resourceVersion"] = resource_version
+        __props__["sensitive"] = sensitive
+        __props__["setPrimary"] = set_primary
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/mysteryboxV1SecretVersion:MysteryboxV1SecretVersion', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -662,7 +694,7 @@ class MysteryboxV1SecretVersion(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
