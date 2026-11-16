@@ -56,7 +56,7 @@ class Mk8sV1NodeGroupArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['Mk8sV1NodeGroupStrategyArgs'] strategy: :
                
@@ -180,7 +180,7 @@ class Mk8sV1NodeGroupArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -277,7 +277,7 @@ class _Mk8sV1NodeGroupState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -440,7 +440,7 @@ class _Mk8sV1NodeGroupState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -589,7 +589,7 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Union['Mk8sV1NodeGroupStrategyArgs', 'Mk8sV1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1NodeGroupStrategy']] strategy: :
                
@@ -722,7 +722,7 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -769,6 +769,42 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["version"] = version
         return Mk8sV1NodeGroup(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_repair: pulumi.Input[Optional[Union['Mk8sV1NodeGroupAutoRepairArgs', 'Mk8sV1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1NodeGroupAutoRepair']]] = None,
+            autoscaling: pulumi.Input[Optional[Union['Mk8sV1NodeGroupAutoscalingArgs', 'Mk8sV1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1NodeGroupAutoscaling']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            fixed_node_count: pulumi.Input[Optional[_builtins.float]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['Mk8sV1NodeGroupMetadataArgs', 'Mk8sV1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1NodeGroupMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['Mk8sV1NodeGroupStatusArgs', 'Mk8sV1NodeGroupStatusArgsDict', 'outputs.Mk8sV1NodeGroupStatus']]] = None,
+            strategy: pulumi.Input[Optional[Union['Mk8sV1NodeGroupStrategyArgs', 'Mk8sV1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1NodeGroupStrategy']]] = None,
+            template: pulumi.Input[Optional[Union['Mk8sV1NodeGroupTemplateArgs', 'Mk8sV1NodeGroupTemplateArgsDict', 'outputs.Mk8sV1NodeGroupTemplate']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoRepair"] = auto_repair
+        __props__["autoscaling"] = autoscaling
+        __props__["createdAt"] = created_at
+        __props__["fixedNodeCount"] = fixed_node_count
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["strategy"] = strategy
+        __props__["template"] = template
+        __props__["updatedAt"] = updated_at
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'nebius:index/mk8sV1NodeGroup:Mk8sV1NodeGroup', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="autoRepair")
@@ -847,7 +883,7 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

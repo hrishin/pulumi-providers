@@ -22,13 +22,13 @@ __all__ = ['MspMlflowV1alpha1ClusterArgs', 'MspMlflowV1alpha1Cluster']
 class MspMlflowV1alpha1ClusterArgs:
     def __init__(__self__, *,
                  admin_username: pulumi.Input[_builtins.str],
-                 network_id: pulumi.Input[_builtins.str],
                  service_account_id: pulumi.Input[_builtins.str],
                  admin_password: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  metadata: pulumi.Input[Optional['MspMlflowV1alpha1ClusterMetadataArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
                  public_access: pulumi.Input[Optional[_builtins.bool]] = None,
                  sensitive: pulumi.Input[Optional['MspMlflowV1alpha1ClusterSensitiveArgs']] = None,
@@ -38,7 +38,6 @@ class MspMlflowV1alpha1ClusterArgs:
         The set of arguments for constructing a MspMlflowV1alpha1Cluster resource.
 
         :param pulumi.Input[_builtins.str] admin_username: MLflow admin username.
-        :param pulumi.Input[_builtins.str] network_id: ID of the vpc network.
         :param pulumi.Input[_builtins.str] service_account_id: Id of the service account that will be used to access S3 bucket (and create one if not provided).
         :param pulumi.Input[_builtins.str] admin_password: MLflow admin password.
         :param pulumi.Input[_builtins.str] description: Description of the cluster.
@@ -48,7 +47,8 @@ class MspMlflowV1alpha1ClusterArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
+        :param pulumi.Input[_builtins.str] network_id: ID of the vpc network.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.bool] public_access: Either make cluster public accessible or accessible only via private VPC.
         :param pulumi.Input['MspMlflowV1alpha1ClusterSensitiveArgs'] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
@@ -59,7 +59,6 @@ class MspMlflowV1alpha1ClusterArgs:
         :param pulumi.Input[_builtins.str] storage_bucket_name: Name of the Nebius S3 bucket for MLflow artifacts. If not provided, will be created under the same parent.
         """
         pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "network_id", network_id)
         pulumi.set(__self__, "service_account_id", service_account_id)
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
@@ -71,6 +70,8 @@ class MspMlflowV1alpha1ClusterArgs:
             pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if network_id is not None:
+            pulumi.set(__self__, "network_id", network_id)
         if parent_id is not None:
             pulumi.set(__self__, "parent_id", parent_id)
         if public_access is not None:
@@ -93,18 +94,6 @@ class MspMlflowV1alpha1ClusterArgs:
     @admin_username.setter
     def admin_username(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "admin_username", value)
-
-    @_builtins.property
-    @pulumi.getter(name="networkId")
-    def network_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        ID of the vpc network.
-        """
-        return pulumi.get(self, "network_id")
-
-    @network_id.setter
-    def network_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountId")
@@ -174,13 +163,25 @@ class MspMlflowV1alpha1ClusterArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkId")
+    def network_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the vpc network.
+        """
+        return pulumi.get(self, "network_id")
+
+    @network_id.setter
+    def network_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentId")
@@ -285,7 +286,7 @@ class _MspMlflowV1alpha1ClusterState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] network_id: ID of the vpc network.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.bool] public_access: Either make cluster public accessible or accessible only via private VPC.
@@ -441,7 +442,7 @@ class _MspMlflowV1alpha1ClusterState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -613,7 +614,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] network_id: ID of the vpc network.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.bool] public_access: Either make cluster public accessible or accessible only via private VPC.
@@ -679,8 +680,6 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
             __props__.__dict__["labels"] = labels
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
-            if network_id is None and not opts.urn:
-                raise TypeError("Missing required property 'network_id'")
             __props__.__dict__["network_id"] = network_id
             __props__.__dict__["parent_id"] = parent_id
             __props__.__dict__["public_access"] = public_access
@@ -748,7 +747,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] network_id: ID of the vpc network.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.bool] public_access: Either make cluster public accessible or accessible only via private VPC.
@@ -794,6 +793,48 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
         __props__.__dict__["storage_bucket_name"] = storage_bucket_name
         __props__.__dict__["updated_at"] = updated_at
         return MspMlflowV1alpha1Cluster(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterMetadataArgs', 'MspMlflowV1alpha1ClusterMetadataArgsDict', 'outputs.MspMlflowV1alpha1ClusterMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            public_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            sensitive: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterSensitiveArgs', 'MspMlflowV1alpha1ClusterSensitiveArgsDict', 'outputs.MspMlflowV1alpha1ClusterSensitive']]] = None,
+            service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            size: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[Union['MspMlflowV1alpha1ClusterStatusArgs', 'MspMlflowV1alpha1ClusterStatusArgsDict', 'outputs.MspMlflowV1alpha1ClusterStatus']]] = None,
+            storage_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adminPassword"] = admin_password
+        __props__["adminUsername"] = admin_username
+        __props__["createdAt"] = created_at
+        __props__["description"] = description
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["networkId"] = network_id
+        __props__["parentId"] = parent_id
+        __props__["publicAccess"] = public_access
+        __props__["resourceVersion"] = resource_version
+        __props__["sensitive"] = sensitive
+        __props__["serviceAccountId"] = service_account_id
+        __props__["size"] = size
+        __props__["status"] = status
+        __props__["storageBucketName"] = storage_bucket_name
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/mspMlflowV1alpha1Cluster:MspMlflowV1alpha1Cluster', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -863,7 +904,7 @@ class MspMlflowV1alpha1Cluster(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
