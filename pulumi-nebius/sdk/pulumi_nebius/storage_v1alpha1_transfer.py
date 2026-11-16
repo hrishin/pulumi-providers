@@ -77,7 +77,7 @@ class StorageV1alpha1TransferArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['StorageV1alpha1TransferSensitiveArgs'] sensitive: This object mirrors the structure of the resource, providing view on the resource's [write-only](https://developer.hashicorp.com/terraform/language/resources/ephemeral/write-only) fields. It is a preferred way to define such fields as they are not stored in the state file. To use any field in write-only mode, do not set it in the main resource, instead set it in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object. Setting the field in the main resource will overwrite the field in the <span pulumi-lang-nodejs="`sensitive`" pulumi-lang-dotnet="`Sensitive`" pulumi-lang-go="`sensitive`" pulumi-lang-python="`sensitive`" pulumi-lang-yaml="`sensitive`" pulumi-lang-java="`sensitive`" pulumi-lang-hcl="`sensitive`">`sensitive`</span> object at merging.
         """
@@ -243,7 +243,7 @@ class StorageV1alpha1TransferArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -323,7 +323,7 @@ class _StorageV1alpha1TransferState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] overwrite_strategy: :
                
                   Overwrite strategy set logic of overwrite already existed objects in destination bucket.
@@ -521,7 +521,7 @@ class _StorageV1alpha1TransferState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -681,7 +681,7 @@ class StorageV1alpha1Transfer(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] overwrite_strategy: :
                
                   Overwrite strategy set logic of overwrite already existed objects in destination bucket.
@@ -837,7 +837,7 @@ class StorageV1alpha1Transfer(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] overwrite_strategy: :
                
                   Overwrite strategy set logic of overwrite already existed objects in destination bucket.
@@ -897,6 +897,46 @@ class StorageV1alpha1Transfer(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return StorageV1alpha1Transfer(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            after_n_empty_iterations: pulumi.Input[Optional[Union['StorageV1alpha1TransferAfterNEmptyIterationsArgs', 'StorageV1alpha1TransferAfterNEmptyIterationsArgsDict', 'outputs.StorageV1alpha1TransferAfterNEmptyIterations']]] = None,
+            after_one_iteration: pulumi.Input[Optional[Union['StorageV1alpha1TransferAfterOneIterationArgs', 'StorageV1alpha1TransferAfterOneIterationArgsDict', 'outputs.StorageV1alpha1TransferAfterOneIteration']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[Union['StorageV1alpha1TransferDestinationArgs', 'StorageV1alpha1TransferDestinationArgsDict', 'outputs.StorageV1alpha1TransferDestination']]] = None,
+            infinite: pulumi.Input[Optional[Union['StorageV1alpha1TransferInfiniteArgs', 'StorageV1alpha1TransferInfiniteArgsDict', 'outputs.StorageV1alpha1TransferInfinite']]] = None,
+            inter_iteration_interval: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['StorageV1alpha1TransferMetadataArgs', 'StorageV1alpha1TransferMetadataArgsDict', 'outputs.StorageV1alpha1TransferMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            overwrite_strategy: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            sensitive: pulumi.Input[Optional[Union['StorageV1alpha1TransferSensitiveArgs', 'StorageV1alpha1TransferSensitiveArgsDict', 'outputs.StorageV1alpha1TransferSensitive']]] = None,
+            source: pulumi.Input[Optional[Union['StorageV1alpha1TransferSourceArgs', 'StorageV1alpha1TransferSourceArgsDict', 'outputs.StorageV1alpha1TransferSource']]] = None,
+            status: pulumi.Input[Optional[Union['StorageV1alpha1TransferStatusArgs', 'StorageV1alpha1TransferStatusArgsDict', 'outputs.StorageV1alpha1TransferStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["afterNEmptyIterations"] = after_n_empty_iterations
+        __props__["afterOneIteration"] = after_one_iteration
+        __props__["createdAt"] = created_at
+        __props__["destination"] = destination
+        __props__["infinite"] = infinite
+        __props__["interIterationInterval"] = inter_iteration_interval
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["overwriteStrategy"] = overwrite_strategy
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["sensitive"] = sensitive
+        __props__["source"] = source
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/storageV1alpha1Transfer:StorageV1alpha1Transfer', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="afterNEmptyIterations")
@@ -987,7 +1027,7 @@ class StorageV1alpha1Transfer(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

@@ -67,7 +67,7 @@ class StorageV1InventoryArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.bool] noncurrent_versions: Include noncurrent versions in inventory if set to true.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] optional_fields: :
                
@@ -221,7 +221,7 @@ class StorageV1InventoryArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -330,7 +330,7 @@ class _StorageV1InventoryState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.bool] noncurrent_versions: Include noncurrent versions in inventory if set to true.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] optional_fields: :
                
@@ -514,7 +514,7 @@ class _StorageV1InventoryState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -704,7 +704,7 @@ class StorageV1Inventory(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.bool] noncurrent_versions: Include noncurrent versions in inventory if set to true.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] optional_fields: :
                
@@ -864,7 +864,7 @@ class StorageV1Inventory(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.bool] noncurrent_versions: Include noncurrent versions in inventory if set to true.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] optional_fields: :
                
@@ -940,6 +940,46 @@ class StorageV1Inventory(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         return StorageV1Inventory(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_bucket_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['StorageV1InventoryMetadataArgs', 'StorageV1InventoryMetadataArgsDict', 'outputs.StorageV1InventoryMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            noncurrent_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+            optional_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            output_format: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            source_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[Union['StorageV1InventoryStatusArgs', 'StorageV1InventoryStatusArgsDict', 'outputs.StorageV1InventoryStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["destinationBucketId"] = destination_bucket_id
+        __props__["destinationPrefix"] = destination_prefix
+        __props__["enabled"] = enabled
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["noncurrentVersions"] = noncurrent_versions
+        __props__["optionalFields"] = optional_fields
+        __props__["outputFormat"] = output_format
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["schedule"] = schedule
+        __props__["sourcePrefix"] = source_prefix
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/storageV1Inventory:StorageV1Inventory', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
+
     @_builtins.property
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[_builtins.str]:
@@ -1008,7 +1048,7 @@ class StorageV1Inventory(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

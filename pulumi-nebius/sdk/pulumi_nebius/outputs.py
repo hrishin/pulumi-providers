@@ -128,6 +128,14 @@ __all__ = [
     'KmsV1SymmetricKeyStatus',
     'Mk8sV1ClusterControlPlane',
     'Mk8sV1ClusterControlPlaneAuditLogs',
+    'Mk8sV1ClusterControlPlaneAuthentication',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidc',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappings',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroups',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsername',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRule',
     'Mk8sV1ClusterControlPlaneEndpoints',
     'Mk8sV1ClusterControlPlaneEndpointsPublicEndpoint',
     'Mk8sV1ClusterControlPlaneKarpenter',
@@ -155,6 +163,7 @@ __all__ = [
     'Mk8sV1NodeGroupTemplate',
     'Mk8sV1NodeGroupTemplateBootDisk',
     'Mk8sV1NodeGroupTemplateBootDiskDiskEncryption',
+    'Mk8sV1NodeGroupTemplateContainerRuntime',
     'Mk8sV1NodeGroupTemplateFilesystem',
     'Mk8sV1NodeGroupTemplateFilesystemExistingFilesystem',
     'Mk8sV1NodeGroupTemplateFollowsSpotPrice',
@@ -523,6 +532,14 @@ __all__ = [
     'GetKmsV1SymmetricKeyStatusResult',
     'GetMk8sV1ClusterControlPlaneResult',
     'GetMk8sV1ClusterControlPlaneAuditLogsResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcIssuerResult',
+    'GetMk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleResult',
     'GetMk8sV1ClusterControlPlaneEndpointsResult',
     'GetMk8sV1ClusterControlPlaneEndpointsPublicEndpointResult',
     'GetMk8sV1ClusterControlPlaneKarpenterResult',
@@ -550,6 +567,7 @@ __all__ = [
     'GetMk8sV1NodeGroupTemplateResult',
     'GetMk8sV1NodeGroupTemplateBootDiskResult',
     'GetMk8sV1NodeGroupTemplateBootDiskDiskEncryptionResult',
+    'GetMk8sV1NodeGroupTemplateContainerRuntimeResult',
     'GetMk8sV1NodeGroupTemplateFilesystemResult',
     'GetMk8sV1NodeGroupTemplateFilesystemExistingFilesystemResult',
     'GetMk8sV1NodeGroupTemplateFollowsSpotPriceResult',
@@ -697,6 +715,27 @@ __all__ = [
     'GetVpcV1AllocationStatusAssignmentLoadBalancerResult',
     'GetVpcV1AllocationStatusAssignmentNetworkInterfaceResult',
     'GetVpcV1AllocationStatusDetailsResult',
+    'GetVpcV1DefaultNetworkNetworkResult',
+    'GetVpcV1DefaultNetworkNetworkMetadataResult',
+    'GetVpcV1DefaultNetworkNetworkSpecResult',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsResult',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolResult',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsResult',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolResult',
+    'GetVpcV1DefaultNetworkNetworkStatusResult',
+    'GetVpcV1DefaultNetworkSubnetResult',
+    'GetVpcV1DefaultNetworkSubnetMetadataResult',
+    'GetVpcV1DefaultNetworkSubnetSpecResult',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsResult',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolResult',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrResult',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsResult',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolResult',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrResult',
+    'GetVpcV1DefaultNetworkSubnetStatusResult',
+    'GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolResult',
+    'GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolResult',
+    'GetVpcV1DefaultNetworkSubnetStatusRouteTableResult',
     'GetVpcV1NetworkIpv4PrivatePoolsResult',
     'GetVpcV1NetworkIpv4PrivatePoolsPoolResult',
     'GetVpcV1NetworkIpv4PublicPoolsResult',
@@ -992,7 +1031,7 @@ class BillingV1PricingPolicyPricingMaxPriceV1(dict):
         """
         :param _builtins.str max_price: :
                
-                  Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+                  Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
                   Must be within the allowed price range (OUT_OF_RANGE otherwise);
                   a value below the current market price is accepted but blocks scheduling.
                   Mutable only while `status.running_vm_count` is 0
@@ -1007,7 +1046,7 @@ class BillingV1PricingPolicyPricingMaxPriceV1(dict):
         """
         :
 
-           Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+           Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
            Must be within the allowed price range (OUT_OF_RANGE otherwise);
            a value below the current market price is accepted but blocks scheduling.
            Mutable only while `status.running_vm_count` is 0
@@ -5373,7 +5412,7 @@ class IamV1GroupMembershipStatusGroupMemberMetadata(dict):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param _builtins.str id: Identifier for the resource, unique for its resource type.
         :param Mapping[str, _builtins.str] labels: Labels associated with the resource.
-        :param _builtins.str name: Human readable name for the resource.
+        :param _builtins.str name: Human-readable name for the resource.
         :param _builtins.str parent_id: Identifier of the parent resource to which the resource belongs.
         :param _builtins.float resource_version: :
                
@@ -5434,7 +5473,7 @@ class IamV1GroupMembershipStatusGroupMemberMetadata(dict):
     @pulumi.getter
     def name(self) -> Optional[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -6327,12 +6366,12 @@ class Mk8sV1ClusterControlPlane(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "subnetId":
-            suggest = "subnet_id"
-        elif key == "auditLogs":
+        if key == "auditLogs":
             suggest = "audit_logs"
         elif key == "etcdClusterSize":
             suggest = "etcd_cluster_size"
+        elif key == "subnetId":
+            suggest = "subnet_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in Mk8sV1ClusterControlPlane. Access the value via the '{suggest}' property getter instead.")
@@ -6346,21 +6385,19 @@ class Mk8sV1ClusterControlPlane(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 subnet_id: _builtins.str,
                  audit_logs: Optional['outputs.Mk8sV1ClusterControlPlaneAuditLogs'] = None,
+                 authentication: Optional['outputs.Mk8sV1ClusterControlPlaneAuthentication'] = None,
                  endpoints: Optional['outputs.Mk8sV1ClusterControlPlaneEndpoints'] = None,
                  etcd_cluster_size: Optional[_builtins.float] = None,
                  karpenter: Optional['outputs.Mk8sV1ClusterControlPlaneKarpenter'] = None,
+                 subnet_id: Optional[_builtins.str] = None,
                  version: Optional[_builtins.str] = None):
         """
-        :param _builtins.str subnet_id: :
-               
-                  Nebius VPC Subnet ID where control plane instances will be located.
-                  Also will be default NodeGroup subnet.
         :param 'Mk8sV1ClusterControlPlaneAuditLogsArgs' audit_logs: :
                
                   Specify configuration of the pushing k8s audit logs into service logs and show it in the UI.
                   By default cluster will be created without it.
+        :param 'Mk8sV1ClusterControlPlaneAuthenticationArgs' authentication: Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
         :param 'Mk8sV1ClusterControlPlaneEndpointsArgs' endpoints: Specification of endpoints of cluster control plane.
         :param _builtins.float etcd_cluster_size: :
                
@@ -6377,6 +6414,11 @@ class Mk8sV1ClusterControlPlane(dict):
                   Please note that there is no feature parity between Karpenter node pools and
                   public node groups.
                   By default cluster will be created without it.
+        :param _builtins.str subnet_id: :
+               
+                  Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
+                  Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
                   Desired Kubernetes version of the cluster. May be lower than the actual cluster version
@@ -6384,28 +6426,20 @@ class Mk8sV1ClusterControlPlane(dict):
                   For now only acceptable format is `<major>.<minor>` like "1.31".
                   Option for patch version update will be added later.
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
             pulumi.set(__self__, "audit_logs", audit_logs)
+        if authentication is not None:
+            pulumi.set(__self__, "authentication", authentication)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
         if etcd_cluster_size is not None:
             pulumi.set(__self__, "etcd_cluster_size", etcd_cluster_size)
         if karpenter is not None:
             pulumi.set(__self__, "karpenter", karpenter)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if version is not None:
             pulumi.set(__self__, "version", version)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> _builtins.str:
-        """
-        :
-
-           Nebius VPC Subnet ID where control plane instances will be located.
-           Also will be default NodeGroup subnet.
-        """
-        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="auditLogs")
@@ -6417,6 +6451,14 @@ class Mk8sV1ClusterControlPlane(dict):
            By default cluster will be created without it.
         """
         return pulumi.get(self, "audit_logs")
+
+    @_builtins.property
+    @pulumi.getter
+    def authentication(self) -> Optional['outputs.Mk8sV1ClusterControlPlaneAuthentication']:
+        """
+        Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
+        """
+        return pulumi.get(self, "authentication")
 
     @_builtins.property
     @pulumi.getter
@@ -6456,6 +6498,18 @@ class Mk8sV1ClusterControlPlane(dict):
         return pulumi.get(self, "karpenter")
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
+           Also will be default NodeGroup subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
     @pulumi.getter
     def version(self) -> Optional[_builtins.str]:
         """
@@ -6473,6 +6527,404 @@ class Mk8sV1ClusterControlPlane(dict):
 class Mk8sV1ClusterControlPlaneAuditLogs(dict):
     def __init__(__self__):
         pass
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthentication(dict):
+    def __init__(__self__, *,
+                 oidcs: Optional[Sequence['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidc']] = None):
+        """
+        :param Sequence['Mk8sV1ClusterControlPlaneAuthenticationOidcArgs'] oidcs: Configures OIDC providers for Kubernetes user authentication.
+        """
+        if oidcs is not None:
+            pulumi.set(__self__, "oidcs", oidcs)
+
+    @_builtins.property
+    @pulumi.getter
+    def oidcs(self) -> Optional[Sequence['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidc']]:
+        """
+        Configures OIDC providers for Kubernetes user authentication.
+        """
+        return pulumi.get(self, "oidcs")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidc(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "claimMappings":
+            suggest = "claim_mappings"
+        elif key == "claimValidationRules":
+            suggest = "claim_validation_rules"
+        elif key == "userValidationRules":
+            suggest = "user_validation_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Mk8sV1ClusterControlPlaneAuthenticationOidc. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Mk8sV1ClusterControlPlaneAuthenticationOidc.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Mk8sV1ClusterControlPlaneAuthenticationOidc.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 claim_mappings: 'outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappings',
+                 issuer: 'outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer',
+                 claim_validation_rules: Optional[Sequence['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule']] = None,
+                 name: Optional[_builtins.str] = None,
+                 user_validation_rules: Optional[Sequence['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRule']] = None):
+        """
+        :param 'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs' claim_mappings: Maps token claims to Kubernetes user attributes.
+        :param 'Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs' issuer: Defines the issuer for accepted tokens.
+        :param Sequence['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs'] claim_validation_rules: Validates token claims before Kubernetes authenticates the user.
+        :param _builtins.str name: Identifies this provider within the cluster configuration.
+        :param Sequence['Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs'] user_validation_rules: Validates the mapped Kubernetes user information.
+        """
+        pulumi.set(__self__, "claim_mappings", claim_mappings)
+        pulumi.set(__self__, "issuer", issuer)
+        if claim_validation_rules is not None:
+            pulumi.set(__self__, "claim_validation_rules", claim_validation_rules)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if user_validation_rules is not None:
+            pulumi.set(__self__, "user_validation_rules", user_validation_rules)
+
+    @_builtins.property
+    @pulumi.getter(name="claimMappings")
+    def claim_mappings(self) -> 'outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappings':
+        """
+        Maps token claims to Kubernetes user attributes.
+        """
+        return pulumi.get(self, "claim_mappings")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> 'outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer':
+        """
+        Defines the issuer for accepted tokens.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidationRules")
+    def claim_validation_rules(self) -> Optional[Sequence['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule']]:
+        """
+        Validates token claims before Kubernetes authenticates the user.
+        """
+        return pulumi.get(self, "claim_validation_rules")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Identifies this provider within the cluster configuration.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="userValidationRules")
+    def user_validation_rules(self) -> Optional[Sequence['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRule']]:
+        """
+        Validates the mapped Kubernetes user information.
+        """
+        return pulumi.get(self, "user_validation_rules")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappings(dict):
+    def __init__(__self__, *,
+                 username: 'outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsername',
+                 groups: Optional['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroups'] = None):
+        """
+        :param 'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs' username: Maps token claims to the Kubernetes username.
+        :param 'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs' groups: Maps token claims to Kubernetes groups. Omission disables group mapping.
+        """
+        pulumi.set(__self__, "username", username)
+        if groups is not None:
+            pulumi.set(__self__, "groups", groups)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> 'outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsername':
+        """
+        Maps token claims to the Kubernetes username.
+        """
+        return pulumi.get(self, "username")
+
+    @_builtins.property
+    @pulumi.getter
+    def groups(self) -> Optional['outputs.Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroups']:
+        """
+        Maps token claims to Kubernetes groups. Omission disables group mapping.
+        """
+        return pulumi.get(self, "groups")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroups(dict):
+    def __init__(__self__, *,
+                 claim: Optional[_builtins.str] = None,
+                 expression: Optional[_builtins.str] = None,
+                 prefix: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str claim: Names the token claim to map.
+        :param _builtins.str expression: Maps token claims with a CEL expression.
+        :param _builtins.str prefix: Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        if claim is not None:
+            pulumi.set(__self__, "claim", claim)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> Optional[_builtins.str]:
+        """
+        Names the token claim to map.
+        """
+        return pulumi.get(self, "claim")
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> Optional[_builtins.str]:
+        """
+        Maps token claims with a CEL expression.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[_builtins.str]:
+        """
+        Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsername(dict):
+    def __init__(__self__, *,
+                 claim: Optional[_builtins.str] = None,
+                 expression: Optional[_builtins.str] = None,
+                 prefix: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str claim: Names the token claim to map.
+        :param _builtins.str expression: Maps token claims with a CEL expression.
+        :param _builtins.str prefix: Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        if claim is not None:
+            pulumi.set(__self__, "claim", claim)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> Optional[_builtins.str]:
+        """
+        Names the token claim to map.
+        """
+        return pulumi.get(self, "claim")
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> Optional[_builtins.str]:
+        """
+        Maps token claims with a CEL expression.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[_builtins.str]:
+        """
+        Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requiredValue":
+            suggest = "required_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 claim: Optional[_builtins.str] = None,
+                 expression: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 required_value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str claim: Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+        :param _builtins.str expression: Validates token claims with CEL. The expression must evaluate to true.
+        :param _builtins.str message: Describes a failed CEL validation.
+        :param _builtins.str required_value: An omitted value matches an empty string, following upstream behavior.
+        """
+        if claim is not None:
+            pulumi.set(__self__, "claim", claim)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if required_value is not None:
+            pulumi.set(__self__, "required_value", required_value)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> Optional[_builtins.str]:
+        """
+        Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+        """
+        return pulumi.get(self, "claim")
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> Optional[_builtins.str]:
+        """
+        Validates token claims with CEL. The expression must evaluate to true.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        Describes a failed CEL validation.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="requiredValue")
+    def required_value(self) -> Optional[_builtins.str]:
+        """
+        An omitted value matches an empty string, following upstream behavior.
+        """
+        return pulumi.get(self, "required_value")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateAuthority":
+            suggest = "certificate_authority"
+        elif key == "discoveryUrl":
+            suggest = "discovery_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Mk8sV1ClusterControlPlaneAuthenticationOidcIssuer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 audiences: Optional[Sequence[_builtins.str]] = None,
+                 certificate_authority: Optional[_builtins.str] = None,
+                 discovery_url: Optional[_builtins.str] = None,
+                 url: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] audiences: Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+        :param _builtins.str certificate_authority: PEM CA bundle for discovery and JWKS. Omission uses system trust.
+        :param _builtins.str discovery_url: Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+        :param _builtins.str url: Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+        """
+        if audiences is not None:
+            pulumi.set(__self__, "audiences", audiences)
+        if certificate_authority is not None:
+            pulumi.set(__self__, "certificate_authority", certificate_authority)
+        if discovery_url is not None:
+            pulumi.set(__self__, "discovery_url", discovery_url)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def audiences(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+        """
+        return pulumi.get(self, "audiences")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateAuthority")
+    def certificate_authority(self) -> Optional[_builtins.str]:
+        """
+        PEM CA bundle for discovery and JWKS. Omission uses system trust.
+        """
+        return pulumi.get(self, "certificate_authority")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> Optional[_builtins.str]:
+        """
+        Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+        """
+        return pulumi.get(self, "discovery_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> Optional[_builtins.str]:
+        """
+        Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRule(dict):
+    def __init__(__self__, *,
+                 expression: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str expression: Validates the mapped Kubernetes user information with CEL.
+        :param _builtins.str message: Describes a failed CEL validation.
+        """
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> Optional[_builtins.str]:
+        """
+        Validates the mapped Kubernetes user information with CEL.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        Describes a failed CEL validation.
+        """
+        return pulumi.get(self, "message")
 
 
 @pulumi.output_type
@@ -8143,6 +8595,8 @@ class Mk8sV1NodeGroupTemplate(dict):
             suggest = "boot_disk"
         elif key == "cloudInitUserData":
             suggest = "cloud_init_user_data"
+        elif key == "containerRuntime":
+            suggest = "container_runtime"
         elif key == "followsSpotPrice":
             suggest = "follows_spot_price"
         elif key == "gpuCluster":
@@ -8181,6 +8635,7 @@ class Mk8sV1NodeGroupTemplate(dict):
                  resources: 'outputs.Mk8sV1NodeGroupTemplateResources',
                  boot_disk: Optional['outputs.Mk8sV1NodeGroupTemplateBootDisk'] = None,
                  cloud_init_user_data: Optional[_builtins.str] = None,
+                 container_runtime: Optional['outputs.Mk8sV1NodeGroupTemplateContainerRuntime'] = None,
                  filesystems: Optional[Sequence['outputs.Mk8sV1NodeGroupTemplateFilesystem']] = None,
                  follows_spot_price: Optional['outputs.Mk8sV1NodeGroupTemplateFollowsSpotPrice'] = None,
                  gpu_cluster: Optional['outputs.Mk8sV1NodeGroupTemplateGpuCluster'] = None,
@@ -8205,6 +8660,13 @@ class Mk8sV1NodeGroupTemplate(dict):
                
                   cloud-init user-data
                   Should contain at least one SSH key.
+        :param 'Mk8sV1NodeGroupTemplateContainerRuntimeArgs' container_runtime: :
+               
+                  Configures container runtime for the node group.
+               
+               #### Inner value description
+               
+                  Configures container runtime for the node group.
         :param Sequence['Mk8sV1NodeGroupTemplateFilesystemArgs'] filesystems: :
                
                   Static attachments of Compute Filesystem.
@@ -8287,6 +8749,8 @@ class Mk8sV1NodeGroupTemplate(dict):
             pulumi.set(__self__, "boot_disk", boot_disk)
         if cloud_init_user_data is not None:
             pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
+        if container_runtime is not None:
+            pulumi.set(__self__, "container_runtime", container_runtime)
         if filesystems is not None:
             pulumi.set(__self__, "filesystems", filesystems)
         if follows_spot_price is not None:
@@ -8348,6 +8812,20 @@ class Mk8sV1NodeGroupTemplate(dict):
            Should contain at least one SSH key.
         """
         return pulumi.get(self, "cloud_init_user_data")
+
+    @_builtins.property
+    @pulumi.getter(name="containerRuntime")
+    def container_runtime(self) -> Optional['outputs.Mk8sV1NodeGroupTemplateContainerRuntime']:
+        """
+        :
+
+           Configures container runtime for the node group.
+
+        #### Inner value description
+
+           Configures container runtime for the node group.
+        """
+        return pulumi.get(self, "container_runtime")
 
     @_builtins.property
     @pulumi.getter
@@ -8702,6 +9180,64 @@ class Mk8sV1NodeGroupTemplateBootDiskDiskEncryption(dict):
            - `DISK_ENCRYPTION_MANAGED`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class Mk8sV1NodeGroupTemplateContainerRuntime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sociPullMode":
+            suggest = "soci_pull_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Mk8sV1NodeGroupTemplateContainerRuntime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Mk8sV1NodeGroupTemplateContainerRuntime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Mk8sV1NodeGroupTemplateContainerRuntime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 soci_pull_mode: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str soci_pull_mode: :
+               
+                  Uses SOCI Snapshotter to pull images.
+               
+               #### Supported values
+               
+                  Image pull modes for SOCI Snapshotter
+                  Possible values:
+               
+                  - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+                  - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+                  - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        if soci_pull_mode is not None:
+            pulumi.set(__self__, "soci_pull_mode", soci_pull_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="sociPullMode")
+    def soci_pull_mode(self) -> Optional[_builtins.str]:
+        """
+        :
+
+           Uses SOCI Snapshotter to pull images.
+
+        #### Supported values
+
+           Image pull modes for SOCI Snapshotter
+           Possible values:
+
+           - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+           - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+           - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        return pulumi.get(self, "soci_pull_mode")
 
 
 @pulumi.output_type
@@ -19297,9 +19833,11 @@ class VpcV1NetworkStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default: Optional[_builtins.bool] = None,
                  default_route_table_id: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str default_route_table_id: ID of the network's default route table.
         :param _builtins.str state: :
                
@@ -19315,10 +19853,20 @@ class VpcV1NetworkStatus(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if default_route_table_id is not None:
             pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -20125,8 +20673,8 @@ class VpcV1SecurityRuleEgress(dict):
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param Sequence[_builtins.float] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -20150,8 +20698,8 @@ class VpcV1SecurityRuleEgress(dict):
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -20215,8 +20763,8 @@ class VpcV1SecurityRuleIngress(dict):
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param _builtins.str source_security_group_id: ID of the referenced Security Group as the source.
         """
         if destination_ports is not None:
@@ -20247,8 +20795,8 @@ class VpcV1SecurityRuleIngress(dict):
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
@@ -20889,6 +21437,7 @@ class VpcV1SubnetStatus(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 default: Optional[_builtins.bool] = None,
                  ipv4_private_cidrs: Optional[Sequence[_builtins.str]] = None,
                  ipv4_private_pools: Optional[Sequence['outputs.VpcV1SubnetStatusIpv4PrivatePool']] = None,
                  ipv4_public_cidrs: Optional[Sequence[_builtins.str]] = None,
@@ -20896,6 +21445,7 @@ class VpcV1SubnetStatus(dict):
                  route_table: Optional['outputs.VpcV1SubnetStatusRouteTable'] = None,
                  state: Optional[_builtins.str] = None):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -20924,6 +21474,8 @@ class VpcV1SubnetStatus(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if ipv4_private_cidrs is not None:
             pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
         if ipv4_private_pools is not None:
@@ -20936,6 +21488,14 @@ class VpcV1SubnetStatus(dict):
             pulumi.set(__self__, "route_table", route_table)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
@@ -21746,7 +22306,7 @@ class GetBillingV1PricingPolicyPricingMaxPriceV1Result(dict):
         """
         :param _builtins.str max_price: :
                
-                  Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+                  Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
                   Must be within the allowed price range (OUT_OF_RANGE otherwise);
                   a value below the current market price is accepted but blocks scheduling.
                   Mutable only while `status.running_vm_count` is 0
@@ -21761,7 +22321,7 @@ class GetBillingV1PricingPolicyPricingMaxPriceV1Result(dict):
         """
         :
 
-           Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+           Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
            Must be within the allowed price range (OUT_OF_RANGE otherwise);
            a value below the current market price is accepted but blocks scheduling.
            Mutable only while `status.running_vm_count` is 0
@@ -25888,7 +26448,7 @@ class GetIamV1GroupMembershipStatusGroupMemberMetadataResult(dict):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param _builtins.str id: Identifier for the resource, unique for its resource type.
         :param Mapping[str, _builtins.str] labels: Labels associated with the resource.
-        :param _builtins.str name: Human readable name for the resource.
+        :param _builtins.str name: Human-readable name for the resource.
         :param _builtins.str parent_id: Identifier of the parent resource to which the resource belongs.
         :param _builtins.float resource_version: :
                
@@ -25942,7 +26502,7 @@ class GetIamV1GroupMembershipStatusGroupMemberMetadataResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -27033,6 +27593,7 @@ class GetKmsV1SymmetricKeyStatusResult(dict):
 class GetMk8sV1ClusterControlPlaneResult(dict):
     def __init__(__self__, *,
                  audit_logs: 'outputs.GetMk8sV1ClusterControlPlaneAuditLogsResult',
+                 authentication: 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationResult',
                  endpoints: 'outputs.GetMk8sV1ClusterControlPlaneEndpointsResult',
                  etcd_cluster_size: _builtins.float,
                  karpenter: 'outputs.GetMk8sV1ClusterControlPlaneKarpenterResult',
@@ -27043,6 +27604,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
                
                   Specify configuration of the pushing k8s audit logs into service logs and show it in the UI.
                   By default cluster will be created without it.
+        :param 'GetMk8sV1ClusterControlPlaneAuthenticationArgs' authentication: Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
         :param 'GetMk8sV1ClusterControlPlaneEndpointsArgs' endpoints: Specification of endpoints of cluster control plane.
         :param _builtins.float etcd_cluster_size: :
                
@@ -27062,6 +27624,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         :param _builtins.str subnet_id: :
                
                   Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
                   Also will be default NodeGroup subnet.
         :param _builtins.str version: :
                
@@ -27071,6 +27634,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
                   Option for patch version update will be added later.
         """
         pulumi.set(__self__, "audit_logs", audit_logs)
+        pulumi.set(__self__, "authentication", authentication)
         pulumi.set(__self__, "endpoints", endpoints)
         pulumi.set(__self__, "etcd_cluster_size", etcd_cluster_size)
         pulumi.set(__self__, "karpenter", karpenter)
@@ -27087,6 +27651,14 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
            By default cluster will be created without it.
         """
         return pulumi.get(self, "audit_logs")
+
+    @_builtins.property
+    @pulumi.getter
+    def authentication(self) -> 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationResult':
+        """
+        Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
+        """
+        return pulumi.get(self, "authentication")
 
     @_builtins.property
     @pulumi.getter
@@ -27132,6 +27704,7 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
         :
 
            Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
            Also will be default NodeGroup subnet.
         """
         return pulumi.get(self, "subnet_id")
@@ -27154,6 +27727,326 @@ class GetMk8sV1ClusterControlPlaneResult(dict):
 class GetMk8sV1ClusterControlPlaneAuditLogsResult(dict):
     def __init__(__self__):
         pass
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationResult(dict):
+    def __init__(__self__, *,
+                 oidcs: Sequence['outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcResult']):
+        """
+        :param Sequence['GetMk8sV1ClusterControlPlaneAuthenticationOidcArgs'] oidcs: Configures OIDC providers for Kubernetes user authentication.
+        """
+        pulumi.set(__self__, "oidcs", oidcs)
+
+    @_builtins.property
+    @pulumi.getter
+    def oidcs(self) -> Sequence['outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcResult']:
+        """
+        Configures OIDC providers for Kubernetes user authentication.
+        """
+        return pulumi.get(self, "oidcs")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcResult(dict):
+    def __init__(__self__, *,
+                 claim_mappings: 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsResult',
+                 claim_validation_rules: Sequence['outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleResult'],
+                 issuer: 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcIssuerResult',
+                 name: _builtins.str,
+                 user_validation_rules: Sequence['outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleResult']):
+        """
+        :param 'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs' claim_mappings: Maps token claims to Kubernetes user attributes.
+        :param Sequence['GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs'] claim_validation_rules: Validates token claims before Kubernetes authenticates the user.
+        :param 'GetMk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs' issuer: Defines the issuer for accepted tokens.
+        :param _builtins.str name: Identifies this provider within the cluster configuration.
+        :param Sequence['GetMk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs'] user_validation_rules: Validates the mapped Kubernetes user information.
+        """
+        pulumi.set(__self__, "claim_mappings", claim_mappings)
+        pulumi.set(__self__, "claim_validation_rules", claim_validation_rules)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "user_validation_rules", user_validation_rules)
+
+    @_builtins.property
+    @pulumi.getter(name="claimMappings")
+    def claim_mappings(self) -> 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsResult':
+        """
+        Maps token claims to Kubernetes user attributes.
+        """
+        return pulumi.get(self, "claim_mappings")
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidationRules")
+    def claim_validation_rules(self) -> Sequence['outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleResult']:
+        """
+        Validates token claims before Kubernetes authenticates the user.
+        """
+        return pulumi.get(self, "claim_validation_rules")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcIssuerResult':
+        """
+        Defines the issuer for accepted tokens.
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Identifies this provider within the cluster configuration.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="userValidationRules")
+    def user_validation_rules(self) -> Sequence['outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleResult']:
+        """
+        Validates the mapped Kubernetes user information.
+        """
+        return pulumi.get(self, "user_validation_rules")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsResult(dict):
+    def __init__(__self__, *,
+                 groups: 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsResult',
+                 username: 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameResult'):
+        """
+        :param 'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs' groups: Maps token claims to Kubernetes groups. Omission disables group mapping.
+        :param 'GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs' username: Maps token claims to the Kubernetes username.
+        """
+        pulumi.set(__self__, "groups", groups)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter
+    def groups(self) -> 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsResult':
+        """
+        Maps token claims to Kubernetes groups. Omission disables group mapping.
+        """
+        return pulumi.get(self, "groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> 'outputs.GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameResult':
+        """
+        Maps token claims to the Kubernetes username.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsResult(dict):
+    def __init__(__self__, *,
+                 claim: _builtins.str,
+                 expression: _builtins.str,
+                 prefix: _builtins.str):
+        """
+        :param _builtins.str claim: Names the token claim to map.
+        :param _builtins.str expression: Maps token claims with a CEL expression.
+        :param _builtins.str prefix: Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        pulumi.set(__self__, "claim", claim)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> _builtins.str:
+        """
+        Names the token claim to map.
+        """
+        return pulumi.get(self, "claim")
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> _builtins.str:
+        """
+        Maps token claims with a CEL expression.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameResult(dict):
+    def __init__(__self__, *,
+                 claim: _builtins.str,
+                 expression: _builtins.str,
+                 prefix: _builtins.str):
+        """
+        :param _builtins.str claim: Names the token claim to map.
+        :param _builtins.str expression: Maps token claims with a CEL expression.
+        :param _builtins.str prefix: Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        pulumi.set(__self__, "claim", claim)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> _builtins.str:
+        """
+        Names the token claim to map.
+        """
+        return pulumi.get(self, "claim")
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> _builtins.str:
+        """
+        Maps token claims with a CEL expression.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleResult(dict):
+    def __init__(__self__, *,
+                 claim: _builtins.str,
+                 expression: _builtins.str,
+                 message: _builtins.str,
+                 required_value: _builtins.str):
+        """
+        :param _builtins.str claim: Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+        :param _builtins.str expression: Validates token claims with CEL. The expression must evaluate to true.
+        :param _builtins.str message: Describes a failed CEL validation.
+        :param _builtins.str required_value: An omitted value matches an empty string, following upstream behavior.
+        """
+        pulumi.set(__self__, "claim", claim)
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "required_value", required_value)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> _builtins.str:
+        """
+        Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+        """
+        return pulumi.get(self, "claim")
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> _builtins.str:
+        """
+        Validates token claims with CEL. The expression must evaluate to true.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Describes a failed CEL validation.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="requiredValue")
+    def required_value(self) -> _builtins.str:
+        """
+        An omitted value matches an empty string, following upstream behavior.
+        """
+        return pulumi.get(self, "required_value")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcIssuerResult(dict):
+    def __init__(__self__, *,
+                 audiences: Sequence[_builtins.str],
+                 certificate_authority: _builtins.str,
+                 discovery_url: _builtins.str,
+                 url: _builtins.str):
+        """
+        :param Sequence[_builtins.str] audiences: Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+        :param _builtins.str certificate_authority: PEM CA bundle for discovery and JWKS. Omission uses system trust.
+        :param _builtins.str discovery_url: Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+        :param _builtins.str url: Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+        """
+        pulumi.set(__self__, "audiences", audiences)
+        pulumi.set(__self__, "certificate_authority", certificate_authority)
+        pulumi.set(__self__, "discovery_url", discovery_url)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def audiences(self) -> Sequence[_builtins.str]:
+        """
+        Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+        """
+        return pulumi.get(self, "audiences")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateAuthority")
+    def certificate_authority(self) -> _builtins.str:
+        """
+        PEM CA bundle for discovery and JWKS. Omission uses system trust.
+        """
+        return pulumi.get(self, "certificate_authority")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> _builtins.str:
+        """
+        Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+        """
+        return pulumi.get(self, "discovery_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetMk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleResult(dict):
+    def __init__(__self__, *,
+                 expression: _builtins.str,
+                 message: _builtins.str):
+        """
+        :param _builtins.str expression: Validates the mapped Kubernetes user information with CEL.
+        :param _builtins.str message: Describes a failed CEL validation.
+        """
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "message", message)
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> _builtins.str:
+        """
+        Validates the mapped Kubernetes user information with CEL.
+        """
+        return pulumi.get(self, "expression")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        Describes a failed CEL validation.
+        """
+        return pulumi.get(self, "message")
 
 
 @pulumi.output_type
@@ -28482,6 +29375,7 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
     def __init__(__self__, *,
                  boot_disk: 'outputs.GetMk8sV1NodeGroupTemplateBootDiskResult',
                  cloud_init_user_data: _builtins.str,
+                 container_runtime: 'outputs.GetMk8sV1NodeGroupTemplateContainerRuntimeResult',
                  filesystems: Sequence['outputs.GetMk8sV1NodeGroupTemplateFilesystemResult'],
                  follows_spot_price: 'outputs.GetMk8sV1NodeGroupTemplateFollowsSpotPriceResult',
                  gpu_cluster: 'outputs.GetMk8sV1NodeGroupTemplateGpuClusterResult',
@@ -28506,6 +29400,13 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
                
                   cloud-init user-data
                   Should contain at least one SSH key.
+        :param 'GetMk8sV1NodeGroupTemplateContainerRuntimeArgs' container_runtime: :
+               
+                  Configures container runtime for the node group.
+               
+               #### Inner value description
+               
+                  Configures container runtime for the node group.
         :param Sequence['GetMk8sV1NodeGroupTemplateFilesystemArgs'] filesystems: :
                
                   Static attachments of Compute Filesystem.
@@ -28586,6 +29487,7 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
         """
         pulumi.set(__self__, "boot_disk", boot_disk)
         pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
+        pulumi.set(__self__, "container_runtime", container_runtime)
         pulumi.set(__self__, "filesystems", filesystems)
         pulumi.set(__self__, "follows_spot_price", follows_spot_price)
         pulumi.set(__self__, "gpu_cluster", gpu_cluster)
@@ -28623,6 +29525,20 @@ class GetMk8sV1NodeGroupTemplateResult(dict):
            Should contain at least one SSH key.
         """
         return pulumi.get(self, "cloud_init_user_data")
+
+    @_builtins.property
+    @pulumi.getter(name="containerRuntime")
+    def container_runtime(self) -> 'outputs.GetMk8sV1NodeGroupTemplateContainerRuntimeResult':
+        """
+        :
+
+           Configures container runtime for the node group.
+
+        #### Inner value description
+
+           Configures container runtime for the node group.
+        """
+        return pulumi.get(self, "container_runtime")
 
     @_builtins.property
     @pulumi.getter
@@ -28950,6 +29866,46 @@ class GetMk8sV1NodeGroupTemplateBootDiskDiskEncryptionResult(dict):
            - `DISK_ENCRYPTION_MANAGED`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMk8sV1NodeGroupTemplateContainerRuntimeResult(dict):
+    def __init__(__self__, *,
+                 soci_pull_mode: _builtins.str):
+        """
+        :param _builtins.str soci_pull_mode: :
+               
+                  Uses SOCI Snapshotter to pull images.
+               
+               #### Supported values
+               
+                  Image pull modes for SOCI Snapshotter
+                  Possible values:
+               
+                  - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+                  - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+                  - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        pulumi.set(__self__, "soci_pull_mode", soci_pull_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="sociPullMode")
+    def soci_pull_mode(self) -> _builtins.str:
+        """
+        :
+
+           Uses SOCI Snapshotter to pull images.
+
+        #### Supported values
+
+           Image pull modes for SOCI Snapshotter
+           Possible values:
+
+           - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+           - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+           - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        return pulumi.get(self, "soci_pull_mode")
 
 
 @pulumi.output_type
@@ -35695,6 +36651,1049 @@ class GetVpcV1AllocationStatusDetailsResult(dict):
 
 
 @pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkResult(dict):
+    def __init__(__self__, *,
+                 metadata: 'outputs.GetVpcV1DefaultNetworkNetworkMetadataResult',
+                 spec: 'outputs.GetVpcV1DefaultNetworkNetworkSpecResult',
+                 status: 'outputs.GetVpcV1DefaultNetworkNetworkStatusResult'):
+        """
+        :param 'GetVpcV1DefaultNetworkNetworkMetadataArgs' metadata: :
+               
+                  Metadata for the network resource.
+                  `metadata.parent_id` represents IAM container
+               
+               #### Inner value description
+               
+                  Common resource metadata.
+        :param 'GetVpcV1DefaultNetworkNetworkSpecArgs' spec: Specification of the network.
+        :param 'GetVpcV1DefaultNetworkNetworkStatusArgs' status: Status of the network.
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "spec", spec)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> 'outputs.GetVpcV1DefaultNetworkNetworkMetadataResult':
+        """
+        :
+
+           Metadata for the network resource.
+           `metadata.parent_id` represents IAM container
+
+        #### Inner value description
+
+           Common resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter
+    def spec(self) -> 'outputs.GetVpcV1DefaultNetworkNetworkSpecResult':
+        """
+        Specification of the network.
+        """
+        return pulumi.get(self, "spec")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> 'outputs.GetVpcV1DefaultNetworkNetworkStatusResult':
+        """
+        Status of the network.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkMetadataResult(dict):
+    def __init__(__self__, *,
+                 created_at: _builtins.str,
+                 id: _builtins.str,
+                 labels: Mapping[str, _builtins.str],
+                 name: _builtins.str,
+                 parent_id: _builtins.str,
+                 resource_version: _builtins.float,
+                 updated_at: _builtins.str):
+        """
+        :param _builtins.str created_at: :
+               
+                  Timestamp indicating when the resource was created.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        :param _builtins.str id: Identifier for the resource, unique for its resource type.
+        :param Mapping[str, _builtins.str] labels: Labels associated with the resource.
+        :param _builtins.str name: Human-readable name for the resource.
+        :param _builtins.str parent_id: Identifier of the parent resource to which the resource belongs.
+        :param _builtins.float resource_version: :
+               
+                  Version of the resource for safe concurrent modifications and consistent reads.
+                  Positive and monotonically increases on each resource spec change (but *not* on each change of the
+                  resource's container(s) or status).
+                  Service allows zero value or current.
+        :param _builtins.str updated_at: :
+               
+                  Timestamp indicating when the resource was last updated.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        pulumi.set(__self__, "created_at", created_at)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "resource_version", resource_version)
+        pulumi.set(__self__, "updated_at", updated_at)
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was created.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Identifier for the resource, unique for its resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> Mapping[str, _builtins.str]:
+        """
+        Labels associated with the resource.
+        """
+        return pulumi.get(self, "labels")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Human-readable name for the resource.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> _builtins.str:
+        """
+        Identifier of the parent resource to which the resource belongs.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceVersion")
+    def resource_version(self) -> _builtins.float:
+        """
+        :
+
+           Version of the resource for safe concurrent modifications and consistent reads.
+           Positive and monotonically increases on each resource spec change (but *not* on each change of the
+           resource's container(s) or status).
+           Service allows zero value or current.
+        """
+        return pulumi.get(self, "resource_version")
+
+    @_builtins.property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was last updated.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "updated_at")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkSpecResult(dict):
+    def __init__(__self__, *,
+                 ipv4_private_pools: 'outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsResult',
+                 ipv4_public_pools: 'outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsResult'):
+        """
+        :param 'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs' ipv4_private_pools: :
+               
+                  Pools for private IPv4 addresses.
+                  Default private pools will be created if not specified.
+                  Default private pools are referred here
+                  https://docs.nebius.com/vpc/addressing/available-addresses
+        :param 'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs' ipv4_public_pools: :
+               
+                  Pools for public IPv4 addresses.
+                  Default public pool will be used if not specified.
+        """
+        pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
+        pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivatePools")
+    def ipv4_private_pools(self) -> 'outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsResult':
+        """
+        :
+
+           Pools for private IPv4 addresses.
+           Default private pools will be created if not specified.
+           Default private pools are referred here
+           https://docs.nebius.com/vpc/addressing/available-addresses
+        """
+        return pulumi.get(self, "ipv4_private_pools")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicPools")
+    def ipv4_public_pools(self) -> 'outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsResult':
+        """
+        :
+
+           Pools for public IPv4 addresses.
+           Default public pool will be used if not specified.
+        """
+        return pulumi.get(self, "ipv4_public_pools")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsResult(dict):
+    def __init__(__self__, *,
+                 pools: Sequence['outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolResult']):
+        pulumi.set(__self__, "pools", pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolResult']:
+        return pulumi.get(self, "pools")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: ID of the pool.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the pool.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsResult(dict):
+    def __init__(__self__, *,
+                 pools: Sequence['outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolResult']):
+        pulumi.set(__self__, "pools", pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['outputs.GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolResult']:
+        return pulumi.get(self, "pools")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: ID of the pool.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the pool.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkNetworkStatusResult(dict):
+    def __init__(__self__, *,
+                 default: _builtins.bool,
+                 default_route_table_id: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
+        :param _builtins.str default_route_table_id: ID of the network's default route table.
+        :param _builtins.str state: :
+               
+                  Current state of the network.
+               
+               #### Supported values
+               
+                  Enumeration of possible states of the network.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Default state, unspecified.
+                  - `CREATING` - Network is being created.
+                  - `READY` - Network is ready for use.
+                  - `DELETING` - Network is being deleted.
+        """
+        pulumi.set(__self__, "default", default)
+        pulumi.set(__self__, "default_route_table_id", default_route_table_id)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultRouteTableId")
+    def default_route_table_id(self) -> _builtins.str:
+        """
+        ID of the network's default route table.
+        """
+        return pulumi.get(self, "default_route_table_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Current state of the network.
+
+        #### Supported values
+
+           Enumeration of possible states of the network.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Default state, unspecified.
+           - `CREATING` - Network is being created.
+           - `READY` - Network is ready for use.
+           - `DELETING` - Network is being deleted.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetResult(dict):
+    def __init__(__self__, *,
+                 metadata: 'outputs.GetVpcV1DefaultNetworkSubnetMetadataResult',
+                 spec: 'outputs.GetVpcV1DefaultNetworkSubnetSpecResult',
+                 status: 'outputs.GetVpcV1DefaultNetworkSubnetStatusResult'):
+        """
+        :param 'GetVpcV1DefaultNetworkSubnetMetadataArgs' metadata: :
+               
+                  Metadata for the subnet resource.
+                  `metadata.parent_id` represents IAM container
+               
+               #### Inner value description
+               
+                  Common resource metadata.
+        :param 'GetVpcV1DefaultNetworkSubnetSpecArgs' spec: Specification of the subnet.
+        :param 'GetVpcV1DefaultNetworkSubnetStatusArgs' status: Status of the subnet.
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "spec", spec)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> 'outputs.GetVpcV1DefaultNetworkSubnetMetadataResult':
+        """
+        :
+
+           Metadata for the subnet resource.
+           `metadata.parent_id` represents IAM container
+
+        #### Inner value description
+
+           Common resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter
+    def spec(self) -> 'outputs.GetVpcV1DefaultNetworkSubnetSpecResult':
+        """
+        Specification of the subnet.
+        """
+        return pulumi.get(self, "spec")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> 'outputs.GetVpcV1DefaultNetworkSubnetStatusResult':
+        """
+        Status of the subnet.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetMetadataResult(dict):
+    def __init__(__self__, *,
+                 created_at: _builtins.str,
+                 id: _builtins.str,
+                 labels: Mapping[str, _builtins.str],
+                 name: _builtins.str,
+                 parent_id: _builtins.str,
+                 resource_version: _builtins.float,
+                 updated_at: _builtins.str):
+        """
+        :param _builtins.str created_at: :
+               
+                  Timestamp indicating when the resource was created.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        :param _builtins.str id: Identifier for the resource, unique for its resource type.
+        :param Mapping[str, _builtins.str] labels: Labels associated with the resource.
+        :param _builtins.str name: Human-readable name for the resource.
+        :param _builtins.str parent_id: Identifier of the parent resource to which the resource belongs.
+        :param _builtins.float resource_version: :
+               
+                  Version of the resource for safe concurrent modifications and consistent reads.
+                  Positive and monotonically increases on each resource spec change (but *not* on each change of the
+                  resource's container(s) or status).
+                  Service allows zero value or current.
+        :param _builtins.str updated_at: :
+               
+                  Timestamp indicating when the resource was last updated.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        pulumi.set(__self__, "created_at", created_at)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "resource_version", resource_version)
+        pulumi.set(__self__, "updated_at", updated_at)
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was created.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "created_at")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Identifier for the resource, unique for its resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> Mapping[str, _builtins.str]:
+        """
+        Labels associated with the resource.
+        """
+        return pulumi.get(self, "labels")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Human-readable name for the resource.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> _builtins.str:
+        """
+        Identifier of the parent resource to which the resource belongs.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceVersion")
+    def resource_version(self) -> _builtins.float:
+        """
+        :
+
+           Version of the resource for safe concurrent modifications and consistent reads.
+           Positive and monotonically increases on each resource spec change (but *not* on each change of the
+           resource's container(s) or status).
+           Service allows zero value or current.
+        """
+        return pulumi.get(self, "resource_version")
+
+    @_builtins.property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was last updated.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "updated_at")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecResult(dict):
+    def __init__(__self__, *,
+                 ipv4_private_pools: 'outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsResult',
+                 ipv4_public_pools: 'outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsResult',
+                 network_id: _builtins.str,
+                 route_table_id: _builtins.str):
+        """
+        :param 'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs' ipv4_private_pools: :
+               
+                  Private IPv4 address pools for this subnet.
+                  If unspecified, pools from the associated network are used.
+        :param 'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs' ipv4_public_pools: :
+               
+                  Public IPv4 address pools for this subnet.
+                  If unspecified, pools from the associated network are used.
+        :param _builtins.str network_id: ID of the network this subnet belongs to.
+        :param _builtins.str route_table_id: :
+               
+                  ID of the route table to associate with the subnet.
+                  If unspecified, the network's default route table is used.
+        """
+        pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
+        pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
+        pulumi.set(__self__, "network_id", network_id)
+        pulumi.set(__self__, "route_table_id", route_table_id)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivatePools")
+    def ipv4_private_pools(self) -> 'outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsResult':
+        """
+        :
+
+           Private IPv4 address pools for this subnet.
+           If unspecified, pools from the associated network are used.
+        """
+        return pulumi.get(self, "ipv4_private_pools")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicPools")
+    def ipv4_public_pools(self) -> 'outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsResult':
+        """
+        :
+
+           Public IPv4 address pools for this subnet.
+           If unspecified, pools from the associated network are used.
+        """
+        return pulumi.get(self, "ipv4_public_pools")
+
+    @_builtins.property
+    @pulumi.getter(name="networkId")
+    def network_id(self) -> _builtins.str:
+        """
+        ID of the network this subnet belongs to.
+        """
+        return pulumi.get(self, "network_id")
+
+    @_builtins.property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> _builtins.str:
+        """
+        :
+
+           ID of the route table to associate with the subnet.
+           If unspecified, the network's default route table is used.
+        """
+        return pulumi.get(self, "route_table_id")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsResult(dict):
+    def __init__(__self__, *,
+                 pools: Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolResult'],
+                 use_network_pools: _builtins.bool):
+        """
+        :param Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs'] pools: :
+               
+                  List of private IPv4 CIDR blocks for this subnet.
+                  Must not overlap with other resources in the network
+                  Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        :param _builtins.bool use_network_pools: :
+               
+                  If true, inherit private IPv4 pools from the network. Defaults to true.
+                  Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        pulumi.set(__self__, "pools", pools)
+        pulumi.set(__self__, "use_network_pools", use_network_pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolResult']:
+        """
+        :
+
+           List of private IPv4 CIDR blocks for this subnet.
+           Must not overlap with other resources in the network
+           Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        """
+        return pulumi.get(self, "pools")
+
+    @_builtins.property
+    @pulumi.getter(name="useNetworkPools")
+    def use_network_pools(self) -> _builtins.bool:
+        """
+        :
+
+           If true, inherit private IPv4 pools from the network. Defaults to true.
+           Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        return pulumi.get(self, "use_network_pools")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolResult(dict):
+    def __init__(__self__, *,
+                 cidrs: Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrResult']):
+        pulumi.set(__self__, "cidrs", cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrResult']:
+        return pulumi.get(self, "cidrs")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrResult(dict):
+    def __init__(__self__, *,
+                 cidr: _builtins.str,
+                 max_mask_length: _builtins.float,
+                 state: _builtins.str):
+        """
+        :param _builtins.str cidr: :
+               
+                  A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+                  If prefix length is specified, the CIDR block will be auto-allocated
+                  from the network's available space.
+        :param _builtins.float max_mask_length: Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        :param _builtins.str state: :
+               
+                  Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+               
+               #### Supported values
+               
+                  Controls provisioning of IP addresses from this pool to other pools
+                  or allocations. Defaults to AVAILABLE.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+                  - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+                  - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        pulumi.set(__self__, "cidr", cidr)
+        pulumi.set(__self__, "max_mask_length", max_mask_length)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> _builtins.str:
+        """
+        :
+
+           A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+           If prefix length is specified, the CIDR block will be auto-allocated
+           from the network's available space.
+        """
+        return pulumi.get(self, "cidr")
+
+    @_builtins.property
+    @pulumi.getter(name="maxMaskLength")
+    def max_mask_length(self) -> _builtins.float:
+        """
+        Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        """
+        return pulumi.get(self, "max_mask_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+
+        #### Supported values
+
+           Controls provisioning of IP addresses from this pool to other pools
+           or allocations. Defaults to AVAILABLE.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+           - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+           - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsResult(dict):
+    def __init__(__self__, *,
+                 pools: Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolResult'],
+                 use_network_pools: _builtins.bool):
+        """
+        :param Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs'] pools: :
+               
+                  List of public IPv4 CIDR blocks for this subnet.
+                  Must not overlap with other resources in the network.
+                  Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        :param _builtins.bool use_network_pools: :
+               
+                  If true, inherit public IPv4 pools from the network.
+                  Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        pulumi.set(__self__, "pools", pools)
+        pulumi.set(__self__, "use_network_pools", use_network_pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolResult']:
+        """
+        :
+
+           List of public IPv4 CIDR blocks for this subnet.
+           Must not overlap with other resources in the network.
+           Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        """
+        return pulumi.get(self, "pools")
+
+    @_builtins.property
+    @pulumi.getter(name="useNetworkPools")
+    def use_network_pools(self) -> _builtins.bool:
+        """
+        :
+
+           If true, inherit public IPv4 pools from the network.
+           Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        return pulumi.get(self, "use_network_pools")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolResult(dict):
+    def __init__(__self__, *,
+                 cidrs: Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrResult']):
+        pulumi.set(__self__, "cidrs", cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence['outputs.GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrResult']:
+        return pulumi.get(self, "cidrs")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrResult(dict):
+    def __init__(__self__, *,
+                 cidr: _builtins.str,
+                 max_mask_length: _builtins.float,
+                 state: _builtins.str):
+        """
+        :param _builtins.str cidr: :
+               
+                  A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+                  If prefix length is specified, the CIDR block will be auto-allocated
+                  from the network's available space.
+        :param _builtins.float max_mask_length: Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        :param _builtins.str state: :
+               
+                  Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+               
+               #### Supported values
+               
+                  Controls provisioning of IP addresses from this pool to other pools
+                  or allocations. Defaults to AVAILABLE.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+                  - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+                  - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        pulumi.set(__self__, "cidr", cidr)
+        pulumi.set(__self__, "max_mask_length", max_mask_length)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> _builtins.str:
+        """
+        :
+
+           A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+           If prefix length is specified, the CIDR block will be auto-allocated
+           from the network's available space.
+        """
+        return pulumi.get(self, "cidr")
+
+    @_builtins.property
+    @pulumi.getter(name="maxMaskLength")
+    def max_mask_length(self) -> _builtins.float:
+        """
+        Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        """
+        return pulumi.get(self, "max_mask_length")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+
+        #### Supported values
+
+           Controls provisioning of IP addresses from this pool to other pools
+           or allocations. Defaults to AVAILABLE.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+           - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+           - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetStatusResult(dict):
+    def __init__(__self__, *,
+                 default: _builtins.bool,
+                 ipv4_private_cidrs: Sequence[_builtins.str],
+                 ipv4_private_pools: Sequence['outputs.GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolResult'],
+                 ipv4_public_cidrs: Sequence[_builtins.str],
+                 ipv4_public_pools: Sequence['outputs.GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolResult'],
+                 route_table: 'outputs.GetVpcV1DefaultNetworkSubnetStatusRouteTableResult',
+                 state: _builtins.str):
+        """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
+        :param Sequence[_builtins.str] ipv4_private_cidrs: :
+               
+                  CIDR blocks.
+                  Deprecated: Use `ipv4_private_pools.cidrs` instead.
+        :param Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs'] ipv4_private_pools: Private IPv4 pools available for allocations in this subnet.
+        :param Sequence[_builtins.str] ipv4_public_cidrs: :
+               
+                  CIDR blocks.
+                  Deprecated: Use `ipv4_public_pools.cidrs` instead.
+        :param Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs'] ipv4_public_pools: Public IPv4 pools available for allocations in this subnet.
+        :param 'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs' route_table: :
+               
+                  Information about the route table associated with this subnet.
+                  Can be either a custom route table or the network's default route table.
+        :param _builtins.str state: :
+               
+                  Current state of the subnet.
+               
+               #### Supported values
+               
+                  Enumeration of possible states of the subnet.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Default state, unspecified.
+                  - `CREATING` - Subnet is being created.
+                  - `READY` - Subnet is ready for use.
+                  - `DELETING` - Subnet is being deleted.
+        """
+        pulumi.set(__self__, "default", default)
+        pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
+        pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
+        pulumi.set(__self__, "ipv4_public_cidrs", ipv4_public_cidrs)
+        pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
+        pulumi.set(__self__, "route_table", route_table)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivateCidrs")
+    @_utilities.deprecated("""Deprecated""")
+    def ipv4_private_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        :
+
+           CIDR blocks.
+           Deprecated: Use `ipv4_private_pools.cidrs` instead.
+        """
+        return pulumi.get(self, "ipv4_private_cidrs")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivatePools")
+    def ipv4_private_pools(self) -> Sequence['outputs.GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolResult']:
+        """
+        Private IPv4 pools available for allocations in this subnet.
+        """
+        return pulumi.get(self, "ipv4_private_pools")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicCidrs")
+    @_utilities.deprecated("""Deprecated""")
+    def ipv4_public_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        :
+
+           CIDR blocks.
+           Deprecated: Use `ipv4_public_pools.cidrs` instead.
+        """
+        return pulumi.get(self, "ipv4_public_cidrs")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicPools")
+    def ipv4_public_pools(self) -> Sequence['outputs.GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolResult']:
+        """
+        Public IPv4 pools available for allocations in this subnet.
+        """
+        return pulumi.get(self, "ipv4_public_pools")
+
+    @_builtins.property
+    @pulumi.getter(name="routeTable")
+    def route_table(self) -> 'outputs.GetVpcV1DefaultNetworkSubnetStatusRouteTableResult':
+        """
+        :
+
+           Information about the route table associated with this subnet.
+           Can be either a custom route table or the network's default route table.
+        """
+        return pulumi.get(self, "route_table")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Current state of the subnet.
+
+        #### Supported values
+
+           Enumeration of possible states of the subnet.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Default state, unspecified.
+           - `CREATING` - Subnet is being created.
+           - `READY` - Subnet is ready for use.
+           - `DELETING` - Subnet is being deleted.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolResult(dict):
+    def __init__(__self__, *,
+                 cidrs: Sequence[_builtins.str],
+                 pool_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cidrs: CIDR blocks sourced from this pool.
+        :param _builtins.str pool_id: ID of the pool available for allocations in this subnet.
+        """
+        pulumi.set(__self__, "cidrs", cidrs)
+        pulumi.set(__self__, "pool_id", pool_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence[_builtins.str]:
+        """
+        CIDR blocks sourced from this pool.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @_builtins.property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> _builtins.str:
+        """
+        ID of the pool available for allocations in this subnet.
+        """
+        return pulumi.get(self, "pool_id")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolResult(dict):
+    def __init__(__self__, *,
+                 cidrs: Sequence[_builtins.str],
+                 pool_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cidrs: CIDR blocks sourced from this pool.
+        :param _builtins.str pool_id: ID of the pool available for allocations in this subnet.
+        """
+        pulumi.set(__self__, "cidrs", cidrs)
+        pulumi.set(__self__, "pool_id", pool_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence[_builtins.str]:
+        """
+        CIDR blocks sourced from this pool.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @_builtins.property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> _builtins.str:
+        """
+        ID of the pool available for allocations in this subnet.
+        """
+        return pulumi.get(self, "pool_id")
+
+
+@pulumi.output_type
+class GetVpcV1DefaultNetworkSubnetStatusRouteTableResult(dict):
+    def __init__(__self__, *,
+                 default: _builtins.bool,
+                 id: _builtins.str):
+        """
+        :param _builtins.bool default: :
+               
+                  Indicates whether this is the network's default route table.
+                  If true, this is the default route table inherited from the network.
+                  If false, this is a custom route table explicitly associated with the subnet via spec.
+        :param _builtins.str id: ID of the route table.
+        """
+        pulumi.set(__self__, "default", default)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        :
+
+           Indicates whether this is the network's default route table.
+           If true, this is the default route table inherited from the network.
+           If false, this is a custom route table explicitly associated with the subnet via spec.
+        """
+        return pulumi.get(self, "default")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the route table.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetVpcV1NetworkIpv4PrivatePoolsResult(dict):
     def __init__(__self__, *,
                  pools: Sequence['outputs.GetVpcV1NetworkIpv4PrivatePoolsPoolResult']):
@@ -35763,9 +37762,11 @@ class GetVpcV1NetworkMetadataResult(dict):
 @pulumi.output_type
 class GetVpcV1NetworkStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  default_route_table_id: _builtins.str,
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str default_route_table_id: ID of the network's default route table.
         :param _builtins.str state: :
                
@@ -35781,8 +37782,17 @@ class GetVpcV1NetworkStatusResult(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -36460,8 +38470,8 @@ class GetVpcV1SecurityRuleEgressResult(dict):
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param Sequence[_builtins.float] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -36482,8 +38492,8 @@ class GetVpcV1SecurityRuleEgressResult(dict):
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -36526,8 +38536,8 @@ class GetVpcV1SecurityRuleIngressResult(dict):
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param _builtins.str source_security_group_id: ID of the referenced Security Group as the source.
         """
         pulumi.set(__self__, "destination_ports", destination_ports)
@@ -36555,8 +38565,8 @@ class GetVpcV1SecurityRuleIngressResult(dict):
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
@@ -37030,6 +39040,7 @@ class GetVpcV1SubnetMetadataResult(dict):
 @pulumi.output_type
 class GetVpcV1SubnetStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  ipv4_private_cidrs: Sequence[_builtins.str],
                  ipv4_private_pools: Sequence['outputs.GetVpcV1SubnetStatusIpv4PrivatePoolResult'],
                  ipv4_public_cidrs: Sequence[_builtins.str],
@@ -37037,6 +39048,7 @@ class GetVpcV1SubnetStatusResult(dict):
                  route_table: 'outputs.GetVpcV1SubnetStatusRouteTableResult',
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -37065,12 +39077,21 @@ class GetVpcV1SubnetStatusResult(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
         pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
         pulumi.set(__self__, "ipv4_public_cidrs", ipv4_public_cidrs)
         pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
         pulumi.set(__self__, "route_table", route_table)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
@@ -37619,9 +39640,11 @@ class GetVpcV1alpha1NetworkPoolResult(dict):
 @pulumi.output_type
 class GetVpcV1alpha1NetworkStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  scope_id: _builtins.str,
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
         :param _builtins.str scope_id: Scope ID of all pools
         :param _builtins.str state: :
                
@@ -37637,8 +39660,17 @@ class GetVpcV1alpha1NetworkStatusResult(dict):
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "scope_id", scope_id)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="scopeId")
@@ -38000,9 +40032,11 @@ class GetVpcV1alpha1SubnetPoolSpecCidrResult(dict):
 @pulumi.output_type
 class GetVpcV1alpha1SubnetStatusResult(dict):
     def __init__(__self__, *,
+                 default: _builtins.bool,
                  ipv4_cidrs: Sequence[_builtins.str],
                  state: _builtins.str):
         """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
         :param Sequence[_builtins.str] ipv4_cidrs: CIDR blocks.
         :param _builtins.str state: :
                
@@ -38018,8 +40052,17 @@ class GetVpcV1alpha1SubnetStatusResult(dict):
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        pulumi.set(__self__, "default", default)
         pulumi.set(__self__, "ipv4_cidrs", ipv4_cidrs)
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
 
     @_builtins.property
     @pulumi.getter(name="ipv4Cidrs")

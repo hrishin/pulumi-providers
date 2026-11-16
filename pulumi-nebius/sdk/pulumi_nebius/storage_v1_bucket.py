@@ -104,7 +104,7 @@ class StorageV1BucketArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] object_audit_logging: :
                
                   Object audit logging specifies which requests must be logged - none, all or mutational only.
@@ -343,7 +343,7 @@ class StorageV1BucketArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -510,7 +510,7 @@ class _StorageV1BucketState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] object_audit_logging: :
                
                   Object audit logging specifies which requests must be logged - none, all or mutational only.
@@ -798,7 +798,7 @@ class _StorageV1BucketState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -1002,7 +1002,7 @@ class StorageV1Bucket(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] object_audit_logging: :
                
                   Object audit logging specifies which requests must be logged - none, all or mutational only.
@@ -1207,7 +1207,7 @@ class StorageV1Bucket(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] object_audit_logging: :
                
                   Object audit logging specifies which requests must be logged - none, all or mutational only.
@@ -1272,6 +1272,50 @@ class StorageV1Bucket(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["versioning_policy"] = versioning_policy
         return StorageV1Bucket(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bucket_policy: pulumi.Input[Optional[Union['StorageV1BucketBucketPolicyArgs', 'StorageV1BucketBucketPolicyArgsDict', 'outputs.StorageV1BucketBucketPolicy']]] = None,
+            cors: pulumi.Input[Optional[Union['StorageV1BucketCorsArgs', 'StorageV1BucketCorsArgsDict', 'outputs.StorageV1BucketCors']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            default_storage_class: pulumi.Input[Optional[_builtins.str]] = None,
+            filesystem_bucket: pulumi.Input[Optional[Union['StorageV1BucketFilesystemBucketArgs', 'StorageV1BucketFilesystemBucketArgsDict', 'outputs.StorageV1BucketFilesystemBucket']]] = None,
+            force_storage_class: pulumi.Input[Optional[_builtins.bool]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_access: pulumi.Input[Optional[Union['StorageV1BucketLastAccessArgs', 'StorageV1BucketLastAccessArgsDict', 'outputs.StorageV1BucketLastAccess']]] = None,
+            lifecycle_configuration: pulumi.Input[Optional[Union['StorageV1BucketLifecycleConfigurationArgs', 'StorageV1BucketLifecycleConfigurationArgsDict', 'outputs.StorageV1BucketLifecycleConfiguration']]] = None,
+            max_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
+            metadata: pulumi.Input[Optional[Union['StorageV1BucketMetadataArgs', 'StorageV1BucketMetadataArgsDict', 'outputs.StorageV1BucketMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_audit_logging: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['StorageV1BucketStatusArgs', 'StorageV1BucketStatusArgsDict', 'outputs.StorageV1BucketStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            versioning_policy: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bucketPolicy"] = bucket_policy
+        __props__["cors"] = cors
+        __props__["createdAt"] = created_at
+        __props__["defaultStorageClass"] = default_storage_class
+        __props__["filesystemBucket"] = filesystem_bucket
+        __props__["forceStorageClass"] = force_storage_class
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["lastAccess"] = last_access
+        __props__["lifecycleConfiguration"] = lifecycle_configuration
+        __props__["maxSizeBytes"] = max_size_bytes
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["objectAuditLogging"] = object_audit_logging
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        __props__["versioningPolicy"] = versioning_policy
+        return pulumi.runtime.exists_resource(None, 'nebius:index/storageV1Bucket:StorageV1Bucket', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="bucketPolicy")
@@ -1433,7 +1477,7 @@ class StorageV1Bucket(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

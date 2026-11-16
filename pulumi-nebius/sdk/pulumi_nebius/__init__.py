@@ -65,6 +65,7 @@ from .get_storage_v1_transfer import *
 from .get_storage_v1alpha1_transfer import *
 from .get_tunnel_v1_tunnel import *
 from .get_vpc_v1_allocation import *
+from .get_vpc_v1_default_network import *
 from .get_vpc_v1_network import *
 from .get_vpc_v1_pool import *
 from .get_vpc_v1_route import *
