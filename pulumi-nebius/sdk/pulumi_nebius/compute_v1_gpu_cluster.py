@@ -21,7 +21,7 @@ __all__ = ['ComputeV1GpuClusterArgs', 'ComputeV1GpuCluster']
 @pulumi.input_type
 class ComputeV1GpuClusterArgs:
     def __init__(__self__, *,
-                 infiniband_fabric: pulumi.Input[_builtins.str],
+                 infiniband_fabric: pulumi.Input[Optional[_builtins.str]] = None,
                  labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  metadata: pulumi.Input[Optional['ComputeV1GpuClusterMetadataArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -39,10 +39,11 @@ class ComputeV1GpuClusterArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
-        pulumi.set(__self__, "infiniband_fabric", infiniband_fabric)
+        if infiniband_fabric is not None:
+            pulumi.set(__self__, "infiniband_fabric", infiniband_fabric)
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
         if metadata is not None:
@@ -54,7 +55,7 @@ class ComputeV1GpuClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="infinibandFabric")
-    def infiniband_fabric(self) -> pulumi.Input[_builtins.str]:
+    def infiniband_fabric(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         :
 
@@ -64,7 +65,7 @@ class ComputeV1GpuClusterArgs:
         return pulumi.get(self, "infiniband_fabric")
 
     @infiniband_fabric.setter
-    def infiniband_fabric(self, value: pulumi.Input[_builtins.str]):
+    def infiniband_fabric(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "infiniband_fabric", value)
 
     @_builtins.property
@@ -99,7 +100,7 @@ class ComputeV1GpuClusterArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -152,7 +153,7 @@ class _ComputeV1GpuClusterState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -262,7 +263,7 @@ class _ComputeV1GpuClusterState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -352,14 +353,14 @@ class ComputeV1GpuCluster(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
         ...
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: ComputeV1GpuClusterArgs,
+                 args: Optional[ComputeV1GpuClusterArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a ComputeV1GpuCluster resource with the given unique name, props, and options.
@@ -393,8 +394,6 @@ class ComputeV1GpuCluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ComputeV1GpuClusterArgs.__new__(ComputeV1GpuClusterArgs)
 
-            if infiniband_fabric is None and not opts.urn:
-                raise TypeError("Missing required property 'infiniband_fabric'")
             __props__.__dict__["infiniband_fabric"] = infiniband_fabric
             __props__.__dict__["labels"] = labels
             __props__.__dict__["metadata"] = metadata
@@ -449,7 +448,7 @@ class ComputeV1GpuCluster(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -479,6 +478,32 @@ class ComputeV1GpuCluster(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         return ComputeV1GpuCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            infiniband_fabric: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1GpuClusterMetadataArgs', 'ComputeV1GpuClusterMetadataArgsDict', 'outputs.ComputeV1GpuClusterMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1GpuClusterStatusArgs', 'ComputeV1GpuClusterStatusArgsDict', 'outputs.ComputeV1GpuClusterStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["infinibandFabric"] = infiniband_fabric
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/computeV1GpuCluster:ComputeV1GpuCluster', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
+
     @_builtins.property
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[_builtins.str]:
@@ -493,7 +518,7 @@ class ComputeV1GpuCluster(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="infinibandFabric")
-    def infiniband_fabric(self) -> pulumi.Output[_builtins.str]:
+    def infiniband_fabric(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         :
 
@@ -534,7 +559,7 @@ class ComputeV1GpuCluster(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

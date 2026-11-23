@@ -40,7 +40,7 @@ class IamV1FederationArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['IamV1FederationSamlSettingsArgs'] saml_settings: SAML federation settings.
         :param pulumi.Input[_builtins.bool] user_account_auto_creation: :
@@ -113,7 +113,7 @@ class IamV1FederationArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -194,7 +194,7 @@ class _IamV1FederationState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -317,7 +317,7 @@ class _IamV1FederationState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -438,7 +438,7 @@ class IamV1Federation(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']] saml_settings: SAML federation settings.
         :param pulumi.Input[_builtins.bool] user_account_auto_creation: :
@@ -543,7 +543,7 @@ class IamV1Federation(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -580,6 +580,36 @@ class IamV1Federation(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["user_account_auto_creation"] = user_account_auto_creation
         return IamV1Federation(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV1FederationMetadataArgs', 'IamV1FederationMetadataArgsDict', 'outputs.IamV1FederationMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            saml_settings: pulumi.Input[Optional[Union['IamV1FederationSamlSettingsArgs', 'IamV1FederationSamlSettingsArgsDict', 'outputs.IamV1FederationSamlSettings']]] = None,
+            status: pulumi.Input[Optional[Union['IamV1FederationStatusArgs', 'IamV1FederationStatusArgsDict', 'outputs.IamV1FederationStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            user_account_auto_creation: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["createdAt"] = created_at
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["samlSettings"] = saml_settings
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        __props__["userAccountAutoCreation"] = user_account_auto_creation
+        return pulumi.runtime.exists_resource(None, 'nebius:index/iamV1Federation:IamV1Federation', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter
@@ -636,7 +666,7 @@ class IamV1Federation(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

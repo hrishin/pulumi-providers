@@ -53,7 +53,7 @@ class BillingV1PricingPolicyArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         """
         pulumi.set(__self__, "compute_instance_spec", compute_instance_spec)
@@ -138,7 +138,7 @@ class BillingV1PricingPolicyArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -198,7 +198,7 @@ class _BillingV1PricingPolicyState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['BillingV1PricingPolicyPricingArgs'] pricing: :
                
@@ -328,7 +328,7 @@ class _BillingV1PricingPolicyState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -450,7 +450,7 @@ class BillingV1PricingPolicy(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Union['BillingV1PricingPolicyPricingArgs', 'BillingV1PricingPolicyPricingArgsDict', 'outputs.BillingV1PricingPolicyPricing']] pricing: :
                
@@ -565,7 +565,7 @@ class BillingV1PricingPolicy(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Union['BillingV1PricingPolicyPricingArgs', 'BillingV1PricingPolicyPricingArgsDict', 'outputs.BillingV1PricingPolicyPricing']] pricing: :
                
@@ -607,6 +607,34 @@ class BillingV1PricingPolicy(pulumi.CustomResource):
         __props__.__dict__["status"] = status
         __props__.__dict__["updated_at"] = updated_at
         return BillingV1PricingPolicy(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compute_instance_spec: pulumi.Input[Optional[Union['BillingV1PricingPolicyComputeInstanceSpecArgs', 'BillingV1PricingPolicyComputeInstanceSpecArgsDict', 'outputs.BillingV1PricingPolicyComputeInstanceSpec']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['BillingV1PricingPolicyMetadataArgs', 'BillingV1PricingPolicyMetadataArgsDict', 'outputs.BillingV1PricingPolicyMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pricing: pulumi.Input[Optional[Union['BillingV1PricingPolicyPricingArgs', 'BillingV1PricingPolicyPricingArgsDict', 'outputs.BillingV1PricingPolicyPricing']]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['BillingV1PricingPolicyStatusArgs', 'BillingV1PricingPolicyStatusArgsDict', 'outputs.BillingV1PricingPolicyStatus']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["computeInstanceSpec"] = compute_instance_spec
+        __props__["createdAt"] = created_at
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["pricing"] = pricing
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/billingV1PricingPolicy:BillingV1PricingPolicy', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="computeInstanceSpec")
@@ -669,7 +697,7 @@ class BillingV1PricingPolicy(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
