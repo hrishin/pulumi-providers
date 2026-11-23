@@ -6,6 +6,7 @@ import builtins as _builtins
 from . import _utilities
 import typing
 # Export this package's modules as members:
+from .ai_v1_endpoint import *
 from .applications_v1alpha1_k8s_release import *
 from .billing_v1_pricing_policy import *
 from .capacity_v1_capacity_allowance import *
@@ -17,6 +18,7 @@ from .compute_v1_instance import *
 from .compute_v1_nvl_instance_group import *
 from .dns_v1_record import *
 from .dns_v1_zone import *
+from .get_ai_v1_endpoint import *
 from .get_applications_v1alpha1_k8s_release import *
 from .get_billing_v1_pricing_policy import *
 from .get_capacity_v1_capacity_allowance import *
@@ -65,6 +67,7 @@ from .get_storage_v1_transfer import *
 from .get_storage_v1alpha1_transfer import *
 from .get_tunnel_v1_tunnel import *
 from .get_vpc_v1_allocation import *
+from .get_vpc_v1_default_network import *
 from .get_vpc_v1_network import *
 from .get_vpc_v1_pool import *
 from .get_vpc_v1_route import *
@@ -129,6 +132,14 @@ else:
 _utilities.register(
     resource_modules="""
 [
+ {
+  "pkg": "nebius",
+  "mod": "index/aiV1Endpoint",
+  "fqn": "pulumi_nebius",
+  "classes": {
+   "nebius:index/aiV1Endpoint:AiV1Endpoint": "AiV1Endpoint"
+  }
+ },
  {
   "pkg": "nebius",
   "mod": "index/applicationsV1alpha1K8sRelease",

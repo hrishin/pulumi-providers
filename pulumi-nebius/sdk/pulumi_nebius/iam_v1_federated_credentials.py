@@ -44,7 +44,7 @@ class IamV1FederatedCredentialsArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input['IamV1FederatedCredentialsOidcProviderArgs'] oidc_provider: :
                
                #### Inner value description
@@ -131,7 +131,7 @@ class IamV1FederatedCredentialsArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -208,7 +208,7 @@ class _IamV1FederatedCredentialsState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input['IamV1FederatedCredentialsOidcProviderArgs'] oidc_provider: :
                
                #### Inner value description
@@ -335,7 +335,7 @@ class _IamV1FederatedCredentialsState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -464,7 +464,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']] oidc_provider: :
                
                #### Inner value description
@@ -579,7 +579,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']] oidc_provider: :
                
                #### Inner value description
@@ -621,6 +621,36 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
         __props__.__dict__["subject_id"] = subject_id
         __props__.__dict__["updated_at"] = updated_at
         return IamV1FederatedCredentials(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            federated_subject_id: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['IamV1FederatedCredentialsMetadataArgs', 'IamV1FederatedCredentialsMetadataArgsDict', 'outputs.IamV1FederatedCredentialsMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            oidc_provider: pulumi.Input[Optional[Union['IamV1FederatedCredentialsOidcProviderArgs', 'IamV1FederatedCredentialsOidcProviderArgsDict', 'outputs.IamV1FederatedCredentialsOidcProvider']]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['IamV1FederatedCredentialsStatusArgs', 'IamV1FederatedCredentialsStatusArgsDict', 'outputs.IamV1FederatedCredentialsStatus']]] = None,
+            subject_id: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdAt"] = created_at
+        __props__["federatedSubjectId"] = federated_subject_id
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["oidcProvider"] = oidc_provider
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["subjectId"] = subject_id
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/iamV1FederatedCredentials:IamV1FederatedCredentials', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -679,7 +709,7 @@ class IamV1FederatedCredentials(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

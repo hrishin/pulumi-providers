@@ -67,7 +67,7 @@ class ComputeV1DiskArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] size_bytes: *Cannot be set alongside size_kibibytes,<span pulumi-lang-nodejs=" sizeMebibytes " pulumi-lang-dotnet=" SizeMebibytes " pulumi-lang-go=" sizeMebibytes " pulumi-lang-python=" size_mebibytes " pulumi-lang-yaml=" sizeMebibytes " pulumi-lang-java=" sizeMebibytes " pulumi-lang-hcl=" size_mebibytes "> sizeMebibytes </span>or size_gibibytes.*
         :param pulumi.Input[_builtins.float] size_gibibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeKibibytes " pulumi-lang-dotnet=" SizeKibibytes " pulumi-lang-go=" sizeKibibytes " pulumi-lang-python=" size_kibibytes " pulumi-lang-yaml=" sizeKibibytes " pulumi-lang-java=" sizeKibibytes " pulumi-lang-hcl=" size_kibibytes "> sizeKibibytes </span>or size_mebibytes.*
@@ -205,7 +205,7 @@ class ComputeV1DiskArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -355,7 +355,7 @@ class _ComputeV1DiskState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -532,7 +532,7 @@ class _ComputeV1DiskState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -745,7 +745,7 @@ class ComputeV1Disk(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] size_bytes: *Cannot be set alongside size_kibibytes,<span pulumi-lang-nodejs=" sizeMebibytes " pulumi-lang-dotnet=" SizeMebibytes " pulumi-lang-go=" sizeMebibytes " pulumi-lang-python=" size_mebibytes " pulumi-lang-yaml=" sizeMebibytes " pulumi-lang-java=" sizeMebibytes " pulumi-lang-hcl=" size_mebibytes "> sizeMebibytes </span>or size_gibibytes.*
         :param pulumi.Input[_builtins.float] size_gibibytes: *Cannot be set alongside size_bytes,<span pulumi-lang-nodejs=" sizeKibibytes " pulumi-lang-dotnet=" SizeKibibytes " pulumi-lang-go=" sizeKibibytes " pulumi-lang-python=" size_kibibytes " pulumi-lang-yaml=" sizeKibibytes " pulumi-lang-java=" sizeKibibytes " pulumi-lang-hcl=" size_kibibytes "> sizeKibibytes </span>or size_mebibytes.*
@@ -897,7 +897,7 @@ class ComputeV1Disk(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -958,6 +958,52 @@ class ComputeV1Disk(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         __props__.__dict__["updated_at"] = updated_at
         return ComputeV1Disk(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            block_size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_encryption: pulumi.Input[Optional[Union['ComputeV1DiskDiskEncryptionArgs', 'ComputeV1DiskDiskEncryptionArgsDict', 'outputs.ComputeV1DiskDiskEncryption']]] = None,
+            forbid_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1DiskMetadataArgs', 'ComputeV1DiskMetadataArgsDict', 'outputs.ComputeV1DiskMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            size_bytes: pulumi.Input[Optional[_builtins.float]] = None,
+            size_gibibytes: pulumi.Input[Optional[_builtins.float]] = None,
+            size_kibibytes: pulumi.Input[Optional[_builtins.float]] = None,
+            size_mebibytes: pulumi.Input[Optional[_builtins.float]] = None,
+            source_image_family: pulumi.Input[Optional[Union['ComputeV1DiskSourceImageFamilyArgs', 'ComputeV1DiskSourceImageFamilyArgsDict', 'outputs.ComputeV1DiskSourceImageFamily']]] = None,
+            source_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1DiskStatusArgs', 'ComputeV1DiskStatusArgsDict', 'outputs.ComputeV1DiskStatus']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blockSizeBytes"] = block_size_bytes
+        __props__["createdAt"] = created_at
+        __props__["diskEncryption"] = disk_encryption
+        __props__["forbidDeletion"] = forbid_deletion
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["sizeBytes"] = size_bytes
+        __props__["sizeGibibytes"] = size_gibibytes
+        __props__["sizeKibibytes"] = size_kibibytes
+        __props__["sizeMebibytes"] = size_mebibytes
+        __props__["sourceImageFamily"] = source_image_family
+        __props__["sourceImageId"] = source_image_id
+        __props__["sourceSnapshotId"] = source_snapshot_id
+        __props__["status"] = status
+        __props__["type"] = type
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/computeV1Disk:ComputeV1Disk', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="blockSizeBytes")
@@ -1031,7 +1077,7 @@ class ComputeV1Disk(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

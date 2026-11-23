@@ -156,12 +156,16 @@ class AwaitableGetIamV2AccessKeyResult(GetIamV2AccessKeyResult):
 
 
 def get_iam_v2_access_key(id: Optional[_builtins.str] = None,
+                          name: Optional[_builtins.str] = None,
+                          parent_id: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamV2AccessKeyResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
+    __args__['name'] = name
+    __args__['parentId'] = parent_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('nebius:index/getIamV2AccessKey:getIamV2AccessKey', __args__, opts=opts, typ=GetIamV2AccessKeyResult, package_ref=_utilities.get_package()).value
 
@@ -179,13 +183,17 @@ def get_iam_v2_access_key(id: Optional[_builtins.str] = None,
         secret_delivery_mode=pulumi.get(__ret__, 'secret_delivery_mode'),
         status=pulumi.get(__ret__, 'status'),
         updated_at=pulumi.get(__ret__, 'updated_at'))
-def get_iam_v2_access_key_output(id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_iam_v2_access_key_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 parent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamV2AccessKeyResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['id'] = id
+    __args__['name'] = name
+    __args__['parentId'] = parent_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nebius:index/getIamV2AccessKey:getIamV2AccessKey', __args__, opts=opts, typ=GetIamV2AccessKeyResult, package_ref=_utilities.get_package())
     return __ret__.apply(lambda __response__: GetIamV2AccessKeyResult(

@@ -92,7 +92,7 @@ class ComputeV1InstanceArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] nvl_instance_group_id: NVLink Instance Group ID associated with the VM
         :param pulumi.Input['ComputeV1InstanceOnDemandArgs'] on_demand: :
                
@@ -350,7 +350,7 @@ class ComputeV1InstanceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -584,7 +584,7 @@ class _ComputeV1InstanceState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeV1InstanceNetworkInterfaceArgs']]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
@@ -872,7 +872,7 @@ class _ComputeV1InstanceState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -1176,7 +1176,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
@@ -1408,7 +1408,7 @@ class ComputeV1Instance(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]] network_interfaces: :
                
                   List of network interfaces attached to the instance.
@@ -1507,6 +1507,66 @@ class ComputeV1Instance(pulumi.CustomResource):
         __props__.__dict__["stopped"] = stopped
         __props__.__dict__["updated_at"] = updated_at
         return ComputeV1Instance(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            boot_disk: pulumi.Input[Optional[Union['ComputeV1InstanceBootDiskArgs', 'ComputeV1InstanceBootDiskArgsDict', 'outputs.ComputeV1InstanceBootDisk']]] = None,
+            cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            filesystems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceFilesystemArgs', 'ComputeV1InstanceFilesystemArgsDict', 'outputs.ComputeV1InstanceFilesystem']]]]] = None,
+            follows_spot_price: pulumi.Input[Optional[Union['ComputeV1InstanceFollowsSpotPriceArgs', 'ComputeV1InstanceFollowsSpotPriceArgsDict', 'outputs.ComputeV1InstanceFollowsSpotPrice']]] = None,
+            gpu_cluster: pulumi.Input[Optional[Union['ComputeV1InstanceGpuClusterArgs', 'ComputeV1InstanceGpuClusterArgsDict', 'outputs.ComputeV1InstanceGpuCluster']]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            local_disks: pulumi.Input[Optional[Union['ComputeV1InstanceLocalDisksArgs', 'ComputeV1InstanceLocalDisksArgsDict', 'outputs.ComputeV1InstanceLocalDisks']]] = None,
+            metadata: pulumi.Input[Optional[Union['ComputeV1InstanceMetadataArgs', 'ComputeV1InstanceMetadataArgsDict', 'outputs.ComputeV1InstanceMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceNetworkInterfaceArgs', 'ComputeV1InstanceNetworkInterfaceArgsDict', 'outputs.ComputeV1InstanceNetworkInterface']]]]] = None,
+            nvl_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            on_demand: pulumi.Input[Optional[Union['ComputeV1InstanceOnDemandArgs', 'ComputeV1InstanceOnDemandArgsDict', 'outputs.ComputeV1InstanceOnDemand']]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            preemptible: pulumi.Input[Optional[Union['ComputeV1InstancePreemptibleArgs', 'ComputeV1InstancePreemptibleArgsDict', 'outputs.ComputeV1InstancePreemptible']]] = None,
+            recovery_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            reservation_policy: pulumi.Input[Optional[Union['ComputeV1InstanceReservationPolicyArgs', 'ComputeV1InstanceReservationPolicyArgsDict', 'outputs.ComputeV1InstanceReservationPolicy']]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            resources: pulumi.Input[Optional[Union['ComputeV1InstanceResourcesArgs', 'ComputeV1InstanceResourcesArgsDict', 'outputs.ComputeV1InstanceResources']]] = None,
+            secondary_disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeV1InstanceSecondaryDiskArgs', 'ComputeV1InstanceSecondaryDiskArgsDict', 'outputs.ComputeV1InstanceSecondaryDisk']]]]] = None,
+            service_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            spot_pricing_policy: pulumi.Input[Optional[Union['ComputeV1InstanceSpotPricingPolicyArgs', 'ComputeV1InstanceSpotPricingPolicyArgsDict', 'outputs.ComputeV1InstanceSpotPricingPolicy']]] = None,
+            status: pulumi.Input[Optional[Union['ComputeV1InstanceStatusArgs', 'ComputeV1InstanceStatusArgsDict', 'outputs.ComputeV1InstanceStatus']]] = None,
+            stopped: pulumi.Input[Optional[_builtins.bool]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bootDisk"] = boot_disk
+        __props__["cloudInitUserData"] = cloud_init_user_data
+        __props__["createdAt"] = created_at
+        __props__["filesystems"] = filesystems
+        __props__["followsSpotPrice"] = follows_spot_price
+        __props__["gpuCluster"] = gpu_cluster
+        __props__["hostname"] = hostname
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["localDisks"] = local_disks
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["networkInterfaces"] = network_interfaces
+        __props__["nvlInstanceGroupId"] = nvl_instance_group_id
+        __props__["onDemand"] = on_demand
+        __props__["parentId"] = parent_id
+        __props__["preemptible"] = preemptible
+        __props__["recoveryPolicy"] = recovery_policy
+        __props__["reservationPolicy"] = reservation_policy
+        __props__["resourceVersion"] = resource_version
+        __props__["resources"] = resources
+        __props__["secondaryDisks"] = secondary_disks
+        __props__["serviceAccountId"] = service_account_id
+        __props__["spotPricingPolicy"] = spot_pricing_policy
+        __props__["status"] = status
+        __props__["stopped"] = stopped
+        __props__["updatedAt"] = updated_at
+        return pulumi.runtime.exists_resource(None, 'nebius:index/computeV1Instance:ComputeV1Instance', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="bootDisk")
@@ -1630,7 +1690,7 @@ class ComputeV1Instance(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 

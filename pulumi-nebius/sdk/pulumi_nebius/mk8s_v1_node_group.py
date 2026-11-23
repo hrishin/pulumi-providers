@@ -56,7 +56,7 @@ class Mk8sV1NodeGroupArgs:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input['Mk8sV1NodeGroupStrategyArgs'] strategy: :
                
@@ -64,9 +64,11 @@ class Mk8sV1NodeGroupArgs:
                   Allows to setup compromise in roll-out speed, extra resources consumption and workloads disruption.
         :param pulumi.Input[_builtins.str] version: :
                
-                  Version is desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-                  By default the cluster control plane `<major>.<minor>` version will be used.
+                  Desired Kubernetes version and optional node image version for the node group.
+                  Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+                  If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+                  If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+                  To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         pulumi.set(__self__, "template", template)
         if auto_repair is not None:
@@ -180,7 +182,7 @@ class Mk8sV1NodeGroupArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -221,9 +223,11 @@ class Mk8sV1NodeGroupArgs:
         """
         :
 
-           Version is desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-           By default the cluster control plane `<major>.<minor>` version will be used.
+           Desired Kubernetes version and optional node image version for the node group.
+           Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+           If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+           If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+           To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         return pulumi.get(self, "version")
 
@@ -277,7 +281,7 @@ class _Mk8sV1NodeGroupState:
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -300,9 +304,11 @@ class _Mk8sV1NodeGroupState:
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[_builtins.str] version: :
                
-                  Version is desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-                  By default the cluster control plane `<major>.<minor>` version will be used.
+                  Desired Kubernetes version and optional node image version for the node group.
+                  Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+                  If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+                  If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+                  To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         if auto_repair is not None:
             pulumi.set(__self__, "auto_repair", auto_repair)
@@ -440,7 +446,7 @@ class _Mk8sV1NodeGroupState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -538,9 +544,11 @@ class _Mk8sV1NodeGroupState:
         """
         :
 
-           Version is desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-           By default the cluster control plane `<major>.<minor>` version will be used.
+           Desired Kubernetes version and optional node image version for the node group.
+           Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+           If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+           If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+           To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         return pulumi.get(self, "version")
 
@@ -589,7 +597,7 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[Union['Mk8sV1NodeGroupStrategyArgs', 'Mk8sV1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1NodeGroupStrategy']] strategy: :
                
@@ -601,9 +609,11 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
                   If not written opposite a NodeTemplate field update will cause NodeGroup roll-out according NodeGroupDeploymentStrategy.
         :param pulumi.Input[_builtins.str] version: :
                
-                  Version is desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-                  By default the cluster control plane `<major>.<minor>` version will be used.
+                  Desired Kubernetes version and optional node image version for the node group.
+                  Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+                  If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+                  If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+                  To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         ...
     @overload
@@ -722,7 +732,7 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
                #### Inner value description
                
                   Common resource metadata.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -745,9 +755,11 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[_builtins.str] version: :
                
-                  Version is desired Kubernetes version of the cluster. For now only acceptable format is
-                  `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-                  By default the cluster control plane `<major>.<minor>` version will be used.
+                  Desired Kubernetes version and optional node image version for the node group.
+                  Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+                  If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+                  If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+                  To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -769,6 +781,42 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
         __props__.__dict__["updated_at"] = updated_at
         __props__.__dict__["version"] = version
         return Mk8sV1NodeGroup(resource_name, opts=opts, __props__=__props__)
+
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_repair: pulumi.Input[Optional[Union['Mk8sV1NodeGroupAutoRepairArgs', 'Mk8sV1NodeGroupAutoRepairArgsDict', 'outputs.Mk8sV1NodeGroupAutoRepair']]] = None,
+            autoscaling: pulumi.Input[Optional[Union['Mk8sV1NodeGroupAutoscalingArgs', 'Mk8sV1NodeGroupAutoscalingArgsDict', 'outputs.Mk8sV1NodeGroupAutoscaling']]] = None,
+            created_at: pulumi.Input[Optional[_builtins.str]] = None,
+            fixed_node_count: pulumi.Input[Optional[_builtins.float]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            labels_all: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Union['Mk8sV1NodeGroupMetadataArgs', 'Mk8sV1NodeGroupMetadataArgsDict', 'outputs.Mk8sV1NodeGroupMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_version: pulumi.Input[Optional[_builtins.float]] = None,
+            status: pulumi.Input[Optional[Union['Mk8sV1NodeGroupStatusArgs', 'Mk8sV1NodeGroupStatusArgsDict', 'outputs.Mk8sV1NodeGroupStatus']]] = None,
+            strategy: pulumi.Input[Optional[Union['Mk8sV1NodeGroupStrategyArgs', 'Mk8sV1NodeGroupStrategyArgsDict', 'outputs.Mk8sV1NodeGroupStrategy']]] = None,
+            template: pulumi.Input[Optional[Union['Mk8sV1NodeGroupTemplateArgs', 'Mk8sV1NodeGroupTemplateArgsDict', 'outputs.Mk8sV1NodeGroupTemplate']]] = None,
+            updated_at: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoRepair"] = auto_repair
+        __props__["autoscaling"] = autoscaling
+        __props__["createdAt"] = created_at
+        __props__["fixedNodeCount"] = fixed_node_count
+        __props__["labels"] = labels
+        __props__["labelsAll"] = labels_all
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["parentId"] = parent_id
+        __props__["resourceVersion"] = resource_version
+        __props__["status"] = status
+        __props__["strategy"] = strategy
+        __props__["template"] = template
+        __props__["updatedAt"] = updated_at
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'nebius:index/mk8sV1NodeGroup:Mk8sV1NodeGroup', id, __props__, opts or pulumi.ResourceOptions(), package_ref=_utilities.get_package())
 
     @_builtins.property
     @pulumi.getter(name="autoRepair")
@@ -847,7 +895,7 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -917,9 +965,11 @@ class Mk8sV1NodeGroup(pulumi.CustomResource):
         """
         :
 
-           Version is desired Kubernetes version of the cluster. For now only acceptable format is
-           `<major>.<minor>` like "1.31". Option for patch version update will be added later.
-           By default the cluster control plane `<major>.<minor>` version will be used.
+           Desired Kubernetes version and optional node image version for the node group.
+           Use `<major>.<minor>[-nebius-node.<image>]`, for example, "1.36" or "1.36-nebius-node.80".
+           If this field is omitted, the Kubernetes version defaults to the cluster control plane version.
+           If the image version suffix is omitted, the latest compatible node image version is selected on NodeGroup creation.
+           To upgrade to the latest node image version later, use `NodeGroupService.Upgrade`.
         """
         return pulumi.get(self, "version")
 

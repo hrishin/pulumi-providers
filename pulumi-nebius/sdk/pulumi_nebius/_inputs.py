@@ -15,6 +15,90 @@ else:
 from . import _utilities
 
 __all__ = [
+    'AiV1EndpointAuthTokenMysteryboxSecretArgs',
+    'AiV1EndpointAuthTokenMysteryboxSecretArgsDict',
+    'AiV1EndpointDiskArgs',
+    'AiV1EndpointDiskArgsDict',
+    'AiV1EndpointEnvironmentVariableArgs',
+    'AiV1EndpointEnvironmentVariableArgsDict',
+    'AiV1EndpointEnvironmentVariableMysteryboxSecretArgs',
+    'AiV1EndpointEnvironmentVariableMysteryboxSecretArgsDict',
+    'AiV1EndpointInjectedFileArgs',
+    'AiV1EndpointInjectedFileArgsDict',
+    'AiV1EndpointMetadataArgs',
+    'AiV1EndpointMetadataArgsDict',
+    'AiV1EndpointPortArgs',
+    'AiV1EndpointPortArgsDict',
+    'AiV1EndpointPricingModelArgs',
+    'AiV1EndpointPricingModelArgsDict',
+    'AiV1EndpointPricingModelFollowsSpotPriceArgs',
+    'AiV1EndpointPricingModelFollowsSpotPriceArgsDict',
+    'AiV1EndpointPricingModelOnDemandArgs',
+    'AiV1EndpointPricingModelOnDemandArgsDict',
+    'AiV1EndpointPricingModelSpotPricingPolicyArgs',
+    'AiV1EndpointPricingModelSpotPricingPolicyArgsDict',
+    'AiV1EndpointRegistryCredentialsArgs',
+    'AiV1EndpointRegistryCredentialsArgsDict',
+    'AiV1EndpointSensitiveArgs',
+    'AiV1EndpointSensitiveArgsDict',
+    'AiV1EndpointSensitiveInjectedFileArgs',
+    'AiV1EndpointSensitiveInjectedFileArgsDict',
+    'AiV1EndpointSensitiveRegistryCredentialsArgs',
+    'AiV1EndpointSensitiveRegistryCredentialsArgsDict',
+    'AiV1EndpointSensitiveVolumeArgs',
+    'AiV1EndpointSensitiveVolumeArgsDict',
+    'AiV1EndpointSensitiveVolumeS3ConfigArgs',
+    'AiV1EndpointSensitiveVolumeS3ConfigArgsDict',
+    'AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgs',
+    'AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgsDict',
+    'AiV1EndpointStatusArgs',
+    'AiV1EndpointStatusArgsDict',
+    'AiV1EndpointStatusInstanceArgs',
+    'AiV1EndpointStatusInstanceArgsDict',
+    'AiV1EndpointStatusStateDetailsArgs',
+    'AiV1EndpointStatusStateDetailsArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgsDict',
+    'AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgs',
+    'AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgsDict',
+    'AiV1EndpointVolumeArgs',
+    'AiV1EndpointVolumeArgsDict',
+    'AiV1EndpointVolumeS3ConfigArgs',
+    'AiV1EndpointVolumeS3ConfigArgsDict',
+    'AiV1EndpointVolumeS3ConfigCredentialsArgs',
+    'AiV1EndpointVolumeS3ConfigCredentialsArgsDict',
+    'AiV1EndpointVolumeS3ConfigMysteryboxSecretArgs',
+    'AiV1EndpointVolumeS3ConfigMysteryboxSecretArgsDict',
     'ApplicationsV1alpha1K8sReleaseMetadataArgs',
     'ApplicationsV1alpha1K8sReleaseMetadataArgsDict',
     'ApplicationsV1alpha1K8sReleaseSensitiveArgs',
@@ -239,6 +323,22 @@ __all__ = [
     'Mk8sV1ClusterControlPlaneArgsDict',
     'Mk8sV1ClusterControlPlaneAuditLogsArgs',
     'Mk8sV1ClusterControlPlaneAuditLogsArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgsDict',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs',
+    'Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgsDict',
     'Mk8sV1ClusterControlPlaneEndpointsArgs',
     'Mk8sV1ClusterControlPlaneEndpointsArgsDict',
     'Mk8sV1ClusterControlPlaneEndpointsPublicEndpointArgs',
@@ -293,6 +393,8 @@ __all__ = [
     'Mk8sV1NodeGroupTemplateBootDiskArgsDict',
     'Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs',
     'Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgsDict',
+    'Mk8sV1NodeGroupTemplateContainerRuntimeArgs',
+    'Mk8sV1NodeGroupTemplateContainerRuntimeArgsDict',
     'Mk8sV1NodeGroupTemplateFilesystemArgs',
     'Mk8sV1NodeGroupTemplateFilesystemArgsDict',
     'Mk8sV1NodeGroupTemplateFilesystemExistingFilesystemArgs',
@@ -781,7 +883,3568 @@ __all__ = [
     'GetMysteryboxV1SecretPayloadEntryDataArgsDict',
     'GetQuotasV1QuotaAllowanceByNameInRegionArgs',
     'GetQuotasV1QuotaAllowanceByNameInRegionArgsDict',
+    'GetVpcV1DefaultNetworkNetworkArgs',
+    'GetVpcV1DefaultNetworkNetworkArgsDict',
+    'GetVpcV1DefaultNetworkNetworkMetadataArgs',
+    'GetVpcV1DefaultNetworkNetworkMetadataArgsDict',
+    'GetVpcV1DefaultNetworkNetworkSpecArgs',
+    'GetVpcV1DefaultNetworkNetworkSpecArgsDict',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgsDict',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgs',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgsDict',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgsDict',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgs',
+    'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgsDict',
+    'GetVpcV1DefaultNetworkNetworkStatusArgs',
+    'GetVpcV1DefaultNetworkNetworkStatusArgsDict',
+    'GetVpcV1DefaultNetworkSubnetArgs',
+    'GetVpcV1DefaultNetworkSubnetArgsDict',
+    'GetVpcV1DefaultNetworkSubnetMetadataArgs',
+    'GetVpcV1DefaultNetworkSubnetMetadataArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgsDict',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgs',
+    'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgsDict',
+    'GetVpcV1DefaultNetworkSubnetStatusArgs',
+    'GetVpcV1DefaultNetworkSubnetStatusArgsDict',
+    'GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs',
+    'GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgsDict',
+    'GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs',
+    'GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgsDict',
+    'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs',
+    'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgsDict',
 ]
+
+class AiV1EndpointAuthTokenMysteryboxSecretArgsDict(TypedDict):
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       MysteryBox secret ID.
+       If you omit it, the service sets it from version_id.
+    """
+    version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       MysteryBox secret version ID.
+       If you omit it, the service sets the primary version of the secret at create time.
+    """
+
+@pulumi.input_type
+class AiV1EndpointAuthTokenMysteryboxSecretArgs:
+    def __init__(__self__, *,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] secret_id: :
+               
+                  MysteryBox secret ID.
+                  If you omit it, the service sets it from version_id.
+        :param pulumi.Input[_builtins.str] version_id: :
+               
+                  MysteryBox secret version ID.
+                  If you omit it, the service sets the primary version of the secret at create time.
+        """
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if version_id is not None:
+            pulumi.set(__self__, "version_id", version_id)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           MysteryBox secret ID.
+           If you omit it, the service sets it from version_id.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionId")
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           MysteryBox secret version ID.
+           If you omit it, the service sets the primary version of the secret at create time.
+        """
+        return pulumi.get(self, "version_id")
+
+    @version_id.setter
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_id", value)
+
+
+class AiV1EndpointDiskArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    :
+
+       Disk type.
+
+    #### Supported values
+
+       the list of available types will be clarified later, it is not final version
+       Possible values:
+
+       - `UNSPECIFIED`
+       - `NETWORK_SSD`
+       - `NETWORK_HDD`
+       - `NETWORK_SSD_NON_REPLICATED`
+       - `NETWORK_SSD_IO_M3`
+    """
+    size_bytes: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Disk size in bytes.
+    """
+
+@pulumi.input_type
+class AiV1EndpointDiskArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 size_bytes: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: :
+               
+                  Disk type.
+               
+               #### Supported values
+               
+                  the list of available types will be clarified later, it is not final version
+                  Possible values:
+               
+                  - `UNSPECIFIED`
+                  - `NETWORK_SSD`
+                  - `NETWORK_HDD`
+                  - `NETWORK_SSD_NON_REPLICATED`
+                  - `NETWORK_SSD_IO_M3`
+        :param pulumi.Input[_builtins.float] size_bytes: Disk size in bytes.
+        """
+        pulumi.set(__self__, "type", type)
+        if size_bytes is not None:
+            pulumi.set(__self__, "size_bytes", size_bytes)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        :
+
+           Disk type.
+
+        #### Supported values
+
+           the list of available types will be clarified later, it is not final version
+           Possible values:
+
+           - `UNSPECIFIED`
+           - `NETWORK_SSD`
+           - `NETWORK_HDD`
+           - `NETWORK_SSD_NON_REPLICATED`
+           - `NETWORK_SSD_IO_M3`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sizeBytes")
+    def size_bytes(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Disk size in bytes.
+        """
+        return pulumi.get(self, "size_bytes")
+
+    @size_bytes.setter
+    def size_bytes(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "size_bytes", value)
+
+
+class AiV1EndpointEnvironmentVariableArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the environment variable.
+    """
+    mysterybox_secret: NotRequired[pulumi.Input[Optional['AiV1EndpointEnvironmentVariableMysteryboxSecretArgsDict']]]
+    """
+    :
+
+       Secret storing the environment variable value.
+       Mutually exclusive with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>.
+       The value is read from the payload entry whose key matches the variable
+       name, or the first entry when no such key exists.
+
+    #### Inner value description
+
+       Reference to a MysteryBox secret.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Environment variable value.
+       Mutually exclusive with <span pulumi-lang-nodejs="`mysteryboxSecret`" pulumi-lang-dotnet="`MysteryboxSecret`" pulumi-lang-go="`mysteryboxSecret`" pulumi-lang-python="`mysterybox_secret`" pulumi-lang-yaml="`mysteryboxSecret`" pulumi-lang-java="`mysteryboxSecret`" pulumi-lang-hcl="`mysterybox_secret`">`mysteryboxSecret`</span>.
+    """
+
+@pulumi.input_type
+class AiV1EndpointEnvironmentVariableArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 mysterybox_secret: pulumi.Input[Optional['AiV1EndpointEnvironmentVariableMysteryboxSecretArgs']] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The name of the environment variable.
+        :param pulumi.Input['AiV1EndpointEnvironmentVariableMysteryboxSecretArgs'] mysterybox_secret: :
+               
+                  Secret storing the environment variable value.
+                  Mutually exclusive with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>.
+                  The value is read from the payload entry whose key matches the variable
+                  name, or the first entry when no such key exists.
+               
+               #### Inner value description
+               
+                  Reference to a MysteryBox secret.
+        :param pulumi.Input[_builtins.str] value: :
+               
+                  Environment variable value.
+                  Mutually exclusive with <span pulumi-lang-nodejs="`mysteryboxSecret`" pulumi-lang-dotnet="`MysteryboxSecret`" pulumi-lang-go="`mysteryboxSecret`" pulumi-lang-python="`mysterybox_secret`" pulumi-lang-yaml="`mysteryboxSecret`" pulumi-lang-java="`mysteryboxSecret`" pulumi-lang-hcl="`mysterybox_secret`">`mysteryboxSecret`</span>.
+        """
+        pulumi.set(__self__, "name", name)
+        if mysterybox_secret is not None:
+            pulumi.set(__self__, "mysterybox_secret", mysterybox_secret)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the environment variable.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mysteryboxSecret")
+    def mysterybox_secret(self) -> pulumi.Input[Optional['AiV1EndpointEnvironmentVariableMysteryboxSecretArgs']]:
+        """
+        :
+
+           Secret storing the environment variable value.
+           Mutually exclusive with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>.
+           The value is read from the payload entry whose key matches the variable
+           name, or the first entry when no such key exists.
+
+        #### Inner value description
+
+           Reference to a MysteryBox secret.
+        """
+        return pulumi.get(self, "mysterybox_secret")
+
+    @mysterybox_secret.setter
+    def mysterybox_secret(self, value: pulumi.Input[Optional['AiV1EndpointEnvironmentVariableMysteryboxSecretArgs']]):
+        pulumi.set(self, "mysterybox_secret", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Environment variable value.
+           Mutually exclusive with <span pulumi-lang-nodejs="`mysteryboxSecret`" pulumi-lang-dotnet="`MysteryboxSecret`" pulumi-lang-go="`mysteryboxSecret`" pulumi-lang-python="`mysterybox_secret`" pulumi-lang-yaml="`mysteryboxSecret`" pulumi-lang-java="`mysteryboxSecret`" pulumi-lang-hcl="`mysterybox_secret`">`mysteryboxSecret`</span>.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class AiV1EndpointEnvironmentVariableMysteryboxSecretArgsDict(TypedDict):
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       MysteryBox secret ID.
+       If you omit it, the service sets it from version_id.
+    """
+    version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       MysteryBox secret version ID.
+       If you omit it, the service sets the primary version of the secret at create time.
+    """
+
+@pulumi.input_type
+class AiV1EndpointEnvironmentVariableMysteryboxSecretArgs:
+    def __init__(__self__, *,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] secret_id: :
+               
+                  MysteryBox secret ID.
+                  If you omit it, the service sets it from version_id.
+        :param pulumi.Input[_builtins.str] version_id: :
+               
+                  MysteryBox secret version ID.
+                  If you omit it, the service sets the primary version of the secret at create time.
+        """
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if version_id is not None:
+            pulumi.set(__self__, "version_id", version_id)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           MysteryBox secret ID.
+           If you omit it, the service sets it from version_id.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionId")
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           MysteryBox secret version ID.
+           If you omit it, the service sets the primary version of the secret at create time.
+        """
+        return pulumi.get(self, "version_id")
+
+    @version_id.setter
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_id", value)
+
+
+class AiV1EndpointInjectedFileArgsDict(TypedDict):
+    container_path: pulumi.Input[_builtins.str]
+    """
+    :
+
+       Absolute path inside the container where the content is written.
+
+       Must be a clean absolute path: root, trailing slashes, empty path
+       segments, "." and ".." are not allowed.
+    """
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       File content. On create, must contain between 1 byte and 64 KiB
+       (one mystery box secret payload).
+       Returned only by Get with view SECRET.
+    """
+
+@pulumi.input_type
+class AiV1EndpointInjectedFileArgs:
+    def __init__(__self__, *,
+                 container_path: pulumi.Input[_builtins.str],
+                 content: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] container_path: :
+               
+                  Absolute path inside the container where the content is written.
+               
+                  Must be a clean absolute path: root, trailing slashes, empty path
+                  segments, "." and ".." are not allowed.
+        :param pulumi.Input[_builtins.str] content: :
+               
+                  File content. On create, must contain between 1 byte and 64 KiB
+                  (one mystery box secret payload).
+                  Returned only by Get with view SECRET.
+        """
+        pulumi.set(__self__, "container_path", container_path)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+
+    @_builtins.property
+    @pulumi.getter(name="containerPath")
+    def container_path(self) -> pulumi.Input[_builtins.str]:
+        """
+        :
+
+           Absolute path inside the container where the content is written.
+
+           Must be a clean absolute path: root, trailing slashes, empty path
+           segments, "." and ".." are not allowed.
+        """
+        return pulumi.get(self, "container_path")
+
+    @container_path.setter
+    def container_path(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "container_path", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           File content. On create, must contain between 1 byte and 64 KiB
+           (one mystery box secret payload).
+           Returned only by Get with view SECRET.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+
+class AiV1EndpointMetadataArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class AiV1EndpointMetadataArgs:
+    def __init__(__self__):
+        pass
+
+
+class AiV1EndpointPortArgsDict(TypedDict):
+    protocol: pulumi.Input[_builtins.str]
+    """
+    :
+
+       Port's protocol.
+
+    #### Supported values
+
+       Represents protocol of the endpoint's port which will be exposed.
+       Possible values:
+
+       - `PROTOCOL_UNSPECIFIED`
+       - `HTTP` - HTTP protocol.
+       - `TCP` - TCP protocol.
+       - `UDP` - UDP protocol.
+    """
+    container_port: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    Container port.
+    """
+    host_port: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    :
+
+       Host port.
+
+       If not specified, will be same as container_port.
+    """
+
+@pulumi.input_type
+class AiV1EndpointPortArgs:
+    def __init__(__self__, *,
+                 protocol: pulumi.Input[_builtins.str],
+                 container_port: pulumi.Input[Optional[_builtins.float]] = None,
+                 host_port: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.str] protocol: :
+               
+                  Port's protocol.
+               
+               #### Supported values
+               
+                  Represents protocol of the endpoint's port which will be exposed.
+                  Possible values:
+               
+                  - `PROTOCOL_UNSPECIFIED`
+                  - `HTTP` - HTTP protocol.
+                  - `TCP` - TCP protocol.
+                  - `UDP` - UDP protocol.
+        :param pulumi.Input[_builtins.float] container_port: Container port.
+        :param pulumi.Input[_builtins.float] host_port: :
+               
+                  Host port.
+               
+                  If not specified, will be same as container_port.
+        """
+        pulumi.set(__self__, "protocol", protocol)
+        if container_port is not None:
+            pulumi.set(__self__, "container_port", container_port)
+        if host_port is not None:
+            pulumi.set(__self__, "host_port", host_port)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> pulumi.Input[_builtins.str]:
+        """
+        :
+
+           Port's protocol.
+
+        #### Supported values
+
+           Represents protocol of the endpoint's port which will be exposed.
+           Possible values:
+
+           - `PROTOCOL_UNSPECIFIED`
+           - `HTTP` - HTTP protocol.
+           - `TCP` - TCP protocol.
+           - `UDP` - UDP protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "protocol", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerPort")
+    def container_port(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        Container port.
+        """
+        return pulumi.get(self, "container_port")
+
+    @container_port.setter
+    def container_port(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "container_port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostPort")
+    def host_port(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        :
+
+           Host port.
+
+           If not specified, will be same as container_port.
+        """
+        return pulumi.get(self, "host_port")
+
+    @host_port.setter
+    def host_port(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "host_port", value)
+
+
+class AiV1EndpointPricingModelArgsDict(TypedDict):
+    follows_spot_price: NotRequired[pulumi.Input[Optional['AiV1EndpointPricingModelFollowsSpotPriceArgsDict']]]
+    """
+    :
+
+       The preemptible VM accepts the current spot price.
+
+       *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+    """
+    on_demand: NotRequired[pulumi.Input[Optional['AiV1EndpointPricingModelOnDemandArgsDict']]]
+    """
+    :
+
+       A regular, non-preemptible VM.
+
+       *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+    """
+    spot_pricing_policy: NotRequired[pulumi.Input[Optional['AiV1EndpointPricingModelSpotPricingPolicyArgsDict']]]
+    """
+    :
+
+       The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+       pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+       *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+    """
+
+@pulumi.input_type
+class AiV1EndpointPricingModelArgs:
+    def __init__(__self__, *,
+                 follows_spot_price: pulumi.Input[Optional['AiV1EndpointPricingModelFollowsSpotPriceArgs']] = None,
+                 on_demand: pulumi.Input[Optional['AiV1EndpointPricingModelOnDemandArgs']] = None,
+                 spot_pricing_policy: pulumi.Input[Optional['AiV1EndpointPricingModelSpotPricingPolicyArgs']] = None):
+        """
+        :param pulumi.Input['AiV1EndpointPricingModelFollowsSpotPriceArgs'] follows_spot_price: :
+               
+                  The preemptible VM accepts the current spot price.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        :param pulumi.Input['AiV1EndpointPricingModelOnDemandArgs'] on_demand: :
+               
+                  A regular, non-preemptible VM.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        :param pulumi.Input['AiV1EndpointPricingModelSpotPricingPolicyArgs'] spot_pricing_policy: :
+               
+                  The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+                  pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+               
+                  *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+        """
+        if follows_spot_price is not None:
+            pulumi.set(__self__, "follows_spot_price", follows_spot_price)
+        if on_demand is not None:
+            pulumi.set(__self__, "on_demand", on_demand)
+        if spot_pricing_policy is not None:
+            pulumi.set(__self__, "spot_pricing_policy", spot_pricing_policy)
+
+    @_builtins.property
+    @pulumi.getter(name="followsSpotPrice")
+    def follows_spot_price(self) -> pulumi.Input[Optional['AiV1EndpointPricingModelFollowsSpotPriceArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "follows_spot_price")
+
+    @follows_spot_price.setter
+    def follows_spot_price(self, value: pulumi.Input[Optional['AiV1EndpointPricingModelFollowsSpotPriceArgs']]):
+        pulumi.set(self, "follows_spot_price", value)
+
+    @_builtins.property
+    @pulumi.getter(name="onDemand")
+    def on_demand(self) -> pulumi.Input[Optional['AiV1EndpointPricingModelOnDemandArgs']]:
+        """
+        :
+
+           A regular, non-preemptible VM.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" followsSpotPrice " pulumi-lang-dotnet=" FollowsSpotPrice " pulumi-lang-go=" followsSpotPrice " pulumi-lang-python=" follows_spot_price " pulumi-lang-yaml=" followsSpotPrice " pulumi-lang-java=" followsSpotPrice " pulumi-lang-hcl=" follows_spot_price "> followsSpotPrice </span>or spot_pricing_policy.*
+        """
+        return pulumi.get(self, "on_demand")
+
+    @on_demand.setter
+    def on_demand(self, value: pulumi.Input[Optional['AiV1EndpointPricingModelOnDemandArgs']]):
+        pulumi.set(self, "on_demand", value)
+
+    @_builtins.property
+    @pulumi.getter(name="spotPricingPolicy")
+    def spot_pricing_policy(self) -> pulumi.Input[Optional['AiV1EndpointPricingModelSpotPricingPolicyArgs']]:
+        """
+        :
+
+           The preemptible VM accepts the current spot price unless it exceeds the maximum price specified by the selected
+           pricing policy. When the spot price exceeds that maximum price, the VM is preempted.
+
+           *Cannot be set alongside<span pulumi-lang-nodejs=" onDemand " pulumi-lang-dotnet=" OnDemand " pulumi-lang-go=" onDemand " pulumi-lang-python=" on_demand " pulumi-lang-yaml=" onDemand " pulumi-lang-java=" onDemand " pulumi-lang-hcl=" on_demand "> onDemand </span>or follows_spot_price.*
+        """
+        return pulumi.get(self, "spot_pricing_policy")
+
+    @spot_pricing_policy.setter
+    def spot_pricing_policy(self, value: pulumi.Input[Optional['AiV1EndpointPricingModelSpotPricingPolicyArgs']]):
+        pulumi.set(self, "spot_pricing_policy", value)
+
+
+class AiV1EndpointPricingModelFollowsSpotPriceArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class AiV1EndpointPricingModelFollowsSpotPriceArgs:
+    def __init__(__self__):
+        pass
+
+
+class AiV1EndpointPricingModelOnDemandArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class AiV1EndpointPricingModelOnDemandArgs:
+    def __init__(__self__):
+        pass
+
+
+class AiV1EndpointPricingModelSpotPricingPolicyArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+    """
+
+@pulumi.input_type
+class AiV1EndpointPricingModelSpotPricingPolicyArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] id: PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        PricingPolicy ID used as the maximum agreed price for the preemptible VM.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+
+class AiV1EndpointRegistryCredentialsArgsDict(TypedDict):
+    mysterybox_secret_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Secret version storing the registry credentials.
+       Must have keys "REGISTRY_USERNAME" and "REGISTRY_PASSWORD".
+    """
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Registry password for private Docker registry.
+       Get returns the password only with view SECRET.
+    """
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Registry username for private Docker registry.
+    """
+
+@pulumi.input_type
+class AiV1EndpointRegistryCredentialsArgs:
+    def __init__(__self__, *,
+                 mysterybox_secret_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] mysterybox_secret_version: :
+               
+                  Secret version storing the registry credentials.
+                  Must have keys "REGISTRY_USERNAME" and "REGISTRY_PASSWORD".
+        :param pulumi.Input[_builtins.str] password: :
+               
+                  Registry password for private Docker registry.
+                  Get returns the password only with view SECRET.
+        :param pulumi.Input[_builtins.str] username: Registry username for private Docker registry.
+        """
+        if mysterybox_secret_version is not None:
+            pulumi.set(__self__, "mysterybox_secret_version", mysterybox_secret_version)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="mysteryboxSecretVersion")
+    def mysterybox_secret_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Secret version storing the registry credentials.
+           Must have keys "REGISTRY_USERNAME" and "REGISTRY_PASSWORD".
+        """
+        return pulumi.get(self, "mysterybox_secret_version")
+
+    @mysterybox_secret_version.setter
+    def mysterybox_secret_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "mysterybox_secret_version", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Registry password for private Docker registry.
+           Get returns the password only with view SECRET.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Registry username for private Docker registry.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "username", value)
+
+
+class AiV1EndpointSensitiveArgsDict(TypedDict):
+    injected_files: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveInjectedFileArgsDict']]]]]
+    """
+    :
+
+       Small config files injected into the container before the user process
+       starts. Intended for configs, not datasets. Read methods return target
+       paths. File content is returned only by Get with view SECRET.
+
+    #### Inner value description
+
+       FileInjection materializes a small file inside the container at launch.
+    """
+    registry_credentials: NotRequired[pulumi.Input[Optional['AiV1EndpointSensitiveRegistryCredentialsArgsDict']]]
+    """
+    Registry credentials for private Docker registry.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The version of the write-only fields combined. You can use a hash here, some number, or a version of the secret from which you pull the value, or you can concatenate all of that together. This field is not sent to the server, but it is stored in the state, so don't store raw secrets here. Changing this field will trigger an update of the resource even if no other fields are changed. Use of this field is not required, but if you do not use it, changes in write-only fields will not trigger updates of the resource by themselves and therefore might not be reflected.
+    """
+    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveVolumeArgsDict']]]]]
+    """
+    :
+
+       Volumes to be mounted into the endpoint's container.
+
+    #### Inner value description
+
+       VolumeMount represents a volume mount for the endpoint's container.
+    """
+
+@pulumi.input_type
+class AiV1EndpointSensitiveArgs:
+    def __init__(__self__, *,
+                 injected_files: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveInjectedFileArgs']]]] = None,
+                 registry_credentials: pulumi.Input[Optional['AiV1EndpointSensitiveRegistryCredentialsArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveVolumeArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AiV1EndpointSensitiveInjectedFileArgs']]] injected_files: :
+               
+                  Small config files injected into the container before the user process
+                  starts. Intended for configs, not datasets. Read methods return target
+                  paths. File content is returned only by Get with view SECRET.
+               
+               #### Inner value description
+               
+                  FileInjection materializes a small file inside the container at launch.
+        :param pulumi.Input['AiV1EndpointSensitiveRegistryCredentialsArgs'] registry_credentials: Registry credentials for private Docker registry.
+        :param pulumi.Input[_builtins.str] version: The version of the write-only fields combined. You can use a hash here, some number, or a version of the secret from which you pull the value, or you can concatenate all of that together. This field is not sent to the server, but it is stored in the state, so don't store raw secrets here. Changing this field will trigger an update of the resource even if no other fields are changed. Use of this field is not required, but if you do not use it, changes in write-only fields will not trigger updates of the resource by themselves and therefore might not be reflected.
+        :param pulumi.Input[Sequence[pulumi.Input['AiV1EndpointSensitiveVolumeArgs']]] volumes: :
+               
+                  Volumes to be mounted into the endpoint's container.
+               
+               #### Inner value description
+               
+                  VolumeMount represents a volume mount for the endpoint's container.
+        """
+        if injected_files is not None:
+            pulumi.set(__self__, "injected_files", injected_files)
+        if registry_credentials is not None:
+            pulumi.set(__self__, "registry_credentials", registry_credentials)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if volumes is not None:
+            pulumi.set(__self__, "volumes", volumes)
+
+    @_builtins.property
+    @pulumi.getter(name="injectedFiles")
+    def injected_files(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveInjectedFileArgs']]]]:
+        """
+        :
+
+           Small config files injected into the container before the user process
+           starts. Intended for configs, not datasets. Read methods return target
+           paths. File content is returned only by Get with view SECRET.
+
+        #### Inner value description
+
+           FileInjection materializes a small file inside the container at launch.
+        """
+        return pulumi.get(self, "injected_files")
+
+    @injected_files.setter
+    def injected_files(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveInjectedFileArgs']]]]):
+        pulumi.set(self, "injected_files", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registryCredentials")
+    def registry_credentials(self) -> pulumi.Input[Optional['AiV1EndpointSensitiveRegistryCredentialsArgs']]:
+        """
+        Registry credentials for private Docker registry.
+        """
+        return pulumi.get(self, "registry_credentials")
+
+    @registry_credentials.setter
+    def registry_credentials(self, value: pulumi.Input[Optional['AiV1EndpointSensitiveRegistryCredentialsArgs']]):
+        pulumi.set(self, "registry_credentials", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The version of the write-only fields combined. You can use a hash here, some number, or a version of the secret from which you pull the value, or you can concatenate all of that together. This field is not sent to the server, but it is stored in the state, so don't store raw secrets here. Changing this field will trigger an update of the resource even if no other fields are changed. Use of this field is not required, but if you do not use it, changes in write-only fields will not trigger updates of the resource by themselves and therefore might not be reflected.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveVolumeArgs']]]]:
+        """
+        :
+
+           Volumes to be mounted into the endpoint's container.
+
+        #### Inner value description
+
+           VolumeMount represents a volume mount for the endpoint's container.
+        """
+        return pulumi.get(self, "volumes")
+
+    @volumes.setter
+    def volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointSensitiveVolumeArgs']]]]):
+        pulumi.set(self, "volumes", value)
+
+
+class AiV1EndpointSensitiveInjectedFileArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    :
+
+       File content. On create, must contain between 1 byte and 64 KiB
+       (one mystery box secret payload).
+       Returned only by Get with view SECRET.
+    """
+
+@pulumi.input_type
+class AiV1EndpointSensitiveInjectedFileArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               :
+               
+                  File content. On create, must contain between 1 byte and 64 KiB
+                  (one mystery box secret payload).
+                  Returned only by Get with view SECRET.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        :
+
+           File content. On create, must contain between 1 byte and 64 KiB
+           (one mystery box secret payload).
+           Returned only by Get with view SECRET.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+
+class AiV1EndpointSensitiveRegistryCredentialsArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    :
+
+       Registry password for private Docker registry.
+       Get returns the password only with view SECRET.
+    """
+
+@pulumi.input_type
+class AiV1EndpointSensitiveRegistryCredentialsArgs:
+    def __init__(__self__, *,
+                 password: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               :
+               
+                  Registry password for private Docker registry.
+                  Get returns the password only with view SECRET.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        :
+
+           Registry password for private Docker registry.
+           Get returns the password only with view SECRET.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+
+class AiV1EndpointSensitiveVolumeArgsDict(TypedDict):
+    s3_config: NotRequired[pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Config for accessing an external S3-compatible storage.
+
+       The bucket name is specified in the <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`">`source`</span> field as an S3 URI.
+    """
+
+@pulumi.input_type
+class AiV1EndpointSensitiveVolumeArgs:
+    def __init__(__self__, *,
+                 s3_config: pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigArgs']] = None):
+        """
+        :param pulumi.Input['AiV1EndpointSensitiveVolumeS3ConfigArgs'] s3_config: :
+               
+               #### Inner value description
+               
+                  Config for accessing an external S3-compatible storage.
+               
+                  The bucket name is specified in the <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`">`source`</span> field as an S3 URI.
+        """
+        if s3_config is not None:
+            pulumi.set(__self__, "s3_config", s3_config)
+
+    @_builtins.property
+    @pulumi.getter(name="s3Config")
+    def s3_config(self) -> pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Config for accessing an external S3-compatible storage.
+
+           The bucket name is specified in the <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`">`source`</span> field as an S3 URI.
+        """
+        return pulumi.get(self, "s3_config")
+
+    @s3_config.setter
+    def s3_config(self, value: pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigArgs']]):
+        pulumi.set(self, "s3_config", value)
+
+
+class AiV1EndpointSensitiveVolumeS3ConfigArgsDict(TypedDict):
+    credentials: NotRequired[pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgsDict']]]
+    """
+    :
+
+       Inline S3 credentials.
+       Get returns the values only with view SECRET.
+
+    #### Inner value description
+
+       Inline S3 credentials.
+
+       *Cannot be set alongside mysterybox_secret.*
+    """
+
+@pulumi.input_type
+class AiV1EndpointSensitiveVolumeS3ConfigArgs:
+    def __init__(__self__, *,
+                 credentials: pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgs']] = None):
+        """
+        :param pulumi.Input['AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgs'] credentials: :
+               
+                  Inline S3 credentials.
+                  Get returns the values only with view SECRET.
+               
+               #### Inner value description
+               
+                  Inline S3 credentials.
+               
+                  *Cannot be set alongside mysterybox_secret.*
+        """
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgs']]:
+        """
+        :
+
+           Inline S3 credentials.
+           Get returns the values only with view SECRET.
+
+        #### Inner value description
+
+           Inline S3 credentials.
+
+           *Cannot be set alongside mysterybox_secret.*
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input[Optional['AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgs']]):
+        pulumi.set(self, "credentials", value)
+
+
+class AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgsDict(TypedDict):
+    access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    Access key ID.
+    """
+    secret_access_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    Secret access key.
+    """
+    session_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    Session token (optional, for temporary credentials).
+    """
+
+@pulumi.input_type
+class AiV1EndpointSensitiveVolumeS3ConfigCredentialsArgs:
+    def __init__(__self__, *,
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_token: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] access_key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               Access key ID.
+        :param pulumi.Input[_builtins.str] secret_access_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               Secret access key.
+        :param pulumi.Input[_builtins.str] session_token: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               Session token (optional, for temporary credentials).
+        """
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if session_token is not None:
+            pulumi.set(__self__, "session_token", session_token)
+
+    @_builtins.property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        Access key ID.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @access_key_id.setter
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "access_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        Secret access key.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sessionToken")
+    def session_token(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        Session token (optional, for temporary credentials).
+        """
+        return pulumi.get(self, "session_token")
+
+    @session_token.setter
+    def session_token(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "session_token", value)
+
+
+class AiV1EndpointStatusArgsDict(TypedDict):
+    instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusInstanceArgsDict']]]]]
+    """
+    :
+
+       Status of individual endpoint instances.
+
+    #### Inner value description
+
+       EndpointInstanceStatus represents the status of a endpoint instance.
+    """
+    private_endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Private endpoints to access the workload.
+    """
+    public_endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Public endpoints to access the workload.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       State of the endpoint.
+
+    #### Supported values
+
+       Endpoint state.
+       Possible values:
+
+       - `STATE_UNSPECIFIED`
+       - `PROVISIONING` - The endpoint is creating resources.
+       - `STARTING` - The endpoint is being started.
+       - `RUNNING` - The endpoint is running.
+       - `STOPPING` - The endpoint is being stopped.
+       - `DELETING` - The endpoint is being deleted.
+       - `STOPPED` - The endpoint has been stopped.
+       - `ERROR` - The endpoint encountered an error.
+       - `IMAGE_PULLING` - The endpoint is pulling an image (STARTING > IMAGE_PULLING > RUNNING).
+    """
+    state_details: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsArgsDict']]]
+    """
+    :
+
+       Details of the endpoint's state.
+
+    #### Inner value description
+
+       Endpoint state details.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusArgs:
+    def __init__(__self__, *,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusInstanceArgs']]]] = None,
+                 private_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 public_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_details: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsArgs']] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AiV1EndpointStatusInstanceArgs']]] instances: :
+               
+                  Status of individual endpoint instances.
+               
+               #### Inner value description
+               
+                  EndpointInstanceStatus represents the status of a endpoint instance.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_endpoints: Private endpoints to access the workload.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] public_endpoints: Public endpoints to access the workload.
+        :param pulumi.Input[_builtins.str] state: :
+               
+                  State of the endpoint.
+               
+               #### Supported values
+               
+                  Endpoint state.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED`
+                  - `PROVISIONING` - The endpoint is creating resources.
+                  - `STARTING` - The endpoint is being started.
+                  - `RUNNING` - The endpoint is running.
+                  - `STOPPING` - The endpoint is being stopped.
+                  - `DELETING` - The endpoint is being deleted.
+                  - `STOPPED` - The endpoint has been stopped.
+                  - `ERROR` - The endpoint encountered an error.
+                  - `IMAGE_PULLING` - The endpoint is pulling an image (STARTING > IMAGE_PULLING > RUNNING).
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsArgs'] state_details: :
+               
+                  Details of the endpoint's state.
+               
+               #### Inner value description
+               
+                  Endpoint state details.
+        """
+        if instances is not None:
+            pulumi.set(__self__, "instances", instances)
+        if private_endpoints is not None:
+            pulumi.set(__self__, "private_endpoints", private_endpoints)
+        if public_endpoints is not None:
+            pulumi.set(__self__, "public_endpoints", public_endpoints)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_details is not None:
+            pulumi.set(__self__, "state_details", state_details)
+
+    @_builtins.property
+    @pulumi.getter
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusInstanceArgs']]]]:
+        """
+        :
+
+           Status of individual endpoint instances.
+
+        #### Inner value description
+
+           EndpointInstanceStatus represents the status of a endpoint instance.
+        """
+        return pulumi.get(self, "instances")
+
+    @instances.setter
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusInstanceArgs']]]]):
+        pulumi.set(self, "instances", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpoints")
+    def private_endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Private endpoints to access the workload.
+        """
+        return pulumi.get(self, "private_endpoints")
+
+    @private_endpoints.setter
+    def private_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "private_endpoints", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicEndpoints")
+    def public_endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Public endpoints to access the workload.
+        """
+        return pulumi.get(self, "public_endpoints")
+
+    @public_endpoints.setter
+    def public_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "public_endpoints", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           State of the endpoint.
+
+        #### Supported values
+
+           Endpoint state.
+           Possible values:
+
+           - `STATE_UNSPECIFIED`
+           - `PROVISIONING` - The endpoint is creating resources.
+           - `STARTING` - The endpoint is being started.
+           - `RUNNING` - The endpoint is running.
+           - `STOPPING` - The endpoint is being stopped.
+           - `DELETING` - The endpoint is being deleted.
+           - `STOPPED` - The endpoint has been stopped.
+           - `ERROR` - The endpoint encountered an error.
+           - `IMAGE_PULLING` - The endpoint is pulling an image (STARTING > IMAGE_PULLING > RUNNING).
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="stateDetails")
+    def state_details(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsArgs']]:
+        """
+        :
+
+           Details of the endpoint's state.
+
+        #### Inner value description
+
+           Endpoint state details.
+        """
+        return pulumi.get(self, "state_details")
+
+    @state_details.setter
+    def state_details(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsArgs']]):
+        pulumi.set(self, "state_details", value)
+
+
+class AiV1EndpointStatusInstanceArgsDict(TypedDict):
+    compute_instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the compute instance running the endpoint.
+    """
+    compute_instance_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       The current state of the compute instance.
+
+    #### Supported values
+
+       Possible values:
+
+       - `UNSPECIFIED`
+       - `CREATING`
+       - `UPDATING`
+       - `STARTING`
+       - `RUNNING`
+       - `STOPPING`
+       - `STOPPED`
+       - `DELETING`
+       - `ERROR`
+    """
+    private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Private IP address of the instance.
+    """
+    public_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Public IP address of the instance.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       The current state of the endpoint's workload.
+
+    #### Supported values
+
+       Endpoint instance state.
+       Possible values:
+
+       - `STATE_UNSPECIFIED`
+       - `PROVISIONING` - The endpoint is creating resources.
+       - `STARTING` - The endpoint is being started.
+       - `RUNNING` - The endpoint is running.
+       - `STOPPING` - The endpoint is being stopped.
+       - `DELETING` - The endpoint is being deleted.
+       - `STOPPED` - The endpoint has been stopped.
+       - `FAILED` - The endpoint has failed.
+       - `ERROR` - The endpoint encountered an error.
+       - `IMAGE_PULLING` - The endpoint is pulling an image (STARTING > IMAGE_PULLING > RUNNING).
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusInstanceArgs:
+    def __init__(__self__, *,
+                 compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_instance_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] compute_instance_id: ID of the compute instance running the endpoint.
+        :param pulumi.Input[_builtins.str] compute_instance_state: :
+               
+                  The current state of the compute instance.
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `UNSPECIFIED`
+                  - `CREATING`
+                  - `UPDATING`
+                  - `STARTING`
+                  - `RUNNING`
+                  - `STOPPING`
+                  - `STOPPED`
+                  - `DELETING`
+                  - `ERROR`
+        :param pulumi.Input[_builtins.str] private_ip: Private IP address of the instance.
+        :param pulumi.Input[_builtins.str] public_ip: Public IP address of the instance.
+        :param pulumi.Input[_builtins.str] state: :
+               
+                  The current state of the endpoint's workload.
+               
+               #### Supported values
+               
+                  Endpoint instance state.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED`
+                  - `PROVISIONING` - The endpoint is creating resources.
+                  - `STARTING` - The endpoint is being started.
+                  - `RUNNING` - The endpoint is running.
+                  - `STOPPING` - The endpoint is being stopped.
+                  - `DELETING` - The endpoint is being deleted.
+                  - `STOPPED` - The endpoint has been stopped.
+                  - `FAILED` - The endpoint has failed.
+                  - `ERROR` - The endpoint encountered an error.
+                  - `IMAGE_PULLING` - The endpoint is pulling an image (STARTING > IMAGE_PULLING > RUNNING).
+        """
+        if compute_instance_id is not None:
+            pulumi.set(__self__, "compute_instance_id", compute_instance_id)
+        if compute_instance_state is not None:
+            pulumi.set(__self__, "compute_instance_state", compute_instance_state)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+        if public_ip is not None:
+            pulumi.set(__self__, "public_ip", public_ip)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="computeInstanceId")
+    def compute_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the compute instance running the endpoint.
+        """
+        return pulumi.get(self, "compute_instance_id")
+
+    @compute_instance_id.setter
+    def compute_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeInstanceState")
+    def compute_instance_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           The current state of the compute instance.
+
+        #### Supported values
+
+           Possible values:
+
+           - `UNSPECIFIED`
+           - `CREATING`
+           - `UPDATING`
+           - `STARTING`
+           - `RUNNING`
+           - `STOPPING`
+           - `STOPPED`
+           - `DELETING`
+           - `ERROR`
+        """
+        return pulumi.get(self, "compute_instance_state")
+
+    @compute_instance_state.setter
+    def compute_instance_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compute_instance_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Private IP address of the instance.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Public IP address of the instance.
+        """
+        return pulumi.get(self, "public_ip")
+
+    @public_ip.setter
+    def public_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "public_ip", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           The current state of the endpoint's workload.
+
+        #### Supported values
+
+           Endpoint instance state.
+           Possible values:
+
+           - `STATE_UNSPECIFIED`
+           - `PROVISIONING` - The endpoint is creating resources.
+           - `STARTING` - The endpoint is being started.
+           - `RUNNING` - The endpoint is running.
+           - `STOPPING` - The endpoint is being stopped.
+           - `DELETING` - The endpoint is being deleted.
+           - `STOPPED` - The endpoint has been stopped.
+           - `FAILED` - The endpoint has failed.
+           - `ERROR` - The endpoint encountered an error.
+           - `IMAGE_PULLING` - The endpoint is pulling an image (STARTING > IMAGE_PULLING > RUNNING).
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class AiV1EndpointStatusStateDetailsArgsDict(TypedDict):
+    code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Short state description.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Detailed human-readable description.
+    """
+    service_error: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorArgsDict']]]
+    """
+    :
+
+       Structured error details for the failure, if available.
+       For quota-related failures, `service_error.details.quota_failure`
+       is populated with the quota violations.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsArgs:
+    def __init__(__self__, *,
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_error: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] code: Short state description.
+        :param pulumi.Input[_builtins.str] message: Detailed human-readable description.
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorArgs'] service_error: :
+               
+                  Structured error details for the failure, if available.
+                  For quota-related failures, `service_error.details.quota_failure`
+                  is populated with the quota violations.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if service_error is not None:
+            pulumi.set(__self__, "service_error", service_error)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Short state description.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Detailed human-readable description.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceError")
+    def service_error(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorArgs']]:
+        """
+        :
+
+           Structured error details for the failure, if available.
+           For quota-related failures, `service_error.details.quota_failure`
+           is populated with the quota violations.
+        """
+        return pulumi.get(self, "service_error")
+
+    @service_error.setter
+    def service_error(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorArgs']]):
+        pulumi.set(self, "service_error", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorArgsDict(TypedDict):
+    bad_request: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       The request is invalid.
+
+       *Cannot be set alongside bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    bad_resource_state: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       The resource we are trying to use, create, change or delete is in a bad state and cannot be used.
+
+       *Cannot be set alongside bad_request, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Detailed error code, service-specific. E.g. "DnsZoneNotEmpty".
+       Name of the exception, without Exception suffix if not set.
+       Example: for PermissionDeniedException > code == PermissionDenied.
+    """
+    internal_error: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Generic internal error.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" quotaFailure " pulumi-lang-dotnet=" QuotaFailure " pulumi-lang-go=" quotaFailure " pulumi-lang-python=" quota_failure " pulumi-lang-yaml=" quotaFailure " pulumi-lang-java=" quotaFailure " pulumi-lang-hcl=" quota_failure "> quotaFailure </span>or not_enough_resources.*
+    """
+    not_enough_resources: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Indicates that there are not enough resources available to perform the requested action.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" quotaFailure " pulumi-lang-dotnet=" QuotaFailure " pulumi-lang-go=" quotaFailure " pulumi-lang-python=" quota_failure " pulumi-lang-yaml=" quotaFailure " pulumi-lang-java=" quotaFailure " pulumi-lang-hcl=" quota_failure "> quotaFailure </span>or internal_error.*
+    """
+    operation_aborted: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Operation on the resource has been aborted by a subsequent operation.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    operation_conflict: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Operation cannot be started because a conflicting operation is already running on the same resource.
+       Wait until the conflicting operation finishes, then you can retry starting your operation.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    out_of_range: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Indicates that element with requested parameters is exceeding the particular range.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    permission_denied: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Indicates that the action cannot be performed because there are insufficient access rights to a resource.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    quota_failure: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Indicates a failure due to exceeding specified limits or allocations in a system or service.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    resource_already_exists: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Resource we are trying to create already exists.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    resource_conflict: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       There is a difference between the actual resource state and the expected one.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    resource_not_found: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Resource we are trying to interact with does not exist.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+    retry_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Retry type tells how to provide retry, e.g.: just a single call or the whole logic before it.
+
+    #### Supported values
+
+       Possible values:
+
+       - `UNSPECIFIED`
+       - `CALL` - Just retry the failed call.
+       - `UNIT_OF_WORK` - Retry whole logic before call and make a new one.
+       - `NOTHING` - Do not retry, this is a fatal error.
+    """
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of Service which the error originated in. E.g. "dns".
+    """
+    too_many_requests: NotRequired[pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       You initiated too many requests to the service at once. Enhance your calm.
+
+       *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorArgs:
+    def __init__(__self__, *,
+                 bad_request: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgs']] = None,
+                 bad_resource_state: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgs']] = None,
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_error: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgs']] = None,
+                 not_enough_resources: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgs']] = None,
+                 operation_aborted: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgs']] = None,
+                 operation_conflict: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgs']] = None,
+                 out_of_range: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgs']] = None,
+                 permission_denied: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgs']] = None,
+                 quota_failure: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgs']] = None,
+                 resource_already_exists: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgs']] = None,
+                 resource_conflict: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgs']] = None,
+                 resource_not_found: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgs']] = None,
+                 retry_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None,
+                 too_many_requests: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgs']] = None):
+        """
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgs'] bad_request: :
+               
+               #### Inner value description
+               
+                  The request is invalid.
+               
+                  *Cannot be set alongside bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgs'] bad_resource_state: :
+               
+               #### Inner value description
+               
+                  The resource we are trying to use, create, change or delete is in a bad state and cannot be used.
+               
+                  *Cannot be set alongside bad_request, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input[_builtins.str] code: :
+               
+                  Detailed error code, service-specific. E.g. "DnsZoneNotEmpty".
+                  Name of the exception, without Exception suffix if not set.
+                  Example: for PermissionDeniedException > code == PermissionDenied.
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgs'] internal_error: :
+               
+               #### Inner value description
+               
+                  Generic internal error.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" quotaFailure " pulumi-lang-dotnet=" QuotaFailure " pulumi-lang-go=" quotaFailure " pulumi-lang-python=" quota_failure " pulumi-lang-yaml=" quotaFailure " pulumi-lang-java=" quotaFailure " pulumi-lang-hcl=" quota_failure "> quotaFailure </span>or not_enough_resources.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgs'] not_enough_resources: :
+               
+               #### Inner value description
+               
+                  Indicates that there are not enough resources available to perform the requested action.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" quotaFailure " pulumi-lang-dotnet=" QuotaFailure " pulumi-lang-go=" quotaFailure " pulumi-lang-python=" quota_failure " pulumi-lang-yaml=" quotaFailure " pulumi-lang-java=" quotaFailure " pulumi-lang-hcl=" quota_failure "> quotaFailure </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgs'] operation_aborted: :
+               
+               #### Inner value description
+               
+                  Operation on the resource has been aborted by a subsequent operation.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgs'] operation_conflict: :
+               
+               #### Inner value description
+               
+                  Operation cannot be started because a conflicting operation is already running on the same resource.
+                  Wait until the conflicting operation finishes, then you can retry starting your operation.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgs'] out_of_range: :
+               
+               #### Inner value description
+               
+                  Indicates that element with requested parameters is exceeding the particular range.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgs'] permission_denied: :
+               
+               #### Inner value description
+               
+                  Indicates that the action cannot be performed because there are insufficient access rights to a resource.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgs'] quota_failure: :
+               
+               #### Inner value description
+               
+                  Indicates a failure due to exceeding specified limits or allocations in a system or service.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgs'] resource_already_exists: :
+               
+               #### Inner value description
+               
+                  Resource we are trying to create already exists.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgs'] resource_conflict: :
+               
+               #### Inner value description
+               
+                  There is a difference between the actual resource state and the expected one.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgs'] resource_not_found: :
+               
+               #### Inner value description
+               
+                  Resource we are trying to interact with does not exist.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        :param pulumi.Input[_builtins.str] retry_type: :
+               
+                  Retry type tells how to provide retry, e.g.: just a single call or the whole logic before it.
+               
+               #### Supported values
+               
+                  Possible values:
+               
+                  - `UNSPECIFIED`
+                  - `CALL` - Just retry the failed call.
+                  - `UNIT_OF_WORK` - Retry whole logic before call and make a new one.
+                  - `NOTHING` - Do not retry, this is a fatal error.
+        :param pulumi.Input[_builtins.str] service: ID of Service which the error originated in. E.g. "dns".
+        :param pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgs'] too_many_requests: :
+               
+               #### Inner value description
+               
+                  You initiated too many requests to the service at once. Enhance your calm.
+               
+                  *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        if bad_request is not None:
+            pulumi.set(__self__, "bad_request", bad_request)
+        if bad_resource_state is not None:
+            pulumi.set(__self__, "bad_resource_state", bad_resource_state)
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if internal_error is not None:
+            pulumi.set(__self__, "internal_error", internal_error)
+        if not_enough_resources is not None:
+            pulumi.set(__self__, "not_enough_resources", not_enough_resources)
+        if operation_aborted is not None:
+            pulumi.set(__self__, "operation_aborted", operation_aborted)
+        if operation_conflict is not None:
+            pulumi.set(__self__, "operation_conflict", operation_conflict)
+        if out_of_range is not None:
+            pulumi.set(__self__, "out_of_range", out_of_range)
+        if permission_denied is not None:
+            pulumi.set(__self__, "permission_denied", permission_denied)
+        if quota_failure is not None:
+            pulumi.set(__self__, "quota_failure", quota_failure)
+        if resource_already_exists is not None:
+            pulumi.set(__self__, "resource_already_exists", resource_already_exists)
+        if resource_conflict is not None:
+            pulumi.set(__self__, "resource_conflict", resource_conflict)
+        if resource_not_found is not None:
+            pulumi.set(__self__, "resource_not_found", resource_not_found)
+        if retry_type is not None:
+            pulumi.set(__self__, "retry_type", retry_type)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if too_many_requests is not None:
+            pulumi.set(__self__, "too_many_requests", too_many_requests)
+
+    @_builtins.property
+    @pulumi.getter(name="badRequest")
+    def bad_request(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           The request is invalid.
+
+           *Cannot be set alongside bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "bad_request")
+
+    @bad_request.setter
+    def bad_request(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgs']]):
+        pulumi.set(self, "bad_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="badResourceState")
+    def bad_resource_state(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           The resource we are trying to use, create, change or delete is in a bad state and cannot be used.
+
+           *Cannot be set alongside bad_request, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "bad_resource_state")
+
+    @bad_resource_state.setter
+    def bad_resource_state(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgs']]):
+        pulumi.set(self, "bad_resource_state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Detailed error code, service-specific. E.g. "DnsZoneNotEmpty".
+           Name of the exception, without Exception suffix if not set.
+           Example: for PermissionDeniedException > code == PermissionDenied.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="internalError")
+    def internal_error(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Generic internal error.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" quotaFailure " pulumi-lang-dotnet=" QuotaFailure " pulumi-lang-go=" quotaFailure " pulumi-lang-python=" quota_failure " pulumi-lang-yaml=" quotaFailure " pulumi-lang-java=" quotaFailure " pulumi-lang-hcl=" quota_failure "> quotaFailure </span>or not_enough_resources.*
+        """
+        return pulumi.get(self, "internal_error")
+
+    @internal_error.setter
+    def internal_error(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgs']]):
+        pulumi.set(self, "internal_error", value)
+
+    @_builtins.property
+    @pulumi.getter(name="notEnoughResources")
+    def not_enough_resources(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Indicates that there are not enough resources available to perform the requested action.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" quotaFailure " pulumi-lang-dotnet=" QuotaFailure " pulumi-lang-go=" quotaFailure " pulumi-lang-python=" quota_failure " pulumi-lang-yaml=" quotaFailure " pulumi-lang-java=" quotaFailure " pulumi-lang-hcl=" quota_failure "> quotaFailure </span>or internal_error.*
+        """
+        return pulumi.get(self, "not_enough_resources")
+
+    @not_enough_resources.setter
+    def not_enough_resources(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgs']]):
+        pulumi.set(self, "not_enough_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operationAborted")
+    def operation_aborted(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Operation on the resource has been aborted by a subsequent operation.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "operation_aborted")
+
+    @operation_aborted.setter
+    def operation_aborted(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgs']]):
+        pulumi.set(self, "operation_aborted", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operationConflict")
+    def operation_conflict(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Operation cannot be started because a conflicting operation is already running on the same resource.
+           Wait until the conflicting operation finishes, then you can retry starting your operation.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "operation_conflict")
+
+    @operation_conflict.setter
+    def operation_conflict(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgs']]):
+        pulumi.set(self, "operation_conflict", value)
+
+    @_builtins.property
+    @pulumi.getter(name="outOfRange")
+    def out_of_range(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Indicates that element with requested parameters is exceeding the particular range.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "out_of_range")
+
+    @out_of_range.setter
+    def out_of_range(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgs']]):
+        pulumi.set(self, "out_of_range", value)
+
+    @_builtins.property
+    @pulumi.getter(name="permissionDenied")
+    def permission_denied(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Indicates that the action cannot be performed because there are insufficient access rights to a resource.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "permission_denied")
+
+    @permission_denied.setter
+    def permission_denied(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgs']]):
+        pulumi.set(self, "permission_denied", value)
+
+    @_builtins.property
+    @pulumi.getter(name="quotaFailure")
+    def quota_failure(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Indicates a failure due to exceeding specified limits or allocations in a system or service.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "quota_failure")
+
+    @quota_failure.setter
+    def quota_failure(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgs']]):
+        pulumi.set(self, "quota_failure", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAlreadyExists")
+    def resource_already_exists(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Resource we are trying to create already exists.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "resource_already_exists")
+
+    @resource_already_exists.setter
+    def resource_already_exists(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgs']]):
+        pulumi.set(self, "resource_already_exists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceConflict")
+    def resource_conflict(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           There is a difference between the actual resource state and the expected one.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "resource_conflict")
+
+    @resource_conflict.setter
+    def resource_conflict(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgs']]):
+        pulumi.set(self, "resource_conflict", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceNotFound")
+    def resource_not_found(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Resource we are trying to interact with does not exist.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, too_many_requests, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "resource_not_found")
+
+    @resource_not_found.setter
+    def resource_not_found(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgs']]):
+        pulumi.set(self, "resource_not_found", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retryType")
+    def retry_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Retry type tells how to provide retry, e.g.: just a single call or the whole logic before it.
+
+        #### Supported values
+
+           Possible values:
+
+           - `UNSPECIFIED`
+           - `CALL` - Just retry the failed call.
+           - `UNIT_OF_WORK` - Retry whole logic before call and make a new one.
+           - `NOTHING` - Do not retry, this is a fatal error.
+        """
+        return pulumi.get(self, "retry_type")
+
+    @retry_type.setter
+    def retry_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "retry_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of Service which the error originated in. E.g. "dns".
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "service", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tooManyRequests")
+    def too_many_requests(self) -> pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           You initiated too many requests to the service at once. Enhance your calm.
+
+           *Cannot be set alongside bad_request, bad_resource_state, resource_not_found, resource_already_exists, out_of_range, permission_denied, resource_conflict, operation_aborted, operation_conflict, quota_failure,<span pulumi-lang-nodejs=" notEnoughResources " pulumi-lang-dotnet=" NotEnoughResources " pulumi-lang-go=" notEnoughResources " pulumi-lang-python=" not_enough_resources " pulumi-lang-yaml=" notEnoughResources " pulumi-lang-java=" notEnoughResources " pulumi-lang-hcl=" not_enough_resources "> notEnoughResources </span>or internal_error.*
+        """
+        return pulumi.get(self, "too_many_requests")
+
+    @too_many_requests.setter
+    def too_many_requests(self, value: pulumi.Input[Optional['AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgs']]):
+        pulumi.set(self, "too_many_requests", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgsDict(TypedDict):
+    violations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgsDict']]]]]
+    """
+    Describes all violations.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorBadRequestArgs:
+    def __init__(__self__, *,
+                 violations: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgs']]] violations: Describes all violations.
+        """
+        if violations is not None:
+            pulumi.set(__self__, "violations", violations)
+
+    @_builtins.property
+    @pulumi.getter
+    def violations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgs']]]]:
+        """
+        Describes all violations.
+        """
+        return pulumi.get(self, "violations")
+
+    @violations.setter
+    def violations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgs']]]]):
+        pulumi.set(self, "violations", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgsDict(TypedDict):
+    field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    What field value is invalid.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Description why the value is invalid, in English.
+    """
+    related_fields: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    :
+
+       Other fields whose values contribute to this violation.
+       Does not include the primary field.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorBadRequestViolationArgs:
+    def __init__(__self__, *,
+                 field: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] field: What field value is invalid.
+        :param pulumi.Input[_builtins.str] message: Description why the value is invalid, in English.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] related_fields: :
+               
+                  Other fields whose values contribute to this violation.
+                  Does not include the primary field.
+        """
+        if field is not None:
+            pulumi.set(__self__, "field", field)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_fields is not None:
+            pulumi.set(__self__, "related_fields", related_fields)
+
+    @_builtins.property
+    @pulumi.getter
+    def field(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        What field value is invalid.
+        """
+        return pulumi.get(self, "field")
+
+    @field.setter
+    def field(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "field", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Description why the value is invalid, in English.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedFields")
+    def related_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        :
+
+           Other fields whose values contribute to this violation.
+           Does not include the primary field.
+        """
+        return pulumi.get(self, "related_fields")
+
+    @related_fields.setter
+    def related_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "related_fields", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The reason why this state is bad and cannot be used.
+    """
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the resource which is bad.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorBadResourceStateArgs:
+    def __init__(__self__, *,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] message: The reason why this state is bad and cannot be used.
+        :param pulumi.Input[_builtins.str] resource_id: ID of the resource which is bad.
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The reason why this state is bad and cannot be used.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the resource which is bad.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgsDict(TypedDict):
+    request_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Error request ID.
+    """
+    trace_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Trace ID for the failing request.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorInternalErrorArgs:
+    def __init__(__self__, *,
+                 request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] request_id: Error request ID.
+        :param pulumi.Input[_builtins.str] trace_id: Trace ID for the failing request.
+        """
+        if request_id is not None:
+            pulumi.set(__self__, "request_id", request_id)
+        if trace_id is not None:
+            pulumi.set(__self__, "trace_id", trace_id)
+
+    @_builtins.property
+    @pulumi.getter(name="requestId")
+    def request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Error request ID.
+        """
+        return pulumi.get(self, "request_id")
+
+    @request_id.setter
+    def request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "request_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="traceId")
+    def trace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Trace ID for the failing request.
+        """
+        return pulumi.get(self, "trace_id")
+
+    @trace_id.setter
+    def trace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "trace_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgsDict(TypedDict):
+    violations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgsDict']]]]]
+    """
+    Describes all resource violations.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesArgs:
+    def __init__(__self__, *,
+                 violations: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgs']]] violations: Describes all resource violations.
+        """
+        if violations is not None:
+            pulumi.set(__self__, "violations", violations)
+
+    @_builtins.property
+    @pulumi.getter
+    def violations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgs']]]]:
+        """
+        Describes all resource violations.
+        """
+        return pulumi.get(self, "violations")
+
+    @violations.setter
+    def violations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgs']]]]):
+        pulumi.set(self, "violations", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A description of how the resource is insufficient.
+    """
+    requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Requested value.
+    """
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       The type of resource that is insufficient.
+       This field is populated when it is possible to determine the lacking resource type.
+       **Not for programmatic use.**
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorNotEnoughResourcesViolationArgs:
+    def __init__(__self__, *,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 requested: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] message: A description of how the resource is insufficient.
+        :param pulumi.Input[_builtins.str] requested: Requested value.
+        :param pulumi.Input[_builtins.str] resource_type: :
+               
+                  The type of resource that is insufficient.
+                  This field is populated when it is possible to determine the lacking resource type.
+                  **Not for programmatic use.**
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if requested is not None:
+            pulumi.set(__self__, "requested", requested)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A description of how the resource is insufficient.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Requested value.
+        """
+        return pulumi.get(self, "requested")
+
+    @requested.setter
+    def requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "requested", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           The type of resource that is insufficient.
+           This field is populated when it is possible to determine the lacking resource type.
+           **Not for programmatic use.**
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_type", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgsDict(TypedDict):
+    aborted_by_operation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the subsequent operation.
+    """
+    operation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the aborted operation.
+    """
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource ID corresponding to both of the operations.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorOperationAbortedArgs:
+    def __init__(__self__, *,
+                 aborted_by_operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] aborted_by_operation_id: ID of the subsequent operation.
+        :param pulumi.Input[_builtins.str] operation_id: ID of the aborted operation.
+        :param pulumi.Input[_builtins.str] resource_id: Resource ID corresponding to both of the operations.
+        """
+        if aborted_by_operation_id is not None:
+            pulumi.set(__self__, "aborted_by_operation_id", aborted_by_operation_id)
+        if operation_id is not None:
+            pulumi.set(__self__, "operation_id", operation_id)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter(name="abortedByOperationId")
+    def aborted_by_operation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the subsequent operation.
+        """
+        return pulumi.get(self, "aborted_by_operation_id")
+
+    @aborted_by_operation_id.setter
+    def aborted_by_operation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "aborted_by_operation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operationId")
+    def operation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the aborted operation.
+        """
+        return pulumi.get(self, "operation_id")
+
+    @operation_id.setter
+    def operation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "operation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource ID corresponding to both of the operations.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgsDict(TypedDict):
+    conflicting_operation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the conflicting operation (the one that's running).
+    """
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource ID corresponding to the conflicting operation.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorOperationConflictArgs:
+    def __init__(__self__, *,
+                 conflicting_operation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] conflicting_operation_id: ID of the conflicting operation (the one that's running).
+        :param pulumi.Input[_builtins.str] resource_id: Resource ID corresponding to the conflicting operation.
+        """
+        if conflicting_operation_id is not None:
+            pulumi.set(__self__, "conflicting_operation_id", conflicting_operation_id)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter(name="conflictingOperationId")
+    def conflicting_operation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the conflicting operation (the one that's running).
+        """
+        return pulumi.get(self, "conflicting_operation_id")
+
+    @conflicting_operation_id.setter
+    def conflicting_operation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "conflicting_operation_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource ID corresponding to the conflicting operation.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgsDict(TypedDict):
+    limit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Available limit.
+    """
+    requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Requested value.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorOutOfRangeArgs:
+    def __init__(__self__, *,
+                 limit: pulumi.Input[Optional[_builtins.str]] = None,
+                 requested: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] limit: Available limit.
+        :param pulumi.Input[_builtins.str] requested: Requested value.
+        """
+        if limit is not None:
+            pulumi.set(__self__, "limit", limit)
+        if requested is not None:
+            pulumi.set(__self__, "requested", requested)
+
+    @_builtins.property
+    @pulumi.getter
+    def limit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Available limit.
+        """
+        return pulumi.get(self, "limit")
+
+    @limit.setter
+    def limit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "limit", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Requested value.
+        """
+        return pulumi.get(self, "requested")
+
+    @requested.setter
+    def requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "requested", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgsDict(TypedDict):
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the resource that cannot be accessed.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorPermissionDeniedArgs:
+    def __init__(__self__, *,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] resource_id: ID of the resource that cannot be accessed.
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the resource that cannot be accessed.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgsDict(TypedDict):
+    violations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgsDict']]]]]
+    """
+    Describes all quota violations.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureArgs:
+    def __init__(__self__, *,
+                 violations: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgs']]] violations: Describes all quota violations.
+        """
+        if violations is not None:
+            pulumi.set(__self__, "violations", violations)
+
+    @_builtins.property
+    @pulumi.getter
+    def violations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgs']]]]:
+        """
+        Describes all quota violations.
+        """
+        return pulumi.get(self, "violations")
+
+    @violations.setter
+    def violations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgs']]]]):
+        pulumi.set(self, "violations", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgsDict(TypedDict):
+    limit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Maximum permissible value.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A description of how the quota check failed.
+    """
+    quota: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Which quota check failed.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Region for the violation, if known. E.g. "eu-north1".
+    """
+    requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Requested value.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorQuotaFailureViolationArgs:
+    def __init__(__self__, *,
+                 limit: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 quota: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 requested: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] limit: Maximum permissible value.
+        :param pulumi.Input[_builtins.str] message: A description of how the quota check failed.
+        :param pulumi.Input[_builtins.str] quota: Which quota check failed.
+        :param pulumi.Input[_builtins.str] region: Region for the violation, if known. E.g. "eu-north1".
+        :param pulumi.Input[_builtins.str] requested: Requested value.
+        """
+        if limit is not None:
+            pulumi.set(__self__, "limit", limit)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if quota is not None:
+            pulumi.set(__self__, "quota", quota)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if requested is not None:
+            pulumi.set(__self__, "requested", requested)
+
+    @_builtins.property
+    @pulumi.getter
+    def limit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Maximum permissible value.
+        """
+        return pulumi.get(self, "limit")
+
+    @limit.setter
+    def limit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "limit", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A description of how the quota check failed.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def quota(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Which quota check failed.
+        """
+        return pulumi.get(self, "quota")
+
+    @quota.setter
+    def quota(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "quota", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Region for the violation, if known. E.g. "eu-north1".
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Requested value.
+        """
+        return pulumi.get(self, "requested")
+
+    @requested.setter
+    def requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "requested", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgsDict(TypedDict):
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the existing resource.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorResourceAlreadyExistsArgs:
+    def __init__(__self__, *,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] resource_id: ID of the existing resource.
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the existing resource.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgsDict(TypedDict):
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Detailed info about conflict.
+    """
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of conflicting resource.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorResourceConflictArgs:
+    def __init__(__self__, *,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] message: Detailed info about conflict.
+        :param pulumi.Input[_builtins.str] resource_id: ID of conflicting resource.
+        """
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Detailed info about conflict.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of conflicting resource.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgsDict(TypedDict):
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the requested resource.
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorResourceNotFoundArgs:
+    def __init__(__self__, *,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] resource_id: ID of the requested resource.
+        """
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the requested resource.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @resource_id.setter
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_id", value)
+
+
+class AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgsDict(TypedDict):
+    violation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    What request limit is exceeded (service-dependent).
+    """
+
+@pulumi.input_type
+class AiV1EndpointStatusStateDetailsServiceErrorTooManyRequestsArgs:
+    def __init__(__self__, *,
+                 violation: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] violation: What request limit is exceeded (service-dependent).
+        """
+        if violation is not None:
+            pulumi.set(__self__, "violation", violation)
+
+    @_builtins.property
+    @pulumi.getter
+    def violation(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        What request limit is exceeded (service-dependent).
+        """
+        return pulumi.get(self, "violation")
+
+    @violation.setter
+    def violation(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "violation", value)
+
+
+class AiV1EndpointVolumeArgsDict(TypedDict):
+    mode: pulumi.Input[_builtins.str]
+    """
+    :
+
+       Mount mode.
+
+    #### Supported values
+
+       Mode that will be used to mount the volume.
+       Possible values:
+
+       - `MODE_UNSPECIFIED`
+       - `READ_ONLY` - Read-only mode.
+       - `READ_WRITE` - Read-write mode.
+    """
+    container_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Path inside the endpoint's container where the volume is mounted.
+
+       Must be an absolute path.
+    """
+    s3_config: NotRequired[pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigArgsDict']]]
+    """
+    :
+
+    #### Inner value description
+
+       Config for accessing an external S3-compatible storage.
+
+       The bucket name is specified in the <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`">`source`</span> field as an S3 URI.
+    """
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Source of the volume mount.
+
+       Can be a name or an ID of Nebius Storage bucket or filesystem,
+       or an S3 URI (e.g. "s3://bucket-name") when using external S3 storage.
+    """
+    source_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Path inside the source volume.
+
+       Optional.
+    """
+
+@pulumi.input_type
+class AiV1EndpointVolumeArgs:
+    def __init__(__self__, *,
+                 mode: pulumi.Input[_builtins.str],
+                 container_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 s3_config: pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigArgs']] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_path: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] mode: :
+               
+                  Mount mode.
+               
+               #### Supported values
+               
+                  Mode that will be used to mount the volume.
+                  Possible values:
+               
+                  - `MODE_UNSPECIFIED`
+                  - `READ_ONLY` - Read-only mode.
+                  - `READ_WRITE` - Read-write mode.
+        :param pulumi.Input[_builtins.str] container_path: :
+               
+                  Path inside the endpoint's container where the volume is mounted.
+               
+                  Must be an absolute path.
+        :param pulumi.Input['AiV1EndpointVolumeS3ConfigArgs'] s3_config: :
+               
+               #### Inner value description
+               
+                  Config for accessing an external S3-compatible storage.
+               
+                  The bucket name is specified in the <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`">`source`</span> field as an S3 URI.
+        :param pulumi.Input[_builtins.str] source: :
+               
+                  Source of the volume mount.
+               
+                  Can be a name or an ID of Nebius Storage bucket or filesystem,
+                  or an S3 URI (e.g. "s3://bucket-name") when using external S3 storage.
+        :param pulumi.Input[_builtins.str] source_path: :
+               
+                  Path inside the source volume.
+               
+                  Optional.
+        """
+        pulumi.set(__self__, "mode", mode)
+        if container_path is not None:
+            pulumi.set(__self__, "container_path", container_path)
+        if s3_config is not None:
+            pulumi.set(__self__, "s3_config", s3_config)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+        if source_path is not None:
+            pulumi.set(__self__, "source_path", source_path)
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> pulumi.Input[_builtins.str]:
+        """
+        :
+
+           Mount mode.
+
+        #### Supported values
+
+           Mode that will be used to mount the volume.
+           Possible values:
+
+           - `MODE_UNSPECIFIED`
+           - `READ_ONLY` - Read-only mode.
+           - `READ_WRITE` - Read-write mode.
+        """
+        return pulumi.get(self, "mode")
+
+    @mode.setter
+    def mode(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerPath")
+    def container_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Path inside the endpoint's container where the volume is mounted.
+
+           Must be an absolute path.
+        """
+        return pulumi.get(self, "container_path")
+
+    @container_path.setter
+    def container_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "container_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="s3Config")
+    def s3_config(self) -> pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigArgs']]:
+        """
+        :
+
+        #### Inner value description
+
+           Config for accessing an external S3-compatible storage.
+
+           The bucket name is specified in the <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`">`source`</span> field as an S3 URI.
+        """
+        return pulumi.get(self, "s3_config")
+
+    @s3_config.setter
+    def s3_config(self, value: pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigArgs']]):
+        pulumi.set(self, "s3_config", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Source of the volume mount.
+
+           Can be a name or an ID of Nebius Storage bucket or filesystem,
+           or an S3 URI (e.g. "s3://bucket-name") when using external S3 storage.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePath")
+    def source_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Path inside the source volume.
+
+           Optional.
+        """
+        return pulumi.get(self, "source_path")
+
+    @source_path.setter
+    def source_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_path", value)
+
+
+class AiV1EndpointVolumeS3ConfigArgsDict(TypedDict):
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    S3-compatible endpoint URL (e.g. "https://s3.amazonaws.com").
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    S3 region.
+    """
+    credentials: NotRequired[pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigCredentialsArgsDict']]]
+    """
+    :
+
+       Inline S3 credentials.
+       Get returns the values only with view SECRET.
+
+    #### Inner value description
+
+       Inline S3 credentials.
+
+       *Cannot be set alongside mysterybox_secret.*
+    """
+    mysterybox_secret: NotRequired[pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigMysteryboxSecretArgsDict']]]
+    """
+    :
+
+       Reference to a MysteryBox secret containing S3 credentials.
+
+    #### Inner value description
+
+       Reference to a MysteryBox secret.
+
+       *Cannot be set alongside credentials.*
+    """
+
+@pulumi.input_type
+class AiV1EndpointVolumeS3ConfigArgs:
+    def __init__(__self__, *,
+                 endpoint: pulumi.Input[_builtins.str],
+                 region: pulumi.Input[_builtins.str],
+                 credentials: pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigCredentialsArgs']] = None,
+                 mysterybox_secret: pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigMysteryboxSecretArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] endpoint: S3-compatible endpoint URL (e.g. "https://s3.amazonaws.com").
+        :param pulumi.Input[_builtins.str] region: S3 region.
+        :param pulumi.Input['AiV1EndpointVolumeS3ConfigCredentialsArgs'] credentials: :
+               
+                  Inline S3 credentials.
+                  Get returns the values only with view SECRET.
+               
+               #### Inner value description
+               
+                  Inline S3 credentials.
+               
+                  *Cannot be set alongside mysterybox_secret.*
+        :param pulumi.Input['AiV1EndpointVolumeS3ConfigMysteryboxSecretArgs'] mysterybox_secret: :
+               
+                  Reference to a MysteryBox secret containing S3 credentials.
+               
+               #### Inner value description
+               
+                  Reference to a MysteryBox secret.
+               
+                  *Cannot be set alongside credentials.*
+        """
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "region", region)
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if mysterybox_secret is not None:
+            pulumi.set(__self__, "mysterybox_secret", mysterybox_secret)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        S3-compatible endpoint URL (e.g. "https://s3.amazonaws.com").
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[_builtins.str]:
+        """
+        S3 region.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigCredentialsArgs']]:
+        """
+        :
+
+           Inline S3 credentials.
+           Get returns the values only with view SECRET.
+
+        #### Inner value description
+
+           Inline S3 credentials.
+
+           *Cannot be set alongside mysterybox_secret.*
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigCredentialsArgs']]):
+        pulumi.set(self, "credentials", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mysteryboxSecret")
+    def mysterybox_secret(self) -> pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigMysteryboxSecretArgs']]:
+        """
+        :
+
+           Reference to a MysteryBox secret containing S3 credentials.
+
+        #### Inner value description
+
+           Reference to a MysteryBox secret.
+
+           *Cannot be set alongside credentials.*
+        """
+        return pulumi.get(self, "mysterybox_secret")
+
+    @mysterybox_secret.setter
+    def mysterybox_secret(self, value: pulumi.Input[Optional['AiV1EndpointVolumeS3ConfigMysteryboxSecretArgs']]):
+        pulumi.set(self, "mysterybox_secret", value)
+
+
+class AiV1EndpointVolumeS3ConfigCredentialsArgsDict(TypedDict):
+    access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Access key ID.
+    """
+    secret_access_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Secret access key.
+    """
+    session_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Session token (optional, for temporary credentials).
+    """
+
+@pulumi.input_type
+class AiV1EndpointVolumeS3ConfigCredentialsArgs:
+    def __init__(__self__, *,
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_token: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] access_key_id: Access key ID.
+        :param pulumi.Input[_builtins.str] secret_access_key: Secret access key.
+        :param pulumi.Input[_builtins.str] session_token: Session token (optional, for temporary credentials).
+        """
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if session_token is not None:
+            pulumi.set(__self__, "session_token", session_token)
+
+    @_builtins.property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Access key ID.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @access_key_id.setter
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "access_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Secret access key.
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @secret_access_key.setter
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_access_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sessionToken")
+    def session_token(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Session token (optional, for temporary credentials).
+        """
+        return pulumi.get(self, "session_token")
+
+    @session_token.setter
+    def session_token(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "session_token", value)
+
+
+class AiV1EndpointVolumeS3ConfigMysteryboxSecretArgsDict(TypedDict):
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       MysteryBox secret ID.
+       If you omit it, the service sets it from version_id.
+    """
+    version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       MysteryBox secret version ID.
+       If you omit it, the service sets the primary version of the secret at create time.
+    """
+
+@pulumi.input_type
+class AiV1EndpointVolumeS3ConfigMysteryboxSecretArgs:
+    def __init__(__self__, *,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] secret_id: :
+               
+                  MysteryBox secret ID.
+                  If you omit it, the service sets it from version_id.
+        :param pulumi.Input[_builtins.str] version_id: :
+               
+                  MysteryBox secret version ID.
+                  If you omit it, the service sets the primary version of the secret at create time.
+        """
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+        if version_id is not None:
+            pulumi.set(__self__, "version_id", version_id)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           MysteryBox secret ID.
+           If you omit it, the service sets it from version_id.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionId")
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           MysteryBox secret version ID.
+           If you omit it, the service sets the primary version of the secret at create time.
+        """
+        return pulumi.get(self, "version_id")
+
+    @version_id.setter
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_id", value)
+
 
 class ApplicationsV1alpha1K8sReleaseMetadataArgsDict(TypedDict):
     pass
@@ -1057,7 +4720,7 @@ class BillingV1PricingPolicyPricingMaxPriceV1ArgsDict(TypedDict):
     """
     :
 
-       Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+       Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
        Must be within the allowed price range (OUT_OF_RANGE otherwise);
        a value below the current market price is accepted but blocks scheduling.
        Mutable only while `status.running_vm_count` is 0
@@ -1072,7 +4735,7 @@ class BillingV1PricingPolicyPricingMaxPriceV1Args:
         """
         :param pulumi.Input[_builtins.str] max_price: :
                
-                  Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+                  Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
                   Must be within the allowed price range (OUT_OF_RANGE otherwise);
                   a value below the current market price is accepted but blocks scheduling.
                   Mutable only while `status.running_vm_count` is 0
@@ -1087,7 +4750,7 @@ class BillingV1PricingPolicyPricingMaxPriceV1Args:
         """
         :
 
-           Per-GPU hourly limit in USD, decimal string 3 digits precision. Example: "3.515".
+           Per-GPU hourly limit in USD, as a string with three decimal places. Example: "3.515".
            Must be within the allowed price range (OUT_OF_RANGE otherwise);
            a value below the current market price is accepted but blocks scheduling.
            Mutable only while `status.running_vm_count` is 0
@@ -6645,7 +10308,7 @@ class IamV1GroupMembershipStatusGroupMemberMetadataArgsDict(TypedDict):
     """
     name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Human readable name for the resource.
+    Human-readable name for the resource.
     """
     parent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -6687,7 +10350,7 @@ class IamV1GroupMembershipStatusGroupMemberMetadataArgs:
                   A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
         :param pulumi.Input[_builtins.str] id: Identifier for the resource, unique for its resource type.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] labels: Labels associated with the resource.
-        :param pulumi.Input[_builtins.str] name: Human readable name for the resource.
+        :param pulumi.Input[_builtins.str] name: Human-readable name for the resource.
         :param pulumi.Input[_builtins.str] parent_id: Identifier of the parent resource to which the resource belongs.
         :param pulumi.Input[_builtins.float] resource_version: :
                
@@ -6760,7 +10423,7 @@ class IamV1GroupMembershipStatusGroupMemberMetadataArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Human readable name for the resource.
+        Human-readable name for the resource.
         """
         return pulumi.get(self, "name")
 
@@ -7889,19 +11552,16 @@ class KmsV1SymmetricKeyStatusArgs:
 
 
 class Mk8sV1ClusterControlPlaneArgsDict(TypedDict):
-    subnet_id: pulumi.Input[_builtins.str]
-    """
-    :
-
-       Nebius VPC Subnet ID where control plane instances will be located.
-       Also will be default NodeGroup subnet.
-    """
     audit_logs: NotRequired[pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuditLogsArgsDict']]]
     """
     :
 
        Specify configuration of the pushing k8s audit logs into service logs and show it in the UI.
        By default cluster will be created without it.
+    """
+    authentication: NotRequired[pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationArgsDict']]]
+    """
+    Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
     """
     endpoints: NotRequired[pulumi.Input[Optional['Mk8sV1ClusterControlPlaneEndpointsArgsDict']]]
     """
@@ -7928,6 +11588,14 @@ class Mk8sV1ClusterControlPlaneArgsDict(TypedDict):
        public node groups.
        By default cluster will be created without it.
     """
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Nebius VPC Subnet ID where control plane instances will be located.
+       If it isn't specified default network of the parent container will be used.
+       Also will be default NodeGroup subnet.
+    """
     version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     :
@@ -7941,21 +11609,19 @@ class Mk8sV1ClusterControlPlaneArgsDict(TypedDict):
 @pulumi.input_type
 class Mk8sV1ClusterControlPlaneArgs:
     def __init__(__self__, *,
-                 subnet_id: pulumi.Input[_builtins.str],
                  audit_logs: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuditLogsArgs']] = None,
+                 authentication: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationArgs']] = None,
                  endpoints: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneEndpointsArgs']] = None,
                  etcd_cluster_size: pulumi.Input[Optional[_builtins.float]] = None,
                  karpenter: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneKarpenterArgs']] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] subnet_id: :
-               
-                  Nebius VPC Subnet ID where control plane instances will be located.
-                  Also will be default NodeGroup subnet.
         :param pulumi.Input['Mk8sV1ClusterControlPlaneAuditLogsArgs'] audit_logs: :
                
                   Specify configuration of the pushing k8s audit logs into service logs and show it in the UI.
                   By default cluster will be created without it.
+        :param pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationArgs'] authentication: Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
         :param pulumi.Input['Mk8sV1ClusterControlPlaneEndpointsArgs'] endpoints: Specification of endpoints of cluster control plane.
         :param pulumi.Input[_builtins.float] etcd_cluster_size: :
                
@@ -7972,6 +11638,11 @@ class Mk8sV1ClusterControlPlaneArgs:
                   Please note that there is no feature parity between Karpenter node pools and
                   public node groups.
                   By default cluster will be created without it.
+        :param pulumi.Input[_builtins.str] subnet_id: :
+               
+                  Nebius VPC Subnet ID where control plane instances will be located.
+                  If it isn't specified default network of the parent container will be used.
+                  Also will be default NodeGroup subnet.
         :param pulumi.Input[_builtins.str] version: :
                
                   Desired Kubernetes version of the cluster. May be lower than the actual cluster version
@@ -7979,32 +11650,20 @@ class Mk8sV1ClusterControlPlaneArgs:
                   For now only acceptable format is `<major>.<minor>` like "1.31".
                   Option for patch version update will be added later.
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
         if audit_logs is not None:
             pulumi.set(__self__, "audit_logs", audit_logs)
+        if authentication is not None:
+            pulumi.set(__self__, "authentication", authentication)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
         if etcd_cluster_size is not None:
             pulumi.set(__self__, "etcd_cluster_size", etcd_cluster_size)
         if karpenter is not None:
             pulumi.set(__self__, "karpenter", karpenter)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if version is not None:
             pulumi.set(__self__, "version", version)
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        :
-
-           Nebius VPC Subnet ID where control plane instances will be located.
-           Also will be default NodeGroup subnet.
-        """
-        return pulumi.get(self, "subnet_id")
-
-    @subnet_id.setter
-    def subnet_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="auditLogs")
@@ -8020,6 +11679,18 @@ class Mk8sV1ClusterControlPlaneArgs:
     @audit_logs.setter
     def audit_logs(self, value: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuditLogsArgs']]):
         pulumi.set(self, "audit_logs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def authentication(self) -> pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationArgs']]:
+        """
+        Configures customer JWT authentication. Requires Kubernetes 1.34 and a compatible control-plane infra version.
+        """
+        return pulumi.get(self, "authentication")
+
+    @authentication.setter
+    def authentication(self, value: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationArgs']]):
+        pulumi.set(self, "authentication", value)
 
     @_builtins.property
     @pulumi.getter
@@ -8071,6 +11742,22 @@ class Mk8sV1ClusterControlPlaneArgs:
         pulumi.set(self, "karpenter", value)
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Nebius VPC Subnet ID where control plane instances will be located.
+           If it isn't specified default network of the parent container will be used.
+           Also will be default NodeGroup subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -8095,6 +11782,555 @@ class Mk8sV1ClusterControlPlaneAuditLogsArgsDict(TypedDict):
 class Mk8sV1ClusterControlPlaneAuditLogsArgs:
     def __init__(__self__):
         pass
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationArgsDict(TypedDict):
+    oidcs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcArgsDict']]]]]
+    """
+    Configures OIDC providers for Kubernetes user authentication.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationArgs:
+    def __init__(__self__, *,
+                 oidcs: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcArgs']]] oidcs: Configures OIDC providers for Kubernetes user authentication.
+        """
+        if oidcs is not None:
+            pulumi.set(__self__, "oidcs", oidcs)
+
+    @_builtins.property
+    @pulumi.getter
+    def oidcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcArgs']]]]:
+        """
+        Configures OIDC providers for Kubernetes user authentication.
+        """
+        return pulumi.get(self, "oidcs")
+
+    @oidcs.setter
+    def oidcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcArgs']]]]):
+        pulumi.set(self, "oidcs", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcArgsDict(TypedDict):
+    claim_mappings: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgsDict']
+    """
+    Maps token claims to Kubernetes user attributes.
+    """
+    issuer: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgsDict']
+    """
+    Defines the issuer for accepted tokens.
+    """
+    claim_validation_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgsDict']]]]]
+    """
+    Validates token claims before Kubernetes authenticates the user.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Identifies this provider within the cluster configuration.
+    """
+    user_validation_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgsDict']]]]]
+    """
+    Validates the mapped Kubernetes user information.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcArgs:
+    def __init__(__self__, *,
+                 claim_mappings: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs'],
+                 issuer: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs'],
+                 claim_validation_rules: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_validation_rules: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs']]]] = None):
+        """
+        :param pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs'] claim_mappings: Maps token claims to Kubernetes user attributes.
+        :param pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs'] issuer: Defines the issuer for accepted tokens.
+        :param pulumi.Input[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs']]] claim_validation_rules: Validates token claims before Kubernetes authenticates the user.
+        :param pulumi.Input[_builtins.str] name: Identifies this provider within the cluster configuration.
+        :param pulumi.Input[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs']]] user_validation_rules: Validates the mapped Kubernetes user information.
+        """
+        pulumi.set(__self__, "claim_mappings", claim_mappings)
+        pulumi.set(__self__, "issuer", issuer)
+        if claim_validation_rules is not None:
+            pulumi.set(__self__, "claim_validation_rules", claim_validation_rules)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if user_validation_rules is not None:
+            pulumi.set(__self__, "user_validation_rules", user_validation_rules)
+
+    @_builtins.property
+    @pulumi.getter(name="claimMappings")
+    def claim_mappings(self) -> pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs']:
+        """
+        Maps token claims to Kubernetes user attributes.
+        """
+        return pulumi.get(self, "claim_mappings")
+
+    @claim_mappings.setter
+    def claim_mappings(self, value: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs']):
+        pulumi.set(self, "claim_mappings", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs']:
+        """
+        Defines the issuer for accepted tokens.
+        """
+        return pulumi.get(self, "issuer")
+
+    @issuer.setter
+    def issuer(self, value: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs']):
+        pulumi.set(self, "issuer", value)
+
+    @_builtins.property
+    @pulumi.getter(name="claimValidationRules")
+    def claim_validation_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs']]]]:
+        """
+        Validates token claims before Kubernetes authenticates the user.
+        """
+        return pulumi.get(self, "claim_validation_rules")
+
+    @claim_validation_rules.setter
+    def claim_validation_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs']]]]):
+        pulumi.set(self, "claim_validation_rules", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifies this provider within the cluster configuration.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userValidationRules")
+    def user_validation_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs']]]]:
+        """
+        Validates the mapped Kubernetes user information.
+        """
+        return pulumi.get(self, "user_validation_rules")
+
+    @user_validation_rules.setter
+    def user_validation_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs']]]]):
+        pulumi.set(self, "user_validation_rules", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgsDict(TypedDict):
+    username: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgsDict']
+    """
+    Maps token claims to the Kubernetes username.
+    """
+    groups: NotRequired[pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgsDict']]]
+    """
+    Maps token claims to Kubernetes groups. Omission disables group mapping.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsArgs:
+    def __init__(__self__, *,
+                 username: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs'],
+                 groups: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs']] = None):
+        """
+        :param pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs'] username: Maps token claims to the Kubernetes username.
+        :param pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs'] groups: Maps token claims to Kubernetes groups. Omission disables group mapping.
+        """
+        pulumi.set(__self__, "username", username)
+        if groups is not None:
+            pulumi.set(__self__, "groups", groups)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs']:
+        """
+        Maps token claims to the Kubernetes username.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs']):
+        pulumi.set(self, "username", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def groups(self) -> pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs']]:
+        """
+        Maps token claims to Kubernetes groups. Omission disables group mapping.
+        """
+        return pulumi.get(self, "groups")
+
+    @groups.setter
+    def groups(self, value: pulumi.Input[Optional['Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs']]):
+        pulumi.set(self, "groups", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgsDict(TypedDict):
+    claim: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Names the token claim to map.
+    """
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Maps token claims with a CEL expression.
+    """
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsGroupsArgs:
+    def __init__(__self__, *,
+                 claim: pulumi.Input[Optional[_builtins.str]] = None,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] claim: Names the token claim to map.
+        :param pulumi.Input[_builtins.str] expression: Maps token claims with a CEL expression.
+        :param pulumi.Input[_builtins.str] prefix: Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        if claim is not None:
+            pulumi.set(__self__, "claim", claim)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Names the token claim to map.
+        """
+        return pulumi.get(self, "claim")
+
+    @claim.setter
+    def claim(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "claim", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Maps token claims with a CEL expression.
+        """
+        return pulumi.get(self, "expression")
+
+    @expression.setter
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expression", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgsDict(TypedDict):
+    claim: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Names the token claim to map.
+    """
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Maps token claims with a CEL expression.
+    """
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimMappingsUsernameArgs:
+    def __init__(__self__, *,
+                 claim: pulumi.Input[Optional[_builtins.str]] = None,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] claim: Names the token claim to map.
+        :param pulumi.Input[_builtins.str] expression: Maps token claims with a CEL expression.
+        :param pulumi.Input[_builtins.str] prefix: Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        if claim is not None:
+            pulumi.set(__self__, "claim", claim)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Names the token claim to map.
+        """
+        return pulumi.get(self, "claim")
+
+    @claim.setter
+    def claim(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "claim", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Maps token claims with a CEL expression.
+        """
+        return pulumi.get(self, "expression")
+
+    @expression.setter
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expression", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Omission and an empty value disable prefixing for claims. Expressions require omission, including for an empty value.
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgsDict(TypedDict):
+    claim: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+    """
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Validates token claims with CEL. The expression must evaluate to true.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Describes a failed CEL validation.
+    """
+    required_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    An omitted value matches an empty string, following upstream behavior.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcClaimValidationRuleArgs:
+    def __init__(__self__, *,
+                 claim: pulumi.Input[Optional[_builtins.str]] = None,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 required_value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] claim: Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+        :param pulumi.Input[_builtins.str] expression: Validates token claims with CEL. The expression must evaluate to true.
+        :param pulumi.Input[_builtins.str] message: Describes a failed CEL validation.
+        :param pulumi.Input[_builtins.str] required_value: An omitted value matches an empty string, following upstream behavior.
+        """
+        if claim is not None:
+            pulumi.set(__self__, "claim", claim)
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if required_value is not None:
+            pulumi.set(__self__, "required_value", required_value)
+
+    @_builtins.property
+    @pulumi.getter
+    def claim(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Names the token claim that must match<span pulumi-lang-nodejs=" requiredValue " pulumi-lang-dotnet=" RequiredValue " pulumi-lang-go=" requiredValue " pulumi-lang-python=" required_value " pulumi-lang-yaml=" requiredValue " pulumi-lang-java=" requiredValue " pulumi-lang-hcl=" required_value "> requiredValue </span>exactly.
+        """
+        return pulumi.get(self, "claim")
+
+    @claim.setter
+    def claim(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "claim", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Validates token claims with CEL. The expression must evaluate to true.
+        """
+        return pulumi.get(self, "expression")
+
+    @expression.setter
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expression", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Describes a failed CEL validation.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="requiredValue")
+    def required_value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        An omitted value matches an empty string, following upstream behavior.
+        """
+        return pulumi.get(self, "required_value")
+
+    @required_value.setter
+    def required_value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "required_value", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgsDict(TypedDict):
+    audiences: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+    """
+    certificate_authority: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    PEM CA bundle for discovery and JWKS. Omission uses system trust.
+    """
+    discovery_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcIssuerArgs:
+    def __init__(__self__, *,
+                 audiences: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_authority: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] audiences: Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+        :param pulumi.Input[_builtins.str] certificate_authority: PEM CA bundle for discovery and JWKS. Omission uses system trust.
+        :param pulumi.Input[_builtins.str] discovery_url: Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+        :param pulumi.Input[_builtins.str] url: Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+        """
+        if audiences is not None:
+            pulumi.set(__self__, "audiences", audiences)
+        if certificate_authority is not None:
+            pulumi.set(__self__, "certificate_authority", certificate_authority)
+        if discovery_url is not None:
+            pulumi.set(__self__, "discovery_url", discovery_url)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def audiences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Lists the token audiences that this issuer accepts, for example, `["kubernetes", "dashboard"]`.
+        """
+        return pulumi.get(self, "audiences")
+
+    @audiences.setter
+    def audiences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "audiences", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateAuthority")
+    def certificate_authority(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        PEM CA bundle for discovery and JWKS. Omission uses system trust.
+        """
+        return pulumi.get(self, "certificate_authority")
+
+    @certificate_authority.setter
+    def certificate_authority(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate_authority", value)
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Overrides the OpenID discovery URL. An empty value uses the issuer's standard discovery URL.
+        """
+        return pulumi.get(self, "discovery_url")
+
+    @discovery_url.setter
+    def discovery_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "discovery_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifies the issuer and must match the token <span pulumi-lang-nodejs="`iss`" pulumi-lang-dotnet="`Iss`" pulumi-lang-go="`iss`" pulumi-lang-python="`iss`" pulumi-lang-yaml="`iss`" pulumi-lang-java="`iss`" pulumi-lang-hcl="`iss`">`iss`</span> claim.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgsDict(TypedDict):
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Validates the mapped Kubernetes user information with CEL.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Describes a failed CEL validation.
+    """
+
+@pulumi.input_type
+class Mk8sV1ClusterControlPlaneAuthenticationOidcUserValidationRuleArgs:
+    def __init__(__self__, *,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] expression: Validates the mapped Kubernetes user information with CEL.
+        :param pulumi.Input[_builtins.str] message: Describes a failed CEL validation.
+        """
+        if expression is not None:
+            pulumi.set(__self__, "expression", expression)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+
+    @_builtins.property
+    @pulumi.getter
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Validates the mapped Kubernetes user information with CEL.
+        """
+        return pulumi.get(self, "expression")
+
+    @expression.setter
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expression", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Describes a failed CEL validation.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
 
 
 class Mk8sV1ClusterControlPlaneEndpointsArgsDict(TypedDict):
@@ -8987,18 +13223,61 @@ class Mk8sV1NodeGroupAutoRepairConditionArgs:
 
 
 class Mk8sV1NodeGroupAutoscalingArgsDict(TypedDict):
+    initial_node_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    :
+
+       Initial number of nodes in the autoscaled node group. Defaults to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span>.
+       At creation, the value must be between <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>, inclusive.
+
+       Updating or clearing this field after creation has no effect.
+       This also applies when switching an existing node group from a fixed size to autoscaling.
+       Autoscaling starts from the current node count, subject to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>.
+    """
     max_node_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     min_node_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
 
 @pulumi.input_type
 class Mk8sV1NodeGroupAutoscalingArgs:
     def __init__(__self__, *,
+                 initial_node_count: pulumi.Input[Optional[_builtins.float]] = None,
                  max_node_count: pulumi.Input[Optional[_builtins.float]] = None,
                  min_node_count: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] initial_node_count: :
+               
+                  Initial number of nodes in the autoscaled node group. Defaults to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span>.
+                  At creation, the value must be between <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>, inclusive.
+               
+                  Updating or clearing this field after creation has no effect.
+                  This also applies when switching an existing node group from a fixed size to autoscaling.
+                  Autoscaling starts from the current node count, subject to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>.
+        """
+        if initial_node_count is not None:
+            pulumi.set(__self__, "initial_node_count", initial_node_count)
         if max_node_count is not None:
             pulumi.set(__self__, "max_node_count", max_node_count)
         if min_node_count is not None:
             pulumi.set(__self__, "min_node_count", min_node_count)
+
+    @_builtins.property
+    @pulumi.getter(name="initialNodeCount")
+    def initial_node_count(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        :
+
+           Initial number of nodes in the autoscaled node group. Defaults to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span>.
+           At creation, the value must be between <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>, inclusive.
+
+           Updating or clearing this field after creation has no effect.
+           This also applies when switching an existing node group from a fixed size to autoscaling.
+           Autoscaling starts from the current node count, subject to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>.
+        """
+        return pulumi.get(self, "initial_node_count")
+
+    @initial_node_count.setter
+    def initial_node_count(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "initial_node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNodeCount")
@@ -9095,9 +13374,10 @@ class Mk8sV1NodeGroupStatusArgsDict(TypedDict):
     """
     :
 
-       Actual version of NodeGroup. Have format `<major>.<minor>.<patch>-nebius-node.<infra_version>` like "1.30.0-nebius-node.10".
-       Where `<major>.<minor>.<patch>` is Kubernetes version and `<infra_version>` is version of Node infrastructure and configuration,
-       which update may include bug fixes, security updates and new features depending on worker node configuration.
+       Actual Kubernetes version and node image version of the node group.
+       Format: `<major>.<minor>.<patch>-nebius-node.<image>`, for example, "1.36.3-nebius-node.80".
+       `<major>.<minor>.<patch>` is the Kubernetes version, and `<image>` is the node image version.
+       Node image updates can include bug fixes, security updates, and new features for the selected node configuration.
     """
 
 @pulumi.input_type
@@ -9153,9 +13433,10 @@ class Mk8sV1NodeGroupStatusArgs:
                   `NodeGroupAutoscalingSpec.min_node_count` and `NodeGroupAutoscalingSpec.max_node_count` decided by autoscaler.
         :param pulumi.Input[_builtins.str] version: :
                
-                  Actual version of NodeGroup. Have format `<major>.<minor>.<patch>-nebius-node.<infra_version>` like "1.30.0-nebius-node.10".
-                  Where `<major>.<minor>.<patch>` is Kubernetes version and `<infra_version>` is version of Node infrastructure and configuration,
-                  which update may include bug fixes, security updates and new features depending on worker node configuration.
+                  Actual Kubernetes version and node image version of the node group.
+                  Format: `<major>.<minor>.<patch>-nebius-node.<image>`, for example, "1.36.3-nebius-node.80".
+                  `<major>.<minor>.<patch>` is the Kubernetes version, and `<image>` is the node image version.
+                  Node image updates can include bug fixes, security updates, and new features for the selected node configuration.
         """
         if events is not None:
             pulumi.set(__self__, "events", events)
@@ -9308,9 +13589,10 @@ class Mk8sV1NodeGroupStatusArgs:
         """
         :
 
-           Actual version of NodeGroup. Have format `<major>.<minor>.<patch>-nebius-node.<infra_version>` like "1.30.0-nebius-node.10".
-           Where `<major>.<minor>.<patch>` is Kubernetes version and `<infra_version>` is version of Node infrastructure and configuration,
-           which update may include bug fixes, security updates and new features depending on worker node configuration.
+           Actual Kubernetes version and node image version of the node group.
+           Format: `<major>.<minor>.<patch>-nebius-node.<image>`, for example, "1.36.3-nebius-node.80".
+           `<major>.<minor>.<patch>` is the Kubernetes version, and `<image>` is the node image version.
+           Node image updates can include bug fixes, security updates, and new features for the selected node configuration.
         """
         return pulumi.get(self, "version")
 
@@ -10262,6 +14544,16 @@ class Mk8sV1NodeGroupTemplateArgsDict(TypedDict):
        cloud-init user-data
        Should contain at least one SSH key.
     """
+    container_runtime: NotRequired[pulumi.Input[Optional['Mk8sV1NodeGroupTemplateContainerRuntimeArgsDict']]]
+    """
+    :
+
+       Configures container runtime for the node group.
+
+    #### Inner value description
+
+       Configures container runtime for the node group.
+    """
     filesystems: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateFilesystemArgsDict']]]]]
     """
     :
@@ -10392,6 +14684,7 @@ class Mk8sV1NodeGroupTemplateArgs:
                  resources: pulumi.Input['Mk8sV1NodeGroupTemplateResourcesArgs'],
                  boot_disk: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateBootDiskArgs']] = None,
                  cloud_init_user_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 container_runtime: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateContainerRuntimeArgs']] = None,
                  filesystems: pulumi.Input[Optional[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateFilesystemArgs']]]] = None,
                  follows_spot_price: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateFollowsSpotPriceArgs']] = None,
                  gpu_cluster: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateGpuClusterArgs']] = None,
@@ -10416,6 +14709,13 @@ class Mk8sV1NodeGroupTemplateArgs:
                
                   cloud-init user-data
                   Should contain at least one SSH key.
+        :param pulumi.Input['Mk8sV1NodeGroupTemplateContainerRuntimeArgs'] container_runtime: :
+               
+                  Configures container runtime for the node group.
+               
+               #### Inner value description
+               
+                  Configures container runtime for the node group.
         :param pulumi.Input[Sequence[pulumi.Input['Mk8sV1NodeGroupTemplateFilesystemArgs']]] filesystems: :
                
                   Static attachments of Compute Filesystem.
@@ -10498,6 +14798,8 @@ class Mk8sV1NodeGroupTemplateArgs:
             pulumi.set(__self__, "boot_disk", boot_disk)
         if cloud_init_user_data is not None:
             pulumi.set(__self__, "cloud_init_user_data", cloud_init_user_data)
+        if container_runtime is not None:
+            pulumi.set(__self__, "container_runtime", container_runtime)
         if filesystems is not None:
             pulumi.set(__self__, "filesystems", filesystems)
         if follows_spot_price is not None:
@@ -10571,6 +14873,24 @@ class Mk8sV1NodeGroupTemplateArgs:
     @cloud_init_user_data.setter
     def cloud_init_user_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_init_user_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerRuntime")
+    def container_runtime(self) -> pulumi.Input[Optional['Mk8sV1NodeGroupTemplateContainerRuntimeArgs']]:
+        """
+        :
+
+           Configures container runtime for the node group.
+
+        #### Inner value description
+
+           Configures container runtime for the node group.
+        """
+        return pulumi.get(self, "container_runtime")
+
+    @container_runtime.setter
+    def container_runtime(self, value: pulumi.Input[Optional['Mk8sV1NodeGroupTemplateContainerRuntimeArgs']]):
+        pulumi.set(self, "container_runtime", value)
 
     @_builtins.property
     @pulumi.getter
@@ -11045,6 +15365,68 @@ class Mk8sV1NodeGroupTemplateBootDiskDiskEncryptionArgs:
     @type.setter
     def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
+
+
+class Mk8sV1NodeGroupTemplateContainerRuntimeArgsDict(TypedDict):
+    soci_pull_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    :
+
+       Uses SOCI Snapshotter to pull images.
+
+    #### Supported values
+
+       Image pull modes for SOCI Snapshotter
+       Possible values:
+
+       - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+       - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+       - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+    """
+
+@pulumi.input_type
+class Mk8sV1NodeGroupTemplateContainerRuntimeArgs:
+    def __init__(__self__, *,
+                 soci_pull_mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] soci_pull_mode: :
+               
+                  Uses SOCI Snapshotter to pull images.
+               
+               #### Supported values
+               
+                  Image pull modes for SOCI Snapshotter
+                  Possible values:
+               
+                  - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+                  - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+                  - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        if soci_pull_mode is not None:
+            pulumi.set(__self__, "soci_pull_mode", soci_pull_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="sociPullMode")
+    def soci_pull_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        :
+
+           Uses SOCI Snapshotter to pull images.
+
+        #### Supported values
+
+           Image pull modes for SOCI Snapshotter
+           Possible values:
+
+           - `SOCI_PULL_MODE_UNSPECIFIED` - Uses the default containerd pull.
+           - `LAZY` - Uses SOCI Snapshotter to fetch image layers on demand.
+           - `PARALLEL` - Uses SOCI Snapshotter to download and unpack image layers in parallel.
+        """
+        return pulumi.get(self, "soci_pull_mode")
+
+    @soci_pull_mode.setter
+    def soci_pull_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "soci_pull_mode", value)
 
 
 class Mk8sV1NodeGroupTemplateFilesystemArgsDict(TypedDict):
@@ -12642,18 +17024,61 @@ class Mk8sV1alpha1NodeGroupAutoRepairConditionArgs:
 
 
 class Mk8sV1alpha1NodeGroupAutoscalingArgsDict(TypedDict):
+    initial_node_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    :
+
+       Initial number of nodes in the autoscaled node group. Defaults to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span>.
+       At creation, the value must be between <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>, inclusive.
+
+       Updating or clearing this field after creation has no effect.
+       This also applies when switching an existing node group from a fixed size to autoscaling.
+       Autoscaling starts from the current node count, subject to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>.
+    """
     max_node_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     min_node_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
 
 @pulumi.input_type
 class Mk8sV1alpha1NodeGroupAutoscalingArgs:
     def __init__(__self__, *,
+                 initial_node_count: pulumi.Input[Optional[_builtins.float]] = None,
                  max_node_count: pulumi.Input[Optional[_builtins.float]] = None,
                  min_node_count: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] initial_node_count: :
+               
+                  Initial number of nodes in the autoscaled node group. Defaults to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span>.
+                  At creation, the value must be between <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>, inclusive.
+               
+                  Updating or clearing this field after creation has no effect.
+                  This also applies when switching an existing node group from a fixed size to autoscaling.
+                  Autoscaling starts from the current node count, subject to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>.
+        """
+        if initial_node_count is not None:
+            pulumi.set(__self__, "initial_node_count", initial_node_count)
         if max_node_count is not None:
             pulumi.set(__self__, "max_node_count", max_node_count)
         if min_node_count is not None:
             pulumi.set(__self__, "min_node_count", min_node_count)
+
+    @_builtins.property
+    @pulumi.getter(name="initialNodeCount")
+    def initial_node_count(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        :
+
+           Initial number of nodes in the autoscaled node group. Defaults to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span>.
+           At creation, the value must be between <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>, inclusive.
+
+           Updating or clearing this field after creation has no effect.
+           This also applies when switching an existing node group from a fixed size to autoscaling.
+           Autoscaling starts from the current node count, subject to <span pulumi-lang-nodejs="`minNodeCount`" pulumi-lang-dotnet="`MinNodeCount`" pulumi-lang-go="`minNodeCount`" pulumi-lang-python="`min_node_count`" pulumi-lang-yaml="`minNodeCount`" pulumi-lang-java="`minNodeCount`" pulumi-lang-hcl="`min_node_count`">`minNodeCount`</span> and <span pulumi-lang-nodejs="`maxNodeCount`" pulumi-lang-dotnet="`MaxNodeCount`" pulumi-lang-go="`maxNodeCount`" pulumi-lang-python="`max_node_count`" pulumi-lang-yaml="`maxNodeCount`" pulumi-lang-java="`maxNodeCount`" pulumi-lang-hcl="`max_node_count`">`maxNodeCount`</span>.
+        """
+        return pulumi.get(self, "initial_node_count")
+
+    @initial_node_count.setter
+    def initial_node_count(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "initial_node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="maxNodeCount")
@@ -24576,6 +29001,10 @@ class VpcV1NetworkMetadataArgs:
 
 
 class VpcV1NetworkStatusArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether this is the project's default network.
+    """
     default_route_table_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ID of the network's default route table.
@@ -24600,9 +29029,11 @@ class VpcV1NetworkStatusArgsDict(TypedDict):
 @pulumi.input_type
 class VpcV1NetworkStatusArgs:
     def __init__(__self__, *,
+                 default: pulumi.Input[Optional[_builtins.bool]] = None,
                  default_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.bool] default: Indicates whether this is the project's default network.
         :param pulumi.Input[_builtins.str] default_route_table_id: ID of the network's default route table.
         :param pulumi.Input[_builtins.str] state: :
                
@@ -24618,10 +29049,24 @@ class VpcV1NetworkStatusArgs:
                   - `READY` - Network is ready for use.
                   - `DELETING` - Network is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if default_route_table_id is not None:
             pulumi.set(__self__, "default_route_table_id", default_route_table_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
+
+    @default.setter
+    def default(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "default", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
@@ -25691,8 +30136,8 @@ class VpcV1SecurityRuleEgressArgsDict(TypedDict):
 
        CIDR blocks as the destination.
        Optional. Empty list means any address.
-       Must be a valid IPv4.
-       Maximum of 8 CIDRs can be specified.
+       Each value must be a valid IPv4 CIDR.
+       Specify at most 8 CIDRs.
     """
     destination_ports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]]]
     """
@@ -25719,8 +30164,8 @@ class VpcV1SecurityRuleEgressArgs:
                
                   CIDR blocks as the destination.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4.
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] destination_ports: :
                
                   List of ports to which the rule applies.
@@ -25744,8 +30189,8 @@ class VpcV1SecurityRuleEgressArgs:
 
            CIDR blocks as the destination.
            Optional. Empty list means any address.
-           Must be a valid IPv4.
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "destination_cidrs")
 
@@ -25799,8 +30244,8 @@ class VpcV1SecurityRuleIngressArgsDict(TypedDict):
 
        CIDR blocks as the source.
        Optional. Empty list means any address.
-       Must be a valid IPv4
-       Maximum of 8 CIDRs can be specified.
+       Each value must be a valid IPv4 CIDR.
+       Specify at most 8 CIDRs.
     """
     source_security_group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -25824,8 +30269,8 @@ class VpcV1SecurityRuleIngressArgs:
                
                   CIDR blocks as the source.
                   Optional. Empty list means any address.
-                  Must be a valid IPv4
-                  Maximum of 8 CIDRs can be specified.
+                  Each value must be a valid IPv4 CIDR.
+                  Specify at most 8 CIDRs.
         :param pulumi.Input[_builtins.str] source_security_group_id: ID of the referenced Security Group as the source.
         """
         if destination_ports is not None:
@@ -25860,8 +30305,8 @@ class VpcV1SecurityRuleIngressArgs:
 
            CIDR blocks as the source.
            Optional. Empty list means any address.
-           Must be a valid IPv4
-           Maximum of 8 CIDRs can be specified.
+           Each value must be a valid IPv4 CIDR.
+           Specify at most 8 CIDRs.
         """
         return pulumi.get(self, "source_cidrs")
 
@@ -26637,6 +31082,10 @@ class VpcV1SubnetMetadataArgs:
 
 
 class VpcV1SubnetStatusArgsDict(TypedDict):
+    default: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether this is the network's default subnet.
+    """
     ipv4_private_cidrs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     :
@@ -26686,6 +31135,7 @@ class VpcV1SubnetStatusArgsDict(TypedDict):
 @pulumi.input_type
 class VpcV1SubnetStatusArgs:
     def __init__(__self__, *,
+                 default: pulumi.Input[Optional[_builtins.bool]] = None,
                  ipv4_private_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ipv4_private_pools: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV1SubnetStatusIpv4PrivatePoolArgs']]]] = None,
                  ipv4_public_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -26693,6 +31143,7 @@ class VpcV1SubnetStatusArgs:
                  route_table: pulumi.Input[Optional['VpcV1SubnetStatusRouteTableArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.bool] default: Indicates whether this is the network's default subnet.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ipv4_private_cidrs: :
                
                   CIDR blocks.
@@ -26721,6 +31172,8 @@ class VpcV1SubnetStatusArgs:
                   - `READY` - Subnet is ready for use.
                   - `DELETING` - Subnet is being deleted.
         """
+        if default is not None:
+            pulumi.set(__self__, "default", default)
         if ipv4_private_cidrs is not None:
             warnings.warn("""Deprecated""", DeprecationWarning)
             pulumi.log.warn("""ipv4_private_cidrs is deprecated: Deprecated""")
@@ -26739,6 +31192,18 @@ class VpcV1SubnetStatusArgs:
             pulumi.set(__self__, "route_table", route_table)
         if state is not None:
             pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
+
+    @default.setter
+    def default(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "default", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4PrivateCidrs")
@@ -27991,5 +32456,1688 @@ class GetQuotasV1QuotaAllowanceByNameInRegionArgs:
     @region.setter
     def region(self, value: _builtins.str):
         pulumi.set(self, "region", value)
+
+
+class GetVpcV1DefaultNetworkNetworkArgsDict(TypedDict):
+    metadata: 'GetVpcV1DefaultNetworkNetworkMetadataArgsDict'
+    """
+    :
+
+       Metadata for the network resource.
+       `metadata.parent_id` represents IAM container
+
+    #### Inner value description
+
+       Common resource metadata.
+    """
+    spec: 'GetVpcV1DefaultNetworkNetworkSpecArgsDict'
+    """
+    Specification of the network.
+    """
+    status: 'GetVpcV1DefaultNetworkNetworkStatusArgsDict'
+    """
+    Status of the network.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkArgs:
+    def __init__(__self__, *,
+                 metadata: 'GetVpcV1DefaultNetworkNetworkMetadataArgs',
+                 spec: 'GetVpcV1DefaultNetworkNetworkSpecArgs',
+                 status: 'GetVpcV1DefaultNetworkNetworkStatusArgs'):
+        """
+        :param 'GetVpcV1DefaultNetworkNetworkMetadataArgs' metadata: :
+               
+                  Metadata for the network resource.
+                  `metadata.parent_id` represents IAM container
+               
+               #### Inner value description
+               
+                  Common resource metadata.
+        :param 'GetVpcV1DefaultNetworkNetworkSpecArgs' spec: Specification of the network.
+        :param 'GetVpcV1DefaultNetworkNetworkStatusArgs' status: Status of the network.
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "spec", spec)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> 'GetVpcV1DefaultNetworkNetworkMetadataArgs':
+        """
+        :
+
+           Metadata for the network resource.
+           `metadata.parent_id` represents IAM container
+
+        #### Inner value description
+
+           Common resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: 'GetVpcV1DefaultNetworkNetworkMetadataArgs'):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def spec(self) -> 'GetVpcV1DefaultNetworkNetworkSpecArgs':
+        """
+        Specification of the network.
+        """
+        return pulumi.get(self, "spec")
+
+    @spec.setter
+    def spec(self, value: 'GetVpcV1DefaultNetworkNetworkSpecArgs'):
+        pulumi.set(self, "spec", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> 'GetVpcV1DefaultNetworkNetworkStatusArgs':
+        """
+        Status of the network.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: 'GetVpcV1DefaultNetworkNetworkStatusArgs'):
+        pulumi.set(self, "status", value)
+
+
+class GetVpcV1DefaultNetworkNetworkMetadataArgsDict(TypedDict):
+    created_at: _builtins.str
+    """
+    :
+
+       Timestamp indicating when the resource was created.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+    id: _builtins.str
+    """
+    Identifier for the resource, unique for its resource type.
+    """
+    labels: Mapping[str, _builtins.str]
+    """
+    Labels associated with the resource.
+    """
+    name: _builtins.str
+    """
+    Human-readable name for the resource.
+    """
+    parent_id: _builtins.str
+    """
+    Identifier of the parent resource to which the resource belongs.
+    """
+    resource_version: _builtins.float
+    """
+    :
+
+       Version of the resource for safe concurrent modifications and consistent reads.
+       Positive and monotonically increases on each resource spec change (but *not* on each change of the
+       resource's container(s) or status).
+       Service allows zero value or current.
+    """
+    updated_at: _builtins.str
+    """
+    :
+
+       Timestamp indicating when the resource was last updated.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkMetadataArgs:
+    def __init__(__self__, *,
+                 created_at: _builtins.str,
+                 id: _builtins.str,
+                 labels: Mapping[str, _builtins.str],
+                 name: _builtins.str,
+                 parent_id: _builtins.str,
+                 resource_version: _builtins.float,
+                 updated_at: _builtins.str):
+        """
+        :param _builtins.str created_at: :
+               
+                  Timestamp indicating when the resource was created.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        :param _builtins.str id: Identifier for the resource, unique for its resource type.
+        :param Mapping[str, _builtins.str] labels: Labels associated with the resource.
+        :param _builtins.str name: Human-readable name for the resource.
+        :param _builtins.str parent_id: Identifier of the parent resource to which the resource belongs.
+        :param _builtins.float resource_version: :
+               
+                  Version of the resource for safe concurrent modifications and consistent reads.
+                  Positive and monotonically increases on each resource spec change (but *not* on each change of the
+                  resource's container(s) or status).
+                  Service allows zero value or current.
+        :param _builtins.str updated_at: :
+               
+                  Timestamp indicating when the resource was last updated.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        pulumi.set(__self__, "created_at", created_at)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "resource_version", resource_version)
+        pulumi.set(__self__, "updated_at", updated_at)
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was created.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "created_at")
+
+    @created_at.setter
+    def created_at(self, value: _builtins.str):
+        pulumi.set(self, "created_at", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Identifier for the resource, unique for its resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: _builtins.str):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> Mapping[str, _builtins.str]:
+        """
+        Labels associated with the resource.
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: Mapping[str, _builtins.str]):
+        pulumi.set(self, "labels", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Human-readable name for the resource.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> _builtins.str:
+        """
+        Identifier of the parent resource to which the resource belongs.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @parent_id.setter
+    def parent_id(self, value: _builtins.str):
+        pulumi.set(self, "parent_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceVersion")
+    def resource_version(self) -> _builtins.float:
+        """
+        :
+
+           Version of the resource for safe concurrent modifications and consistent reads.
+           Positive and monotonically increases on each resource spec change (but *not* on each change of the
+           resource's container(s) or status).
+           Service allows zero value or current.
+        """
+        return pulumi.get(self, "resource_version")
+
+    @resource_version.setter
+    def resource_version(self, value: _builtins.float):
+        pulumi.set(self, "resource_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was last updated.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "updated_at")
+
+    @updated_at.setter
+    def updated_at(self, value: _builtins.str):
+        pulumi.set(self, "updated_at", value)
+
+
+class GetVpcV1DefaultNetworkNetworkSpecArgsDict(TypedDict):
+    ipv4_private_pools: 'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgsDict'
+    """
+    :
+
+       Pools for private IPv4 addresses.
+       Default private pools will be created if not specified.
+       Default private pools are referred here
+       https://docs.nebius.com/vpc/addressing/available-addresses
+    """
+    ipv4_public_pools: 'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgsDict'
+    """
+    :
+
+       Pools for public IPv4 addresses.
+       Default public pool will be used if not specified.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkSpecArgs:
+    def __init__(__self__, *,
+                 ipv4_private_pools: 'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs',
+                 ipv4_public_pools: 'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs'):
+        """
+        :param 'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs' ipv4_private_pools: :
+               
+                  Pools for private IPv4 addresses.
+                  Default private pools will be created if not specified.
+                  Default private pools are referred here
+                  https://docs.nebius.com/vpc/addressing/available-addresses
+        :param 'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs' ipv4_public_pools: :
+               
+                  Pools for public IPv4 addresses.
+                  Default public pool will be used if not specified.
+        """
+        pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
+        pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivatePools")
+    def ipv4_private_pools(self) -> 'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs':
+        """
+        :
+
+           Pools for private IPv4 addresses.
+           Default private pools will be created if not specified.
+           Default private pools are referred here
+           https://docs.nebius.com/vpc/addressing/available-addresses
+        """
+        return pulumi.get(self, "ipv4_private_pools")
+
+    @ipv4_private_pools.setter
+    def ipv4_private_pools(self, value: 'GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs'):
+        pulumi.set(self, "ipv4_private_pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicPools")
+    def ipv4_public_pools(self) -> 'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs':
+        """
+        :
+
+           Pools for public IPv4 addresses.
+           Default public pool will be used if not specified.
+        """
+        return pulumi.get(self, "ipv4_public_pools")
+
+    @ipv4_public_pools.setter
+    def ipv4_public_pools(self, value: 'GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs'):
+        pulumi.set(self, "ipv4_public_pools", value)
+
+
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgsDict(TypedDict):
+    pools: Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgsDict']
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsArgs:
+    def __init__(__self__, *,
+                 pools: Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgs']):
+        pulumi.set(__self__, "pools", pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgs']:
+        return pulumi.get(self, "pools")
+
+    @pools.setter
+    def pools(self, value: Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgs']):
+        pulumi.set(self, "pools", value)
+
+
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgsDict(TypedDict):
+    id: _builtins.str
+    """
+    ID of the pool.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PrivatePoolsPoolArgs:
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: ID of the pool.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the pool.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: _builtins.str):
+        pulumi.set(self, "id", value)
+
+
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgsDict(TypedDict):
+    pools: Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgsDict']
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsArgs:
+    def __init__(__self__, *,
+                 pools: Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgs']):
+        pulumi.set(__self__, "pools", pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgs']:
+        return pulumi.get(self, "pools")
+
+    @pools.setter
+    def pools(self, value: Sequence['GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgs']):
+        pulumi.set(self, "pools", value)
+
+
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgsDict(TypedDict):
+    id: _builtins.str
+    """
+    ID of the pool.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkSpecIpv4PublicPoolsPoolArgs:
+    def __init__(__self__, *,
+                 id: _builtins.str):
+        """
+        :param _builtins.str id: ID of the pool.
+        """
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the pool.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: _builtins.str):
+        pulumi.set(self, "id", value)
+
+
+class GetVpcV1DefaultNetworkNetworkStatusArgsDict(TypedDict):
+    default: _builtins.bool
+    """
+    Indicates whether this is the project's default network.
+    """
+    default_route_table_id: _builtins.str
+    """
+    ID of the network's default route table.
+    """
+    state: _builtins.str
+    """
+    :
+
+       Current state of the network.
+
+    #### Supported values
+
+       Enumeration of possible states of the network.
+       Possible values:
+
+       - `STATE_UNSPECIFIED` - Default state, unspecified.
+       - `CREATING` - Network is being created.
+       - `READY` - Network is ready for use.
+       - `DELETING` - Network is being deleted.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkNetworkStatusArgs:
+    def __init__(__self__, *,
+                 default: _builtins.bool,
+                 default_route_table_id: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.bool default: Indicates whether this is the project's default network.
+        :param _builtins.str default_route_table_id: ID of the network's default route table.
+        :param _builtins.str state: :
+               
+                  Current state of the network.
+               
+               #### Supported values
+               
+                  Enumeration of possible states of the network.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Default state, unspecified.
+                  - `CREATING` - Network is being created.
+                  - `READY` - Network is ready for use.
+                  - `DELETING` - Network is being deleted.
+        """
+        pulumi.set(__self__, "default", default)
+        pulumi.set(__self__, "default_route_table_id", default_route_table_id)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the project's default network.
+        """
+        return pulumi.get(self, "default")
+
+    @default.setter
+    def default(self, value: _builtins.bool):
+        pulumi.set(self, "default", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultRouteTableId")
+    def default_route_table_id(self) -> _builtins.str:
+        """
+        ID of the network's default route table.
+        """
+        return pulumi.get(self, "default_route_table_id")
+
+    @default_route_table_id.setter
+    def default_route_table_id(self, value: _builtins.str):
+        pulumi.set(self, "default_route_table_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Current state of the network.
+
+        #### Supported values
+
+           Enumeration of possible states of the network.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Default state, unspecified.
+           - `CREATING` - Network is being created.
+           - `READY` - Network is ready for use.
+           - `DELETING` - Network is being deleted.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: _builtins.str):
+        pulumi.set(self, "state", value)
+
+
+class GetVpcV1DefaultNetworkSubnetArgsDict(TypedDict):
+    metadata: 'GetVpcV1DefaultNetworkSubnetMetadataArgsDict'
+    """
+    :
+
+       Metadata for the subnet resource.
+       `metadata.parent_id` represents IAM container
+
+    #### Inner value description
+
+       Common resource metadata.
+    """
+    spec: 'GetVpcV1DefaultNetworkSubnetSpecArgsDict'
+    """
+    Specification of the subnet.
+    """
+    status: 'GetVpcV1DefaultNetworkSubnetStatusArgsDict'
+    """
+    Status of the subnet.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetArgs:
+    def __init__(__self__, *,
+                 metadata: 'GetVpcV1DefaultNetworkSubnetMetadataArgs',
+                 spec: 'GetVpcV1DefaultNetworkSubnetSpecArgs',
+                 status: 'GetVpcV1DefaultNetworkSubnetStatusArgs'):
+        """
+        :param 'GetVpcV1DefaultNetworkSubnetMetadataArgs' metadata: :
+               
+                  Metadata for the subnet resource.
+                  `metadata.parent_id` represents IAM container
+               
+               #### Inner value description
+               
+                  Common resource metadata.
+        :param 'GetVpcV1DefaultNetworkSubnetSpecArgs' spec: Specification of the subnet.
+        :param 'GetVpcV1DefaultNetworkSubnetStatusArgs' status: Status of the subnet.
+        """
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "spec", spec)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> 'GetVpcV1DefaultNetworkSubnetMetadataArgs':
+        """
+        :
+
+           Metadata for the subnet resource.
+           `metadata.parent_id` represents IAM container
+
+        #### Inner value description
+
+           Common resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: 'GetVpcV1DefaultNetworkSubnetMetadataArgs'):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def spec(self) -> 'GetVpcV1DefaultNetworkSubnetSpecArgs':
+        """
+        Specification of the subnet.
+        """
+        return pulumi.get(self, "spec")
+
+    @spec.setter
+    def spec(self, value: 'GetVpcV1DefaultNetworkSubnetSpecArgs'):
+        pulumi.set(self, "spec", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> 'GetVpcV1DefaultNetworkSubnetStatusArgs':
+        """
+        Status of the subnet.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: 'GetVpcV1DefaultNetworkSubnetStatusArgs'):
+        pulumi.set(self, "status", value)
+
+
+class GetVpcV1DefaultNetworkSubnetMetadataArgsDict(TypedDict):
+    created_at: _builtins.str
+    """
+    :
+
+       Timestamp indicating when the resource was created.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+    id: _builtins.str
+    """
+    Identifier for the resource, unique for its resource type.
+    """
+    labels: Mapping[str, _builtins.str]
+    """
+    Labels associated with the resource.
+    """
+    name: _builtins.str
+    """
+    Human-readable name for the resource.
+    """
+    parent_id: _builtins.str
+    """
+    Identifier of the parent resource to which the resource belongs.
+    """
+    resource_version: _builtins.float
+    """
+    :
+
+       Version of the resource for safe concurrent modifications and consistent reads.
+       Positive and monotonically increases on each resource spec change (but *not* on each change of the
+       resource's container(s) or status).
+       Service allows zero value or current.
+    """
+    updated_at: _builtins.str
+    """
+    :
+
+       Timestamp indicating when the resource was last updated.
+
+       A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetMetadataArgs:
+    def __init__(__self__, *,
+                 created_at: _builtins.str,
+                 id: _builtins.str,
+                 labels: Mapping[str, _builtins.str],
+                 name: _builtins.str,
+                 parent_id: _builtins.str,
+                 resource_version: _builtins.float,
+                 updated_at: _builtins.str):
+        """
+        :param _builtins.str created_at: :
+               
+                  Timestamp indicating when the resource was created.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        :param _builtins.str id: Identifier for the resource, unique for its resource type.
+        :param Mapping[str, _builtins.str] labels: Labels associated with the resource.
+        :param _builtins.str name: Human-readable name for the resource.
+        :param _builtins.str parent_id: Identifier of the parent resource to which the resource belongs.
+        :param _builtins.float resource_version: :
+               
+                  Version of the resource for safe concurrent modifications and consistent reads.
+                  Positive and monotonically increases on each resource spec change (but *not* on each change of the
+                  resource's container(s) or status).
+                  Service allows zero value or current.
+        :param _builtins.str updated_at: :
+               
+                  Timestamp indicating when the resource was last updated.
+               
+                  A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        pulumi.set(__self__, "created_at", created_at)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "resource_version", resource_version)
+        pulumi.set(__self__, "updated_at", updated_at)
+
+    @_builtins.property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was created.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "created_at")
+
+    @created_at.setter
+    def created_at(self, value: _builtins.str):
+        pulumi.set(self, "created_at", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Identifier for the resource, unique for its resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: _builtins.str):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def labels(self) -> Mapping[str, _builtins.str]:
+        """
+        Labels associated with the resource.
+        """
+        return pulumi.get(self, "labels")
+
+    @labels.setter
+    def labels(self, value: Mapping[str, _builtins.str]):
+        pulumi.set(self, "labels", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Human-readable name for the resource.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> _builtins.str:
+        """
+        Identifier of the parent resource to which the resource belongs.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @parent_id.setter
+    def parent_id(self, value: _builtins.str):
+        pulumi.set(self, "parent_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceVersion")
+    def resource_version(self) -> _builtins.float:
+        """
+        :
+
+           Version of the resource for safe concurrent modifications and consistent reads.
+           Positive and monotonically increases on each resource spec change (but *not* on each change of the
+           resource's container(s) or status).
+           Service allows zero value or current.
+        """
+        return pulumi.get(self, "resource_version")
+
+    @resource_version.setter
+    def resource_version(self, value: _builtins.float):
+        pulumi.set(self, "resource_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> _builtins.str:
+        """
+        :
+
+           Timestamp indicating when the resource was last updated.
+
+           A string representing a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ` or `YYYY-MM-DDTHH:MM:SS.SSS±HH:MM`
+        """
+        return pulumi.get(self, "updated_at")
+
+    @updated_at.setter
+    def updated_at(self, value: _builtins.str):
+        pulumi.set(self, "updated_at", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecArgsDict(TypedDict):
+    ipv4_private_pools: 'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgsDict'
+    """
+    :
+
+       Private IPv4 address pools for this subnet.
+       If unspecified, pools from the associated network are used.
+    """
+    ipv4_public_pools: 'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgsDict'
+    """
+    :
+
+       Public IPv4 address pools for this subnet.
+       If unspecified, pools from the associated network are used.
+    """
+    network_id: _builtins.str
+    """
+    ID of the network this subnet belongs to.
+    """
+    route_table_id: _builtins.str
+    """
+    :
+
+       ID of the route table to associate with the subnet.
+       If unspecified, the network's default route table is used.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecArgs:
+    def __init__(__self__, *,
+                 ipv4_private_pools: 'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs',
+                 ipv4_public_pools: 'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs',
+                 network_id: _builtins.str,
+                 route_table_id: _builtins.str):
+        """
+        :param 'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs' ipv4_private_pools: :
+               
+                  Private IPv4 address pools for this subnet.
+                  If unspecified, pools from the associated network are used.
+        :param 'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs' ipv4_public_pools: :
+               
+                  Public IPv4 address pools for this subnet.
+                  If unspecified, pools from the associated network are used.
+        :param _builtins.str network_id: ID of the network this subnet belongs to.
+        :param _builtins.str route_table_id: :
+               
+                  ID of the route table to associate with the subnet.
+                  If unspecified, the network's default route table is used.
+        """
+        pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
+        pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
+        pulumi.set(__self__, "network_id", network_id)
+        pulumi.set(__self__, "route_table_id", route_table_id)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivatePools")
+    def ipv4_private_pools(self) -> 'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs':
+        """
+        :
+
+           Private IPv4 address pools for this subnet.
+           If unspecified, pools from the associated network are used.
+        """
+        return pulumi.get(self, "ipv4_private_pools")
+
+    @ipv4_private_pools.setter
+    def ipv4_private_pools(self, value: 'GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs'):
+        pulumi.set(self, "ipv4_private_pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicPools")
+    def ipv4_public_pools(self) -> 'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs':
+        """
+        :
+
+           Public IPv4 address pools for this subnet.
+           If unspecified, pools from the associated network are used.
+        """
+        return pulumi.get(self, "ipv4_public_pools")
+
+    @ipv4_public_pools.setter
+    def ipv4_public_pools(self, value: 'GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs'):
+        pulumi.set(self, "ipv4_public_pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkId")
+    def network_id(self) -> _builtins.str:
+        """
+        ID of the network this subnet belongs to.
+        """
+        return pulumi.get(self, "network_id")
+
+    @network_id.setter
+    def network_id(self, value: _builtins.str):
+        pulumi.set(self, "network_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="routeTableId")
+    def route_table_id(self) -> _builtins.str:
+        """
+        :
+
+           ID of the route table to associate with the subnet.
+           If unspecified, the network's default route table is used.
+        """
+        return pulumi.get(self, "route_table_id")
+
+    @route_table_id.setter
+    def route_table_id(self, value: _builtins.str):
+        pulumi.set(self, "route_table_id", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgsDict(TypedDict):
+    pools: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgsDict']
+    """
+    :
+
+       List of private IPv4 CIDR blocks for this subnet.
+       Must not overlap with other resources in the network
+       Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+    """
+    use_network_pools: _builtins.bool
+    """
+    :
+
+       If true, inherit private IPv4 pools from the network. Defaults to true.
+       Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsArgs:
+    def __init__(__self__, *,
+                 pools: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs'],
+                 use_network_pools: _builtins.bool):
+        """
+        :param Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs'] pools: :
+               
+                  List of private IPv4 CIDR blocks for this subnet.
+                  Must not overlap with other resources in the network
+                  Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        :param _builtins.bool use_network_pools: :
+               
+                  If true, inherit private IPv4 pools from the network. Defaults to true.
+                  Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        pulumi.set(__self__, "pools", pools)
+        pulumi.set(__self__, "use_network_pools", use_network_pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs']:
+        """
+        :
+
+           List of private IPv4 CIDR blocks for this subnet.
+           Must not overlap with other resources in the network
+           Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        """
+        return pulumi.get(self, "pools")
+
+    @pools.setter
+    def pools(self, value: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs']):
+        pulumi.set(self, "pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useNetworkPools")
+    def use_network_pools(self) -> _builtins.bool:
+        """
+        :
+
+           If true, inherit private IPv4 pools from the network. Defaults to true.
+           Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        return pulumi.get(self, "use_network_pools")
+
+    @use_network_pools.setter
+    def use_network_pools(self, value: _builtins.bool):
+        pulumi.set(self, "use_network_pools", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgsDict(TypedDict):
+    cidrs: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgsDict']
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolArgs:
+    def __init__(__self__, *,
+                 cidrs: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgs']):
+        pulumi.set(__self__, "cidrs", cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgs']:
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgs']):
+        pulumi.set(self, "cidrs", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgsDict(TypedDict):
+    cidr: _builtins.str
+    """
+    :
+
+       A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+       If prefix length is specified, the CIDR block will be auto-allocated
+       from the network's available space.
+    """
+    max_mask_length: _builtins.float
+    """
+    Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+    """
+    state: _builtins.str
+    """
+    :
+
+       Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+
+    #### Supported values
+
+       Controls provisioning of IP addresses from this pool to other pools
+       or allocations. Defaults to AVAILABLE.
+       Possible values:
+
+       - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+       - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+       - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PrivatePoolsPoolCidrArgs:
+    def __init__(__self__, *,
+                 cidr: _builtins.str,
+                 max_mask_length: _builtins.float,
+                 state: _builtins.str):
+        """
+        :param _builtins.str cidr: :
+               
+                  A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+                  If prefix length is specified, the CIDR block will be auto-allocated
+                  from the network's available space.
+        :param _builtins.float max_mask_length: Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        :param _builtins.str state: :
+               
+                  Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+               
+               #### Supported values
+               
+                  Controls provisioning of IP addresses from this pool to other pools
+                  or allocations. Defaults to AVAILABLE.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+                  - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+                  - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        pulumi.set(__self__, "cidr", cidr)
+        pulumi.set(__self__, "max_mask_length", max_mask_length)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> _builtins.str:
+        """
+        :
+
+           A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+           If prefix length is specified, the CIDR block will be auto-allocated
+           from the network's available space.
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: _builtins.str):
+        pulumi.set(self, "cidr", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maxMaskLength")
+    def max_mask_length(self) -> _builtins.float:
+        """
+        Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        """
+        return pulumi.get(self, "max_mask_length")
+
+    @max_mask_length.setter
+    def max_mask_length(self, value: _builtins.float):
+        pulumi.set(self, "max_mask_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+
+        #### Supported values
+
+           Controls provisioning of IP addresses from this pool to other pools
+           or allocations. Defaults to AVAILABLE.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+           - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+           - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: _builtins.str):
+        pulumi.set(self, "state", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgsDict(TypedDict):
+    pools: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgsDict']
+    """
+    :
+
+       List of public IPv4 CIDR blocks for this subnet.
+       Must not overlap with other resources in the network.
+       Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+    """
+    use_network_pools: _builtins.bool
+    """
+    :
+
+       If true, inherit public IPv4 pools from the network.
+       Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsArgs:
+    def __init__(__self__, *,
+                 pools: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs'],
+                 use_network_pools: _builtins.bool):
+        """
+        :param Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs'] pools: :
+               
+                  List of public IPv4 CIDR blocks for this subnet.
+                  Must not overlap with other resources in the network.
+                  Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        :param _builtins.bool use_network_pools: :
+               
+                  If true, inherit public IPv4 pools from the network.
+                  Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        pulumi.set(__self__, "pools", pools)
+        pulumi.set(__self__, "use_network_pools", use_network_pools)
+
+    @_builtins.property
+    @pulumi.getter
+    def pools(self) -> Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs']:
+        """
+        :
+
+           List of public IPv4 CIDR blocks for this subnet.
+           Must not overlap with other resources in the network.
+           Must be empty if <span pulumi-lang-nodejs="`useNetworkPools`" pulumi-lang-dotnet="`UseNetworkPools`" pulumi-lang-go="`useNetworkPools`" pulumi-lang-python="`use_network_pools`" pulumi-lang-yaml="`useNetworkPools`" pulumi-lang-java="`useNetworkPools`" pulumi-lang-hcl="`use_network_pools`">`useNetworkPools`</span> is true.
+        """
+        return pulumi.get(self, "pools")
+
+    @pools.setter
+    def pools(self, value: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs']):
+        pulumi.set(self, "pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useNetworkPools")
+    def use_network_pools(self) -> _builtins.bool:
+        """
+        :
+
+           If true, inherit public IPv4 pools from the network.
+           Must be false if <span pulumi-lang-nodejs="`pools`" pulumi-lang-dotnet="`Pools`" pulumi-lang-go="`pools`" pulumi-lang-python="`pools`" pulumi-lang-yaml="`pools`" pulumi-lang-java="`pools`" pulumi-lang-hcl="`pools`">`pools`</span> is specified.
+        """
+        return pulumi.get(self, "use_network_pools")
+
+    @use_network_pools.setter
+    def use_network_pools(self, value: _builtins.bool):
+        pulumi.set(self, "use_network_pools", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgsDict(TypedDict):
+    cidrs: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgsDict']
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolArgs:
+    def __init__(__self__, *,
+                 cidrs: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgs']):
+        pulumi.set(__self__, "cidrs", cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgs']:
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: Sequence['GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgs']):
+        pulumi.set(self, "cidrs", value)
+
+
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgsDict(TypedDict):
+    cidr: _builtins.str
+    """
+    :
+
+       A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+       If prefix length is specified, the CIDR block will be auto-allocated
+       from the network's available space.
+    """
+    max_mask_length: _builtins.float
+    """
+    Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+    """
+    state: _builtins.str
+    """
+    :
+
+       Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+
+    #### Supported values
+
+       Controls provisioning of IP addresses from this pool to other pools
+       or allocations. Defaults to AVAILABLE.
+       Possible values:
+
+       - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+       - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+       - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetSpecIpv4PublicPoolsPoolCidrArgs:
+    def __init__(__self__, *,
+                 cidr: _builtins.str,
+                 max_mask_length: _builtins.float,
+                 state: _builtins.str):
+        """
+        :param _builtins.str cidr: :
+               
+                  A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+                  If prefix length is specified, the CIDR block will be auto-allocated
+                  from the network's available space.
+        :param _builtins.float max_mask_length: Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        :param _builtins.str state: :
+               
+                  Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+               
+               #### Supported values
+               
+                  Controls provisioning of IP addresses from this pool to other pools
+                  or allocations. Defaults to AVAILABLE.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+                  - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+                  - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        pulumi.set(__self__, "cidr", cidr)
+        pulumi.set(__self__, "max_mask_length", max_mask_length)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidr(self) -> _builtins.str:
+        """
+        :
+
+           A CIDR block (e.g., "10.1.2.0/24") or a prefix length (e.g., "/24").
+           If prefix length is specified, the CIDR block will be auto-allocated
+           from the network's available space.
+        """
+        return pulumi.get(self, "cidr")
+
+    @cidr.setter
+    def cidr(self, value: _builtins.str):
+        pulumi.set(self, "cidr", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maxMaskLength")
+    def max_mask_length(self) -> _builtins.float:
+        """
+        Maximum mask length for an allocation from this block. Defaults to /32 for IPv4.
+        """
+        return pulumi.get(self, "max_mask_length")
+
+    @max_mask_length.setter
+    def max_mask_length(self, value: _builtins.float):
+        pulumi.set(self, "max_mask_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Controls provisioning of IP addresses from the CIDR block. Defaults to AVAILABLE.
+
+        #### Supported values
+
+           Controls provisioning of IP addresses from this pool to other pools
+           or allocations. Defaults to AVAILABLE.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Not used, mandated by the protocol.
+           - `AVAILABLE` - Default state. Provision of the IP addresses from this CIDR block is allowed.
+           - `DISABLED` - Provision of the IP addresses from this CIDR block is denied.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: _builtins.str):
+        pulumi.set(self, "state", value)
+
+
+class GetVpcV1DefaultNetworkSubnetStatusArgsDict(TypedDict):
+    default: _builtins.bool
+    """
+    Indicates whether this is the network's default subnet.
+    """
+    ipv4_private_cidrs: Sequence[_builtins.str]
+    """
+    :
+
+       CIDR blocks.
+       Deprecated: Use `ipv4_private_pools.cidrs` instead.
+    """
+    ipv4_private_pools: Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgsDict']
+    """
+    Private IPv4 pools available for allocations in this subnet.
+    """
+    ipv4_public_cidrs: Sequence[_builtins.str]
+    """
+    :
+
+       CIDR blocks.
+       Deprecated: Use `ipv4_public_pools.cidrs` instead.
+    """
+    ipv4_public_pools: Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgsDict']
+    """
+    Public IPv4 pools available for allocations in this subnet.
+    """
+    route_table: 'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgsDict'
+    """
+    :
+
+       Information about the route table associated with this subnet.
+       Can be either a custom route table or the network's default route table.
+    """
+    state: _builtins.str
+    """
+    :
+
+       Current state of the subnet.
+
+    #### Supported values
+
+       Enumeration of possible states of the subnet.
+       Possible values:
+
+       - `STATE_UNSPECIFIED` - Default state, unspecified.
+       - `CREATING` - Subnet is being created.
+       - `READY` - Subnet is ready for use.
+       - `DELETING` - Subnet is being deleted.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetStatusArgs:
+    def __init__(__self__, *,
+                 default: _builtins.bool,
+                 ipv4_private_cidrs: Sequence[_builtins.str],
+                 ipv4_private_pools: Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs'],
+                 ipv4_public_cidrs: Sequence[_builtins.str],
+                 ipv4_public_pools: Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs'],
+                 route_table: 'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs',
+                 state: _builtins.str):
+        """
+        :param _builtins.bool default: Indicates whether this is the network's default subnet.
+        :param Sequence[_builtins.str] ipv4_private_cidrs: :
+               
+                  CIDR blocks.
+                  Deprecated: Use `ipv4_private_pools.cidrs` instead.
+        :param Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs'] ipv4_private_pools: Private IPv4 pools available for allocations in this subnet.
+        :param Sequence[_builtins.str] ipv4_public_cidrs: :
+               
+                  CIDR blocks.
+                  Deprecated: Use `ipv4_public_pools.cidrs` instead.
+        :param Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs'] ipv4_public_pools: Public IPv4 pools available for allocations in this subnet.
+        :param 'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs' route_table: :
+               
+                  Information about the route table associated with this subnet.
+                  Can be either a custom route table or the network's default route table.
+        :param _builtins.str state: :
+               
+                  Current state of the subnet.
+               
+               #### Supported values
+               
+                  Enumeration of possible states of the subnet.
+                  Possible values:
+               
+                  - `STATE_UNSPECIFIED` - Default state, unspecified.
+                  - `CREATING` - Subnet is being created.
+                  - `READY` - Subnet is ready for use.
+                  - `DELETING` - Subnet is being deleted.
+        """
+        pulumi.set(__self__, "default", default)
+        if ipv4_private_cidrs is not None:
+            warnings.warn("""Deprecated""", DeprecationWarning)
+            pulumi.log.warn("""ipv4_private_cidrs is deprecated: Deprecated""")
+        pulumi.set(__self__, "ipv4_private_cidrs", ipv4_private_cidrs)
+        pulumi.set(__self__, "ipv4_private_pools", ipv4_private_pools)
+        if ipv4_public_cidrs is not None:
+            warnings.warn("""Deprecated""", DeprecationWarning)
+            pulumi.log.warn("""ipv4_public_cidrs is deprecated: Deprecated""")
+        pulumi.set(__self__, "ipv4_public_cidrs", ipv4_public_cidrs)
+        pulumi.set(__self__, "ipv4_public_pools", ipv4_public_pools)
+        pulumi.set(__self__, "route_table", route_table)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        Indicates whether this is the network's default subnet.
+        """
+        return pulumi.get(self, "default")
+
+    @default.setter
+    def default(self, value: _builtins.bool):
+        pulumi.set(self, "default", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivateCidrs")
+    @_utilities.deprecated("""Deprecated""")
+    def ipv4_private_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        :
+
+           CIDR blocks.
+           Deprecated: Use `ipv4_private_pools.cidrs` instead.
+        """
+        return pulumi.get(self, "ipv4_private_cidrs")
+
+    @ipv4_private_cidrs.setter
+    def ipv4_private_cidrs(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "ipv4_private_cidrs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PrivatePools")
+    def ipv4_private_pools(self) -> Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs']:
+        """
+        Private IPv4 pools available for allocations in this subnet.
+        """
+        return pulumi.get(self, "ipv4_private_pools")
+
+    @ipv4_private_pools.setter
+    def ipv4_private_pools(self, value: Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs']):
+        pulumi.set(self, "ipv4_private_pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicCidrs")
+    @_utilities.deprecated("""Deprecated""")
+    def ipv4_public_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        :
+
+           CIDR blocks.
+           Deprecated: Use `ipv4_public_pools.cidrs` instead.
+        """
+        return pulumi.get(self, "ipv4_public_cidrs")
+
+    @ipv4_public_cidrs.setter
+    def ipv4_public_cidrs(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "ipv4_public_cidrs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4PublicPools")
+    def ipv4_public_pools(self) -> Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs']:
+        """
+        Public IPv4 pools available for allocations in this subnet.
+        """
+        return pulumi.get(self, "ipv4_public_pools")
+
+    @ipv4_public_pools.setter
+    def ipv4_public_pools(self, value: Sequence['GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs']):
+        pulumi.set(self, "ipv4_public_pools", value)
+
+    @_builtins.property
+    @pulumi.getter(name="routeTable")
+    def route_table(self) -> 'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs':
+        """
+        :
+
+           Information about the route table associated with this subnet.
+           Can be either a custom route table or the network's default route table.
+        """
+        return pulumi.get(self, "route_table")
+
+    @route_table.setter
+    def route_table(self, value: 'GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs'):
+        pulumi.set(self, "route_table", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        :
+
+           Current state of the subnet.
+
+        #### Supported values
+
+           Enumeration of possible states of the subnet.
+           Possible values:
+
+           - `STATE_UNSPECIFIED` - Default state, unspecified.
+           - `CREATING` - Subnet is being created.
+           - `READY` - Subnet is ready for use.
+           - `DELETING` - Subnet is being deleted.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: _builtins.str):
+        pulumi.set(self, "state", value)
+
+
+class GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgsDict(TypedDict):
+    cidrs: Sequence[_builtins.str]
+    """
+    CIDR blocks sourced from this pool.
+    """
+    pool_id: _builtins.str
+    """
+    ID of the pool available for allocations in this subnet.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetStatusIpv4PrivatePoolArgs:
+    def __init__(__self__, *,
+                 cidrs: Sequence[_builtins.str],
+                 pool_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cidrs: CIDR blocks sourced from this pool.
+        :param _builtins.str pool_id: ID of the pool available for allocations in this subnet.
+        """
+        pulumi.set(__self__, "cidrs", cidrs)
+        pulumi.set(__self__, "pool_id", pool_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence[_builtins.str]:
+        """
+        CIDR blocks sourced from this pool.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "cidrs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> _builtins.str:
+        """
+        ID of the pool available for allocations in this subnet.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: _builtins.str):
+        pulumi.set(self, "pool_id", value)
+
+
+class GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgsDict(TypedDict):
+    cidrs: Sequence[_builtins.str]
+    """
+    CIDR blocks sourced from this pool.
+    """
+    pool_id: _builtins.str
+    """
+    ID of the pool available for allocations in this subnet.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetStatusIpv4PublicPoolArgs:
+    def __init__(__self__, *,
+                 cidrs: Sequence[_builtins.str],
+                 pool_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cidrs: CIDR blocks sourced from this pool.
+        :param _builtins.str pool_id: ID of the pool available for allocations in this subnet.
+        """
+        pulumi.set(__self__, "cidrs", cidrs)
+        pulumi.set(__self__, "pool_id", pool_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> Sequence[_builtins.str]:
+        """
+        CIDR blocks sourced from this pool.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "cidrs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="poolId")
+    def pool_id(self) -> _builtins.str:
+        """
+        ID of the pool available for allocations in this subnet.
+        """
+        return pulumi.get(self, "pool_id")
+
+    @pool_id.setter
+    def pool_id(self, value: _builtins.str):
+        pulumi.set(self, "pool_id", value)
+
+
+class GetVpcV1DefaultNetworkSubnetStatusRouteTableArgsDict(TypedDict):
+    default: _builtins.bool
+    """
+    :
+
+       Indicates whether this is the network's default route table.
+       If true, this is the default route table inherited from the network.
+       If false, this is a custom route table explicitly associated with the subnet via spec.
+    """
+    id: _builtins.str
+    """
+    ID of the route table.
+    """
+
+@pulumi.input_type
+class GetVpcV1DefaultNetworkSubnetStatusRouteTableArgs:
+    def __init__(__self__, *,
+                 default: _builtins.bool,
+                 id: _builtins.str):
+        """
+        :param _builtins.bool default: :
+               
+                  Indicates whether this is the network's default route table.
+                  If true, this is the default route table inherited from the network.
+                  If false, this is a custom route table explicitly associated with the subnet via spec.
+        :param _builtins.str id: ID of the route table.
+        """
+        pulumi.set(__self__, "default", default)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def default(self) -> _builtins.bool:
+        """
+        :
+
+           Indicates whether this is the network's default route table.
+           If true, this is the default route table inherited from the network.
+           If false, this is a custom route table explicitly associated with the subnet via spec.
+        """
+        return pulumi.get(self, "default")
+
+    @default.setter
+    def default(self, value: _builtins.bool):
+        pulumi.set(self, "default", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        ID of the route table.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: _builtins.str):
+        pulumi.set(self, "id", value)
 
 
